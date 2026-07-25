@@ -1,0 +1,1273 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum AdminStatus {
+  ACTIVE
+  INACTIVE
+  LOCKED
+}
+
+enum AdminRole {
+  SUPER_ADMIN
+  ADMIN
+  STORE_MANAGER
+  PRODUCTION_STAFF
+  DELIVERY_BOY
+}
+
+model AdminUser {
+  role                    AdminRole   @default(ADMIN)
+  id                      String      @id @default(uuid()) @db.Char(36)
+  name                    String
+  email                   String      @unique
+  pendingEmail            String?
+  pendingEmailRequestedAt DateTime?
+  pendingEmailExpiresAt   DateTime?
+  passwordHash            String?
+  mobile                  String?
+  avatarFileId            String?     @db.Char(36)
+  status                  AdminStatus
+  emailVerifiedAt         DateTime?
+  lastLoginAt             DateTime?
+  failedLoginAttempts     Int         @default(0)
+  lockedUntil             DateTime?
+  passwordChangedAt       DateTime?
+  isSuperAdmin            Boolean     @default(true)
+  createdAt               DateTime    @default(now())
+  updatedAt               DateTime    @updatedAt
+  deletedAt               DateTime?
+
+  sessions      AdminSession[]
+  otpChallenges OtpChallenge[]
+
+  @@index([email])
+  @@index([status])
+  @@map("admin_users")
+}
+
+model AdminSession {
+  id               String    @id @default(uuid()) @db.Char(36)
+  adminUserId      String    @db.Char(36)
+  refreshTokenHash String
+  userAgent        String?   @db.Text
+  ipAddress        String?
+  lastActivityAt   DateTime?
+  expiresAt        DateTime
+  revokedAt        DateTime?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  adminUser AdminUser @relation(fields: [adminUserId], references: [id], onDelete: Cascade)
+
+  @@index([adminUserId])
+  @@index([expiresAt])
+  @@map("admin_sessions")
+}
+
+enum OtpPurpose {
+  PASSWORD_CHANGE
+  EMAIL_CHANGE_OLD_EMAIL
+  EMAIL_CHANGE_NEW_EMAIL
+  FORGOT_PASSWORD
+  LOGIN_VERIFICATION
+}
+
+model OtpChallenge {
+  id                String     @id @default(uuid()) @db.Char(36)
+  adminUserId       String?    @db.Char(36)
+  transactionId     String?    @db.Char(36)
+  metadataJson      String?    @db.Text
+  purpose           OtpPurpose
+  destination       String
+  otpHash           String
+  expiresAt         DateTime
+  verifiedAt        DateTime?
+  attemptCount      Int        @default(0)
+  maxAttempts       Int        @default(5)
+  resendAvailableAt DateTime?
+  invalidatedAt     DateTime?
+  createdAt         DateTime   @default(now())
+  updatedAt         DateTime   @updatedAt
+
+  adminUser AdminUser? @relation(fields: [adminUserId], references: [id], onDelete: SetNull)
+
+  @@index([destination])
+  @@index([purpose])
+  @@index([expiresAt])
+  @@map("otp_challenges")
+}
+
+enum StoreMode {
+  SINGLE_STORE
+  MULTI_STORE
+  FRANCHISE
+}
+
+enum StoreStatus {
+  ACTIVE
+  INACTIVE
+  TEMPORARILY_CLOSED
+}
+
+model Store {
+  id                  String      @id @default(uuid()) @db.Char(36)
+  name                String
+  code                String      @unique
+  slug                String      @unique
+  email               String?
+  phone               String?
+  whatsappNumber      String?
+  addressLine1        String?
+  addressLine2        String?
+  city                String?
+  state               String?
+  country             String      @default("India")
+  postalCode          String?
+  latitude            Decimal?    @db.Decimal(10, 8)
+  longitude           Decimal?    @db.Decimal(11, 8)
+  timezone            String      @default("Asia/Kolkata")
+  currency            String      @default("INR")
+  mode                StoreMode
+  status              StoreStatus
+  openingTime         String?
+  closingTime         String?
+  productionStartTime String?
+  productionEndTime   String?
+  deliveryStartTime   String?
+  deliveryEndTime     String?
+  createdAt           DateTime    @default(now())
+  updatedAt           DateTime    @updatedAt
+  deletedAt           DateTime?
+
+  settings          StoreSetting[]
+  featureFlags      FeatureFlag[]
+  categories        Category[]
+  brands            Brand[]
+  taxRates          TaxRate[]
+  productAttributes ProductAttribute[]
+  attributeGroups   AttributeGroup[]
+  products          Product[]
+  productAddons     ProductAddon[]
+  addonGroups       AddonGroup[]
+
+  @@index([status])
+  @@index([slug])
+  @@map("stores")
+}
+
+enum SettingType {
+  STRING
+  NUMBER
+  BOOLEAN
+  JSON
+  SECRET
+}
+
+model AppSetting {
+  id               String      @id @default(uuid()) @db.Char(36)
+  namespace        String
+  key              String
+  valueJson        String      @db.Text
+  valueType        SettingType
+  isPublic         Boolean     @default(false)
+  isEncrypted      Boolean     @default(false)
+  description      String?     @db.Text
+  updatedByAdminId String?     @db.Char(36)
+  createdAt        DateTime    @default(now())
+  updatedAt        DateTime    @updatedAt
+
+  @@unique([namespace, key])
+  @@index([namespace])
+  @@index([key])
+  @@map("app_settings")
+}
+
+model StoreSetting {
+  id          String      @id @default(uuid()) @db.Char(36)
+  storeId     String      @db.Char(36)
+  namespace   String
+  key         String
+  valueJson   String      @db.Text
+  valueType   SettingType
+  isEncrypted Boolean     @default(false)
+  description String?     @db.Text
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  store Store @relation(fields: [storeId], references: [id], onDelete: Cascade)
+
+  @@unique([storeId, namespace, key])
+  @@index([storeId])
+  @@index([namespace])
+  @@index([key])
+  @@map("store_settings")
+}
+
+enum FeatureFlagScope {
+  GLOBAL
+  STORE
+}
+
+model FeatureFlag {
+  id                String           @id @default(uuid()) @db.Char(36)
+  key               String           @unique
+  name              String
+  description       String?          @db.Text
+  enabled           Boolean          @default(false)
+  scope             FeatureFlagScope
+  storeId           String?          @db.Char(36)
+  rolloutPercentage Int              @default(100)
+  createdAt         DateTime         @default(now())
+  updatedAt         DateTime         @updatedAt
+
+  store Store? @relation(fields: [storeId], references: [id], onDelete: Cascade)
+
+  @@index([key])
+  @@index([scope])
+  @@index([enabled])
+  @@map("feature_flags")
+}
+
+enum AuditActorType {
+  SYSTEM
+  ADMIN
+  CUSTOMER
+  DELIVERY_BOY
+}
+
+model AuditLog {
+  id            String         @id @default(uuid()) @db.Char(36)
+  actorType     AuditActorType
+  actorAdminId  String?        @db.Char(36)
+  action        String
+  entityType    String
+  entityId      String?        @db.Char(36)
+  requestId     String?
+  ipAddress     String?
+  userAgent     String?        @db.Text
+  oldValuesJson String?        @db.Text
+  newValuesJson String?        @db.Text
+  metadataJson  String?        @db.Text
+  createdAt     DateTime       @default(now())
+
+  @@index([entityType])
+  @@index([entityId])
+  @@index([createdAt])
+  @@map("audit_logs")
+}
+
+enum FileOwnerType {
+  SYSTEM
+  ADMIN
+  PRODUCT
+  CATEGORY
+  BRAND
+  CUSTOMER
+  ORDER
+  ORDER_ITEM
+  PERSONALISATION_SUBMISSION
+  DESIGN_PROOF
+}
+
+enum FileRole {
+  LOGO
+  FAVICON
+  PRODUCT_MAIN
+  PRODUCT_GALLERY
+  CATEGORY_IMAGE
+  CATEGORY_ICON
+  CATEGORY_DESKTOP_BANNER
+  CATEGORY_MOBILE_BANNER
+  SEO_IMAGE
+  BRAND_IMAGE
+  BRAND_LOGO
+  BRAND_BANNER
+  ATTRIBUTE_VALUE_IMAGE
+  CUSTOMER_UPLOAD
+  ADDON_IMAGE
+  ADDON_OPTION_IMAGE
+  ADDON_CUSTOMER_UPLOAD
+  MAIN_PERSONALISATION_IMAGE
+  SUPPORTING_PERSONALISATION_IMAGE
+  THUMBNAIL
+  PREVIEW
+  DESIGN_PROOF
+  ADMIN_SIGNATURE
+  ADMIN_AVATAR
+  OTHER
+}
+
+enum FileVisibility {
+  PUBLIC
+  PRIVATE
+}
+
+enum FileStatus {
+  TEMPORARY
+  ACTIVE
+  PROTECTED
+  PENDING_DELETION
+  DELETED
+  CLEANUP_FAILED
+}
+
+model FileAsset {
+  id                String         @id @default(uuid()) @db.Char(36)
+  ownerType         FileOwnerType
+  ownerId           String?        @db.Char(36)
+  storeId           String?        @db.Char(36)
+  uploadSessionId   String?        @db.Char(36)
+  role              FileRole
+  visibility        FileVisibility
+  status            FileStatus
+  originalName      String
+  storedName        String
+  storageDisk       String
+  storagePath       String
+  thumbnailPath     String?
+  previewPath       String?
+  mimeType          String
+  extension         String
+  sizeBytes         Int
+  width             Int?
+  height            Int?
+  checksum          String?
+  retentionUntil    DateTime?
+  scheduledDeleteAt DateTime?
+  deletedAt         DateTime?
+  createdAt         DateTime       @default(now())
+  updatedAt         DateTime       @updatedAt
+
+  @@index([ownerType])
+  @@index([ownerId])
+  @@index([status])
+  @@index([scheduledDeleteAt])
+  @@map("file_assets")
+}
+
+enum UploadSessionStatus {
+  ACTIVE
+  CONVERTED
+  EXPIRED
+  DELETED
+}
+
+model UploadSession {
+  id                 String              @id @default(uuid()) @db.Char(36)
+  sessionTokenHash   String
+  customerId         String?             @db.Char(36) // Intentionally deferred relation to Customer
+  status             UploadSessionStatus
+  expiresAt          DateTime
+  convertedToOrderAt DateTime?
+  createdAt          DateTime            @default(now())
+  updatedAt          DateTime            @updatedAt
+
+  @@index([status])
+  @@index([expiresAt])
+  @@map("upload_sessions")
+}
+
+enum JobStatus {
+  PENDING
+  RUNNING
+  COMPLETED
+  FAILED
+  CANCELLED
+}
+
+model SystemJob {
+  id           String    @id @default(uuid()) @db.Char(36)
+  jobType      String
+  jobKey       String?
+  status       JobStatus
+  startedAt    DateTime?
+  completedAt  DateTime?
+  failedAt     DateTime?
+  attempts     Int       @default(0)
+  errorMessage String?   @db.Text
+  metadataJson String?   @db.Text
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  @@index([status])
+  @@index([jobType])
+  @@map("system_jobs")
+}
+
+model ApiRequestLog {
+  id         String   @id @default(uuid()) @db.Char(36)
+  requestId  String   @unique
+  method     String
+  path       String
+  statusCode Int
+  durationMs Int
+  ipAddress  String?
+  userAgent  String?  @db.Text
+  createdAt  DateTime @default(now())
+
+  @@index([createdAt])
+  @@index([path])
+  @@map("api_request_logs")
+}
+
+enum CategoryStatus {
+  ACTIVE
+  INACTIVE
+  ARCHIVED
+}
+
+model Category {
+  id                  String         @id @default(uuid()) @db.Char(36)
+  parentId            String?        @db.Char(36)
+  storeId             String?        @db.Char(36)
+  name                String
+  slug                String         @unique
+  code                String?
+  shortDescription    String?        @db.Text
+  description         String?        @db.Text
+  imageFileId         String?        @db.Char(36)
+  iconFileId          String?        @db.Char(36)
+  desktopBannerFileId String?        @db.Char(36)
+  mobileBannerFileId  String?        @db.Char(36)
+  status              CategoryStatus @default(ACTIVE)
+  isFeatured          Boolean        @default(false)
+  showOnHomepage      Boolean        @default(false)
+  sortOrder           Int            @default(0)
+  level               Int            @default(1)
+  path                String?        @db.VarChar(500)
+  seoTitle            String?
+  seoDescription      String?        @db.Text
+  seoKeywordsJson     String?        @db.Text
+  seoImageFileId      String?        @db.Char(36)
+  createdByAdminId    String?        @db.Char(36)
+  updatedByAdminId    String?        @db.Char(36)
+  createdAt           DateTime       @default(now())
+  updatedAt           DateTime       @updatedAt
+  deletedAt           DateTime?
+
+  parent   Category?  @relation("CategoryToCategory", fields: [parentId], references: [id], onDelete: Restrict)
+  children Category[] @relation("CategoryToCategory")
+
+  store                Store?                        @relation(fields: [storeId], references: [id], onDelete: SetNull)
+  attributeAssignments AttributeCategoryAssignment[]
+  productsPrimary      Product[]                     @relation("PrimaryCategoryToProduct")
+  productAssignments   ProductCategoryAssignment[]
+  addonAssignments     AddonAssignment[]
+
+  @@index([parentId])
+  @@index([storeId])
+  @@index([slug])
+  @@index([status])
+  @@index([sortOrder])
+  @@index([deletedAt])
+  @@index([isFeatured])
+  @@index([showOnHomepage])
+  @@map("categories")
+}
+
+enum BrandStatus {
+  ACTIVE
+  INACTIVE
+  ARCHIVED
+}
+
+model Brand {
+  id               String      @id @default(uuid()) @db.Char(36)
+  storeId          String?     @db.Char(36)
+  name             String
+  slug             String      @unique
+  code             String?
+  description      String?     @db.Text
+  shortDescription String?     @db.Text
+  logoFileId       String?     @db.Char(36)
+  bannerFileId     String?     @db.Char(36)
+  seoImageFileId   String?     @db.Char(36)
+  websiteUrl       String?
+  status           BrandStatus @default(ACTIVE)
+  isFeatured       Boolean     @default(false)
+  sortOrder        Int         @default(0)
+  seoTitle         String?
+  seoDescription   String?     @db.Text
+  seoKeywordsJson  String?     @db.Text
+  createdByAdminId String?     @db.Char(36)
+  updatedByAdminId String?     @db.Char(36)
+  createdAt        DateTime    @default(now())
+  updatedAt        DateTime    @updatedAt
+  deletedAt        DateTime?
+
+  store Store? @relation(fields: [storeId], references: [id], onDelete: SetNull)
+  products Product[]
+
+  @@index([name])
+  @@index([slug])
+  @@index([code])
+  @@index([status])
+  @@index([isFeatured])
+  @@index([sortOrder])
+  @@index([storeId])
+  @@index([deletedAt])
+  @@map("brands")
+}
+
+enum TaxType {
+  GST
+  IGST
+  ZERO_RATED
+  EXEMPT
+  CUSTOM
+}
+
+enum TaxRateStatus {
+  ACTIVE
+  INACTIVE
+  ARCHIVED
+}
+
+model TaxRate {
+  id               String        @id @default(uuid()) @db.Char(36)
+  storeId          String?       @db.Char(36)
+  name             String
+  code             String        @unique
+  description      String?       @db.Text
+  taxType          TaxType       @default(GST)
+  totalRate        Decimal       @db.Decimal(7, 4)
+  cgstRate         Decimal       @default(0) @db.Decimal(7, 4)
+  sgstRate         Decimal       @default(0) @db.Decimal(7, 4)
+  igstRate         Decimal       @default(0) @db.Decimal(7, 4)
+  cessRate         Decimal       @default(0) @db.Decimal(7, 4)
+  hsnCode          String?
+  sacCode          String?
+  priceIncludesTax Boolean       @default(true)
+  status           TaxRateStatus @default(ACTIVE)
+  isDefault        Boolean       @default(false)
+  sortOrder        Int           @default(0)
+  effectiveFrom    DateTime?
+  effectiveUntil   DateTime?
+  createdByAdminId String?       @db.Char(36)
+  updatedByAdminId String?       @db.Char(36)
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+  deletedAt        DateTime?
+
+  store Store? @relation(fields: [storeId], references: [id], onDelete: SetNull)
+  products Product[]
+  variations ProductVariation[]
+  addons ProductAddon[]
+
+  @@index([code])
+  @@index([status])
+  @@index([isDefault])
+  @@index([taxType])
+  @@index([deletedAt])
+  @@map("tax_rates")
+}
+
+enum ProductAttributeStatus {
+  ACTIVE
+  INACTIVE
+  ARCHIVED
+}
+
+enum ProductAttributeType {
+  TEXT
+  COLOUR_SWATCH
+  IMAGE_SWATCH
+  BUTTON
+  DROPDOWN
+  RADIO
+}
+
+model ProductAttribute {
+  id                   String                 @id @default(uuid()) @db.Char(36)
+  storeId              String?                @db.Char(36)
+  name                 String
+  slug                 String                 @unique
+  code                 String?
+  description          String?                @db.Text
+  type                 ProductAttributeType   @default(TEXT)
+  status               ProductAttributeStatus @default(ACTIVE)
+  isVariationAttribute Boolean                @default(true)
+  isFilterable         Boolean                @default(true)
+  isRequiredByDefault  Boolean                @default(false)
+  showOnProductPage    Boolean                @default(true)
+  showInProductSummary Boolean                @default(true)
+  allowMultipleValues  Boolean                @default(false)
+  sortOrder            Int                    @default(0)
+  createdByAdminId     String?                @db.Char(36)
+  updatedByAdminId     String?                @db.Char(36)
+  createdAt            DateTime               @default(now())
+  updatedAt            DateTime               @updatedAt
+  deletedAt            DateTime?
+
+  store               Store?                        @relation(fields: [storeId], references: [id], onDelete: SetNull)
+  values              ProductAttributeValue[]
+  categoryAssignments AttributeCategoryAssignment[]
+  groupItems          AttributeGroupItem[]
+  productAssignments  ProductAttributeAssignment[]
+  variationValues     ProductVariationValue[]
+
+  @@index([status])
+  @@index([sortOrder])
+  @@index([storeId])
+  @@index([deletedAt])
+  @@index([isVariationAttribute])
+  @@index([isFilterable])
+  @@map("product_attributes")
+}
+
+model ProductAttributeValue {
+  id               String                 @id @default(uuid()) @db.Char(36)
+  attributeId      String                 @db.Char(36)
+  name             String
+  slug             String
+  code             String?
+  description      String?                @db.Text
+  displayValue     String?
+  colourHex        String?
+  imageFileId      String?                @db.Char(36)
+  metadataJson     String?                @db.Text
+  status           ProductAttributeStatus @default(ACTIVE)
+  sortOrder        Int                    @default(0)
+  createdByAdminId String?                @db.Char(36)
+  updatedByAdminId String?                @db.Char(36)
+  createdAt        DateTime               @default(now())
+  updatedAt        DateTime               @updatedAt
+  deletedAt        DateTime?
+
+  attribute ProductAttribute @relation(fields: [attributeId], references: [id], onDelete: Cascade)
+  productValueAssignments ProductAttributeValueAssignment[]
+  variationValues ProductVariationValue[]
+
+  @@unique([attributeId, slug])
+  @@index([attributeId])
+  @@index([status])
+  @@index([sortOrder])
+  @@index([deletedAt])
+  @@map("product_attribute_values")
+}
+
+model AttributeCategoryAssignment {
+  id                   String   @id @default(uuid()) @db.Char(36)
+  attributeId          String   @db.Char(36)
+  categoryId           String   @db.Char(36)
+  isRequired           Boolean  @default(false)
+  isVariationAttribute Boolean?
+  isFilterable         Boolean?
+  sortOrder            Int      @default(0)
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  attribute ProductAttribute @relation(fields: [attributeId], references: [id], onDelete: Cascade)
+  category  Category         @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@unique([attributeId, categoryId])
+  @@index([categoryId])
+  @@index([attributeId])
+  @@index([sortOrder])
+  @@map("attribute_category_assignments")
+}
+
+model AttributeGroup {
+  id          String                 @id @default(uuid()) @db.Char(36)
+  storeId     String?                @db.Char(36)
+  name        String
+  slug        String                 @unique
+  description String?                @db.Text
+  sortOrder   Int                    @default(0)
+  status      ProductAttributeStatus @default(ACTIVE)
+  createdAt   DateTime               @default(now())
+  updatedAt   DateTime               @updatedAt
+  deletedAt   DateTime?
+
+  store Store?               @relation(fields: [storeId], references: [id], onDelete: SetNull)
+  items AttributeGroupItem[]
+
+  @@index([status])
+  @@index([sortOrder])
+  @@map("attribute_groups")
+}
+
+model AttributeGroupItem {
+  id          String   @id @default(uuid()) @db.Char(36)
+  groupId     String   @db.Char(36)
+  attributeId String   @db.Char(36)
+  sortOrder   Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  group     AttributeGroup   @relation(fields: [groupId], references: [id], onDelete: Cascade)
+  attribute ProductAttribute @relation(fields: [attributeId], references: [id], onDelete: Cascade)
+
+  @@unique([groupId, attributeId])
+  @@index([groupId])
+  @@index([attributeId])
+  @@map("attribute_group_items")
+}
+
+enum ProductType {
+  SIMPLE
+  VARIABLE
+  COMBO
+  GIFT_SET
+  PERSONALISED
+}
+
+enum ProductStatus {
+  DRAFT
+  ACTIVE
+  INACTIVE
+  OUT_OF_STOCK
+  ARCHIVED
+  SCHEDULED
+}
+
+enum ProductVisibility {
+  PUBLIC
+  HIDDEN
+  APP_ONLY
+  WEBSITE_ONLY
+  ADMIN_ONLY
+}
+
+enum ProductCondition {
+  NEW
+  HANDMADE
+  CUSTOM_MADE
+}
+
+enum ProductMediaType {
+  IMAGE
+  VIDEO
+  DOCUMENT
+}
+
+enum ProductBadge {
+  NEW
+  HOT
+  FLASH_SALE
+  PERSONALISED
+  BEST_SELLER
+  FEATURED
+  LIMITED_STOCK
+  SAME_DAY
+  EXCLUSIVE
+  TRENDING
+}
+
+enum BadgeSource {
+  MANUAL
+  AUTOMATIC
+  SYSTEM
+}
+
+model Product {
+  id                             String            @id @default(uuid()) @db.Char(36)
+  storeId                        String?           @db.Char(36)
+  productType                    ProductType
+  status                         ProductStatus     @default(DRAFT)
+  visibility                     ProductVisibility @default(PUBLIC)
+  condition                      ProductCondition? @default(NEW)
+  title                          String
+  internalName                   String?
+  slug                           String            @unique
+  sku                            String?           @unique
+  barcode                        String?           @unique
+  brandId                        String?           @db.Char(36)
+  primaryCategoryId              String            @db.Char(36)
+  shortDescription               String?           @db.Text
+  description                    String?           @db.Text
+  highlightsJson                 String?           @db.Text
+  careInstructions               String?           @db.Text
+  countryOfOrigin                String?
+  manufacturer                   String?
+  packer                         String?
+  importer                       String?
+  hsnCode                        String?
+  taxRateId                      String?           @db.Char(36)
+  mrp                            Decimal?          @db.Decimal(12, 2)
+  sellingPrice                   Decimal?          @db.Decimal(12, 2)
+  costPrice                      Decimal?          @db.Decimal(12, 2)
+  priceIncludesTax               Boolean           @default(true)
+  minimumOrderQuantity           Int               @default(1)
+  maximumOrderQuantity           Int?
+  manageStock                    Boolean           @default(true)
+  stockQuantity                  Int?
+  reservedStock                  Int               @default(0)
+  lowStockThreshold              Int?
+  allowBackorder                 Boolean           @default(false)
+  weightGrams                    Decimal?          @db.Decimal(10, 2)
+  lengthCm                       Decimal?          @db.Decimal(10, 2)
+  widthCm                        Decimal?          @db.Decimal(10, 2)
+  heightCm                       Decimal?          @db.Decimal(10, 2)
+  isFragile                      Boolean           @default(false)
+  requiresSpecialPackaging       Boolean           @default(false)
+  sameDayEligible                Boolean           @default(false)
+  nextDayEligible                Boolean           @default(true)
+  expressEligible                Boolean           @default(false)
+  storePickupEligible            Boolean           @default(true)
+  maximumSameDayDistanceKm       Decimal?          @db.Decimal(8, 2)
+  preparationTimeMinutes         Int?
+  packingTimeMinutes             Int?
+  externalLabRequired            Boolean           @default(false)
+  requiresManualDeliveryReview   Boolean           @default(false)
+  isPersonalised                 Boolean           @default(false)
+  isFeatured                     Boolean           @default(false)
+  isNewBadgeManual               Boolean           @default(false)
+  isHotBadgeManual               Boolean           @default(false)
+  isFlashSaleManual              Boolean           @default(false)
+  isBestSellerOverride           Boolean           @default(false)
+  sortOrder                      Int               @default(0)
+  publishAt                      DateTime?
+  unpublishAt                    DateTime?
+  seoTitle                       String?
+  seoDescription                 String?           @db.Text
+  seoKeywordsJson                String?           @db.Text
+  seoImageFileId                 String?           @db.Char(36)
+  mainImageFileId                String?           @db.Char(36)
+  isIndexable                    Boolean           @default(true)
+  isFollowable                   Boolean           @default(true)
+  createdByAdminId               String?           @db.Char(36)
+  updatedByAdminId               String?           @db.Char(36)
+  createdAt                      DateTime          @default(now())
+  updatedAt                      DateTime          @updatedAt
+  deletedAt                      DateTime?
+
+  store                Store?                       @relation(fields: [storeId], references: [id], onDelete: SetNull)
+  brand                Brand?                       @relation(fields: [brandId], references: [id], onDelete: SetNull)
+  primaryCategory      Category                     @relation("PrimaryCategoryToProduct", fields: [primaryCategoryId], references: [id], onDelete: Restrict)
+  taxRate              TaxRate?                     @relation(fields: [taxRateId], references: [id], onDelete: SetNull)
+  categoryAssignments  ProductCategoryAssignment[]
+  attributeAssignments ProductAttributeAssignment[]
+  media                ProductMedia[]
+  badges               ProductBadgeAssignment[]
+  variations           ProductVariation[]
+  addonAssignments     AddonAssignment[]
+
+  @@index([storeId])
+  @@index([brandId])
+  @@index([primaryCategoryId])
+  @@index([status])
+  @@index([visibility])
+  @@index([productType])
+  @@index([slug])
+  @@index([sku])
+  @@index([isFeatured])
+  @@index([isPersonalised])
+  @@index([sameDayEligible])
+  @@index([deletedAt])
+  @@map("products")
+}
+
+model ProductCategoryAssignment {
+  id         String   @id @default(uuid()) @db.Char(36)
+  productId  String   @db.Char(36)
+  categoryId String   @db.Char(36)
+  isPrimary  Boolean  @default(false)
+  sortOrder  Int      @default(0)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  product  Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  category Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@unique([productId, categoryId])
+  @@index([productId])
+  @@index([categoryId])
+  @@map("product_category_assignments")
+}
+
+model ProductAttributeAssignment {
+  id                   String   @id @default(uuid()) @db.Char(36)
+  productId            String   @db.Char(36)
+  attributeId          String   @db.Char(36)
+  isRequired           Boolean  @default(false)
+  isVariationAttribute Boolean  @default(true)
+  isFilterable         Boolean  @default(true)
+  sortOrder            Int      @default(0)
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  product          Product                           @relation(fields: [productId], references: [id], onDelete: Cascade)
+  attribute        ProductAttribute                  @relation(fields: [attributeId], references: [id], onDelete: Cascade)
+  valueAssignments ProductAttributeValueAssignment[]
+
+  @@unique([productId, attributeId])
+  @@index([productId])
+  @@index([attributeId])
+  @@map("product_attribute_assignments")
+}
+
+model ProductAttributeValueAssignment {
+  id                            String   @id @default(uuid()) @db.Char(36)
+  productAttributeAssignmentId String   @db.Char(36)
+  attributeValueId              String   @db.Char(36)
+  sortOrder                     Int      @default(0)
+  createdAt                     DateTime @default(now())
+  updatedAt                     DateTime @updatedAt
+
+  productAttributeAssignment ProductAttributeAssignment @relation(fields: [productAttributeAssignmentId], references: [id], onDelete: Cascade)
+  attributeValue             ProductAttributeValue      @relation(fields: [attributeValueId], references: [id], onDelete: Cascade)
+
+  @@unique([productAttributeAssignmentId, attributeValueId])
+  @@index([productAttributeAssignmentId])
+  @@index([attributeValueId])
+  @@map("product_attribute_value_assignments")
+}
+
+model ProductMedia {
+  id          String           @id @default(uuid()) @db.Char(36)
+  productId   String           @db.Char(36)
+  fileAssetId String           @db.Char(36)
+  mediaType   ProductMediaType @default(IMAGE)
+  sortOrder   Int              @default(0)
+  isPrimary   Boolean          @default(false)
+  altText     String?
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@index([productId])
+  @@index([fileAssetId])
+  @@map("product_media")
+}
+
+model ProductBadgeAssignment {
+  id           String       @id @default(uuid()) @db.Char(36)
+  productId    String       @db.Char(36)
+  badge        ProductBadge
+  source       BadgeSource  @default(MANUAL)
+  active       Boolean      @default(true)
+  startsAt     DateTime?
+  endsAt       DateTime?
+  metadataJson String?      @db.Text
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@unique([productId, badge])
+  @@index([productId])
+  @@index([badge])
+  @@map("product_badge_assignments")
+}
+
+enum ProductVariationStatus {
+  ACTIVE
+  INACTIVE
+  OUT_OF_STOCK
+  ARCHIVED
+}
+
+model ProductVariation {
+  id                             String                 @id @default(uuid()) @db.Char(36)
+  productId                      String                 @db.Char(36)
+  combinationKey                 String
+  title                          String
+  sku                            String?                @unique
+  barcode                        String?                @unique
+  status                         ProductVariationStatus @default(ACTIVE)
+  isDefault                      Boolean                @default(false)
+  mrp                            Decimal?               @db.Decimal(12, 2)
+  sellingPrice                   Decimal?               @db.Decimal(12, 2)
+  costPrice                      Decimal?               @db.Decimal(12, 2)
+  taxRateId                      String?                @db.Char(36)
+  priceIncludesTax               Boolean?
+  manageStock                    Boolean                @default(true)
+  stockQuantity                  Int?
+  reservedStock                  Int                    @default(0)
+  lowStockThreshold              Int?
+  allowBackorder                 Boolean                @default(false)
+  weightGrams                    Decimal?               @db.Decimal(10, 2)
+  lengthCm                       Decimal?               @db.Decimal(10, 2)
+  widthCm                        Decimal?               @db.Decimal(10, 2)
+  heightCm                       Decimal?               @db.Decimal(10, 2)
+  preparationTimeMinutes         Int?
+  packingTimeMinutes             Int?
+  sameDayEligible                Boolean?
+  nextDayEligible                Boolean?
+  expressEligible                Boolean?
+  maximumSameDayDistanceKm       Decimal?               @db.Decimal(8, 2)
+  externalLabRequired            Boolean?
+  requiresManualDeliveryReview   Boolean?
+  mainImageFileId                String?                @db.Char(36)
+  sortOrder                      Int                    @default(0)
+  createdByAdminId               String?                @db.Char(36)
+  updatedByAdminId               String?                @db.Char(36)
+  createdAt                      DateTime               @default(now())
+  updatedAt                      DateTime               @updatedAt
+  deletedAt                      DateTime?
+
+  product Product                 @relation(fields: [productId], references: [id], onDelete: Cascade)
+  taxRate TaxRate?                @relation(fields: [taxRateId], references: [id], onDelete: SetNull)
+  values  ProductVariationValue[]
+  media   ProductVariationMedia[]
+  addonAssignments AddonAssignment[]
+
+  @@unique([productId, combinationKey])
+  @@index([productId])
+  @@index([status])
+  @@index([isDefault])
+  @@index([sortOrder])
+  @@index([deletedAt])
+  @@index([sellingPrice])
+  @@index([stockQuantity])
+  @@map("product_variations")
+}
+
+model ProductVariationValue {
+  id               String   @id @default(uuid()) @db.Char(36)
+  variationId      String   @db.Char(36)
+  attributeId      String   @db.Char(36)
+  attributeValueId String   @db.Char(36)
+  sortOrder        Int      @default(0)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  variation      ProductVariation      @relation(fields: [variationId], references: [id], onDelete: Cascade)
+  attribute      ProductAttribute      @relation(fields: [attributeId], references: [id], onDelete: Cascade)
+  attributeValue ProductAttributeValue @relation(fields: [attributeValueId], references: [id], onDelete: Cascade)
+
+  @@unique([variationId, attributeId])
+  @@unique([variationId, attributeValueId])
+  @@index([variationId])
+  @@index([attributeId])
+  @@index([attributeValueId])
+  @@map("product_variation_values")
+}
+
+model ProductVariationMedia {
+  id          String   @id @default(uuid()) @db.Char(36)
+  variationId String   @db.Char(36)
+  fileAssetId String   @db.Char(36)
+  sortOrder   Int      @default(0)
+  isPrimary   Boolean  @default(false)
+  altText     String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  variation ProductVariation @relation(fields: [variationId], references: [id], onDelete: Cascade)
+
+  @@unique([variationId, fileAssetId])
+  @@index([variationId])
+  @@index([sortOrder])
+  @@map("product_variation_media")
+}
+
+// ==========================================
+// BATCH 11: PRODUCT ADD-ONS & OPTIONAL EXTRAS
+// ==========================================
+
+enum ProductAddonStatus {
+  ACTIVE
+  INACTIVE
+  ARCHIVED
+  SCHEDULED
+}
+
+enum ProductAddonInputType {
+  CHECKBOX
+  RADIO
+  DROPDOWN
+  QUANTITY
+  TEXT
+  TEXTAREA
+  SINGLE_IMAGE
+  MULTI_IMAGE
+  FILE
+  NUMBER
+}
+
+enum ProductAddonPricingType {
+  FIXED
+  PERCENTAGE
+  FREE
+  PER_QUANTITY
+  CUSTOM_AMOUNT
+}
+
+enum AddonAssignmentType {
+  GLOBAL
+  ALL_PERSONALISED_PRODUCTS
+  CATEGORY
+  PRODUCT
+  VARIATION
+}
+
+enum AddonAssignmentStatus {
+  ACTIVE
+  INACTIVE
+}
+
+enum AddonGroupSelectionType {
+  SINGLE
+  MULTIPLE
+}
+
+model ProductAddon {
+  id               String                  @id @default(uuid()) @db.Char(36)
+  storeId          String?                 @db.Char(36)
+  name             String
+  slug             String                  @unique
+  code             String?
+  shortDescription String?                 @db.Text
+  description      String?                 @db.Text
+  inputType        ProductAddonInputType
+  pricingType      ProductAddonPricingType
+  fixedPrice       Decimal?                @db.Decimal(12, 2)
+  percentageRate   Decimal?                @db.Decimal(7, 4)
+  minimumAmount    Decimal?                @db.Decimal(12, 2)
+  maximumAmount    Decimal?                @db.Decimal(12, 2)
+  defaultAmount    Decimal?                @db.Decimal(12, 2)
+  taxRateId        String?                 @db.Char(36)
+  priceIncludesTax Boolean                 @default(true)
+  imageFileId      String?                 @db.Char(36)
+  status           ProductAddonStatus      @default(ACTIVE)
+  isRequired       Boolean                 @default(false)
+  allowQuantity    Boolean                 @default(false)
+  minimumQuantity  Int                     @default(0)
+  maximumQuantity  Int?
+  defaultQuantity  Int?
+  manageStock      Boolean                 @default(false)
+  stockQuantity    Int?
+  reservedStock    Int                     @default(0)
+  lowStockThreshold Int?
+  allowBackorder   Boolean                 @default(false)
+  placeholder      String?
+  helpText         String?                 @db.Text
+  validationJson   String?                 @db.Text
+  customerLabel    String?
+  internalLabel    String?
+  sortOrder        Int                     @default(0)
+  startsAt         DateTime?
+  endsAt           DateTime?
+  createdByAdminId String?                 @db.Char(36)
+  updatedByAdminId String?                 @db.Char(36)
+  createdAt        DateTime                @default(now())
+  updatedAt        DateTime                @updatedAt
+  deletedAt        DateTime?
+
+  store       Store?               @relation(fields: [storeId], references: [id], onDelete: SetNull)
+  taxRate     TaxRate?             @relation(fields: [taxRateId], references: [id], onDelete: SetNull)
+  options     ProductAddonOption[]
+  assignments AddonAssignment[]
+  groupItems  AddonGroupItem[]
+
+  @@index([status])
+  @@index([storeId])
+  @@index([inputType])
+  @@index([pricingType])
+  @@index([sortOrder])
+  @@index([deletedAt])
+  @@index([startsAt])
+  @@index([endsAt])
+  @@map("product_addons")
+}
+
+model ProductAddonOption {
+  id             String                  @id @default(uuid()) @db.Char(36)
+  addonId        String                  @db.Char(36)
+  name           String
+  code           String?
+  description    String?                 @db.Text
+  pricingType    ProductAddonPricingType?
+  fixedPrice     Decimal?                @db.Decimal(12, 2)
+  percentageRate Decimal?                @db.Decimal(7, 4)
+  imageFileId    String?                 @db.Char(36)
+  isDefault      Boolean                 @default(false)
+  status         ProductAddonStatus      @default(ACTIVE)
+  sortOrder      Int                     @default(0)
+  metadataJson   String?                 @db.Text
+  createdAt      DateTime                @default(now())
+  updatedAt      DateTime                @updatedAt
+  deletedAt      DateTime?
+
+  addon ProductAddon @relation(fields: [addonId], references: [id], onDelete: Cascade)
+
+  @@index([addonId])
+  @@index([status])
+  @@index([sortOrder])
+  @@index([deletedAt])
+  @@map("product_addon_options")
+}
+
+model AddonAssignment {
+  id                 String                @id @default(uuid()) @db.Char(36)
+  addonId            String                @db.Char(36)
+  assignmentType     AddonAssignmentType
+  productId          String?               @db.Char(36)
+  variationId        String?               @db.Char(36)
+  categoryId         String?               @db.Char(36)
+  isRequiredOverride Boolean?
+  priceOverride      Decimal?              @db.Decimal(12, 2)
+  percentageOverride Decimal?              @db.Decimal(7, 4)
+  sortOrder          Int                   @default(0)
+  startsAt           DateTime?
+  endsAt             DateTime?
+  status             AddonAssignmentStatus @default(ACTIVE)
+  createdAt          DateTime              @default(now())
+  updatedAt          DateTime              @updatedAt
+
+  addon     ProductAddon      @relation(fields: [addonId], references: [id], onDelete: Cascade)
+  product   Product?          @relation(fields: [productId], references: [id], onDelete: Cascade)
+  variation ProductVariation? @relation(fields: [variationId], references: [id], onDelete: Cascade)
+  category  Category?         @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@index([addonId])
+  @@index([productId])
+  @@index([variationId])
+  @@index([categoryId])
+  @@index([assignmentType])
+  @@index([status])
+  @@map("addon_assignments")
+}
+
+model AddonGroup {
+  id                String                  @id @default(uuid()) @db.Char(36)
+  storeId           String?                 @db.Char(36)
+  name              String
+  slug              String                  @unique
+  description       String?                 @db.Text
+  selectionType     AddonGroupSelectionType
+  minimumSelections Int                     @default(0)
+  maximumSelections Int?
+  isRequired        Boolean                 @default(false)
+  status            ProductAddonStatus      @default(ACTIVE)
+  sortOrder         Int                     @default(0)
+  createdAt         DateTime                @default(now())
+  updatedAt         DateTime                @updatedAt
+  deletedAt         DateTime?
+
+  store Store?           @relation(fields: [storeId], references: [id], onDelete: SetNull)
+  items AddonGroupItem[]
+
+  @@index([status])
+  @@index([sortOrder])
+  @@map("addon_groups")
+}
+
+model AddonGroupItem {
+  id        String   @id @default(uuid()) @db.Char(36)
+  groupId   String   @db.Char(36)
+  addonId   String   @db.Char(36)
+  sortOrder Int      @default(0)
+  isDefault Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  group AddonGroup   @relation(fields: [groupId], references: [id], onDelete: Cascade)
+  addon ProductAddon @relation(fields: [addonId], references: [id], onDelete: Cascade)
+
+  @@unique([groupId, addonId])
+  @@index([groupId])
+  @@index([addonId])
+  @@index([sortOrder])
+  @@map("addon_group_items")
+}
+
