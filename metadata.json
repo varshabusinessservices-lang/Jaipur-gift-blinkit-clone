@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "description": "",
+  "name": "Jaipur Gifting Enterprise & Delivery Zones",
+  "description": "Batch 24 & Delivery Zone Management: Hyperlocal delivery zones, Leaflet maps, radius/polygon geo-fencing, serviceability engine, pricing matrix, and production readiness",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

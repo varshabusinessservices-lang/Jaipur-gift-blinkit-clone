@@ -11,6 +11,7 @@ import { productRouter } from '../products/products.routes';
 import { productAddonRouter } from '../productAddons/productAddon.routes';
 import { addonGroupRouter } from '../productAddons/addonGroup.routes';
 import { personalisationFormRouter } from '../personalisationForms/personalisationForms.routes';
+import { customerUploadAdminRouter } from '../customerUploads/customerUploads.admin.routes';
 import multer from 'multer';
 
 export const adminRouter = Router();
@@ -50,6 +51,9 @@ adminRouter.use('/addon-groups', addonGroupRouter);
 
 // Personalisation Forms
 adminRouter.use('/personalisation-forms', personalisationFormRouter);
+
+// Customer Uploads Manager
+adminRouter.use('/customer-uploads', customerUploadAdminRouter);
 
 
 // Profile

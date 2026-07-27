@@ -344,6 +344,8 @@ model FileAsset {
   createdAt         DateTime       @default(now())
   updatedAt         DateTime       @updatedAt
 
+  customerUploads CustomerUpload[]
+
   @@index([ownerType])
   @@index([ownerId])
   @@index([status])
@@ -353,24 +355,142 @@ model FileAsset {
 
 enum UploadSessionStatus {
   ACTIVE
+  COMPLETED
   CONVERTED
   EXPIRED
-  DELETED
+  ABANDONED
+  BLOCKED
+}
+
+enum UploadSessionSource {
+  WEBSITE
+  ANDROID_APP
+  ADMIN
+  WHATSAPP_ASSISTED
+  OFFLINE_ORDER
 }
 
 model UploadSession {
-  id                 String              @id @default(uuid()) @db.Char(36)
-  sessionTokenHash   String
-  customerId         String?             @db.Char(36) // Intentionally deferred relation to Customer
-  status             UploadSessionStatus
-  expiresAt          DateTime
-  convertedToOrderAt DateTime?
-  createdAt          DateTime            @default(now())
-  updatedAt          DateTime            @updatedAt
+  id                    String              @id @default(uuid()) @db.Char(36)
+  publicToken           String              @unique
+  customerId            String?             @db.Char(36)
+  anonymousSessionId    String?
+  storeId               String?             @db.Char(36)
+  productId             String?             @db.Char(36)
+  variationId           String?             @db.Char(36)
+  personalisationFormId String?             @db.Char(36)
+  formVersion           Int?
+  status                UploadSessionStatus @default(ACTIVE)
+  source                UploadSessionSource @default(WEBSITE)
+  deviceFingerprintHash String?
+  ipHash                String?
+  userAgentSummary      String?
+  expiresAt             DateTime
+  lastActivityAt        DateTime            @default(now())
+  convertedAt           DateTime?
+  abandonedAt           DateTime?
+  createdAt             DateTime            @default(now())
+  updatedAt             DateTime            @updatedAt
+  deletedAt             DateTime?
+
+  customerUploads CustomerUpload[]
 
   @@index([status])
   @@index([expiresAt])
   @@map("upload_sessions")
+}
+
+enum CustomerUploadRole {
+  MAIN_PHOTO
+  SUPPORTING_PHOTO
+  PROFILE_PHOTO
+  LOGO
+  QR_IMAGE
+  DOCUMENT
+  REFERENCE_IMAGE
+  ADDON_UPLOAD
+  OTHER
+}
+
+enum CustomerUploadLifecycleStatus {
+  UPLOADING
+  TEMPORARY
+  VALIDATED
+  VALIDATION_FAILED
+  RESERVED
+  ORDER_ATTACHED
+  RETENTION_HOLD
+  CLEANUP_ELIGIBLE
+  PURGED
+  QUARANTINED
+  REJECTED
+}
+
+model CustomerUpload {
+  id                     String                        @id @default(uuid()) @db.Char(36)
+  uploadSessionId        String                        @db.Char(36)
+  fileAssetId            String                        @db.Char(36)
+  productId              String?                       @db.Char(36)
+  variationId            String?                       @db.Char(36)
+  personalisationFormId  String?                       @db.Char(36)
+  personalisationFieldId String?                       @db.Char(36)
+  fieldKey               String?
+  uploadRole             CustomerUploadRole
+  lifecycleStatus        CustomerUploadLifecycleStatus
+  originalFileName       String
+  safeFileName           String
+  mimeType               String
+  extension              String
+  sizeBytes              Int
+  width                  Int?
+  height                 Int?
+  orientation            String?
+  checksum               String?
+  sortOrder              Int                           @default(0)
+  isPrimary              Boolean                       @default(false)
+  isCustomerDeleted      Boolean                       @default(false)
+  isAdminProtected       Boolean                       @default(false)
+  protectionReason       String?
+  retentionStartsAt      DateTime?
+  retentionExpiresAt     DateTime?
+  purgedAt               DateTime?
+  metadataJson           String?                       @db.Text
+  validationResultJson   String?                       @db.Text
+  createdAt              DateTime                      @default(now())
+  updatedAt              DateTime                      @updatedAt
+  deletedAt              DateTime?
+
+  uploadSession UploadSession @relation(fields: [uploadSessionId], references: [id], onDelete: Cascade)
+  fileAsset     FileAsset     @relation(fields: [fileAssetId], references: [id], onDelete: Cascade)
+
+  @@index([uploadSessionId])
+  @@index([fileAssetId])
+  @@index([lifecycleStatus])
+  @@map("customer_uploads")
+}
+
+enum CleanupRunStatus {
+  RUNNING
+  COMPLETED
+  PARTIAL
+  FAILED
+}
+
+model CustomerUploadCleanupRun {
+  id               String           @id @default(uuid()) @db.Char(36)
+  startedAt        DateTime         @default(now())
+  completedAt      DateTime?
+  status           CleanupRunStatus
+  dryRun           Boolean
+  scannedCount     Int
+  eligibleCount    Int
+  purgedCount      Int
+  skippedCount     Int
+  failedCount      Int
+  errorSummaryJson String?          @db.Text
+  createdAt        DateTime         @default(now())
+
+  @@map("customer_upload_cleanup_runs")
 }
 
 enum JobStatus {
@@ -501,7 +621,7 @@ model Brand {
   updatedAt        DateTime    @updatedAt
   deletedAt        DateTime?
 
-  store Store? @relation(fields: [storeId], references: [id], onDelete: SetNull)
+  store    Store?    @relation(fields: [storeId], references: [id], onDelete: SetNull)
   products Product[]
 
   @@index([name])
@@ -555,10 +675,10 @@ model TaxRate {
   updatedAt        DateTime      @updatedAt
   deletedAt        DateTime?
 
-  store Store? @relation(fields: [storeId], references: [id], onDelete: SetNull)
-  products Product[]
+  store      Store?             @relation(fields: [storeId], references: [id], onDelete: SetNull)
+  products   Product[]
   variations ProductVariation[]
-  addons ProductAddon[]
+  addons     ProductAddon[]
 
   @@index([code])
   @@index([status])
@@ -640,9 +760,9 @@ model ProductAttributeValue {
   updatedAt        DateTime               @updatedAt
   deletedAt        DateTime?
 
-  attribute ProductAttribute @relation(fields: [attributeId], references: [id], onDelete: Cascade)
+  attribute               ProductAttribute                  @relation(fields: [attributeId], references: [id], onDelete: Cascade)
   productValueAssignments ProductAttributeValueAssignment[]
-  variationValues ProductVariationValue[]
+  variationValues         ProductVariationValue[]
 
   @@unique([attributeId, slug])
   @@index([attributeId])
@@ -767,76 +887,76 @@ enum BadgeSource {
 }
 
 model Product {
-  id                             String            @id @default(uuid()) @db.Char(36)
-  storeId                        String?           @db.Char(36)
-  productType                    ProductType
-  status                         ProductStatus     @default(DRAFT)
-  visibility                     ProductVisibility @default(PUBLIC)
-  condition                      ProductCondition? @default(NEW)
-  title                          String
-  internalName                   String?
-  slug                           String            @unique
-  sku                            String?           @unique
-  barcode                        String?           @unique
-  brandId                        String?           @db.Char(36)
-  primaryCategoryId              String            @db.Char(36)
-  shortDescription               String?           @db.Text
-  description                    String?           @db.Text
-  highlightsJson                 String?           @db.Text
-  careInstructions               String?           @db.Text
-  countryOfOrigin                String?
-  manufacturer                   String?
-  packer                         String?
-  importer                       String?
-  hsnCode                        String?
-  taxRateId                      String?           @db.Char(36)
-  mrp                            Decimal?          @db.Decimal(12, 2)
-  sellingPrice                   Decimal?          @db.Decimal(12, 2)
-  costPrice                      Decimal?          @db.Decimal(12, 2)
-  priceIncludesTax               Boolean           @default(true)
-  minimumOrderQuantity           Int               @default(1)
-  maximumOrderQuantity           Int?
-  manageStock                    Boolean           @default(true)
-  stockQuantity                  Int?
-  reservedStock                  Int               @default(0)
-  lowStockThreshold              Int?
-  allowBackorder                 Boolean           @default(false)
-  weightGrams                    Decimal?          @db.Decimal(10, 2)
-  lengthCm                       Decimal?          @db.Decimal(10, 2)
-  widthCm                        Decimal?          @db.Decimal(10, 2)
-  heightCm                       Decimal?          @db.Decimal(10, 2)
-  isFragile                      Boolean           @default(false)
-  requiresSpecialPackaging       Boolean           @default(false)
-  sameDayEligible                Boolean           @default(false)
-  nextDayEligible                Boolean           @default(true)
-  expressEligible                Boolean           @default(false)
-  storePickupEligible            Boolean           @default(true)
-  maximumSameDayDistanceKm       Decimal?          @db.Decimal(8, 2)
-  preparationTimeMinutes         Int?
-  packingTimeMinutes             Int?
-  externalLabRequired            Boolean           @default(false)
-  requiresManualDeliveryReview   Boolean           @default(false)
-  isPersonalised                 Boolean           @default(false)
-  isFeatured                     Boolean           @default(false)
-  isNewBadgeManual               Boolean           @default(false)
-  isHotBadgeManual               Boolean           @default(false)
-  isFlashSaleManual              Boolean           @default(false)
-  isBestSellerOverride           Boolean           @default(false)
-  sortOrder                      Int               @default(0)
-  publishAt                      DateTime?
-  unpublishAt                    DateTime?
-  seoTitle                       String?
-  seoDescription                 String?           @db.Text
-  seoKeywordsJson                String?           @db.Text
-  seoImageFileId                 String?           @db.Char(36)
-  mainImageFileId                String?           @db.Char(36)
-  isIndexable                    Boolean           @default(true)
-  isFollowable                   Boolean           @default(true)
-  createdByAdminId               String?           @db.Char(36)
-  updatedByAdminId               String?           @db.Char(36)
-  createdAt                      DateTime          @default(now())
-  updatedAt                      DateTime          @updatedAt
-  deletedAt                      DateTime?
+  id                           String            @id @default(uuid()) @db.Char(36)
+  storeId                      String?           @db.Char(36)
+  productType                  ProductType
+  status                       ProductStatus     @default(DRAFT)
+  visibility                   ProductVisibility @default(PUBLIC)
+  condition                    ProductCondition? @default(NEW)
+  title                        String
+  internalName                 String?
+  slug                         String            @unique
+  sku                          String?           @unique
+  barcode                      String?           @unique
+  brandId                      String?           @db.Char(36)
+  primaryCategoryId            String            @db.Char(36)
+  shortDescription             String?           @db.Text
+  description                  String?           @db.Text
+  highlightsJson               String?           @db.Text
+  careInstructions             String?           @db.Text
+  countryOfOrigin              String?
+  manufacturer                 String?
+  packer                       String?
+  importer                     String?
+  hsnCode                      String?
+  taxRateId                    String?           @db.Char(36)
+  mrp                          Decimal?          @db.Decimal(12, 2)
+  sellingPrice                 Decimal?          @db.Decimal(12, 2)
+  costPrice                    Decimal?          @db.Decimal(12, 2)
+  priceIncludesTax             Boolean           @default(true)
+  minimumOrderQuantity         Int               @default(1)
+  maximumOrderQuantity         Int?
+  manageStock                  Boolean           @default(true)
+  stockQuantity                Int?
+  reservedStock                Int               @default(0)
+  lowStockThreshold            Int?
+  allowBackorder               Boolean           @default(false)
+  weightGrams                  Decimal?          @db.Decimal(10, 2)
+  lengthCm                     Decimal?          @db.Decimal(10, 2)
+  widthCm                      Decimal?          @db.Decimal(10, 2)
+  heightCm                     Decimal?          @db.Decimal(10, 2)
+  isFragile                    Boolean           @default(false)
+  requiresSpecialPackaging     Boolean           @default(false)
+  sameDayEligible              Boolean           @default(false)
+  nextDayEligible              Boolean           @default(true)
+  expressEligible              Boolean           @default(false)
+  storePickupEligible          Boolean           @default(true)
+  maximumSameDayDistanceKm     Decimal?          @db.Decimal(8, 2)
+  preparationTimeMinutes       Int?
+  packingTimeMinutes           Int?
+  externalLabRequired          Boolean           @default(false)
+  requiresManualDeliveryReview Boolean           @default(false)
+  isPersonalised               Boolean           @default(false)
+  isFeatured                   Boolean           @default(false)
+  isNewBadgeManual             Boolean           @default(false)
+  isHotBadgeManual             Boolean           @default(false)
+  isFlashSaleManual            Boolean           @default(false)
+  isBestSellerOverride         Boolean           @default(false)
+  sortOrder                    Int               @default(0)
+  publishAt                    DateTime?
+  unpublishAt                  DateTime?
+  seoTitle                     String?
+  seoDescription               String?           @db.Text
+  seoKeywordsJson              String?           @db.Text
+  seoImageFileId               String?           @db.Char(36)
+  mainImageFileId              String?           @db.Char(36)
+  isIndexable                  Boolean           @default(true)
+  isFollowable                 Boolean           @default(true)
+  createdByAdminId             String?           @db.Char(36)
+  updatedByAdminId             String?           @db.Char(36)
+  createdAt                    DateTime          @default(now())
+  updatedAt                    DateTime          @updatedAt
+  deletedAt                    DateTime?
 
   store                Store?                       @relation(fields: [storeId], references: [id], onDelete: SetNull)
   brand                Brand?                       @relation(fields: [brandId], references: [id], onDelete: SetNull)
@@ -904,12 +1024,12 @@ model ProductAttributeAssignment {
 }
 
 model ProductAttributeValueAssignment {
-  id                            String   @id @default(uuid()) @db.Char(36)
+  id                           String   @id @default(uuid()) @db.Char(36)
   productAttributeAssignmentId String   @db.Char(36)
-  attributeValueId              String   @db.Char(36)
-  sortOrder                     Int      @default(0)
-  createdAt                     DateTime @default(now())
-  updatedAt                     DateTime @updatedAt
+  attributeValueId             String   @db.Char(36)
+  sortOrder                    Int      @default(0)
+  createdAt                    DateTime @default(now())
+  updatedAt                    DateTime @updatedAt
 
   productAttributeAssignment ProductAttributeAssignment @relation(fields: [productAttributeAssignmentId], references: [id], onDelete: Cascade)
   attributeValue             ProductAttributeValue      @relation(fields: [attributeValueId], references: [id], onDelete: Cascade)
@@ -966,48 +1086,48 @@ enum ProductVariationStatus {
 }
 
 model ProductVariation {
-  id                             String                 @id @default(uuid()) @db.Char(36)
-  productId                      String                 @db.Char(36)
-  combinationKey                 String
-  title                          String
-  sku                            String?                @unique
-  barcode                        String?                @unique
-  status                         ProductVariationStatus @default(ACTIVE)
-  isDefault                      Boolean                @default(false)
-  mrp                            Decimal?               @db.Decimal(12, 2)
-  sellingPrice                   Decimal?               @db.Decimal(12, 2)
-  costPrice                      Decimal?               @db.Decimal(12, 2)
-  taxRateId                      String?                @db.Char(36)
-  priceIncludesTax               Boolean?
-  manageStock                    Boolean                @default(true)
-  stockQuantity                  Int?
-  reservedStock                  Int                    @default(0)
-  lowStockThreshold              Int?
-  allowBackorder                 Boolean                @default(false)
-  weightGrams                    Decimal?               @db.Decimal(10, 2)
-  lengthCm                       Decimal?               @db.Decimal(10, 2)
-  widthCm                        Decimal?               @db.Decimal(10, 2)
-  heightCm                       Decimal?               @db.Decimal(10, 2)
-  preparationTimeMinutes         Int?
-  packingTimeMinutes             Int?
-  sameDayEligible                Boolean?
-  nextDayEligible                Boolean?
-  expressEligible                Boolean?
-  maximumSameDayDistanceKm       Decimal?               @db.Decimal(8, 2)
-  externalLabRequired            Boolean?
-  requiresManualDeliveryReview   Boolean?
-  mainImageFileId                String?                @db.Char(36)
-  sortOrder                      Int                    @default(0)
-  createdByAdminId               String?                @db.Char(36)
-  updatedByAdminId               String?                @db.Char(36)
-  createdAt                      DateTime               @default(now())
-  updatedAt                      DateTime               @updatedAt
-  deletedAt                      DateTime?
+  id                           String                 @id @default(uuid()) @db.Char(36)
+  productId                    String                 @db.Char(36)
+  combinationKey               String
+  title                        String
+  sku                          String?                @unique
+  barcode                      String?                @unique
+  status                       ProductVariationStatus @default(ACTIVE)
+  isDefault                    Boolean                @default(false)
+  mrp                          Decimal?               @db.Decimal(12, 2)
+  sellingPrice                 Decimal?               @db.Decimal(12, 2)
+  costPrice                    Decimal?               @db.Decimal(12, 2)
+  taxRateId                    String?                @db.Char(36)
+  priceIncludesTax             Boolean?
+  manageStock                  Boolean                @default(true)
+  stockQuantity                Int?
+  reservedStock                Int                    @default(0)
+  lowStockThreshold            Int?
+  allowBackorder               Boolean                @default(false)
+  weightGrams                  Decimal?               @db.Decimal(10, 2)
+  lengthCm                     Decimal?               @db.Decimal(10, 2)
+  widthCm                      Decimal?               @db.Decimal(10, 2)
+  heightCm                     Decimal?               @db.Decimal(10, 2)
+  preparationTimeMinutes       Int?
+  packingTimeMinutes           Int?
+  sameDayEligible              Boolean?
+  nextDayEligible              Boolean?
+  expressEligible              Boolean?
+  maximumSameDayDistanceKm     Decimal?               @db.Decimal(8, 2)
+  externalLabRequired          Boolean?
+  requiresManualDeliveryReview Boolean?
+  mainImageFileId              String?                @db.Char(36)
+  sortOrder                    Int                    @default(0)
+  createdByAdminId             String?                @db.Char(36)
+  updatedByAdminId             String?                @db.Char(36)
+  createdAt                    DateTime               @default(now())
+  updatedAt                    DateTime               @updatedAt
+  deletedAt                    DateTime?
 
-  product Product                 @relation(fields: [productId], references: [id], onDelete: Cascade)
-  taxRate TaxRate?                @relation(fields: [taxRateId], references: [id], onDelete: SetNull)
-  values  ProductVariationValue[]
-  media   ProductVariationMedia[]
+  product          Product                 @relation(fields: [productId], references: [id], onDelete: Cascade)
+  taxRate          TaxRate?                @relation(fields: [taxRateId], references: [id], onDelete: SetNull)
+  values           ProductVariationValue[]
+  media            ProductVariationMedia[]
   addonAssignments AddonAssignment[]
 
   @@unique([productId, combinationKey])
@@ -1111,47 +1231,47 @@ enum AddonGroupSelectionType {
 }
 
 model ProductAddon {
-  id               String                  @id @default(uuid()) @db.Char(36)
-  storeId          String?                 @db.Char(36)
-  name             String
-  slug             String                  @unique
-  code             String?
-  shortDescription String?                 @db.Text
-  description      String?                 @db.Text
-  inputType        ProductAddonInputType
-  pricingType      ProductAddonPricingType
-  fixedPrice       Decimal?                @db.Decimal(12, 2)
-  percentageRate   Decimal?                @db.Decimal(7, 4)
-  minimumAmount    Decimal?                @db.Decimal(12, 2)
-  maximumAmount    Decimal?                @db.Decimal(12, 2)
-  defaultAmount    Decimal?                @db.Decimal(12, 2)
-  taxRateId        String?                 @db.Char(36)
-  priceIncludesTax Boolean                 @default(true)
-  imageFileId      String?                 @db.Char(36)
-  status           ProductAddonStatus      @default(ACTIVE)
-  isRequired       Boolean                 @default(false)
-  allowQuantity    Boolean                 @default(false)
-  minimumQuantity  Int                     @default(0)
-  maximumQuantity  Int?
-  defaultQuantity  Int?
-  manageStock      Boolean                 @default(false)
-  stockQuantity    Int?
-  reservedStock    Int                     @default(0)
+  id                String                  @id @default(uuid()) @db.Char(36)
+  storeId           String?                 @db.Char(36)
+  name              String
+  slug              String                  @unique
+  code              String?
+  shortDescription  String?                 @db.Text
+  description       String?                 @db.Text
+  inputType         ProductAddonInputType
+  pricingType       ProductAddonPricingType
+  fixedPrice        Decimal?                @db.Decimal(12, 2)
+  percentageRate    Decimal?                @db.Decimal(7, 4)
+  minimumAmount     Decimal?                @db.Decimal(12, 2)
+  maximumAmount     Decimal?                @db.Decimal(12, 2)
+  defaultAmount     Decimal?                @db.Decimal(12, 2)
+  taxRateId         String?                 @db.Char(36)
+  priceIncludesTax  Boolean                 @default(true)
+  imageFileId       String?                 @db.Char(36)
+  status            ProductAddonStatus      @default(ACTIVE)
+  isRequired        Boolean                 @default(false)
+  allowQuantity     Boolean                 @default(false)
+  minimumQuantity   Int                     @default(0)
+  maximumQuantity   Int?
+  defaultQuantity   Int?
+  manageStock       Boolean                 @default(false)
+  stockQuantity     Int?
+  reservedStock     Int                     @default(0)
   lowStockThreshold Int?
-  allowBackorder   Boolean                 @default(false)
-  placeholder      String?
-  helpText         String?                 @db.Text
-  validationJson   String?                 @db.Text
-  customerLabel    String?
-  internalLabel    String?
-  sortOrder        Int                     @default(0)
-  startsAt         DateTime?
-  endsAt           DateTime?
-  createdByAdminId String?                 @db.Char(36)
-  updatedByAdminId String?                 @db.Char(36)
-  createdAt        DateTime                @default(now())
-  updatedAt        DateTime                @updatedAt
-  deletedAt        DateTime?
+  allowBackorder    Boolean                 @default(false)
+  placeholder       String?
+  helpText          String?                 @db.Text
+  validationJson    String?                 @db.Text
+  customerLabel     String?
+  internalLabel     String?
+  sortOrder         Int                     @default(0)
+  startsAt          DateTime?
+  endsAt            DateTime?
+  createdByAdminId  String?                 @db.Char(36)
+  updatedByAdminId  String?                 @db.Char(36)
+  createdAt         DateTime                @default(now())
+  updatedAt         DateTime                @updatedAt
+  deletedAt         DateTime?
 
   store       Store?               @relation(fields: [storeId], references: [id], onDelete: SetNull)
   taxRate     TaxRate?             @relation(fields: [taxRateId], references: [id], onDelete: SetNull)
@@ -1171,21 +1291,21 @@ model ProductAddon {
 }
 
 model ProductAddonOption {
-  id             String                  @id @default(uuid()) @db.Char(36)
-  addonId        String                  @db.Char(36)
+  id             String                   @id @default(uuid()) @db.Char(36)
+  addonId        String                   @db.Char(36)
   name           String
   code           String?
-  description    String?                 @db.Text
+  description    String?                  @db.Text
   pricingType    ProductAddonPricingType?
-  fixedPrice     Decimal?                @db.Decimal(12, 2)
-  percentageRate Decimal?                @db.Decimal(7, 4)
-  imageFileId    String?                 @db.Char(36)
-  isDefault      Boolean                 @default(false)
-  status         ProductAddonStatus      @default(ACTIVE)
-  sortOrder      Int                     @default(0)
-  metadataJson   String?                 @db.Text
-  createdAt      DateTime                @default(now())
-  updatedAt      DateTime                @updatedAt
+  fixedPrice     Decimal?                 @db.Decimal(12, 2)
+  percentageRate Decimal?                 @db.Decimal(7, 4)
+  imageFileId    String?                  @db.Char(36)
+  isDefault      Boolean                  @default(false)
+  status         ProductAddonStatus       @default(ACTIVE)
+  sortOrder      Int                      @default(0)
+  metadataJson   String?                  @db.Text
+  createdAt      DateTime                 @default(now())
+  updatedAt      DateTime                 @updatedAt
   deletedAt      DateTime?
 
   addon ProductAddon @relation(fields: [addonId], references: [id], onDelete: Cascade)
@@ -1270,4 +1390,1381 @@ model AddonGroupItem {
   @@index([sortOrder])
   @@map("addon_group_items")
 }
+
+enum CustomerStatus {
+  ACTIVE
+  INACTIVE
+  BLOCKED
+}
+
+model Customer {
+  id               String          @id @default(uuid()) @db.Char(36)
+  mobile           String?         @unique
+  email            String?         @unique
+  passwordHash     String?
+  name             String?
+  status           CustomerStatus  @default(ACTIVE)
+  isVerified       Boolean         @default(false)
+  tagsJson         String?         @db.Text
+  internalNotes    String?         @db.Text
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
+  deletedAt        DateTime?
+
+  addresses        CustomerAddress[]
+  sessions         CustomerSession[]
+  wallet           CustomerWallet?
+  referralCode     CustomerReferralCode?
+  referredUsers    CustomerReferralRelationship[] @relation("ReferrerRelation")
+  referredBy       CustomerReferralRelationship?  @relation("RefereeRelation")
+
+  @@index([mobile])
+  @@index([email])
+  @@index([status])
+  @@map("customers")
+}
+
+enum AddressLabel {
+  HOME
+  WORK
+  OTHER
+}
+
+model CustomerAddress {
+  id                   String       @id @default(uuid()) @db.Char(36)
+  customerId           String       @db.Char(36)
+  name                 String
+  mobile               String
+  addressLine1         String
+  addressLine2         String?
+  landmark             String?
+  city                 String
+  state                String
+  postalCode           String
+  latitude             Decimal?     @db.Decimal(10, 8)
+  longitude            Decimal?     @db.Decimal(11, 8)
+  label                AddressLabel @default(HOME)
+  customLabel          String?
+  deliveryInstructions String?      @db.Text
+  isDefault            Boolean      @default(false)
+  isServiceable        Boolean      @default(true)
+  createdAt            DateTime     @default(now())
+  updatedAt            DateTime     @updatedAt
+  deletedAt            DateTime?
+
+  customer             Customer     @relation(fields: [customerId], references: [id], onDelete: Cascade)
+
+  @@index([customerId])
+  @@map("customer_addresses")
+}
+
+model CustomerSession {
+  id               String    @id @default(uuid()) @db.Char(36)
+  customerId       String    @db.Char(36)
+  refreshTokenHash String
+  userAgent        String?   @db.Text
+  ipAddress        String?
+  lastActivityAt   DateTime?
+  expiresAt        DateTime
+  revokedAt        DateTime?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  customer         Customer  @relation(fields: [customerId], references: [id], onDelete: Cascade)
+
+  @@index([customerId])
+  @@index([expiresAt])
+  @@map("customer_sessions")
+}
+
+enum CustomerOtpPurpose {
+  REGISTRATION
+  LOGIN
+  RESET
+}
+
+model CustomerOtp {
+  id                String             @id @default(uuid()) @db.Char(36)
+  mobile            String
+  purpose           CustomerOtpPurpose
+  otpHash           String
+  expiresAt         DateTime
+  attemptCount      Int                @default(0)
+  maxAttempts       Int                @default(5)
+  resendCount       Int                @default(0)
+  lastSentAt        DateTime?
+  verifiedAt        DateTime?
+  createdAt         DateTime           @default(now())
+  updatedAt         DateTime           @updatedAt
+
+  @@index([mobile])
+  @@index([expiresAt])
+  @@map("customer_otps")
+}
+
+model CustomerWallet {
+  id               String              @id @default(uuid()) @db.Char(36)
+  customerId       String              @unique @db.Char(36)
+  balance          Decimal             @default(0.00) @db.Decimal(12, 2)
+  currency         String              @default("INR")
+  createdAt        DateTime            @default(now())
+  updatedAt        DateTime            @updatedAt
+
+  customer         Customer            @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  transactions     WalletTransaction[]
+
+  @@map("customer_wallets")
+}
+
+enum WalletTransactionType {
+  CREDIT
+  DEBIT
+}
+
+enum WalletTransactionPurpose {
+  REFERRAL_REWARD
+  REFUND
+  TOPUP
+  ORDER_PAYMENT
+  BONUS
+}
+
+model WalletTransaction {
+  id               String                   @id @default(uuid()) @db.Char(36)
+  walletId         String                   @db.Char(36)
+  amount           Decimal                  @db.Decimal(12, 2)
+  type             WalletTransactionType
+  purpose          WalletTransactionPurpose
+  referenceId      String?                  @db.Char(36)
+  description      String?                  @db.Text
+  createdAt        DateTime                 @default(now())
+
+  wallet           CustomerWallet           @relation(fields: [walletId], references: [id], onDelete: Cascade)
+
+  @@index([walletId])
+  @@map("wallet_transactions")
+}
+
+model CustomerReferralCode {
+  id                 String       @id @default(uuid()) @db.Char(36)
+  customerId         String       @unique @db.Char(36)
+  code               String       @unique
+  totalReferredCount Int          @default(0)
+  totalEarned        Decimal      @default(0.00) @db.Decimal(12, 2)
+  createdAt          DateTime     @default(now())
+  updatedAt          DateTime     @updatedAt
+
+  customer           Customer     @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  relationships      CustomerReferralRelationship[]
+
+  @@map("customer_referral_codes")
+}
+
+enum ReferralStatus {
+  PENDING
+  REWARDED
+  VOID_FRAUD
+}
+
+model CustomerReferralRelationship {
+  id                  String         @id @default(uuid()) @db.Char(36)
+  referrerId          String         @db.Char(36)
+  refereeId           String         @unique @db.Char(36)
+  referralCodeId      String         @db.Char(36)
+  status              ReferralStatus @default(PENDING)
+  rewardAmountReferrer Decimal?      @db.Decimal(12, 2)
+  rewardAmountReferee  Decimal?      @db.Decimal(12, 2)
+  notes               String?        @db.Text
+  createdAt           DateTime       @default(now())
+  updatedAt           DateTime       @updatedAt
+
+  referrer            Customer       @relation("ReferrerRelation", fields: [referrerId], references: [id], onDelete: Cascade)
+  referee             Customer       @relation("RefereeRelation", fields: [refereeId], references: [id], onDelete: Cascade)
+  referralCode        CustomerReferralCode @relation(fields: [referralCodeId], references: [id], onDelete: Cascade)
+
+  @@index([referrerId])
+  @@index([refereeId])
+  @@map("customer_referral_relationships")
+}
+
+model ReferralRule {
+  id                    String        @id @default(uuid()) @db.Char(36)
+  isActive              Boolean       @default(true)
+  referrerReward        Decimal       @db.Decimal(12, 2)
+  refereeReward         Decimal       @db.Decimal(12, 2)
+  minOrderValue         Decimal       @db.Decimal(12, 2)
+  maxRewardsPerReferrer Int           @default(10)
+  createdAt             DateTime      @default(now())
+  updatedAt             DateTime      @updatedAt
+
+  @@map("referral_rules")
+}
+
+enum CartStatus {
+  ACTIVE
+  LOCKED
+  EXPIRED
+  ABANDONED
+  CONVERTED
+  BLOCKED
+}
+
+enum CartSource {
+  WEBSITE
+  ANDROID_APP
+  ADMIN_ASSISTED
+  WAL_IN
+  PHONE
+  WHATSAPP
+  INSTAGRAM
+}
+
+enum CartItemStatus {
+  ACTIVE
+  INVALID
+  UNAVAILABLE
+  OUT_OF_STOCK
+  PRICE_CHANGED
+  REQUIRES_ACTION
+  REMOVED
+}
+
+enum CartItemInventoryStatus {
+  AVAILABLE
+  LOW_STOCK
+  OUT_OF_STOCK
+  NOT_TRACKED
+  BACKORDER_ALLOWED
+  UNAVAILABLE_AT_STORE
+  UNKNOWN
+}
+
+enum PersonalisationResponseStatus {
+  DRAFT
+  COMPLETE
+  INVALID
+  REQUIRES_REVIEW
+  LOCKED
+}
+
+model Cart {
+  id                            String       @id @default(uuid()) @db.Char(36)
+  publicToken                   String       @unique
+  customerId                    String?      @db.Char(36)
+  anonymousSessionId            String?
+  storeId                       String?      @db.Char(36)
+  currency                      String       @default("INR")
+  status                        CartStatus   @default(ACTIVE)
+  source                        CartSource   @default(WEBSITE)
+  itemCountCached               Int          @default(0)
+  quantityTotalCached           Int          @default(0)
+  merchandiseSubtotalCached     Decimal      @default(0.00) @db.Decimal(12, 2)
+  addOnTotalCached              Decimal      @default(0.00) @db.Decimal(12, 2)
+  discountTotalCached           Decimal      @default(0.00) @db.Decimal(12, 2)
+  taxTotalCached                Decimal      @default(0.00) @db.Decimal(12, 2)
+  deliveryEstimateCached        Decimal      @default(0.00) @db.Decimal(12, 2)
+  walletPreviewAmountCached     Decimal      @default(0.00) @db.Decimal(12, 2)
+  grandTotalCached              Decimal      @default(0.00) @db.Decimal(12, 2)
+  pricingVersion                Int?
+  couponCode                    String?
+  referralCode                  String?
+  selectedAddressId             String?      @db.Char(36)
+  expiresAt                     DateTime
+  lastActivityAt                DateTime     @default(now())
+  convertedAt                   DateTime?
+  abandonedAt                   DateTime?
+  metadataJson                  String?      @db.Text
+  createdAt                     DateTime     @default(now())
+  updatedAt                     DateTime     @updatedAt
+  deletedAt                     DateTime?
+
+  items                         CartItem[]
+  personalisationResponses      CartPersonalisationResponse[]
+  discountAllocations           CartDiscountAllocation[]
+
+  @@index([status])
+  @@index([customerId])
+  @@index([anonymousSessionId])
+  @@index([expiresAt])
+  @@map("carts")
+}
+
+model CartItem {
+  id                                    String                  @id @default(uuid()) @db.Char(36)
+  cartId                                String                  @db.Char(36)
+  lineNumber                            Int
+  productId                             String                  @db.Char(36)
+  variationId                           String?                 @db.Char(36)
+  quantity                              Int                     @default(1)
+  itemStatus                            CartItemStatus          @default(ACTIVE)
+  productNameSnapshot                   String
+  productSlugSnapshot                   String?
+  productTypeSnapshot                   String
+  variationNameSnapshot                 String?
+  skuSnapshot                           String?
+  imageSnapshotJson                     String?                 @db.Text
+  baseUnitPriceSnapshot                 Decimal                 @db.Decimal(12, 2)
+  variationPriceAdjustmentSnapshot      Decimal                 @default(0.00) @db.Decimal(12, 2)
+  finalUnitProductPriceSnapshot         Decimal                 @db.Decimal(12, 2)
+  addOnUnitTotalSnapshot                Decimal                 @default(0.00) @db.Decimal(12, 2)
+  personalisationUnitChargeSnapshot     Decimal                 @default(0.00) @db.Decimal(12, 2)
+  lineSubtotalSnapshot                  Decimal                 @db.Decimal(12, 2)
+  discountTotalSnapshot                 Decimal                 @default(0.00) @db.Decimal(12, 2)
+  taxableAmountSnapshot                 Decimal                 @db.Decimal(12, 2)
+  taxTotalSnapshot                      Decimal                 @default(0.00) @db.Decimal(12, 2)
+  lineTotalSnapshot                     Decimal                 @db.Decimal(12, 2)
+  taxModeSnapshot                       String                  @default("inclusive")
+  taxRateSnapshot                       Decimal?                @db.Decimal(7, 4)
+  taxCodeSnapshot                       String?
+  requiresPersonalisation               Boolean                 @default(false)
+  personalisationComplete               Boolean                 @default(false)
+  inventoryStatus                       CartItemInventoryStatus @default(AVAILABLE)
+  availableQuantitySnapshot             Int?
+  deliveryClassSnapshot                 String?
+  preparationMinutesSnapshot            Int?
+  uploadSessionId                       String?                 @db.Char(36)
+  personalisationResponseId             String?                 @db.Char(36)
+  pricingContextJson                    String?                 @db.Text
+  validationResultJson                  String?                 @db.Text
+  expiresAt                             DateTime?
+  createdAt                             DateTime                @default(now())
+  updatedAt                             DateTime                @updatedAt
+  deletedAt                             DateTime?
+
+  cart                                  Cart                    @relation(fields: [cartId], references: [id], onDelete: Cascade)
+  addOns                                CartItemAddOn[]
+  personalisationResponse               CartPersonalisationResponse? @relation("CartItemToResponse", fields: [personalisationResponseId], references: [id], onDelete: SetNull)
+
+  @@index([cartId])
+  @@index([productId])
+  @@map("cart_items")
+}
+
+model CartPersonalisationResponse {
+  id                                String                        @id @default(uuid()) @db.Char(36)
+  cartItemId                        String?                       @db.Char(36)
+  cartId                            String                        @db.Char(36)
+  customerId                        String?                       @db.Char(36)
+  uploadSessionId                   String?                       @db.Char(36)
+  productId                         String                        @db.Char(36)
+  variationId                       String?                       @db.Char(36)
+  personalisationFormId             String                        @db.Char(36)
+  personalisationFormVersion        Int                           @default(1)
+  formNameSnapshot                  String
+  responseStatus                    PersonalisationResponseStatus @default(DRAFT)
+  responseJson                      String                        @db.Text
+  displaySummaryJson                String?                       @db.Text
+  validationResultJson              String?                       @db.Text
+  completedAt                       DateTime?
+  createdAt                         DateTime                      @default(now())
+  updatedAt                         DateTime                      @updatedAt
+  deletedAt                         DateTime?
+
+  cart                              Cart                          @relation(fields: [cartId], references: [id], onDelete: Cascade)
+  cartItems                         CartItem[]                    @relation("CartItemToResponse")
+
+  @@index([cartId])
+  @@index([productId])
+  @@map("cart_personalisation_responses")
+}
+
+model CartItemAddOn {
+  id                        String              @id @default(uuid()) @db.Char(36)
+  cartItemId                String              @db.Char(36)
+  productAddOnId            String              @db.Char(36)
+  addOnGroupId              String?             @db.Char(36)
+  addOnOptionId             String?             @db.Char(36)
+  addOnNameSnapshot         String
+  groupNameSnapshot         String?
+  optionNameSnapshot        String?
+  pricingTypeSnapshot       String
+  unitPriceSnapshot         Decimal             @db.Decimal(12, 2)
+  quantity                  Int                 @default(1)
+  totalPriceSnapshot        Decimal             @db.Decimal(12, 2)
+  taxModeSnapshot           String?
+  taxRateSnapshot           Decimal?            @db.Decimal(7, 4)
+  taxTotalSnapshot          Decimal             @default(0.00) @db.Decimal(12, 2)
+  requiredSnapshot          Boolean             @default(false)
+  customerInputJson         String?             @db.Text
+  uploadIdsJson             String?             @db.Text
+  sortOrder                 Int                 @default(0)
+  createdAt                 DateTime            @default(now())
+  updatedAt                 DateTime            @updatedAt
+
+  cartItem                  CartItem            @relation(fields: [cartItemId], references: [id], onDelete: Cascade)
+
+  @@index([cartItemId])
+  @@map("cart_item_addons")
+}
+
+enum CartDiscountSourceType {
+  PRODUCT
+  VARIATION
+  COUPON
+  PROMOTION
+  REFERRAL
+  ADMIN
+  SYSTEM
+}
+
+model CartDiscountAllocation {
+  id                 String                 @id @default(uuid()) @db.Char(36)
+  cartId             String                 @db.Char(36)
+  cartItemId         String?                @db.Char(36)
+  sourceType         CartDiscountSourceType
+  sourceId           String?                @db.Char(36)
+  code               String?
+  descriptionSnapshot String
+  amount             Decimal                @db.Decimal(12, 2)
+  metadataJson       String?                @db.Text
+  createdAt          DateTime               @default(now())
+
+  cart               Cart                   @relation(fields: [cartId], references: [id], onDelete: Cascade)
+
+  @@index([cartId])
+  @@map("cart_discount_allocations")
+}
+
+model CartCleanupRun {
+  id               String           @id @default(uuid()) @db.Char(36)
+  startedAt        DateTime         @default(now())
+  completedAt      DateTime?
+  dryRun           Boolean
+  status           String
+  scannedCount     Int
+  expiredCount     Int
+  skippedCount     Int
+  failedCount      Int
+  errorSummaryJson String?          @db.Text
+  createdAt        DateTime         @default(now())
+
+  @@map("cart_cleanup_runs")
+}
+
+enum CheckoutStatus {
+  DRAFT
+  VALIDATING
+  READY
+  PAYMENT_PENDING
+  LOCKED
+  EXPIRED
+  CANCELLED
+  CONVERTED
+}
+
+enum WalletReservationStatus {
+  RESERVED
+  RELEASED
+  EXPIRED
+  CONVERTED
+}
+
+model CheckoutSession {
+  id                  String         @id @default(uuid()) @db.Char(36)
+  checkoutNumber      String         @unique
+  customerId          String         @db.Char(36)
+  cartId              String         @db.Char(36)
+  storeId             String?        @db.Char(36)
+  status              CheckoutStatus @default(DRAFT)
+  addressSnapshotJson String?        @db.Text
+  pricingSnapshotJson String?        @db.Text
+  taxSnapshotJson     String?        @db.Text
+  deliverySnapshotJson String?       @db.Text
+  paymentSnapshotJson String?        @db.Text
+  walletSnapshotJson  String?        @db.Text
+  couponSnapshotJson  String?        @db.Text
+  consentSnapshotJson String?        @db.Text
+  razorpayOrderId     String?
+  razorpayStatus      String?
+  expiresAt           DateTime
+  lockedAt            DateTime?
+  createdAt           DateTime       @default(now())
+  updatedAt           DateTime       @updatedAt
+
+  @@index([customerId])
+  @@index([cartId])
+  @@index([status])
+  @@map("checkout_sessions")
+}
+
+model WalletReservation {
+  id          String                  @id @default(uuid()) @db.Char(36)
+  customerId  String                  @db.Char(36)
+  checkoutId  String                  @db.Char(36)
+  amount      Decimal                 @db.Decimal(12, 2)
+  type        String                  @default("NORMAL")
+  status      WalletReservationStatus @default(RESERVED)
+  createdAt   DateTime                @default(now())
+  updatedAt   DateTime                @updatedAt
+
+  @@index([customerId])
+  @@index([checkoutId])
+  @@map("wallet_reservations")
+}
+
+model Coupon {
+  id                String    @id @default(uuid()) @db.Char(36)
+  code              String    @unique
+  discountType      String    @default("PERCENTAGE") // PERCENTAGE or FIXED
+  discountValue     Decimal   @db.Decimal(12, 2)
+  minOrderAmount    Decimal?  @db.Decimal(12, 2)
+  maxDiscountAmount Decimal?  @db.Decimal(12, 2)
+  isActive          Boolean   @default(true)
+  expiresAt         DateTime?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  @@index([code])
+  @@map("coupons")
+}
+
+model ServiceArea {
+  id                 String   @id @default(uuid()) @db.Char(36)
+  pincode            String   @unique
+  city               String   @default("Jaipur")
+  state              String   @default("Rajasthan")
+  storeId            String?  @db.Char(36)
+  isServiceable      Boolean  @default(true)
+  isSameDayEligible  Boolean  @default(true)
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  @@index([pincode])
+  @@map("service_areas")
+}
+
+enum OrderStatus {
+  PENDING
+  PAYMENT_PENDING
+  PAID
+  READY_FOR_PRODUCTION
+  IN_PRODUCTION
+  READY_FOR_DISPATCH
+  OUT_FOR_DELIVERY
+  DELIVERED
+  CANCELLED
+  REFUNDED
+  FAILED
+}
+
+enum PaymentStatus {
+  PENDING
+  AUTHORIZED
+  PAID
+  FAILED
+  REFUNDED
+  PARTIALLY_REFUNDED
+}
+
+model Order {
+  id                  String        @id @default(uuid()) @db.Char(36)
+  orderNumber         String        @unique
+  checkoutSessionId   String        @db.Char(36)
+  customerId          String        @db.Char(36)
+  storeId             String?       @db.Char(36)
+  status              OrderStatus   @default(PENDING)
+  paymentStatus       PaymentStatus @default(PENDING)
+  fulfilmentStatus    String        @default("PENDING")
+  source              String        @default("CHECKOUT")
+  subtotal            Decimal       @db.Decimal(12, 2)
+  addonTotal          Decimal       @default(0) @db.Decimal(12, 2)
+  personalisationTotal Decimal      @default(0) @db.Decimal(12, 2)
+  discountTotal       Decimal       @default(0) @db.Decimal(12, 2)
+  taxTotal            Decimal       @default(0) @db.Decimal(12, 2)
+  deliveryCharge      Decimal       @default(0) @db.Decimal(12, 2)
+  handlingCharge      Decimal       @default(0) @db.Decimal(12, 2)
+  codCharge           Decimal       @default(0) @db.Decimal(12, 2)
+  walletAmount        Decimal       @default(0) @db.Decimal(12, 2)
+  payableAmount       Decimal       @db.Decimal(12, 2)
+  totalAmount         Decimal       @db.Decimal(12, 2)
+  currency            String        @default("INR")
+  addressSnapshotJson String?       @db.Text
+  pricingSnapshotJson String?       @db.Text
+  deliverySnapshotJson String?      @db.Text
+  paymentSnapshotJson String?       @db.Text
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+  deletedAt           DateTime?
+
+  items               OrderItem[]
+  timelines           OrderTimeline[]
+  payments            OrderPayment[]
+  invoices            Invoice[]
+
+  @@index([customerId])
+  @@index([orderNumber])
+  @@index([status])
+  @@map("orders")
+}
+
+model OrderItem {
+  id                    String   @id @default(uuid()) @db.Char(36)
+  orderId               String   @db.Char(36)
+  productId             String   @db.Char(36)
+  variationId           String?  @db.Char(36)
+  sku                   String?
+  nameSnapshot          String
+  imageSnapshot         String?
+  priceSnapshot         Decimal  @db.Decimal(12, 2)
+  quantity              Int
+  taxSnapshot           Decimal  @default(0) @db.Decimal(12, 2)
+  personalisationJson   String?  @db.Text
+  uploadsJson           String?  @db.Text
+  addonsJson            String?  @db.Text
+  createdAt             DateTime @default(now())
+
+  order                 Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  @@index([orderId])
+  @@map("order_items")
+}
+
+model OrderTimeline {
+  id          String   @id @default(uuid()) @db.Char(36)
+  orderId     String   @db.Char(36)
+  status      String
+  title       String
+  description String?
+  metadataJson String? @db.Text
+  createdAt   DateTime @default(now())
+
+  order       Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  @@index([orderId])
+  @@map("order_timelines")
+}
+
+model OrderPayment {
+  id              String        @id @default(uuid()) @db.Char(36)
+  orderId         String        @db.Char(36)
+  gateway         String        @default("RAZORPAY")
+  gatewayOrderId  String?
+  gatewayPaymentId String?
+  gatewaySignature String?
+  amount          Decimal       @db.Decimal(12, 2)
+  currency        String        @default("INR")
+  status          PaymentStatus @default(PENDING)
+  rawResponseJson String?       @db.Text
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  order           Order         @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  @@index([orderId])
+  @@index([gatewayOrderId])
+  @@map("order_payments")
+}
+
+model InventoryReservation {
+  id          String   @id @default(uuid()) @db.Char(36)
+  orderId     String?  @db.Char(36)
+  productId   String   @db.Char(36)
+  variationId String?  @db.Char(36)
+  quantity    Int
+  status      String   @default("RESERVED") // RESERVED, RELEASED, CONSUMED
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([orderId])
+  @@index([productId])
+  @@map("inventory_reservations")
+}
+
+model Invoice {
+  id            String   @id @default(uuid()) @db.Char(36)
+  invoiceNumber String   @unique
+  orderId       String   @db.Char(36)
+  customerId    String   @db.Char(36)
+  gstNumber     String?
+  subtotal      Decimal  @db.Decimal(12, 2)
+  taxTotal      Decimal  @db.Decimal(12, 2)
+  totalAmount   Decimal  @db.Decimal(12, 2)
+  pdfUrl        String?
+  createdAt     DateTime @default(now())
+
+  order         Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  @@index([orderId])
+  @@map("invoices")
+}
+
+enum ProductionStatus {
+  NEW
+  ARTWORK_PENDING
+  ARTWORK_APPROVED
+  PRINT_QUEUE
+  PRINTING
+  PRINTED
+  QC_PENDING
+  QC_PASSED
+  QC_FAILED
+  REPRINT_REQUIRED
+  PACKING_QUEUE
+  PACKING
+  READY_FOR_DISPATCH
+  CANCELLED
+}
+
+enum MachineStatus {
+  AVAILABLE
+  BUSY
+  OFFLINE
+  MAINTENANCE
+}
+
+model ProductionJob {
+  id                  String             @id @default(uuid()) @db.Char(36)
+  jobNumber           String             @unique
+  orderId             String             @db.Char(36)
+  customerId          String             @db.Char(36)
+  priority            String             @default("NORMAL")
+  status              ProductionStatus   @default(NEW)
+  assignedStore       String             @default("store-jaipur-main")
+  assignedStaff       String?
+  estimatedCompletion DateTime?
+  actualCompletion    DateTime?
+  notes               String?            @db.Text
+  createdAt           DateTime           @default(now())
+  updatedAt           DateTime           @updatedAt
+
+  items               ProductionItem[]
+  timelines           ProductionTimeline[]
+
+  @@index([orderId])
+  @@index([jobNumber])
+  @@index([status])
+  @@map("production_jobs")
+}
+
+model ProductionItem {
+  id                  String           @id @default(uuid()) @db.Char(36)
+  jobId               String           @db.Char(36)
+  orderItemId         String           @db.Char(36)
+  productId           String           @db.Char(36)
+  variationId         String?          @db.Char(36)
+  nameSnapshot        String
+  imageSnapshot       String?
+  quantity            Int              @default(1)
+  machineId           String?          @db.Char(36)
+  station             String?
+  assignedStaff       String?
+  artworkStatus       String           @default("PENDING")
+  printStatus         String           @default("PENDING")
+  qcStatus            String           @default("PENDING")
+  packingStatus       String           @default("PENDING")
+  status              ProductionStatus @default(NEW)
+  timestampsJson      String?          @db.Text
+  createdAt           DateTime         @default(now())
+  updatedAt           DateTime         @updatedAt
+
+  job                 ProductionJob    @relation(fields: [jobId], references: [id], onDelete: Cascade)
+
+  @@index([jobId])
+  @@index([orderItemId])
+  @@map("production_items")
+}
+
+model Machine {
+  id          String        @id @default(uuid()) @db.Char(36)
+  name        String
+  type        String
+  status      MachineStatus @default(AVAILABLE)
+  storeId     String        @default("store-jaipur-main")
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@index([storeId])
+  @@map("machines")
+}
+
+model Staff {
+  id          String   @id @default(uuid()) @db.Char(36)
+  name        String
+  role        String
+  storeId     String   @default("store-jaipur-main")
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([storeId])
+  @@map("staff")
+}
+
+model ProductionTimeline {
+  id           String        @id @default(uuid()) @db.Char(36)
+  jobId        String        @db.Char(36)
+  itemId       String?       @db.Char(36)
+  status       String
+  title        String
+  description  String?       @db.Text
+  metadataJson String?       @db.Text
+  createdAt    DateTime      @default(now())
+
+  job          ProductionJob @relation(fields: [jobId], references: [id], onDelete: Cascade)
+
+  @@index([jobId])
+  @@map("production_timelines")
+}
+
+enum DeliveryStatus {
+  NEW
+  ASSIGNING
+  ASSIGNED
+  ACCEPTED
+  REJECTED
+  READY_FOR_PICKUP
+  PICKED_UP
+  OUT_FOR_DELIVERY
+  ARRIVED
+  OTP_PENDING
+  DELIVERED
+  FAILED
+  RETURN_TO_STORE
+  CANCELLED
+}
+
+enum RiderStatus {
+  OFFLINE
+  AVAILABLE
+  BUSY
+  ON_BREAK
+  DELIVERING
+}
+
+model DeliveryTask {
+  id                String         @id @default(uuid()) @db.Char(36)
+  taskNumber        String         @unique
+  orderId           String         @db.Char(36)
+  storeId           String         @default("store-jaipur-main")
+  riderId           String?        @db.Char(36)
+  deliveryPartner   String         @default("OWN_RIDER") // OWN_RIDER, STORE_STAFF, THIRD_PARTY, RAPIDO, PORTER, SHADOWFAX
+  deliveryMode      String         @default("NEXT_DAY")
+  priority          String         @default("NORMAL")
+  status            DeliveryStatus @default(NEW)
+  pickupAddress     String?        @db.Text
+  deliveryAddress   String?        @db.Text
+  estimatedDistance Float          @default(2.5)
+  estimatedDuration Int            @default(15)
+  scheduledTime     DateTime?
+  assignedAt        DateTime?
+  pickedUpAt        DateTime?
+  deliveredAt       DateTime?
+  otp               String?
+  otpExpiresAt      DateTime?
+  proofOfDeliveryJson String?      @db.Text
+  exceptionJson     String?        @db.Text
+  createdAt         DateTime       @default(now())
+  updatedAt         DateTime       @updatedAt
+
+  rider             Rider?         @relation(fields: [riderId], references: [id], onDelete: SetNull)
+  timelines         DeliveryTimeline[]
+
+  @@index([orderId])
+  @@index([taskNumber])
+  @@index([riderId])
+  @@index([status])
+  @@map("delivery_tasks")
+}
+
+model Rider {
+  id                String       @id @default(uuid()) @db.Char(36)
+  name              String
+  phone             String       @unique
+  vehicle           String       @default("EV_SCOOTER")
+  storeId           String       @default("store-jaipur-main")
+  availability      Boolean      @default(true)
+  status            RiderStatus  @default(AVAILABLE)
+  activeOrdersCount Int          @default(0)
+  capacity          Int          @default(5)
+  latitude          Float?
+  longitude         Float?
+  createdAt         DateTime     @default(now())
+  updatedAt         DateTime     @updatedAt
+
+  tasks             DeliveryTask[]
+
+  @@index([storeId])
+  @@index([status])
+  @@map("riders")
+}
+
+model DeliveryTimeline {
+  id           String       @id @default(uuid()) @db.Char(36)
+  taskId       String       @db.Char(36)
+  status       String
+  title        String
+  description  String?      @db.Text
+  metadataJson String?      @db.Text
+  createdAt    DateTime     @default(now())
+
+  task         DeliveryTask @relation(fields: [taskId], references: [id], onDelete: Cascade)
+
+  @@index([taskId])
+  @@map("delivery_timelines")
+}
+
+model ReturnRequest {
+  id                String       @id @default(uuid()) @db.Char(36)
+  returnNumber      String       @unique
+  orderId           String       @db.Char(36)
+  orderItemId       String?      @db.Char(36)
+  customerId        String       @db.Char(36)
+  reason            String
+  remarks           String?      @db.Text
+  imagesJson        String?      @db.Text
+  videosJson        String?      @db.Text
+  requestedQuantity Int          @default(1)
+  status            String       @default("REQUESTED")
+  eligibilityStatus String       @default("ELIGIBLE")
+  eligibilityReason String?      @db.Text
+  createdAt         DateTime     @default(now())
+  updatedAt         DateTime     @updatedAt
+
+  inspection        ReturnInspection?
+  replacement       ReplacementOrder?
+  reversePickup     ReversePickupTask?
+  timelines         ReturnTimeline[]
+
+  @@index([orderId])
+  @@index([customerId])
+  @@index([status])
+  @@map("return_requests")
+}
+
+model ReturnInspection {
+  id             String        @id @default(uuid()) @db.Char(36)
+  returnId       String        @unique @db.Char(36)
+  result         String        // PASS, FAIL, PARTIAL
+  condition      String?
+  damageType     String?
+  missingParts   String?
+  photosJson     String?       @db.Text
+  inspectorNotes String?       @db.Text
+  inspectorId    String?       @db.Char(36)
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+
+  returnRequest  ReturnRequest @relation(fields: [returnId], references: [id], onDelete: Cascade)
+
+  @@index([returnId])
+  @@map("return_inspections")
+}
+
+model ReplacementOrder {
+  id                 String        @id @default(uuid()) @db.Char(36)
+  replacementNumber  String        @unique
+  returnId           String        @unique @db.Char(36)
+  originalOrderId    String        @db.Char(36)
+  newProductionJobId String?       @db.Char(36)
+  status             String        @default("REPLACEMENT_INITIATED")
+  createdAt          DateTime      @default(now())
+  updatedAt          DateTime      @updatedAt
+
+  returnRequest      ReturnRequest @relation(fields: [returnId], references: [id], onDelete: Cascade)
+
+  @@index([returnId])
+  @@index([originalOrderId])
+  @@map("replacement_orders")
+}
+
+model RefundLedger {
+  id           String   @id @default(uuid()) @db.Char(36)
+  refundNumber String   @unique
+  orderId      String   @db.Char(36)
+  returnId     String?  @db.Char(36)
+  amount       Float
+  mode         String   // ORIGINAL_PAYMENT, WALLET, RAZORPAY, ADMIN_OVERRIDE
+  reference    String?
+  status       String   @default("PENDING") // PENDING, INITIATED, COMPLETED, FAILED
+  createdBy    String?
+  approvedBy   String?
+  metadataJson String?  @db.Text
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([orderId])
+  @@index([returnId])
+  @@index([status])
+  @@map("refund_ledgers")
+}
+
+model ReversePickupTask {
+  id            String        @id @default(uuid()) @db.Char(36)
+  taskNumber    String        @unique
+  returnId      String        @unique @db.Char(36)
+  orderId       String        @db.Char(36)
+  riderId       String?       @db.Char(36)
+  status        String        @default("NEW") // NEW, ASSIGNED, PICKED_UP, RETURNED_TO_STORE, FAILED
+  pickupAddress String?       @db.Text
+  storeAddress  String?       @db.Text
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  returnRequest ReturnRequest @relation(fields: [returnId], references: [id], onDelete: Cascade)
+
+  @@index([returnId])
+  @@index([orderId])
+  @@index([status])
+  @@map("reverse_pickup_tasks")
+}
+
+model SupportTicket {
+  id            String          @id @default(uuid()) @db.Char(36)
+  ticketNumber  String          @unique
+  customerId    String          @db.Char(36)
+  orderId       String?         @db.Char(36)
+  returnId      String?         @db.Char(36)
+  category      String          // ORDER, DELIVERY, RETURN, REFUND, REPLACEMENT, PAYMENT, PERSONALISATION, QUALITY, OTHER
+  priority      String          @default("NORMAL") // LOW, NORMAL, HIGH, URGENT
+  status        String          @default("OPEN") // OPEN, IN_PROGRESS, WAITING_CUSTOMER, RESOLVED, CLOSED
+  assignedStaff String?
+  subject       String
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+
+  messages      SupportMessage[]
+
+  @@index([customerId])
+  @@index([status])
+  @@index([category])
+  @@map("support_tickets")
+}
+
+model SupportMessage {
+  id              String        @id @default(uuid()) @db.Char(36)
+  ticketId        String        @db.Char(36)
+  senderType      String        // CUSTOMER, ADMIN, SYSTEM
+  senderName      String?
+  message         String        @db.Text
+  attachmentsJson String?       @db.Text
+  createdAt       DateTime      @default(now())
+
+  ticket          SupportTicket @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+
+  @@index([ticketId])
+  @@map("support_messages")
+}
+
+model ReturnTimeline {
+  id           String        @id @default(uuid()) @db.Char(36)
+  returnId     String        @db.Char(36)
+  status       String
+  title        String
+  description  String?       @db.Text
+  metadataJson String?       @db.Text
+  createdAt    DateTime      @default(now())
+
+  returnRequest ReturnRequest @relation(fields: [returnId], references: [id], onDelete: Cascade)
+
+  @@index([returnId])
+  @@map("return_timelines")
+}
+
+model OutboxEvent {
+  id            String    @id @default(uuid()) @db.Char(36)
+  eventType     String
+  aggregateType String
+  aggregateId   String    @db.Char(36)
+  storeId       String?   @db.Char(36)
+  customerId    String?   @db.Char(36)
+  actorId       String?   @db.Char(36)
+  correlationId String?   @db.Char(36)
+  causationId   String?   @db.Char(36)
+  payload       String    @db.Text
+  status        String    @default("PENDING") // PENDING, PROCESSING, PROCESSED, FAILED, DEAD_LETTER
+  attempts      Int       @default(0)
+  nextAttemptAt DateTime?
+  lockedAt      DateTime?
+  processedAt   DateTime?
+  lastError     String?   @db.Text
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@index([status])
+  @@index([eventType])
+  @@index([nextAttemptAt])
+  @@map("outbox_events")
+}
+
+model Notification {
+  id                String       @id @default(uuid()) @db.Char(36)
+  notificationNumber String      @unique
+  eventId           String?      @db.Char(36)
+  recipientType     String       // CUSTOMER, STAFF, ADMIN
+  recipientId       String?      @db.Char(36)
+  customerId        String?      @db.Char(36)
+  staffId           String?      @db.Char(36)
+  channel           String       // EMAIL, SMS, WHATSAPP, PUSH, IN_APP
+  category          String       // AUTHENTICATION, ORDER, PAYMENT, PRODUCTION, DELIVERY, RETURN, REFUND, REPLACEMENT, SUPPORT, SECURITY, SYSTEM
+  templateId        String?      @db.Char(36)
+  renderedSubject   String?
+  renderedBody      String       @db.Text
+  renderedPayload   String?      @db.Text
+  status            String       @default("QUEUED") // QUEUED, PROCESSING, SENT, DELIVERED, READ, FAILED, DEAD_LETTER, CANCELLED, SKIPPED
+  priority          String       @default("NORMAL") // LOW, NORMAL, HIGH, CRITICAL
+  scheduledAt       DateTime?
+  sentAt            DateTime?
+  deliveredAt       DateTime?
+  failedAt          DateTime?
+  readAt            DateTime?
+  provider          String?
+  providerMessageId String?
+  attempts          Int          @default(0)
+  idempotencyKey    String       @unique
+  lastError         String?      @db.Text
+  metadataJson      String?      @db.Text
+  createdAt         DateTime     @default(now())
+  updatedAt         DateTime     @updatedAt
+
+  attemptsList      NotificationDeliveryAttempt[]
+
+  @@index([customerId])
+  @@index([staffId])
+  @@index([status])
+  @@index([channel])
+  @@index([idempotencyKey])
+  @@map("notifications")
+}
+
+model NotificationTemplate {
+  id                  String   @id @default(uuid()) @db.Char(36)
+  code                String   // e.g. ORDER_PLACED_EMAIL
+  name                String
+  channel             String   // EMAIL, SMS, WHATSAPP, PUSH, IN_APP
+  category            String   // ORDER, etc.
+  locale              String   @default("en")
+  subjectTemplate     String?
+  bodyTemplate        String   @db.Text
+  payloadTemplate     String?  @db.Text
+  version             Int      @default(1)
+  isActive            Boolean  @default(true)
+  isDefault           Boolean  @default(false)
+  variablesSchemaJson String?  @db.Text
+  providerTemplateName String?
+  providerTemplateId  String?
+  approvalStatus      String   @default("APPROVED") // APPROVED, PENDING, REJECTED
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+  deletedAt           DateTime?
+
+  @@index([code, channel, locale])
+  @@map("notification_templates")
+}
+
+model EventNotificationRule {
+  id            String   @id @default(uuid()) @db.Char(36)
+  eventType     String
+  channel       String   // EMAIL, SMS, WHATSAPP, PUSH, IN_APP
+  recipientRule String   // CUSTOMER, STAFF, ADMIN
+  templateCode  String
+  priority      String   @default("NORMAL")
+  isEnabled     Boolean  @default(true)
+  delaySeconds  Int      @default(0)
+  conditionsJson String? @db.Text
+  storeScope    String?
+  locale        String   @default("en")
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([eventType, isEnabled])
+  @@map("event_notification_rules")
+}
+
+model NotificationPreference {
+  id             String   @id @default(uuid()) @db.Char(36)
+  customerId     String   @db.Char(36)
+  category       String   // ORDER, PAYMENT, etc.
+  emailEnabled   Boolean  @default(true)
+  smsEnabled     Boolean  @default(true)
+  whatsappEnabled Boolean @default(true)
+  pushEnabled    Boolean  @default(true)
+  inAppEnabled   Boolean  @default(true)
+  consentSource  String   @default("CHECKOUT")
+  optedInAt      DateTime @default(now())
+  optedOutAt     DateTime?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@unique([customerId, category])
+  @@index([customerId])
+  @@map("notification_preferences")
+}
+
+model DeviceRegistration {
+  id          String    @id @default(uuid()) @db.Char(36)
+  userId      String?   @db.Char(36)
+  customerId  String?   @db.Char(36)
+  staffId     String?   @db.Char(36)
+  deviceId    String
+  platform    String    // ANDROID, IOS, WEB
+  pushToken   String    @db.Text
+  appVersion  String?
+  deviceName  String?
+  isActive    Boolean   @default(true)
+  lastSeenAt  DateTime  @default(now())
+  revokedAt   DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([customerId])
+  @@index([staffId])
+  @@index([deviceId])
+  @@map("device_registrations")
+}
+
+model NotificationDeliveryAttempt {
+  id             String       @id @default(uuid()) @db.Char(36)
+  notificationId String       @db.Char(36)
+  channel        String
+  provider       String?
+  status         String       // SUCCESS, FAILED
+  requestPayload String?      @db.Text
+  responsePayload String?     @db.Text
+  errorMessage   String?      @db.Text
+  durationMs     Int          @default(0)
+  createdAt      DateTime     @default(now())
+
+  notification   Notification @relation(fields: [notificationId], references: [id], onDelete: Cascade)
+
+  @@index([notificationId])
+  @@map("notification_delivery_attempts")
+}
+
+model NotificationProviderCallback {
+  id                 String   @id @default(uuid()) @db.Char(36)
+  provider           String
+  providerMessageId  String?
+  status             String
+  rawPayloadJson     String   @db.Text
+  signatureVerified  Boolean  @default(true)
+  receivedAt         DateTime @default(now())
+  processedAt        DateTime?
+
+  @@index([providerMessageId])
+  @@map("notification_provider_callbacks")
+}
+
+model FinanceLedger {
+  id              String   @id @default(uuid()) @db.Char(36)
+  ledgerNumber    String   @unique
+  transactionType String   // SALE, PAYMENT, COD_RECEIVED, WALLET_CREDIT, WALLET_DEBIT, REFERRAL_REWARD, REFUND, REFUND_REVERSAL, DELIVERY_CHARGE, PACKAGING_CHARGE, GST_OUTPUT, GST_INPUT, ADJUSTMENT, MANUAL_ENTRY
+  referenceType   String?  // ORDER, REFUND, WALLET, SETTLEMENT, MANUAL
+  referenceId     String?  @db.Char(36)
+  customerId      String?  @db.Char(36)
+  orderId         String?  @db.Char(36)
+  storeId         String?  @db.Char(36)
+  debit           Float    @default(0)
+  credit          Float    @default(0)
+  runningBalance  Float    @default(0)
+  currency        String   @default("INR")
+  narration       String?  @db.Text
+  createdBy       String?
+  createdAt       DateTime @default(now())
+
+  @@index([createdAt])
+  @@index([storeId])
+  @@index([transactionType])
+  @@index([customerId])
+  @@index([orderId])
+  @@map("finance_ledgers")
+}
+
+model WalletLedger {
+  id              String   @id @default(uuid()) @db.Char(36)
+  ledgerNumber    String   @unique
+  customerId      String   @db.Char(36)
+  transactionType String   // REFERRAL_CREDIT, REFUND_CREDIT, PROMOTIONAL_CREDIT, MANUAL_ADJUSTMENT, WALLET_USAGE, WALLET_EXPIRY, WALLET_REVERSAL
+  amount          Float
+  balanceAfter    Float
+  referenceType   String?
+  referenceId     String?  @db.Char(36)
+  expiresAt       DateTime?
+  narration       String?  @db.Text
+  createdAt       DateTime @default(now())
+
+  @@index([customerId])
+  @@index([createdAt])
+  @@map("wallet_ledgers")
+}
+
+model Settlement {
+  id               String    @id @default(uuid()) @db.Char(36)
+  settlementNumber String    @unique
+  entityType       String    // STORE, RIDER, GATEWAY, WALLET
+  entityId         String    @db.Char(36)
+  amount           Float
+  commission       Float     @default(0)
+  netAmount        Float
+  status           String    @default("PENDING") // PENDING, MATCHED, MISMATCH, RECONCILED, FAILED
+  gatewayReference String?
+  reconciledAt     DateTime?
+  metadataJson     String?   @db.Text
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  @@index([entityId])
+  @@index([status])
+  @@index([createdAt])
+  @@map("settlements")
+}
+
+model ScheduledReport {
+  id            String    @id @default(uuid()) @db.Char(36)
+  reportType    String    // REVENUE, ORDERS, PRODUCTS, CUSTOMERS, PRODUCTION, DELIVERY, RETURNS, AUDIT
+  frequency     String    // DAILY, WEEKLY, MONTHLY
+  recipientEmail String
+  storeId       String?   @db.Char(36)
+  isActive      Boolean   @default(true)
+  lastRunAt     DateTime?
+  nextRunAt     DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@index([isActive])
+  @@map("scheduled_reports")
+}
+
+model ReportExecution {
+  id           String    @id @default(uuid()) @db.Char(36)
+  reportType   String
+  parameters   String?   @db.Text
+  status       String    @default("SUCCESS") // SUCCESS, FAILED
+  fileUrl      String?
+  fileSize     Int?      @default(0)
+  errorMessage String?   @db.Text
+  createdAt    DateTime  @default(now())
+
+  @@index([reportType])
+  @@map("report_executions")
+}
+
+model ExportJob {
+  id           String    @id @default(uuid()) @db.Char(36)
+  exportType   String    // CSV, EXCEL, PDF
+  module       String    // FINANCE, ORDERS, PRODUCTS, CUSTOMERS, GST
+  status       String    @default("PENDING") // PENDING, PROCESSING, COMPLETED, FAILED
+  fileUrl      String?
+  filterParams String?   @db.Text
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  @@index([status])
+  @@map("export_jobs")
+}
+
+model AnalyticsSnapshot {
+  id           String   @id @default(uuid()) @db.Char(36)
+  snapshotDate String   @unique // YYYY-MM-DD
+  metricsJson  String   @db.Text
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([snapshotDate])
+  @@map("analytics_snapshots")
+}
+
+
+
+
+
 

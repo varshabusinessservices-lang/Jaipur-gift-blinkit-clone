@@ -1,0 +1,24 @@
+[
+  {
+    "id": "rider-1",
+    "name": "Rajesh Rider",
+    "phone": "9829011111",
+    "vehicle": "EV_SCOOTER",
+    "storeId": "store-jaipur-main",
+    "availability": true,
+    "status": "AVAILABLE",
+    "activeOrdersCount": 0,
+    "capacity": 5
+  },
+  {
+    "id": "rider-2",
+    "name": "Manoj Delivery",
+    "phone": "9829022222",
+    "vehicle": "MOTORCYCLE",
+    "storeId": "store-jaipur-main",
+    "availability": true,
+    "status": "AVAILABLE",
+    "activeOrdersCount": 0,
+    "capacity": 6
+  }
+]

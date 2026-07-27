@@ -1,0 +1,74 @@
+[
+  {
+    "id": "store-1785061296769-1kn979",
+    "createdAt": "2026-07-26T10:21:36.769Z",
+    "storeName": "Jaipur Central Warehouse",
+    "storeType": "WAREHOUSE",
+    "gstin": "08AABCW1234K1ZU",
+    "address": "Industrial Area, Jaipur",
+    "deliveryRadiusKm": 25
+  },
+  {
+    "id": "store-1785062908994-h7d6is",
+    "createdAt": "2026-07-26T10:48:28.994Z",
+    "storeName": "Jaipur Central Warehouse",
+    "storeType": "WAREHOUSE",
+    "gstin": "08AABCW1234K1ZU",
+    "address": "Industrial Area, Jaipur",
+    "deliveryRadiusKm": 25
+  },
+  {
+    "id": "store-1785065676981-vuk6ju",
+    "createdAt": "2026-07-26T11:34:36.981Z",
+    "storeName": "Jaipur Central Warehouse",
+    "storeType": "WAREHOUSE",
+    "gstin": "08AABCW1234K1ZU",
+    "address": "Industrial Area, Jaipur",
+    "deliveryRadiusKm": 25
+  },
+  {
+    "id": "store-1785162179289-8tvtmz",
+    "createdAt": "2026-07-27T14:22:59.289Z",
+    "storeName": "Jaipur Central Warehouse",
+    "storeType": "WAREHOUSE",
+    "gstin": "08AABCW1234K1ZU",
+    "address": "Industrial Area, Jaipur",
+    "deliveryRadiusKm": 25
+  },
+  {
+    "id": "store-1785162239044-3rxjui",
+    "createdAt": "2026-07-27T14:23:59.045Z",
+    "storeName": "Jaipur Central Warehouse",
+    "storeType": "WAREHOUSE",
+    "gstin": "08AABCW1234K1ZU",
+    "address": "Industrial Area, Jaipur",
+    "deliveryRadiusKm": 25
+  },
+  {
+    "id": "store-1785164908745-15wl8d",
+    "createdAt": "2026-07-27T15:08:28.745Z",
+    "storeName": "Jaipur Central Warehouse",
+    "storeType": "WAREHOUSE",
+    "gstin": "08AABCW1234K1ZU",
+    "address": "Industrial Area, Jaipur",
+    "deliveryRadiusKm": 25
+  },
+  {
+    "id": "store-1785164945586-zvepq5",
+    "createdAt": "2026-07-27T15:09:05.586Z",
+    "storeName": "Jaipur Central Warehouse",
+    "storeType": "WAREHOUSE",
+    "gstin": "08AABCW1234K1ZU",
+    "address": "Industrial Area, Jaipur",
+    "deliveryRadiusKm": 25
+  },
+  {
+    "id": "store-1785165002784-tp685v",
+    "createdAt": "2026-07-27T15:10:02.784Z",
+    "storeName": "Jaipur Central Warehouse",
+    "storeType": "WAREHOUSE",
+    "gstin": "08AABCW1234K1ZU",
+    "address": "Industrial Area, Jaipur",
+    "deliveryRadiusKm": 25
+  }
+]

@@ -1,0 +1,557 @@
+[
+  {
+    "id": "rule-1785060039021",
+    "eventType": "OTP_REQUESTED",
+    "channel": "SMS",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "OTP_SMS",
+    "priority": "CRITICAL",
+    "createdAt": "2026-07-26T10:00:39.021Z",
+    "updatedAt": "2026-07-26T10:00:39.021Z"
+  },
+  {
+    "id": "rule-1785060039021",
+    "eventType": "ORDER_CREATED",
+    "channel": "EMAIL",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "ORDER_PLACED_EMAIL",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:39.021Z",
+    "updatedAt": "2026-07-26T10:00:39.021Z"
+  },
+  {
+    "id": "rule-1785060039021",
+    "eventType": "ORDER_CREATED",
+    "channel": "WHATSAPP",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "ORDER_PLACED_WA",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:39.021Z",
+    "updatedAt": "2026-07-26T10:00:39.021Z"
+  },
+  {
+    "id": "rule-1785060039022",
+    "eventType": "ORDER_OUT_FOR_DELIVERY",
+    "channel": "PUSH",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "DELIVERY_OUT_PUSH",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:39.022Z",
+    "updatedAt": "2026-07-26T10:00:39.022Z"
+  },
+  {
+    "id": "rule-1785060039022",
+    "eventType": "REFUND_COMPLETED",
+    "channel": "EMAIL",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "REFUND_COMPLETED_EMAIL",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:39.022Z",
+    "updatedAt": "2026-07-26T10:00:39.022Z"
+  },
+  {
+    "id": "rule-1785060039026",
+    "eventType": "OTP_REQUESTED",
+    "channel": "SMS",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "OTP_SMS",
+    "priority": "CRITICAL",
+    "createdAt": "2026-07-26T10:00:39.026Z",
+    "updatedAt": "2026-07-26T10:00:39.026Z"
+  },
+  {
+    "id": "rule-1785060039026",
+    "eventType": "ORDER_CREATED",
+    "channel": "EMAIL",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "ORDER_PLACED_EMAIL",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:39.026Z",
+    "updatedAt": "2026-07-26T10:00:39.026Z"
+  },
+  {
+    "id": "rule-1785060039026",
+    "eventType": "ORDER_CREATED",
+    "channel": "WHATSAPP",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "ORDER_PLACED_WA",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:39.026Z",
+    "updatedAt": "2026-07-26T10:00:39.026Z"
+  },
+  {
+    "id": "rule-1785060039027",
+    "eventType": "ORDER_OUT_FOR_DELIVERY",
+    "channel": "PUSH",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "DELIVERY_OUT_PUSH",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:39.027Z",
+    "updatedAt": "2026-07-26T10:00:39.027Z"
+  },
+  {
+    "id": "rule-1785060039027",
+    "eventType": "REFUND_COMPLETED",
+    "channel": "EMAIL",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "REFUND_COMPLETED_EMAIL",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:39.027Z",
+    "updatedAt": "2026-07-26T10:00:39.027Z"
+  },
+  {
+    "id": "rule-1785060039030",
+    "eventType": "OTP_REQUESTED",
+    "channel": "SMS",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "OTP_SMS",
+    "priority": "CRITICAL",
+    "createdAt": "2026-07-26T10:00:39.030Z",
+    "updatedAt": "2026-07-26T10:00:39.030Z"
+  },
+  {
+    "id": "rule-1785060039030",
+    "eventType": "ORDER_CREATED",
+    "channel": "EMAIL",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "ORDER_PLACED_EMAIL",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:39.030Z",
+    "updatedAt": "2026-07-26T10:00:39.030Z"
+  },
+  {
+    "id": "rule-1785060039030",
+    "eventType": "ORDER_CREATED",
+    "channel": "WHATSAPP",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "ORDER_PLACED_WA",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:39.030Z",
+    "updatedAt": "2026-07-26T10:00:39.030Z"
+  },
+  {
+    "id": "rule-1785060039031",
+    "eventType": "ORDER_OUT_FOR_DELIVERY",
+    "channel": "PUSH",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "DELIVERY_OUT_PUSH",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:39.031Z",
+    "updatedAt": "2026-07-26T10:00:39.031Z"
+  },
+  {
+    "id": "rule-1785060039031",
+    "eventType": "REFUND_COMPLETED",
+    "channel": "EMAIL",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "REFUND_COMPLETED_EMAIL",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:39.031Z",
+    "updatedAt": "2026-07-26T10:00:39.031Z"
+  },
+  {
+    "id": "rule-1785060039039",
+    "eventType": "OTP_REQUESTED",
+    "channel": "SMS",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "OTP_SMS",
+    "priority": "CRITICAL",
+    "createdAt": "2026-07-26T10:00:39.039Z",
+    "updatedAt": "2026-07-26T10:00:39.039Z"
+  },
+  {
+    "id": "rule-1785060039040",
+    "eventType": "ORDER_CREATED",
+    "channel": "EMAIL",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "ORDER_PLACED_EMAIL",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:39.040Z",
+    "updatedAt": "2026-07-26T10:00:39.040Z"
+  },
+  {
+    "id": "rule-1785060039040",
+    "eventType": "ORDER_CREATED",
+    "channel": "WHATSAPP",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "ORDER_PLACED_WA",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:39.040Z",
+    "updatedAt": "2026-07-26T10:00:39.040Z"
+  },
+  {
+    "id": "rule-1785060039040",
+    "eventType": "ORDER_OUT_FOR_DELIVERY",
+    "channel": "PUSH",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "DELIVERY_OUT_PUSH",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:39.040Z",
+    "updatedAt": "2026-07-26T10:00:39.040Z"
+  },
+  {
+    "id": "rule-1785060039040",
+    "eventType": "REFUND_COMPLETED",
+    "channel": "EMAIL",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "REFUND_COMPLETED_EMAIL",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:39.040Z",
+    "updatedAt": "2026-07-26T10:00:39.040Z"
+  },
+  {
+    "id": "rule-1785060039044",
+    "eventType": "OTP_REQUESTED",
+    "channel": "SMS",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "OTP_SMS",
+    "priority": "CRITICAL",
+    "createdAt": "2026-07-26T10:00:39.044Z",
+    "updatedAt": "2026-07-26T10:00:39.044Z"
+  },
+  {
+    "id": "rule-1785060039044",
+    "eventType": "ORDER_CREATED",
+    "channel": "EMAIL",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "ORDER_PLACED_EMAIL",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:39.044Z",
+    "updatedAt": "2026-07-26T10:00:39.044Z"
+  },
+  {
+    "id": "rule-1785060039044",
+    "eventType": "ORDER_CREATED",
+    "channel": "WHATSAPP",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "ORDER_PLACED_WA",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:39.044Z",
+    "updatedAt": "2026-07-26T10:00:39.044Z"
+  },
+  {
+    "id": "rule-1785060039045",
+    "eventType": "ORDER_OUT_FOR_DELIVERY",
+    "channel": "PUSH",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "DELIVERY_OUT_PUSH",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:39.045Z",
+    "updatedAt": "2026-07-26T10:00:39.045Z"
+  },
+  {
+    "id": "rule-1785060039045",
+    "eventType": "REFUND_COMPLETED",
+    "channel": "EMAIL",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "REFUND_COMPLETED_EMAIL",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:39.045Z",
+    "updatedAt": "2026-07-26T10:00:39.045Z"
+  },
+  {
+    "id": "rule-1785060056533",
+    "eventType": "OTP_REQUESTED",
+    "channel": "SMS",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "OTP_SMS",
+    "priority": "CRITICAL",
+    "createdAt": "2026-07-26T10:00:56.533Z",
+    "updatedAt": "2026-07-26T10:00:56.533Z"
+  },
+  {
+    "id": "rule-1785060056534",
+    "eventType": "ORDER_CREATED",
+    "channel": "EMAIL",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "ORDER_PLACED_EMAIL",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:56.534Z",
+    "updatedAt": "2026-07-26T10:00:56.534Z"
+  },
+  {
+    "id": "rule-1785060056534",
+    "eventType": "ORDER_CREATED",
+    "channel": "WHATSAPP",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "ORDER_PLACED_WA",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:56.534Z",
+    "updatedAt": "2026-07-26T10:00:56.534Z"
+  },
+  {
+    "id": "rule-1785060056534",
+    "eventType": "ORDER_OUT_FOR_DELIVERY",
+    "channel": "PUSH",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "DELIVERY_OUT_PUSH",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:56.534Z",
+    "updatedAt": "2026-07-26T10:00:56.534Z"
+  },
+  {
+    "id": "rule-1785060056535",
+    "eventType": "REFUND_COMPLETED",
+    "channel": "EMAIL",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "REFUND_COMPLETED_EMAIL",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:56.535Z",
+    "updatedAt": "2026-07-26T10:00:56.535Z"
+  },
+  {
+    "id": "rule-1785060056539",
+    "eventType": "OTP_REQUESTED",
+    "channel": "SMS",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "OTP_SMS",
+    "priority": "CRITICAL",
+    "createdAt": "2026-07-26T10:00:56.539Z",
+    "updatedAt": "2026-07-26T10:00:56.539Z"
+  },
+  {
+    "id": "rule-1785060056540",
+    "eventType": "ORDER_CREATED",
+    "channel": "EMAIL",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "ORDER_PLACED_EMAIL",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:56.540Z",
+    "updatedAt": "2026-07-26T10:00:56.540Z"
+  },
+  {
+    "id": "rule-1785060056540",
+    "eventType": "ORDER_CREATED",
+    "channel": "WHATSAPP",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "ORDER_PLACED_WA",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:56.540Z",
+    "updatedAt": "2026-07-26T10:00:56.540Z"
+  },
+  {
+    "id": "rule-1785060056541",
+    "eventType": "ORDER_OUT_FOR_DELIVERY",
+    "channel": "PUSH",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "DELIVERY_OUT_PUSH",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:56.541Z",
+    "updatedAt": "2026-07-26T10:00:56.541Z"
+  },
+  {
+    "id": "rule-1785060056541",
+    "eventType": "REFUND_COMPLETED",
+    "channel": "EMAIL",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "REFUND_COMPLETED_EMAIL",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:56.541Z",
+    "updatedAt": "2026-07-26T10:00:56.541Z"
+  },
+  {
+    "id": "rule-1785060056545",
+    "eventType": "OTP_REQUESTED",
+    "channel": "SMS",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "OTP_SMS",
+    "priority": "CRITICAL",
+    "createdAt": "2026-07-26T10:00:56.545Z",
+    "updatedAt": "2026-07-26T10:00:56.545Z"
+  },
+  {
+    "id": "rule-1785060056545",
+    "eventType": "ORDER_CREATED",
+    "channel": "EMAIL",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "ORDER_PLACED_EMAIL",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:56.545Z",
+    "updatedAt": "2026-07-26T10:00:56.545Z"
+  },
+  {
+    "id": "rule-1785060056546",
+    "eventType": "ORDER_CREATED",
+    "channel": "WHATSAPP",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "ORDER_PLACED_WA",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:56.546Z",
+    "updatedAt": "2026-07-26T10:00:56.546Z"
+  },
+  {
+    "id": "rule-1785060056546",
+    "eventType": "ORDER_OUT_FOR_DELIVERY",
+    "channel": "PUSH",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "DELIVERY_OUT_PUSH",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:56.546Z",
+    "updatedAt": "2026-07-26T10:00:56.546Z"
+  },
+  {
+    "id": "rule-1785060056547",
+    "eventType": "REFUND_COMPLETED",
+    "channel": "EMAIL",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "REFUND_COMPLETED_EMAIL",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:56.547Z",
+    "updatedAt": "2026-07-26T10:00:56.547Z"
+  },
+  {
+    "id": "rule-1785060056554",
+    "eventType": "OTP_REQUESTED",
+    "channel": "SMS",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "OTP_SMS",
+    "priority": "CRITICAL",
+    "createdAt": "2026-07-26T10:00:56.554Z",
+    "updatedAt": "2026-07-26T10:00:56.554Z"
+  },
+  {
+    "id": "rule-1785060056555",
+    "eventType": "ORDER_CREATED",
+    "channel": "EMAIL",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "ORDER_PLACED_EMAIL",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:56.555Z",
+    "updatedAt": "2026-07-26T10:00:56.555Z"
+  },
+  {
+    "id": "rule-1785060056555",
+    "eventType": "ORDER_CREATED",
+    "channel": "WHATSAPP",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "ORDER_PLACED_WA",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:56.555Z",
+    "updatedAt": "2026-07-26T10:00:56.555Z"
+  },
+  {
+    "id": "rule-1785060056555",
+    "eventType": "ORDER_OUT_FOR_DELIVERY",
+    "channel": "PUSH",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "DELIVERY_OUT_PUSH",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:56.555Z",
+    "updatedAt": "2026-07-26T10:00:56.555Z"
+  },
+  {
+    "id": "rule-1785060056556",
+    "eventType": "REFUND_COMPLETED",
+    "channel": "EMAIL",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "REFUND_COMPLETED_EMAIL",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:56.556Z",
+    "updatedAt": "2026-07-26T10:00:56.556Z"
+  },
+  {
+    "id": "rule-1785060056558",
+    "eventType": "OTP_REQUESTED",
+    "channel": "SMS",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "OTP_SMS",
+    "priority": "CRITICAL",
+    "createdAt": "2026-07-26T10:00:56.558Z",
+    "updatedAt": "2026-07-26T10:00:56.558Z"
+  },
+  {
+    "id": "rule-1785060056558",
+    "eventType": "ORDER_CREATED",
+    "channel": "EMAIL",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "ORDER_PLACED_EMAIL",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:56.558Z",
+    "updatedAt": "2026-07-26T10:00:56.558Z"
+  },
+  {
+    "id": "rule-1785060056559",
+    "eventType": "ORDER_CREATED",
+    "channel": "WHATSAPP",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "ORDER_PLACED_WA",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:56.559Z",
+    "updatedAt": "2026-07-26T10:00:56.559Z"
+  },
+  {
+    "id": "rule-1785060056559",
+    "eventType": "ORDER_OUT_FOR_DELIVERY",
+    "channel": "PUSH",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "DELIVERY_OUT_PUSH",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:56.559Z",
+    "updatedAt": "2026-07-26T10:00:56.559Z"
+  },
+  {
+    "id": "rule-1785060056559",
+    "eventType": "REFUND_COMPLETED",
+    "channel": "EMAIL",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "REFUND_COMPLETED_EMAIL",
+    "priority": "HIGH",
+    "createdAt": "2026-07-26T10:00:56.559Z",
+    "updatedAt": "2026-07-26T10:00:56.559Z"
+  },
+  {
+    "id": "rule-1785060074230",
+    "eventType": "OTP_REQUESTED",
+    "channel": "SMS",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "OTP_SMS",
+    "priority": "CRITICAL",
+    "isEnabled": true,
+    "createdAt": "2026-07-26T10:01:14.230Z",
+    "updatedAt": "2026-07-26T10:01:14.231Z"
+  },
+  {
+    "id": "rule-1785060074231",
+    "eventType": "ORDER_CREATED",
+    "channel": "EMAIL",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "ORDER_PLACED_EMAIL",
+    "priority": "HIGH",
+    "isEnabled": true,
+    "createdAt": "2026-07-26T10:01:14.231Z",
+    "updatedAt": "2026-07-26T10:01:14.231Z"
+  },
+  {
+    "id": "rule-1785060074232",
+    "eventType": "ORDER_CREATED",
+    "channel": "WHATSAPP",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "ORDER_PLACED_WA",
+    "priority": "HIGH",
+    "isEnabled": true,
+    "createdAt": "2026-07-26T10:01:14.232Z",
+    "updatedAt": "2026-07-26T10:01:14.232Z"
+  },
+  {
+    "id": "rule-1785060074232",
+    "eventType": "ORDER_OUT_FOR_DELIVERY",
+    "channel": "PUSH",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "DELIVERY_OUT_PUSH",
+    "priority": "HIGH",
+    "isEnabled": true,
+    "createdAt": "2026-07-26T10:01:14.232Z",
+    "updatedAt": "2026-07-26T10:01:14.232Z"
+  },
+  {
+    "id": "rule-1785060074232",
+    "eventType": "REFUND_COMPLETED",
+    "channel": "EMAIL",
+    "recipientRule": "CUSTOMER",
+    "templateCode": "REFUND_COMPLETED_EMAIL",
+    "priority": "HIGH",
+    "isEnabled": true,
+    "createdAt": "2026-07-26T10:01:14.233Z",
+    "updatedAt": "2026-07-26T10:01:14.233Z"
+  }
+]

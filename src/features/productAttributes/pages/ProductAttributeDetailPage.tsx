@@ -49,11 +49,12 @@ export const ProductAttributeDetailPage: React.FC = () => {
     const selections: AttributeSelectionInput[] = [];
 
     Object.entries(selectedAttributeMap).forEach(([attrId, valIds]) => {
-      if (valIds.length === 0) return;
+      const vIds = valIds as string[];
+      if (vIds.length === 0) return;
       const targetAttr = allAttrs.attributes.find((a) => a.id === attrId);
       if (!targetAttr) return;
 
-      const chosenValues = targetAttr.values.filter((v) => valIds.includes(v.id));
+      const chosenValues = targetAttr.values.filter((v) => vIds.includes(v.id));
       if (chosenValues.length > 0) {
         selections.push({
           attributeId: targetAttr.id,
@@ -244,7 +245,7 @@ export const ProductAttributeDetailPage: React.FC = () => {
               </div>
               <div className="flex flex-wrap gap-1.5 pt-1">
                 {otherAttr.values.map((val) => {
-                  const isSelected = (selectedAttributeMap[otherAttr.id] || []).includes(val.id);
+                  const isSelected = ((selectedAttributeMap as Record<string, string[]>)[otherAttr.id] || []).includes(val.id);
                   return (
                     <button
                       key={val.id}

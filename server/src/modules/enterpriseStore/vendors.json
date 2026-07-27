@@ -1,0 +1,90 @@
+[
+  {
+    "id": "ven-1785061296775-m1n6p8",
+    "status": "ACTIVE",
+    "rating": 5,
+    "createdAt": "2026-07-26T10:21:36.775Z",
+    "vendorName": "Jaipur Gift Box Suppliers",
+    "vendorType": "GIFT_SUPPLIER",
+    "gstin": "08AABCG9999K1Z5",
+    "paymentTerms": "NET_30",
+    "leadTimeDays": 5
+  },
+  {
+    "id": "ven-1785062909001-x1frvj",
+    "status": "ACTIVE",
+    "rating": 5,
+    "createdAt": "2026-07-26T10:48:29.001Z",
+    "vendorName": "Jaipur Gift Box Suppliers",
+    "vendorType": "GIFT_SUPPLIER",
+    "gstin": "08AABCG9999K1Z5",
+    "paymentTerms": "NET_30",
+    "leadTimeDays": 5
+  },
+  {
+    "id": "ven-1785065676987-mp4fbs",
+    "status": "ACTIVE",
+    "rating": 5,
+    "createdAt": "2026-07-26T11:34:36.988Z",
+    "vendorName": "Jaipur Gift Box Suppliers",
+    "vendorType": "GIFT_SUPPLIER",
+    "gstin": "08AABCG9999K1Z5",
+    "paymentTerms": "NET_30",
+    "leadTimeDays": 5
+  },
+  {
+    "id": "ven-1785162179300-pnwlxp",
+    "status": "ACTIVE",
+    "rating": 5,
+    "createdAt": "2026-07-27T14:22:59.300Z",
+    "vendorName": "Jaipur Gift Box Suppliers",
+    "vendorType": "GIFT_SUPPLIER",
+    "gstin": "08AABCG9999K1Z5",
+    "paymentTerms": "NET_30",
+    "leadTimeDays": 5
+  },
+  {
+    "id": "ven-1785162239051-ywikvj",
+    "status": "ACTIVE",
+    "rating": 5,
+    "createdAt": "2026-07-27T14:23:59.051Z",
+    "vendorName": "Jaipur Gift Box Suppliers",
+    "vendorType": "GIFT_SUPPLIER",
+    "gstin": "08AABCG9999K1Z5",
+    "paymentTerms": "NET_30",
+    "leadTimeDays": 5
+  },
+  {
+    "id": "ven-1785164908751-fyovh0",
+    "status": "ACTIVE",
+    "rating": 5,
+    "createdAt": "2026-07-27T15:08:28.751Z",
+    "vendorName": "Jaipur Gift Box Suppliers",
+    "vendorType": "GIFT_SUPPLIER",
+    "gstin": "08AABCG9999K1Z5",
+    "paymentTerms": "NET_30",
+    "leadTimeDays": 5
+  },
+  {
+    "id": "ven-1785164945592-kt0qee",
+    "status": "ACTIVE",
+    "rating": 5,
+    "createdAt": "2026-07-27T15:09:05.592Z",
+    "vendorName": "Jaipur Gift Box Suppliers",
+    "vendorType": "GIFT_SUPPLIER",
+    "gstin": "08AABCG9999K1Z5",
+    "paymentTerms": "NET_30",
+    "leadTimeDays": 5
+  },
+  {
+    "id": "ven-1785165002791-puwcqr",
+    "status": "ACTIVE",
+    "rating": 5,
+    "createdAt": "2026-07-27T15:10:02.791Z",
+    "vendorName": "Jaipur Gift Box Suppliers",
+    "vendorType": "GIFT_SUPPLIER",
+    "gstin": "08AABCG9999K1Z5",
+    "paymentTerms": "NET_30",
+    "leadTimeDays": 5
+  }
+]

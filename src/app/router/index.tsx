@@ -43,15 +43,49 @@ import { PersonalisationFormListPage } from "../../features/personalisationForms
 import { PersonalisationFormCreatePage } from "../../features/personalisationForms/pages/PersonalisationFormCreatePage";
 import { PersonalisationFormEditPage } from "../../features/personalisationForms/pages/PersonalisationFormEditPage";
 import { PersonalisationFormDetailPage } from "../../features/personalisationForms/pages/PersonalisationFormDetailPage";
+import { CustomerUploadsListPage } from "../../features/customerUploads/pages/CustomerUploadsListPage";
+import { CustomerUploadDetailPage } from "../../features/customerUploads/pages/CustomerUploadDetailPage";
+import { UploadSessionListPage } from "../../features/customerUploads/pages/UploadSessionListPage";
+import { UploadSessionDetailPage } from "../../features/customerUploads/pages/UploadSessionDetailPage";
+import { CleanupManagerPage } from "../../features/customerUploads/pages/CleanupManagerPage";
+import { FinanceDashboardPage } from "../../features/finance/pages/FinanceDashboardPage";
+import { EnterpriseStoreDashboardPage } from "../../features/enterpriseStore/pages/EnterpriseStoreDashboardPage";
+import { ProductionDashboardPage } from "../../features/productionReadiness/pages/ProductionDashboardPage";
+import { DeliveryZonesManagementPage } from "../../features/deliveryZones/pages/DeliveryZonesManagementPage";
+import { SettingsLayout } from "../../layouts/SettingsLayout";
+import { SystemSettingsPage } from "../../features/settings/pages/SystemSettingsPage";
+import { WebSettingsPage } from "../../features/settings/pages/WebSettingsPage";
+import { AppSettingsPage } from "../../features/settings/pages/AppSettingsPage";
+import { HomeSettingsPage } from "../../features/settings/pages/HomeSettingsPage";
+import { AuthSettingsPage } from "../../features/settings/pages/AuthSettingsPage";
+import { EmailSettingsPage } from "../../features/settings/pages/EmailSettingsPage";
+import { PaymentSettingsPage } from "../../features/settings/pages/PaymentSettingsPage";
+import { NotificationSettingsPage } from "../../features/settings/pages/NotificationSettingsPage";
+import { DeliveryBoySettingsPage } from "../../features/settings/pages/DeliveryBoySettingsPage";
 import { PlaceholderPage } from "../../pages/PlaceholderPage";
 import { NotFoundPage } from "../../pages/NotFoundPage";
 import { RouteErrorBoundary } from "../../components/common/RouteErrorBoundary";
 import { ProtectedRoute } from "../../components/common/ProtectedRoute";
+import { OrdersManagementPage } from "../../features/orders/pages/OrdersManagementPage";
+import { DispatchManagementPage } from "../../features/dispatch/pages/DispatchManagementPage";
+import { BannersManagementPage } from "../../features/banners/pages/BannersManagementPage";
+import { FeaturedSectionsManagementPage } from "../../features/featuredSections/pages/FeaturedSectionsManagementPage";
+import { CouponsManagementPage } from "../../features/coupons/pages/CouponsManagementPage";
+import { NotificationsManagementPage } from "../../features/notifications/pages/NotificationsManagementPage";
+import { CustomersManagementPage } from "../../features/customers/pages/CustomersManagementPage";
+import { DeliveryBoysManagementPage } from "../../features/deliveryBoys/pages/DeliveryBoysManagementPage";
+import { DesignSystemShowcasePage } from "../../features/frontend/pages/DesignSystemShowcasePage";
+import { HomePage } from "../../features/frontend/pages/HomePage";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Navigate to="/admin/dashboard" replace />,
+    element: <HomePage />,
+    errorElement: <RouteErrorBoundary />,
+  },
+  {
+    path: "/design-system",
+    element: <DesignSystemShowcasePage />,
     errorElement: <RouteErrorBoundary />,
   },
   {
@@ -109,7 +143,31 @@ export const router = createBrowserRouter([
       },
       {
         path: "sales/orders",
-        element: <PlaceholderPage title="Orders" />,
+        element: <OrdersManagementPage />,
+      },
+      {
+        path: "orders",
+        element: <OrdersManagementPage />,
+      },
+      {
+        path: "dispatch",
+        element: <DispatchManagementPage />,
+      },
+      {
+        path: "banners",
+        element: <BannersManagementPage />,
+      },
+      {
+        path: "featured-sections",
+        element: <FeaturedSectionsManagementPage />,
+      },
+      {
+        path: "coupons",
+        element: <CouponsManagementPage />,
+      },
+      {
+        path: "notifications",
+        element: <NotificationsManagementPage />,
       },
       {
         path: "sales/invoices",
@@ -272,6 +330,26 @@ export const router = createBrowserRouter([
         element: <PersonalisationFormEditPage />,
       },
       {
+        path: "customer-uploads",
+        element: <CustomerUploadsListPage />,
+      },
+      {
+        path: "customer-uploads/:id",
+        element: <CustomerUploadDetailPage />,
+      },
+      {
+        path: "upload-sessions",
+        element: <UploadSessionListPage />,
+      },
+      {
+        path: "upload-sessions/:id",
+        element: <UploadSessionDetailPage />,
+      },
+      {
+        path: "customer-uploads/cleanup",
+        element: <CleanupManagerPage />,
+      },
+      {
         path: "catalog/personalisation-forms",
         element: <PersonalisationFormListPage />,
       },
@@ -285,7 +363,27 @@ export const router = createBrowserRouter([
       },
       {
         path: "customers",
-        element: <PlaceholderPage title="Customers" />,
+        element: <CustomersManagementPage />,
+      },
+      {
+        path: "delivery-boys",
+        element: <DeliveryBoysManagementPage />,
+      },
+      {
+        path: "finance",
+        element: <FinanceDashboardPage />,
+      },
+      {
+        path: "enterprise",
+        element: <EnterpriseStoreDashboardPage />,
+      },
+      {
+        path: "production",
+        element: <ProductionDashboardPage />,
+      },
+      {
+        path: "delivery-zones",
+        element: <DeliveryZonesManagementPage />,
       },
       {
         path: "reports",
@@ -293,7 +391,31 @@ export const router = createBrowserRouter([
       },
       {
         path: "settings",
-        element: <PlaceholderPage title="Settings" />,
+        element: <SettingsLayout />,
+        children: [
+          { index: true, element: <Navigate to="system" replace /> },
+          { path: "system", element: <SystemSettingsPage /> },
+          { path: "web", element: <WebSettingsPage /> },
+          { path: "website", element: <Navigate to="web" replace /> },
+          { path: "seo-integrations", element: <Navigate to="web" replace /> },
+          { path: "legal", element: <Navigate to="web" replace /> },
+          { path: "app", element: <AppSettingsPage /> },
+          { path: "home", element: <HomeSettingsPage /> },
+          { path: "home-general", element: <Navigate to="home" replace /> },
+          { path: "home-general-settings", element: <Navigate to="home" replace /> },
+          { path: "authentication", element: <AuthSettingsPage /> },
+          { path: "email", element: <EmailSettingsPage /> },
+          { path: "payment", element: <PaymentSettingsPage /> },
+          { path: "payments", element: <Navigate to="payment" replace /> },
+          { path: "notification", element: <NotificationSettingsPage /> },
+          { path: "notifications", element: <Navigate to="notification" replace /> },
+          { path: "delivery-boy", element: <DeliveryBoySettingsPage /> },
+          { path: "delivery", element: <Navigate to="delivery-boy" replace /> },
+          { path: "delivery-zones", element: <DeliveryZonesManagementPage /> },
+          { path: "personalisation", element: <Navigate to="system" replace /> },
+          { path: "orders-returns", element: <Navigate to="system" replace /> },
+          { path: "storage-privacy", element: <Navigate to="system" replace /> },
+        ]
       },
       {
         path: "*",

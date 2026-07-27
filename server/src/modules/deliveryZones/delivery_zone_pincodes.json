@@ -1,0 +1,8 @@
+[
+  {"id": "pin-1", "deliveryZoneId": "zone-1", "pincode": "302001", "city": "Jaipur", "active": true},
+  {"id": "pin-2", "deliveryZoneId": "zone-1", "pincode": "302005", "city": "Jaipur", "active": true},
+  {"id": "pin-3", "deliveryZoneId": "zone-2", "pincode": "302017", "city": "Jaipur", "active": true},
+  {"id": "pin-4", "deliveryZoneId": "zone-2", "pincode": "302018", "city": "Jaipur", "active": true},
+  {"id": "pin-5", "deliveryZoneId": "zone-3", "pincode": "302021", "city": "Jaipur", "active": true},
+  {"id": "pin-6", "deliveryZoneId": "zone-4", "pincode": "302020", "city": "Jaipur", "active": true}
+]

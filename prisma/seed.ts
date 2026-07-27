@@ -3,7 +3,7 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 async function main() {
-  console.log('Starting seed...');
+  console.log('Starting backend seed for Jaipur Gifting Enterprise...');
   
   // Jaipur Main Store
   const store = await prisma.store.upsert({
@@ -19,68 +19,34 @@ async function main() {
   });
   console.log('Upserted Store:', store.name);
 
-  const features = [
-    { key: 'personalised_products', enabled: true },
-    { key: 'dynamic_delivery_promise', enabled: false },
-    { key: 'same_day_delivery', enabled: true },
-    { key: 'next_day_delivery', enabled: true },
-    { key: 'express_delivery', enabled: false },
-    { key: 'scheduled_delivery', enabled: false },
-    { key: 'delivery_zones', enabled: true },
-    { key: 'razorpay', enabled: false },
-    { key: 'cash_on_delivery', enabled: false },
-    { key: 'manual_upi', enabled: false },
-    { key: 'wallet_payment', enabled: false },
-    { key: 'customer_android_app', enabled: false },
-    { key: 'delivery_android_app', enabled: false },
-    { key: 'automatic_media_cleanup', enabled: false },
+  // Categories: Customised Gifts, No Customised, Jewellery, Mugs, Photo Frame, Mouse Pad, Bottle
+  const categoriesList = [
+    { name: 'Customised Gifts', slug: 'customised', image: 'https://images.unsplash.com/photo-1513151233558-d860c5398176?w=500&q=80' },
+    { name: 'No Customised', slug: 'no-customised', image: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=500&q=80' },
+    { name: 'Jewellery', slug: 'jewellery', image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=500&q=80' },
+    { name: 'Mugs', slug: 'mugs', image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=500&q=80' },
+    { name: 'Photo Frame', slug: 'photo-frame', image: 'https://images.unsplash.com/photo-1544816155-12df9643f363?w=500&q=80' },
+    { name: 'Mouse Pad', slug: 'mouse-pad', image: 'https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500&q=80' },
+    { name: 'Bottle', slug: 'bottle', image: 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=500&q=80' }
   ];
 
-  for (const f of features) {
-    await prisma.featureFlag.upsert({
-      where: { key: f.key },
-      update: {},
+  for (const cat of categoriesList) {
+    await prisma.category.upsert({
+      where: { slug: cat.slug },
+      update: { name: cat.name },
       create: {
-        key: f.key,
-        name: f.key.replace(/_/g, ' ').toUpperCase(),
-        enabled: f.enabled,
-        scope: 'GLOBAL'
+        storeId: store.id,
+        name: cat.name,
+        slug: cat.slug,
+        status: 'ACTIVE',
+        showOnHomepage: true,
+        sortOrder: 0
       }
     });
   }
-  console.log('Upserted Feature Flags');
-
-  const settings = [
-    { namespace: 'system', key: 'app_name', val: 'Jaipur Personalised Gifts', type: 'STRING', pub: true },
-    { namespace: 'system', key: 'timezone', val: 'Asia/Kolkata', type: 'STRING', pub: true },
-    { namespace: 'system', key: 'currency', val: 'INR', type: 'STRING', pub: true },
-    { namespace: 'system', key: 'store_mode', val: 'SINGLE_STORE', type: 'STRING', pub: true },
-    
-    { namespace: 'delivery', key: 'orders_accepted_24x7', val: 'true', type: 'BOOLEAN', pub: true },
-    { namespace: 'delivery', key: 'store_opening_time', val: '08:00', type: 'STRING', pub: true },
-    { namespace: 'delivery', key: 'store_closing_time', val: '20:00', type: 'STRING', pub: true },
-    
-    { namespace: 'storage_privacy', key: 'temporary_upload_retention_hours', val: '24', type: 'NUMBER', pub: false },
-    { namespace: 'orders_returns', key: 'personalised_returns_enabled', val: 'false', type: 'BOOLEAN', pub: true },
-  ];
-
-  for (const s of settings) {
-    await prisma.appSetting.upsert({
-      where: { namespace_key: { namespace: s.namespace, key: s.key } },
-      update: {},
-      create: {
-        namespace: s.namespace,
-        key: s.key,
-        valueJson: JSON.stringify(s.val),
-        valueType: s.type as any,
-        isPublic: s.pub
-      }
-    });
-  }
-  console.log('Upserted Settings');
+  console.log('Upserted Categories successfully');
 
   // Development Admin
-  
   if (process.env.NODE_ENV !== 'production') {
     const bcrypt = require('bcrypt');
     const passwordHash = await bcrypt.hash('Admin@123', 10);
@@ -102,8 +68,7 @@ async function main() {
     console.log('Upserted Development Admin:', admin.email);
   }
 
-
-  console.log('Seed completed successfully.');
+  console.log('Backend seed completed successfully.');
 }
 
 main()

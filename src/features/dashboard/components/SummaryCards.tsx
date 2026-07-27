@@ -1,3 +1,4 @@
+import React from "react";
 import { DashboardSummaryData, SummaryMetric } from '../types/dashboard.types';
 import { formatCurrency, formatNumber, formatPercent } from '../utils/formatters';
 import {

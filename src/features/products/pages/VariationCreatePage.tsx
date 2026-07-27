@@ -43,7 +43,7 @@ export const VariationCreatePage: React.FC = () => {
 
     const attributeValuePairs = Object.entries(selectedAttributeValues).map(([attributeId, attributeValueId]) => ({
       attributeId,
-      attributeValueId,
+      attributeValueId: String(attributeValueId),
     }));
 
     if (attributeValuePairs.length === 0) {

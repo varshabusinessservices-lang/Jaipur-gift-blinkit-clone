@@ -9,20 +9,15 @@ import {
 
 const settingsNavigation = [
   { name: "System", href: "/admin/settings/system", icon: Settings },
-  { name: "Website", href: "/admin/settings/website", icon: Globe },
-  { name: "Mobile App", href: "/admin/settings/app", icon: Smartphone },
-  { name: "Home Appearance", href: "/admin/settings/home", icon: Home },
+  { name: "Web", href: "/admin/settings/web", icon: Globe },
+  { name: "App", href: "/admin/settings/app", icon: Smartphone },
+  { name: "Home General Settings", href: "/admin/settings/home", icon: Home },
   { name: "Authentication", href: "/admin/settings/authentication", icon: Shield },
   { name: "Email", href: "/admin/settings/email", icon: Mail },
-  { name: "Payments", href: "/admin/settings/payments", icon: CreditCard },
-  { name: "Notifications", href: "/admin/settings/notifications", icon: Bell },
-  { name: "Delivery", href: "/admin/settings/delivery", icon: Truck },
+  { name: "Payment", href: "/admin/settings/payment", icon: CreditCard },
+  { name: "Notification", href: "/admin/settings/notification", icon: Bell },
+  { name: "Delivery Boy", href: "/admin/settings/delivery-boy", icon: Truck },
   { name: "Delivery Zones", href: "/admin/settings/delivery-zones", icon: Map },
-  { name: "Personalisation", href: "/admin/settings/personalisation", icon: Gift },
-  { name: "Orders & Returns", href: "/admin/settings/orders-returns", icon: RefreshCcw },
-  { name: "Storage & Privacy", href: "/admin/settings/storage-privacy", icon: Database },
-  { name: "SEO & Integrations", href: "/admin/settings/seo-integrations", icon: Search },
-  { name: "Legal Policies", href: "/admin/settings/legal", icon: FileText },
 ];
 
 export function SettingsLayout() {

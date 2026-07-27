@@ -1,0 +1,6 @@
+{
+  "baseDeliveryCharge": 49.0,
+  "freeDeliveryThreshold": 499.0,
+  "weightSurchargeThresholdGrams": 5000,
+  "weightSurchargeAmountPerKg": 15.0
+}

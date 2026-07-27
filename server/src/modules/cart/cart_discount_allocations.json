@@ -1,0 +1,11 @@
+[
+  {
+    "id": "c887e0d6-b8e2-4304-8b93-495ca1b1cc41",
+    "cartId": "e1a1e434-12f5-406e-883e-0e9e5da75a53",
+    "sourceType": "COUPON",
+    "code": "FIRST100",
+    "descriptionSnapshot": "Promo code FIRST100 applied successfully",
+    "amount": "100",
+    "createdAt": "2026-07-27T15:09:45.237Z"
+  }
+]

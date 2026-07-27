@@ -1,0 +1,98 @@
+[
+  {
+    "id": "inv-1785061296771-5xfg5d",
+    "available": 50,
+    "reserved": 5,
+    "inProduction": 10,
+    "damaged": 0,
+    "returned": 0,
+    "transferred": 0,
+    "storeId": "store-1785061296771",
+    "productId": "prod-gift-box-1",
+    "updatedAt": "2026-07-26T10:21:36.771Z"
+  },
+  {
+    "id": "inv-1785062908997-cgyr7n",
+    "available": 50,
+    "reserved": 5,
+    "inProduction": 10,
+    "damaged": 0,
+    "returned": 0,
+    "transferred": 0,
+    "storeId": "store-1785062908996",
+    "productId": "prod-gift-box-1",
+    "updatedAt": "2026-07-26T10:48:28.997Z"
+  },
+  {
+    "id": "inv-1785065676984-um3kjq",
+    "available": 50,
+    "reserved": 5,
+    "inProduction": 10,
+    "damaged": 0,
+    "returned": 0,
+    "transferred": 0,
+    "storeId": "store-1785065676983",
+    "productId": "prod-gift-box-1",
+    "updatedAt": "2026-07-26T11:34:36.984Z"
+  },
+  {
+    "id": "inv-1785162179295-guovmz",
+    "available": 50,
+    "reserved": 5,
+    "inProduction": 10,
+    "damaged": 0,
+    "returned": 0,
+    "transferred": 0,
+    "storeId": "store-1785162179294",
+    "productId": "prod-gift-box-1",
+    "updatedAt": "2026-07-27T14:22:59.295Z"
+  },
+  {
+    "id": "inv-1785162239047-qx9je7",
+    "available": 50,
+    "reserved": 5,
+    "inProduction": 10,
+    "damaged": 0,
+    "returned": 0,
+    "transferred": 0,
+    "storeId": "store-1785162239047",
+    "productId": "prod-gift-box-1",
+    "updatedAt": "2026-07-27T14:23:59.047Z"
+  },
+  {
+    "id": "inv-1785164908747-99247n",
+    "available": 50,
+    "reserved": 5,
+    "inProduction": 10,
+    "damaged": 0,
+    "returned": 0,
+    "transferred": 0,
+    "storeId": "store-1785164908747",
+    "productId": "prod-gift-box-1",
+    "updatedAt": "2026-07-27T15:08:28.747Z"
+  },
+  {
+    "id": "inv-1785164945589-3unk1c",
+    "available": 50,
+    "reserved": 5,
+    "inProduction": 10,
+    "damaged": 0,
+    "returned": 0,
+    "transferred": 0,
+    "storeId": "store-1785164945588",
+    "productId": "prod-gift-box-1",
+    "updatedAt": "2026-07-27T15:09:05.589Z"
+  },
+  {
+    "id": "inv-1785165002787-c1d1wx",
+    "available": 50,
+    "reserved": 5,
+    "inProduction": 10,
+    "damaged": 0,
+    "returned": 0,
+    "transferred": 0,
+    "storeId": "store-1785165002787",
+    "productId": "prod-gift-box-1",
+    "updatedAt": "2026-07-27T15:10:02.787Z"
+  }
+]

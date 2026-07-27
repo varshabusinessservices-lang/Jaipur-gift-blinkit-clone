@@ -1,0 +1,90 @@
+[
+  {
+    "id": "cap-1785061296778-rridd0",
+    "storeId": "store-cap-1785061296778",
+    "dailyProductionLimit": 200,
+    "hourlyDeliveryCapacity": 25,
+    "printingCapacity": 100,
+    "packingCapacity": 150,
+    "currentProduction": 0,
+    "currentDeliveries": 0,
+    "updatedAt": "2026-07-26T10:21:36.778Z"
+  },
+  {
+    "id": "cap-1785062909005-364gei",
+    "storeId": "store-cap-1785062909005",
+    "dailyProductionLimit": 200,
+    "hourlyDeliveryCapacity": 25,
+    "printingCapacity": 100,
+    "packingCapacity": 150,
+    "currentProduction": 0,
+    "currentDeliveries": 0,
+    "updatedAt": "2026-07-26T10:48:29.005Z"
+  },
+  {
+    "id": "cap-1785065676992-jkb7u7",
+    "storeId": "store-cap-1785065676991",
+    "dailyProductionLimit": 200,
+    "hourlyDeliveryCapacity": 25,
+    "printingCapacity": 100,
+    "packingCapacity": 150,
+    "currentProduction": 0,
+    "currentDeliveries": 0,
+    "updatedAt": "2026-07-26T11:34:36.992Z"
+  },
+  {
+    "id": "cap-1785162179304-rq62ws",
+    "storeId": "store-cap-1785162179304",
+    "dailyProductionLimit": 200,
+    "hourlyDeliveryCapacity": 25,
+    "printingCapacity": 100,
+    "packingCapacity": 150,
+    "currentProduction": 0,
+    "currentDeliveries": 0,
+    "updatedAt": "2026-07-27T14:22:59.304Z"
+  },
+  {
+    "id": "cap-1785162239054-4x6ssn",
+    "storeId": "store-cap-1785162239054",
+    "dailyProductionLimit": 200,
+    "hourlyDeliveryCapacity": 25,
+    "printingCapacity": 100,
+    "packingCapacity": 150,
+    "currentProduction": 0,
+    "currentDeliveries": 0,
+    "updatedAt": "2026-07-27T14:23:59.054Z"
+  },
+  {
+    "id": "cap-1785164908754-myxd7g",
+    "storeId": "store-cap-1785164908754",
+    "dailyProductionLimit": 200,
+    "hourlyDeliveryCapacity": 25,
+    "printingCapacity": 100,
+    "packingCapacity": 150,
+    "currentProduction": 0,
+    "currentDeliveries": 0,
+    "updatedAt": "2026-07-27T15:08:28.754Z"
+  },
+  {
+    "id": "cap-1785164945596-ykpdvd",
+    "storeId": "store-cap-1785164945596",
+    "dailyProductionLimit": 200,
+    "hourlyDeliveryCapacity": 25,
+    "printingCapacity": 100,
+    "packingCapacity": 150,
+    "currentProduction": 0,
+    "currentDeliveries": 0,
+    "updatedAt": "2026-07-27T15:09:05.596Z"
+  },
+  {
+    "id": "cap-1785165002795-w2786c",
+    "storeId": "store-cap-1785165002794",
+    "dailyProductionLimit": 200,
+    "hourlyDeliveryCapacity": 25,
+    "printingCapacity": 100,
+    "packingCapacity": 150,
+    "currentProduction": 0,
+    "currentDeliveries": 0,
+    "updatedAt": "2026-07-27T15:10:02.795Z"
+  }
+]

@@ -1,12 +1,24 @@
+import React from "react";
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams, Link } from 'react-router-dom';
 import {
   ArrowLeft, Eye, Layout, Smartphone, Tablet, Monitor, Info, Check, AlertTriangle, ShieldCheck, Download, Mail, Phone, MessageSquare, Clipboard, Image as ImageIcon, Heart
 } from 'lucide-react';
 import { personalisationFormsService } from '../services/personalisationFormsService';
+import { UploadSessionProvider, useUploadSession } from '../../customerUploads/components/UploadSessionProvider';
+import { PersonalisationFileField } from '../../customerUploads/components/CustomerUploaders';
+import { UploadSummary } from '../../customerUploads/components/UploadSummary';
 import { toast } from 'sonner';
 
 export function PersonalisationFormDetailPage() {
+  return (
+    <UploadSessionProvider>
+      <PersonalisationFormDetailPageInner />
+    </UploadSessionProvider>
+  );
+}
+
+function PersonalisationFormDetailPageInner() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [form, setForm] = useState<any | null>(null);
@@ -17,6 +29,8 @@ export function PersonalisationFormDetailPage() {
   const [validationErrors, setValidationErrors] = useState<any[]>([]);
   const [validatedSuccessfully, setValidatedSuccessfully] = useState(false);
 
+  const { session, uploads, initSession, uploadFile, deleteUpload, refreshSession } = useUploadSession();
+
   useEffect(() => {
     const loadForm = async () => {
       if (!id) return;
@@ -24,6 +38,9 @@ export function PersonalisationFormDetailPage() {
         setLoading(true);
         const data = await personalisationFormsService.getForm(id);
         setForm(data);
+        
+        // Instantiate real/mock upload session for interactive previews
+        await initSession(`preview-product-${id}`, data.id, null);
       } catch (error) {
         toast.error('Failed to load personalisation form');
         navigate('/admin/personalisation-forms');
@@ -32,7 +49,7 @@ export function PersonalisationFormDetailPage() {
       }
     };
     loadForm();
-  }, [id, navigate]);
+  }, [id, navigate, initSession]);
 
   const handleInputChange = (fieldId: string, val: any) => {
     setSubmission((prev) => ({ ...prev, [fieldId]: val }));
@@ -44,7 +61,24 @@ export function PersonalisationFormDetailPage() {
     e.preventDefault();
     if (!form) return;
     try {
-      const result = await personalisationFormsService.validateSubmission(form.id, submission);
+      // Map active uploaded files to the submission keys so backend validation can run
+      const enrichedSubmission = { ...submission };
+      form.fields.forEach((field: any) => {
+        const isPhoto = ['MAIN_PHOTO', 'SUPPORTING_PHOTOS', 'IMAGE', 'MULTI_IMAGE', 'FILE', 'LOGO', 'QR_IMAGE', 'DOCUMENT'].includes(field.fieldType);
+        if (isPhoto) {
+          const fieldUploads = uploads.filter((u) => u.personalisationFieldId === field.id && !u.isCustomerDeleted);
+          if (fieldUploads.length > 0) {
+            enrichedSubmission[field.id] = fieldUploads.map(u => ({
+              id: u.id,
+              name: u.originalFileName,
+              size: u.sizeBytes,
+              mimeType: u.mimeType
+            }));
+          }
+        }
+      });
+
+      const result = await personalisationFormsService.validateSubmission(form.id, enrichedSubmission);
       if (result.isValid) {
         setValidationErrors([]);
         setValidatedSuccessfully(true);
@@ -67,20 +101,18 @@ export function PersonalisationFormDetailPage() {
     return <div className="text-center py-20 text-red-500 font-semibold">Form not found.</div>;
   }
 
-  // Get field widths
   const getColSpan = (layout: string) => {
     if (layout === '1_column') return 'col-span-1';
     if (layout === '2_column') return 'col-span-1 md:col-span-2';
     return 'col-span-1 md:col-span-2';
   };
 
-  // Group fields for production
   const fields = form.fields || [];
   const photoFields = fields.filter((f: any) =>
-    ['MAIN_PHOTO', 'SUPPORTING_PHOTOS', 'PROFILE_PHOTO', 'LOGO', 'QR_IMAGE', 'IMAGE', 'MULTI_IMAGE'].includes(f.fieldType)
+    ['MAIN_PHOTO', 'SUPPORTING_PHOTOS', 'PROFILE_PHOTO', 'LOGO', 'QR_IMAGE', 'IMAGE', 'MULTI_IMAGE', 'FILE', 'DOCUMENT'].includes(f.fieldType)
   );
   const textAndMsgFields = fields.filter((f: any) =>
-    ['TEXT', 'TEXTAREA', 'COLOR', 'RATING', 'SIGNATURE'].includes(f.fieldType)
+    ['TEXT', 'TEXT_AREA', 'TEXTAREA', 'COLOR', 'RATING', 'SIGNATURE'].includes(f.fieldType)
   );
   const metadataFields = fields.filter((f: any) =>
     !photoFields.includes(f) && !textAndMsgFields.includes(f)
@@ -130,7 +162,7 @@ export function PersonalisationFormDetailPage() {
               <Info className="h-5 w-5 text-indigo-500 mt-0.5 shrink-0" />
               <div>
                 <h4 className="text-sm font-semibold text-slate-900">Interactive Form Tester</h4>
-                <p className="text-xs text-slate-500">Test live validation rules (regex, required, counts, etc.) directly in the responsive frame below.</p>
+                <p className="text-xs text-slate-500">Test live validation rules and customer upload flows (resolutions, aspect ratios) directly in the frame.</p>
               </div>
             </div>
             <div className="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 shadow-inner self-start sm:self-center">
@@ -169,150 +201,161 @@ export function PersonalisationFormDetailPage() {
                   : 'w-full'
               }`}
             >
-              <form onSubmit={handleTestValidate} className="bg-white p-6 rounded-xl space-y-6">
-                <div>
-                  <h3 className="text-lg font-bold text-slate-900">{form.name}</h3>
-                  {form.description && <p className="text-xs text-slate-500 mt-1">{form.description}</p>}
-                </div>
-
-                {validatedSuccessfully && (
-                  <div className="bg-emerald-50 border border-emerald-200 p-4 rounded-lg flex items-start gap-3">
-                    <ShieldCheck className="h-5 w-5 text-emerald-600 mt-0.5" />
-                    <div>
-                      <h4 className="text-xs font-bold text-emerald-800">Success! Form entries validated</h4>
-                      <p className="text-[11px] text-emerald-700 mt-0.5">Ready for shopping cart integration. No client-side payload issues.</p>
-                    </div>
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <form onSubmit={handleTestValidate} className="lg:col-span-2 bg-white p-6 rounded-xl space-y-6 border border-slate-150">
+                  <div>
+                    <h3 className="text-lg font-bold text-slate-900">{form.name}</h3>
+                    {form.description && <p className="text-xs text-slate-500 mt-1">{form.description}</p>}
                   </div>
-                )}
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {fields.map((field: any) => {
-                    const error = validationErrors.find((err) => err.fieldId === field.id);
-                    const colSpan = getColSpan(field.settingsJson?.layout || 'full_width');
-                    const isPhoto = ['MAIN_PHOTO', 'SUPPORTING_PHOTOS', 'IMAGE', 'MULTI_IMAGE', 'FILE'].includes(field.fieldType);
-
-                    return (
-                      <div key={field.id} className={`${colSpan} space-y-1.5`}>
-                        <label className="block text-xs font-semibold text-slate-700">
-                          {field.label} {field.required && <span className="text-red-500">*</span>}
-                        </label>
-
-                        {/* Text inputs */}
-                        {['TEXT', 'EMAIL', 'PHONE', 'WHATSAPP', 'URL'].includes(field.fieldType) && (
-                          <input
-                            type={field.fieldType === 'EMAIL' ? 'email' : 'text'}
-                            value={submission[field.id] || ''}
-                            onChange={(e) => handleInputChange(field.id, e.target.value)}
-                            placeholder={field.placeholder || `Enter ${field.label.toLowerCase()}`}
-                            className={`w-full px-3 py-2 border rounded-lg text-sm bg-white text-slate-800 focus:outline-none focus:ring-1 ${
-                              error ? 'border-red-500 focus:ring-red-500' : 'border-slate-300 focus:ring-indigo-500'
-                            }`}
-                          />
-                        )}
-
-                        {/* Textarea */}
-                        {field.fieldType === 'TEXTAREA' && (
-                          <textarea
-                            rows={3}
-                            value={submission[field.id] || ''}
-                            onChange={(e) => handleInputChange(field.id, e.target.value)}
-                            placeholder={field.placeholder || `Enter ${field.label.toLowerCase()}`}
-                            className={`w-full px-3 py-2 border rounded-lg text-sm bg-white text-slate-800 focus:outline-none focus:ring-1 ${
-                              error ? 'border-red-500 focus:ring-red-500' : 'border-slate-300 focus:ring-indigo-500'
-                            }`}
-                          />
-                        )}
-
-                        {/* Numeric */}
-                        {field.fieldType === 'NUMBER' && (
-                          <input
-                            type="number"
-                            value={submission[field.id] || ''}
-                            onChange={(e) => handleInputChange(field.id, e.target.value)}
-                            placeholder={field.placeholder || 'e.g. 10'}
-                            className={`w-full px-3 py-2 border rounded-lg text-sm bg-white text-slate-800 focus:outline-none focus:ring-1 ${
-                              error ? 'border-red-500 focus:ring-red-500' : 'border-slate-300 focus:ring-indigo-500'
-                            }`}
-                          />
-                        )}
-
-                        {/* Date / Time */}
-                        {field.fieldType === 'DATE' && (
-                          <input
-                            type="date"
-                            value={submission[field.id] || ''}
-                            onChange={(e) => handleInputChange(field.id, e.target.value)}
-                            className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm bg-white text-slate-800 focus:outline-none"
-                          />
-                        )}
-
-                        {/* Select Choice */}
-                        {field.fieldType === 'SELECT' && (
-                          <select
-                            value={submission[field.id] || ''}
-                            onChange={(e) => handleInputChange(field.id, e.target.value)}
-                            className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm bg-white text-slate-700 focus:outline-none"
-                          >
-                            <option value="">Select an option...</option>
-                            {(field.settingsJson?.options || []).map((opt: any) => (
-                              <option key={opt.value} value={opt.value}>{opt.label}</option>
-                            ))}
-                          </select>
-                        )}
-
-                        {/* Media and uploads */}
-                        {isPhoto && (
-                          <div className="border border-dashed border-slate-300 rounded-lg p-4 bg-slate-50 text-center space-y-2">
-                            <ImageIcon className="h-8 w-8 text-slate-300 mx-auto" />
-                            <div className="text-xs text-slate-600 font-semibold">
-                              Click or drag images/files here to upload
-                            </div>
-                            <div className="text-[10px] text-slate-400">
-                              Limits: Max {field.settingsJson?.imageSettings?.maxImages || 1} image(s), Up to {((field.settingsJson?.imageSettings?.maxSizeBytes || 10 * 1024 * 1024) / (1024 * 1024))}MB
-                            </div>
-                            {/* Simulator for photo upload */}
-                            <button
-                              type="button"
-                              onClick={() => {
-                                // simulate successful file input
-                                handleInputChange(field.id, [{ name: 'test-photo.jpg', size: 1000 }]);
-                                toast.success(`Simulated image upload for "${field.label}"`);
-                              }}
-                              className="px-2 py-1 bg-white border border-slate-200 shadow-sm hover:bg-slate-50 rounded text-[10px] font-semibold text-slate-700"
-                            >
-                              Mock File Select
-                            </button>
-                            {submission[field.id] && (
-                              <div className="text-[10px] text-indigo-600 font-medium bg-indigo-50 border border-indigo-200/50 py-1 rounded">
-                                Selected: {submission[field.id].length} items
-                              </div>
-                            )}
-                          </div>
-                        )}
-
-                        {/* Help instructions text */}
-                        {field.helpText && <p className="text-[10px] text-slate-400 font-medium">{field.helpText}</p>}
-
-                        {/* Inline red errors */}
-                        {error && (
-                          <p className="text-xs text-red-500 font-semibold flex items-center gap-1">
-                            <AlertTriangle className="h-3.5 w-3.5" /> {error.message}
-                          </p>
-                        )}
+                  {validatedSuccessfully && (
+                    <div className="bg-emerald-50 border border-emerald-200 p-4 rounded-lg flex items-start gap-3">
+                      <ShieldCheck className="h-5 w-5 text-emerald-600 mt-0.5" />
+                      <div>
+                        <h4 className="text-xs font-bold text-emerald-800">Success! Form entries validated</h4>
+                        <p className="text-[11px] text-emerald-700 mt-0.5">Ready for shopping cart integration. No client-side payload issues.</p>
                       </div>
-                    );
-                  })}
-                </div>
+                    </div>
+                  )}
 
-                <div className="pt-4 border-t border-slate-100 flex justify-end">
-                  <button
-                    type="submit"
-                    className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-sm font-semibold text-white rounded-lg shadow transition-colors"
-                  >
-                    Validate Submissions Preview
-                  </button>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {fields.map((field: any) => {
+                      const error = validationErrors.find((err) => err.fieldId === field.id);
+                      const colSpan = getColSpan(field.settingsJson?.layout || 'full_width');
+                      const isPhoto = ['MAIN_PHOTO', 'SUPPORTING_PHOTOS', 'IMAGE', 'MULTI_IMAGE', 'FILE', 'LOGO', 'QR_IMAGE', 'DOCUMENT'].includes(field.fieldType);
+
+                      return (
+                        <div key={field.id} className={`${colSpan} space-y-1.5`}>
+                          {!isPhoto && (
+                            <>
+                              <label className="block text-xs font-semibold text-slate-700">
+                                {field.label} {field.required && <span className="text-red-500">*</span>}
+                              </label>
+
+                              {/* Text inputs */}
+                              {['TEXT', 'EMAIL', 'PHONE', 'WHATSAPP', 'URL'].includes(field.fieldType) && (
+                                <input
+                                  type={field.fieldType === 'EMAIL' ? 'email' : 'text'}
+                                  value={submission[field.id] || ''}
+                                  onChange={(e) => handleInputChange(field.id, e.target.value)}
+                                  placeholder={field.placeholder || `Enter ${field.label.toLowerCase()}`}
+                                  className={`w-full px-3 py-2 border rounded-lg text-sm bg-white text-slate-800 focus:outline-none focus:ring-1 ${
+                                    error ? 'border-red-500 focus:ring-red-500' : 'border-slate-300 focus:ring-indigo-500'
+                                  }`}
+                                />
+                              )}
+
+                              {/* Textarea */}
+                              {['TEXTAREA', 'TEXT_AREA'].includes(field.fieldType) && (
+                                <textarea
+                                  rows={3}
+                                  value={submission[field.id] || ''}
+                                  onChange={(e) => handleInputChange(field.id, e.target.value)}
+                                  placeholder={field.placeholder || `Enter ${field.label.toLowerCase()}`}
+                                  className={`w-full px-3 py-2 border rounded-lg text-sm bg-white text-slate-800 focus:outline-none focus:ring-1 ${
+                                    error ? 'border-red-500 focus:ring-red-500' : 'border-slate-300 focus:ring-indigo-500'
+                                  }`}
+                                />
+                              )}
+
+                              {/* Numeric */}
+                              {field.fieldType === 'NUMBER' && (
+                                <input
+                                  type="number"
+                                  value={submission[field.id] || ''}
+                                  onChange={(e) => handleInputChange(field.id, e.target.value)}
+                                  placeholder={field.placeholder || 'e.g. 10'}
+                                  className={`w-full px-3 py-2 border rounded-lg text-sm bg-white text-slate-800 focus:outline-none focus:ring-1 ${
+                                    error ? 'border-red-500 focus:ring-red-500' : 'border-slate-300 focus:ring-indigo-500'
+                                  }`}
+                                />
+                              )}
+
+                              {/* Date */}
+                              {field.fieldType === 'DATE' && (
+                                <input
+                                  type="date"
+                                  value={submission[field.id] || ''}
+                                  onChange={(e) => handleInputChange(field.id, e.target.value)}
+                                  className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm bg-white text-slate-800 focus:outline-none"
+                                />
+                              )}
+
+                              {/* Select Choice */}
+                              {field.fieldType === 'SELECT' && (
+                                <select
+                                  value={submission[field.id] || ''}
+                                  onChange={(e) => handleInputChange(field.id, e.target.value)}
+                                  className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm bg-white text-slate-700 focus:outline-none"
+                                >
+                                  <option value="">Select an option...</option>
+                                  {(field.settingsJson?.options || []).map((opt: any) => (
+                                    <option key={opt.value} value={opt.value}>{opt.label}</option>
+                                  ))}
+                                </select>
+                              )}
+                            </>
+                          )}
+
+                          {/* Media and Uploads with REAL live/mock engine integration */}
+                          {isPhoto && (
+                            <PersonalisationFileField
+                              field={{
+                                id: field.id,
+                                type: field.fieldType === 'MULTI_IMAGE' || field.fieldType === 'SUPPORTING_PHOTOS' ? 'MULTI_IMAGE' : field.fieldType === 'FILE' || field.fieldType === 'DOCUMENT' ? 'DOCUMENT' : 'SINGLE_IMAGE',
+                                label: field.label,
+                                isRequired: field.required,
+                                helpText: field.helpText,
+                                validationRules: { maxFiles: field.settingsJson?.imageSettings?.maxImages || 10 }
+                              }}
+                              uploads={uploads}
+                              onUpload={async (file, role) => {
+                                const res = await uploadFile(field.id, role, file);
+                                toast.success(`Uploaded and validated file "${file.name}"`);
+                                return res;
+                              }}
+                              onDelete={async (uploadId) => {
+                                await deleteUpload(uploadId);
+                                toast.success('Deleted asset successfully');
+                              }}
+                            />
+                          )}
+
+                          {/* Inline red errors */}
+                          {error && (
+                            <p className="text-xs text-red-500 font-semibold flex items-center gap-1 mt-1">
+                              <AlertTriangle className="h-3.5 w-3.5" /> {error.message}
+                            </p>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  <div className="pt-4 border-t border-slate-100 flex justify-end">
+                    <button
+                      type="submit"
+                      className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-sm font-semibold text-white rounded-lg shadow transition-colors cursor-pointer"
+                    >
+                      Validate Submissions Preview
+                    </button>
+                  </div>
+                </form>
+
+                {/* Checklist / Upload summary sidebar */}
+                <div className="lg:col-span-1 space-y-4">
+                  <UploadSummary
+                    uploads={uploads}
+                    requiredFieldsCount={fields.filter((f: any) => f.required && ['MAIN_PHOTO', 'SUPPORTING_PHOTOS', 'IMAGE', 'MULTI_IMAGE', 'FILE', 'LOGO', 'QR_IMAGE', 'DOCUMENT'].includes(f.fieldType)).length}
+                  />
+
+                  <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-2">
+                    <h4 className="text-xs font-bold text-slate-700 uppercase tracking-widest">Active session token</h4>
+                    <p className="text-xs font-mono bg-white p-2 border border-slate-150 rounded font-bold text-slate-600 truncate">{session?.publicToken || 'Connecting session...'}</p>
+                    <p className="text-[10px] text-slate-400">Temporary uploads will expire and purge after the configured retention limit.</p>
+                  </div>
                 </div>
-              </form>
+              </div>
             </div>
           </div>
         </div>

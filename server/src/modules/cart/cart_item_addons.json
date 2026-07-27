@@ -1,0 +1,23 @@
+[
+  {
+    "id": "5a9d67ab-6fcd-4e46-9309-e3bf969885b2",
+    "quantity": 1,
+    "productAddOnId": "addon-wrap-01",
+    "addOnGroupId": null,
+    "addOnOptionId": null,
+    "addOnNameSnapshot": "Gift Wrapping",
+    "groupNameSnapshot": null,
+    "optionNameSnapshot": null,
+    "pricingTypeSnapshot": "FIXED",
+    "unitPriceSnapshot": "30",
+    "totalPriceSnapshot": "30",
+    "taxModeSnapshot": "inclusive",
+    "taxRateSnapshot": "18",
+    "taxTotalSnapshot": "4.58",
+    "customerInputJson": "Happy Anniversary!",
+    "uploadIdsJson": null,
+    "cartItemId": "a6fa1943-1b46-4196-8825-dbf67bd7de07",
+    "createdAt": "2026-07-27T15:09:45.087Z",
+    "updatedAt": "2026-07-27T15:09:45.087Z"
+  }
+]

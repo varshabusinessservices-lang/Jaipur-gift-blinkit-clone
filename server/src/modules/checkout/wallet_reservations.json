@@ -1,0 +1,112 @@
+[
+  {
+    "id": "a4318fa4-d85d-4aa8-a0fe-166997576721",
+    "customerId": "cust-test-123",
+    "checkoutId": "26b392dd-ef40-4004-892e-1ab853f98c10",
+    "amount": "100",
+    "type": "NORMAL",
+    "status": "RESERVED",
+    "createdAt": "2026-07-26T07:51:17.988Z",
+    "updatedAt": "2026-07-26T07:51:17.988Z"
+  },
+  {
+    "id": "7b262493-869e-415a-afbf-8dd7d53d989f",
+    "customerId": "cust-test-123",
+    "checkoutId": "82017185-444e-4f05-9772-3d4bc8d1c116",
+    "amount": "100",
+    "type": "NORMAL",
+    "status": "RESERVED",
+    "createdAt": "2026-07-26T07:51:42.318Z",
+    "updatedAt": "2026-07-26T07:51:42.318Z"
+  },
+  {
+    "id": "f6d05be9-1d38-474c-84ab-968626e52448",
+    "customerId": "cust-test-123",
+    "checkoutId": "0f330351-509e-4031-bc95-659f45d38e79",
+    "amount": "100",
+    "type": "NORMAL",
+    "status": "RESERVED",
+    "createdAt": "2026-07-26T07:52:51.447Z",
+    "updatedAt": "2026-07-26T07:52:51.447Z"
+  },
+  {
+    "id": "ab2bfea8-92c1-492b-b21d-60a584bed4e5",
+    "customerId": "cust-test-123",
+    "checkoutId": "fecfc5bf-e748-42f3-859a-3e03d3971e71",
+    "amount": "100",
+    "type": "NORMAL",
+    "status": "RESERVED",
+    "createdAt": "2026-07-26T07:54:02.817Z",
+    "updatedAt": "2026-07-26T07:54:02.817Z"
+  },
+  {
+    "id": "b8b86766-31ec-42d2-80aa-79ae76329c1e",
+    "customerId": "cust-test-123",
+    "checkoutId": "cad0f548-eb7d-4e53-b20c-16d0672bb8e8",
+    "amount": "100",
+    "type": "NORMAL",
+    "status": "RESERVED",
+    "createdAt": "2026-07-26T07:55:19.909Z",
+    "updatedAt": "2026-07-26T07:55:19.909Z"
+  },
+  {
+    "id": "60f2e003-f35e-4cc8-a0bc-521921605ccb",
+    "customerId": "cust-test-123",
+    "checkoutId": "8a3c22f6-fbfc-48eb-b538-e727a8ac2624",
+    "amount": "100",
+    "type": "NORMAL",
+    "status": "RESERVED",
+    "createdAt": "2026-07-26T10:48:37.780Z",
+    "updatedAt": "2026-07-26T10:48:37.780Z"
+  },
+  {
+    "id": "3a53263e-836a-485e-a357-206f8360979c",
+    "customerId": "cust-test-123",
+    "checkoutId": "364878f0-7213-491b-af01-cccb735db564",
+    "amount": "100",
+    "type": "NORMAL",
+    "status": "RESERVED",
+    "createdAt": "2026-07-27T14:23:04.512Z",
+    "updatedAt": "2026-07-27T14:23:04.512Z"
+  },
+  {
+    "id": "35f92601-cbd5-4f53-b99f-342b8007a3ca",
+    "customerId": "cust-test-123",
+    "checkoutId": "be2a752a-b7dc-41aa-8f63-deabed2447cc",
+    "amount": "100",
+    "type": "NORMAL",
+    "status": "RESERVED",
+    "createdAt": "2026-07-27T14:23:50.617Z",
+    "updatedAt": "2026-07-27T14:23:50.617Z"
+  },
+  {
+    "id": "e45664c3-5d7c-4d2a-94f7-21f3df41357f",
+    "customerId": "cust-test-123",
+    "checkoutId": "e0eef67c-d4b4-4a23-8f52-f0eb95717adb",
+    "amount": "100",
+    "type": "NORMAL",
+    "status": "RESERVED",
+    "createdAt": "2026-07-27T15:08:20.030Z",
+    "updatedAt": "2026-07-27T15:08:20.030Z"
+  },
+  {
+    "id": "a19cbd39-9808-4dfa-b7eb-3862bdc248b2",
+    "customerId": "cust-test-123",
+    "checkoutId": "4336e4a1-f158-4d4a-9bee-dc57d7320371",
+    "amount": "100",
+    "type": "NORMAL",
+    "status": "RESERVED",
+    "createdAt": "2026-07-27T15:08:56.191Z",
+    "updatedAt": "2026-07-27T15:08:56.191Z"
+  },
+  {
+    "id": "01d4b893-438f-43ae-bed2-6e0718e945d4",
+    "customerId": "cust-test-123",
+    "checkoutId": "c50e6ebc-03c2-4cc6-9f0a-8a3b6d01c132",
+    "amount": "100",
+    "type": "NORMAL",
+    "status": "RESERVED",
+    "createdAt": "2026-07-27T15:09:53.094Z",
+    "updatedAt": "2026-07-27T15:09:53.094Z"
+  }
+]

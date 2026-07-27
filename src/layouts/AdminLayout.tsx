@@ -7,7 +7,7 @@ import {
   LayoutDashboard, ShoppingCart, Settings, Users, LogOut, 
   Menu, X, Search, Bell, Package, Tag, Truck, RefreshCcw, 
   Gift, Layers, Percent, FileText, Image as ImageIcon,
-  UserCheck
+  UserCheck, DollarSign, Building2, ShieldCheck
 } from "lucide-react";
 import { useEffect } from "react";
 import { config } from "../config/env";
@@ -24,6 +24,7 @@ const navigation = [
     items: [
       { name: "Orders", href: "/admin/orders", icon: ShoppingCart },
       { name: "Production", href: "/admin/production", icon: Package },
+      { name: "Customer Uploads", href: "/admin/customer-uploads", icon: ImageIcon },
       { name: "Dispatch Management", href: "/admin/dispatch", icon: Truck },
       { name: "Return & Replacement", href: "/admin/returns", icon: RefreshCcw },
     ]
@@ -66,6 +67,9 @@ const navigation = [
   {
     title: "Analytics",
     items: [
+      { name: "Finance & BI", href: "/admin/finance", icon: DollarSign },
+      { name: "Enterprise Stores", href: "/admin/enterprise", icon: Building2 },
+      { name: "Production Readiness", href: "/admin/production", icon: ShieldCheck },
       { name: "Reports", href: "/admin/reports", icon: FileText },
     ]
   },

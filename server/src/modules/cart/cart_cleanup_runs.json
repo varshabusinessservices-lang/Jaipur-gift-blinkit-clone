@@ -1,0 +1,15 @@
+[
+  {
+    "id": "947c40bf-297d-43ae-84c5-55a6355433c7",
+    "startedAt": "2026-07-27T15:09:45.499Z",
+    "completedAt": "2026-07-27T15:09:45.499Z",
+    "dryRun": false,
+    "status": "SUCCESS",
+    "scannedCount": 2,
+    "expiredCount": 0,
+    "skippedCount": 2,
+    "failedCount": 0,
+    "createdAt": "2026-07-27T15:09:45.499Z",
+    "updatedAt": "2026-07-27T15:09:45.502Z"
+  }
+]

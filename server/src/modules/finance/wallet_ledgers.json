@@ -1,0 +1,112 @@
+[
+  {
+    "id": "wal-1785060529106-3uo0de",
+    "ledgerNumber": "WAL-2026-000001",
+    "customerId": "cust-test-wallet-99",
+    "transactionType": "REFERRAL_CREDIT",
+    "amount": 100,
+    "balanceAfter": 100,
+    "narration": "Referral bonus",
+    "createdAt": "2026-07-26T10:08:49.106Z"
+  },
+  {
+    "id": "wal-1785060662779-5xftwp",
+    "ledgerNumber": "WAL-2026-000002",
+    "customerId": "cust-test-wallet-99",
+    "transactionType": "REFERRAL_CREDIT",
+    "amount": 100,
+    "balanceAfter": 200,
+    "narration": "Referral bonus",
+    "createdAt": "2026-07-26T10:11:02.779Z"
+  },
+  {
+    "id": "wal-1785060676349-0lhmvu",
+    "ledgerNumber": "WAL-2026-000003",
+    "customerId": "cust-test-wallet-1785060676348",
+    "transactionType": "REFERRAL_CREDIT",
+    "amount": 100,
+    "balanceAfter": 100,
+    "narration": "Referral bonus",
+    "createdAt": "2026-07-26T10:11:16.349Z"
+  },
+  {
+    "id": "wal-1785060857809-6hlisu",
+    "ledgerNumber": "WAL-2026-000004",
+    "customerId": "cust-test-wallet-1785060857809",
+    "transactionType": "REFERRAL_CREDIT",
+    "amount": 100,
+    "balanceAfter": 100,
+    "narration": "Referral bonus",
+    "createdAt": "2026-07-26T10:14:17.809Z"
+  },
+  {
+    "id": "wal-1785060926414-22barn",
+    "ledgerNumber": "WAL-2026-000005",
+    "customerId": "cust-test-wallet-1785060926413",
+    "transactionType": "REFERRAL_CREDIT",
+    "amount": 100,
+    "balanceAfter": 100,
+    "narration": "Referral bonus",
+    "createdAt": "2026-07-26T10:15:26.414Z"
+  },
+  {
+    "id": "wal-1785062911594-infc7y",
+    "ledgerNumber": "WAL-2026-000006",
+    "customerId": "cust-test-wallet-1785062911593",
+    "transactionType": "REFERRAL_CREDIT",
+    "amount": 100,
+    "balanceAfter": 100,
+    "narration": "Referral bonus",
+    "createdAt": "2026-07-26T10:48:31.594Z"
+  },
+  {
+    "id": "wal-1785162180967-xe6jtw",
+    "ledgerNumber": "WAL-2026-000007",
+    "customerId": "cust-test-wallet-1785162180966",
+    "transactionType": "REFERRAL_CREDIT",
+    "amount": 100,
+    "balanceAfter": 100,
+    "narration": "Referral bonus",
+    "createdAt": "2026-07-27T14:23:00.967Z"
+  },
+  {
+    "id": "wal-1785162240346-mmxxtq",
+    "ledgerNumber": "WAL-2026-000008",
+    "customerId": "cust-test-wallet-1785162240346",
+    "transactionType": "REFERRAL_CREDIT",
+    "amount": 100,
+    "balanceAfter": 100,
+    "narration": "Referral bonus",
+    "createdAt": "2026-07-27T14:24:00.346Z"
+  },
+  {
+    "id": "wal-1785164909146-7rpuwl",
+    "ledgerNumber": "WAL-2026-000009",
+    "customerId": "cust-test-wallet-1785164909145",
+    "transactionType": "REFERRAL_CREDIT",
+    "amount": 100,
+    "balanceAfter": 100,
+    "narration": "Referral bonus",
+    "createdAt": "2026-07-27T15:08:29.146Z"
+  },
+  {
+    "id": "wal-1785164944800-prt1qu",
+    "ledgerNumber": "WAL-2026-000010",
+    "customerId": "cust-test-wallet-1785164944799",
+    "transactionType": "REFERRAL_CREDIT",
+    "amount": 100,
+    "balanceAfter": 100,
+    "narration": "Referral bonus",
+    "createdAt": "2026-07-27T15:09:04.800Z"
+  },
+  {
+    "id": "wal-1785165003204-0yn2xx",
+    "ledgerNumber": "WAL-2026-000011",
+    "customerId": "cust-test-wallet-1785165003204",
+    "transactionType": "REFERRAL_CREDIT",
+    "amount": 100,
+    "balanceAfter": 100,
+    "narration": "Referral bonus",
+    "createdAt": "2026-07-27T15:10:03.204Z"
+  }
+]

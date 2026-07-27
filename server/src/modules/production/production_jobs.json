@@ -1,0 +1,63 @@
+[
+  {
+    "id": "534273ab-f0b6-47e2-a347-9d3e23d64b1e",
+    "jobNumber": "PJ-2026-886776",
+    "orderId": "f5e13747-2893-41b1-a55a-092e3d8f9f39",
+    "customerId": "cust-prod-test-1",
+    "priority": "NORMAL",
+    "status": "ARTWORK_PENDING",
+    "assignedStore": "store-jaipur-main",
+    "notes": "Initialized from verified order",
+    "createdAt": "2026-07-27T15:09:43.467Z",
+    "updatedAt": "2026-07-27T15:09:43.467Z"
+  },
+  {
+    "id": "ff21c096-3ce7-4deb-bf8b-7224d99c43a7",
+    "jobNumber": "PJ-2026-990093",
+    "orderId": "159b3b24-f2b4-462a-b860-dc1fe2b1928b",
+    "customerId": "cust-prod-test-1",
+    "priority": "NORMAL",
+    "status": "PRINT_QUEUE",
+    "assignedStore": "store-jaipur-main",
+    "notes": "Initialized from verified order",
+    "createdAt": "2026-07-27T15:09:43.653Z",
+    "updatedAt": "2026-07-27T15:09:43.655Z"
+  },
+  {
+    "id": "2819cf20-11ba-44b0-8d14-64f1796d0959",
+    "jobNumber": "PJ-2026-931228",
+    "orderId": "b0e54bd8-7569-4480-8d47-5db8bb6f9ca4",
+    "customerId": "cust-prod-test-1",
+    "priority": "NORMAL",
+    "status": "QC_PENDING",
+    "assignedStore": "store-jaipur-main",
+    "notes": "Initialized from verified order",
+    "createdAt": "2026-07-27T15:09:43.822Z",
+    "updatedAt": "2026-07-27T15:09:43.825Z"
+  },
+  {
+    "id": "8660a8d9-81c0-42b9-8f9d-876255917af4",
+    "jobNumber": "PJ-2026-566985",
+    "orderId": "2bea0a47-78ed-4498-8cde-e3c1713cf1fd",
+    "customerId": "cust-prod-test-1",
+    "priority": "NORMAL",
+    "status": "READY_FOR_DISPATCH",
+    "assignedStore": "store-jaipur-main",
+    "notes": "Initialized from verified order",
+    "createdAt": "2026-07-27T15:09:43.978Z",
+    "updatedAt": "2026-07-27T15:09:43.983Z",
+    "actualCompletion": "2026-07-27T15:09:43.983Z"
+  },
+  {
+    "id": "65c811af-7654-4de6-9258-3b4c1d56bba7",
+    "jobNumber": "PJ-2026-360755",
+    "orderId": "b548ab09-1375-4ebf-8083-bd583a955c8e",
+    "customerId": "cust-prod-test-1",
+    "priority": "NORMAL",
+    "status": "QC_PENDING",
+    "assignedStore": "store-jaipur-main",
+    "notes": "Initialized from verified order",
+    "createdAt": "2026-07-27T15:09:44.145Z",
+    "updatedAt": "2026-07-27T15:09:44.147Z"
+  }
+]

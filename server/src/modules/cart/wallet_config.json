@@ -1,0 +1,8 @@
+{
+  "ruleType": "REFERRAL_RESTRICTED",
+  "unrestrictedCapPercentage": 100.0,
+  "referralCapPercentage": 15.0,
+  "promotionalCapPercentage": 10.0,
+  "promotionalMaxAmount": 100.0,
+  "referralMinCartAmount": 499.0
+}

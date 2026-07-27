@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { ArrowLeft, Save, Plus, Trash2, Gift, DollarSign, Layers, CheckCircle2, ShieldCheck } from 'lucide-react';

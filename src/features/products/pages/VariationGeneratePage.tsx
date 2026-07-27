@@ -94,7 +94,7 @@ export const VariationGeneratePage: React.FC = () => {
   const handleRunPreview = async () => {
     setErrorMsg(null);
     const selectedAttrIds = Object.keys(selectedValues).filter((id) => (selectedValues[id] || []).length > 0);
-    const allSelectedValIds = Object.values(selectedValues).flat();
+    const allSelectedValIds = Object.values(selectedValues).flat() as string[];
 
     if (selectedAttrIds.length === 0) {
       setErrorMsg('Please select at least one value for an attribute.');
