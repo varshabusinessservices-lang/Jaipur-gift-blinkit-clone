@@ -92,6 +92,18 @@
     "tsx": "^4.21.0",
     "typescript": "~5.8.2",
     "vite": "^6.2.3",
+    "rollup": "4.14.3",
     "vitest": "^4.1.10"
+  },
+  "overrides": {
+    "rollup": "4.14.3"
+  },
+  "pnpm": {
+    "overrides": {
+      "rollup": "4.14.3"
+    }
+  },
+  "resolutions": {
+    "rollup": "4.14.3"
   }
 }
