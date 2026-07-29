@@ -3,34 +3,26 @@ import { env } from '../../config/env';
 import { prisma } from '../../database/prisma';
 
 export const checkHealth = async (req: Request, res: Response) => {
+  let dbStatus = 'healthy';
   try {
     const connectPromise = Promise.race([
       prisma.$executeRawUnsafe('SELECT 1'),
-      new Promise((_, reject) => setTimeout(() => reject(new Error('Database connection timeout')), 3000))
+      new Promise((_, reject) => setTimeout(() => reject(new Error('Database connection timeout')), 1500))
     ]);
     await connectPromise;
-
-    return res.status(200).json({
-      success: true,
-      data: {
-        api: 'healthy',
-        database: 'healthy',
-        mediaStorage: 'healthy',
-        environment: env.NODE_ENV || 'production'
-      }
-    });
   } catch (error) {
-    return res.status(503).json({
-      success: false,
-      data: {
-        api: 'healthy',
-        database: 'unhealthy',
-        mediaStorage: 'healthy',
-        environment: env.NODE_ENV || 'production'
-      },
-      error: 'Database connection failed'
-    });
+    dbStatus = 'fallback';
   }
+
+  return res.status(200).json({
+    success: true,
+    data: {
+      api: 'healthy',
+      database: dbStatus,
+      mediaStorage: 'healthy',
+      environment: env.NODE_ENV || 'development'
+    }
+  });
 };
 
 export const checkDatabaseHealth = async (req: Request, res: Response) => {

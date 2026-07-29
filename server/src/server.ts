@@ -62,8 +62,9 @@ async function startServer() {
     // 7. Global Error handler
     app.use(errorHandler);
 
-    const server = app.listen(3000, '0.0.0.0', () => {
-      console.log(`[server]: Server is running at http://localhost:${3000}`);
+    const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
+    const server = app.listen(port, '0.0.0.0', () => {
+      console.log(`[server]: Server is running at http://localhost:${port}`);
     });
 
     // Graceful shutdown
