@@ -33,44 +33,7 @@ export interface AuthService {
   resetPassword(data: { token: string; password: string }): Promise<void>;
 }
 
-export const mockAuthService: AuthService = {
-  async login({ email, password }): Promise<AuthResponse> {
-    await new Promise((resolve) => setTimeout(resolve, 200));
-
-    if (email.trim().toLowerCase() === "admin@example.com" && password === "Admin@123") {
-      return {
-        user: {
-          id: "mock-super-admin-id",
-          name: "Super Admin",
-          email: "admin@example.com",
-          role: "SUPER_ADMIN",
-          status: "ACTIVE",
-          isSuperAdmin: true,
-          mobile: "+91 9876543210",
-          avatarUrl: null,
-          emailVerifiedAt: new Date().toISOString(),
-          lastLoginAt: new Date().toISOString(),
-          passwordChangedAt: new Date().toISOString(),
-          createdAt: new Date().toISOString(),
-        },
-        accessToken: "mock-access-token",
-        refreshToken: "mock-refresh-token",
-      };
-    }
-
-    throw new Error("Invalid credentials");
-  },
-
-  async forgotPassword(_email: string): Promise<void> {
-    await new Promise((resolve) => setTimeout(resolve, 200));
-  },
-
-  async resetPassword(_data): Promise<void> {
-    await new Promise((resolve) => setTimeout(resolve, 200));
-  },
-};
-
-export const apiAuthService: AuthService = {
+export const authService: AuthService = {
   async login(credentials): Promise<AuthResponse> {
     try {
       const response = await apiClient.post("/auth/login", credentials);
@@ -95,6 +58,3 @@ export const apiAuthService: AuthService = {
   },
 };
 
-const useMockApi = String(import.meta.env.VITE_ADMIN_USE_MOCK_API).toLowerCase() === 'true';
-
-export const authService: AuthService = useMockApi ? mockAuthService : apiAuthService;

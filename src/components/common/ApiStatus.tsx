@@ -1,17 +1,11 @@
 import { useEffect, useState } from "react";
-import { config } from "../../config/env";
 import { apiClient } from "../../lib/axios";
 import { cn } from "../../lib/utils";
 
 export function ApiStatus() {
-  const [status, setStatus] = useState<"checking" | "connected" | "unavailable" | "mock">("checking");
+  const [status, setStatus] = useState<"checking" | "connected" | "unavailable">("checking");
 
   useEffect(() => {
-    if (config.useMockApi) {
-      setStatus("mock");
-      return;
-    }
-
     const checkHealth = async () => {
       try {
         const response = await apiClient.get("/health");
@@ -30,8 +24,6 @@ export function ApiStatus() {
 
   const getStatusDisplay = () => {
     switch (status) {
-      case "mock":
-        return { label: "Mock API", dotClass: "bg-amber-400" };
       case "connected":
         return { label: "REAL API", dotClass: "bg-green-500" };
       case "unavailable":
@@ -52,3 +44,4 @@ export function ApiStatus() {
     </div>
   );
 }
+

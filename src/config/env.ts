@@ -1,19 +1,9 @@
 /// <reference types="vite/client" />
 
-const rawMockVal = import.meta.env.VITE_ADMIN_USE_MOCK_API;
 const isProd = import.meta.env.PROD || import.meta.env.MODE === 'production';
 
-let useMockApi = false;
-
-if (rawMockVal !== undefined && String(rawMockVal).toLowerCase() === 'true') {
-  if (isProd) {
-    throw new Error("CRITICAL FATAL CONFIG ERROR: VITE_ADMIN_USE_MOCK_API cannot be 'true' in production build!");
-  }
-  useMockApi = true;
-}
-
 function normalizeApiBaseUrl(url?: string): string {
-  if (!url || url.includes('localhost')) {
+  if (!url) {
     return '/api/v1';
   }
   const trimmed = url.trim().replace(/\/+$/, '');
@@ -26,17 +16,18 @@ function normalizeApiBaseUrl(url?: string): string {
   return `${trimmed}/api/v1`;
 }
 
-const rawApiBaseUrl = import.meta.env.VITE_API_BASE_URL;
-const resolvedApiBaseUrl = normalizeApiBaseUrl(rawApiBaseUrl);
+const rawApiUrl = import.meta.env.VITE_API_URL || import.meta.env.VITE_API_BASE_URL;
+const resolvedApiBaseUrl = normalizeApiBaseUrl(rawApiUrl);
 
 export const config = {
   apiBaseUrl: resolvedApiBaseUrl,
   appName: import.meta.env.VITE_APP_NAME || "Jaipur Personalised Gifts Admin",
   appEnv: import.meta.env.VITE_APP_ENV || (isProd ? "production" : "development"),
-  useMockApi,
-  adminUseMockApi: useMockApi,
+  useMockApi: false,
+  adminUseMockApi: false,
   currency: "INR",
   timezone: "Asia/Kolkata",
   isSingleStoreMode: true,
 };
+
 
