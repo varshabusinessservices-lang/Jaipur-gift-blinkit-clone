@@ -1,7 +1,7 @@
 import { useRouteError, isRouteErrorResponse, Link } from "react-router-dom";
 import { AlertTriangle, RefreshCcw, Home } from "lucide-react";
 
-export function RouteErrorBoundary() {
+export function RouteFallback() {
   const error = useRouteError();
   
   let errorMessage = "An unexpected error occurred.";

@@ -96,7 +96,7 @@ import { NotificationSettingsPage } from "../../features/settings/pages/Notifica
 import { DeliveryBoySettingsPage } from "../../features/settings/pages/DeliveryBoySettingsPage";
 import { PlaceholderPage } from "../../pages/PlaceholderPage";
 import { NotFoundPage } from "../../pages/NotFoundPage";
-import { RouteErrorBoundary } from "../../components/common/RouteErrorBoundary";
+import { RouteFallback } from "../../components/common/RouteFallback";
 import { ProtectedRoute } from "../../components/common/ProtectedRoute";
 import { OrdersManagementPage } from "../../features/orders/pages/OrdersManagementPage";
 import { DispatchManagementPage } from "../../features/dispatch/pages/DispatchManagementPage";
@@ -129,7 +129,7 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <PublicLayout />,
-    errorElement: <RouteErrorBoundary />,
+    errorElement: <RouteFallback />,
     children: [
       { index: true, element: <HomePage /> },
       { path: "category/:slug", element: <CategoryPage /> },
@@ -150,27 +150,27 @@ export const router = createBrowserRouter([
   {
     path: "/design-system",
     element: <DesignSystemShowcasePage />,
-    errorElement: <RouteErrorBoundary />,
+    errorElement: <RouteFallback />,
   },
   {
     path: "/admin",
     element: <Navigate to="/admin/dashboard" replace />,
-    errorElement: <RouteErrorBoundary />,
+    errorElement: <RouteFallback />,
   },
   {
     path: "/admin/login",
     element: <LoginPage />,
-    errorElement: <RouteErrorBoundary />,
+    errorElement: <RouteFallback />,
   },
   {
     path: "/admin/forgot-password",
     element: <ForgotPasswordPage />,
-    errorElement: <RouteErrorBoundary />,
+    errorElement: <RouteFallback />,
   },
   {
     path: "/admin/reset-password",
     element: <ResetPasswordPage />,
-    errorElement: <RouteErrorBoundary />,
+    errorElement: <RouteFallback />,
   },
   {
     path: "/admin",
@@ -179,7 +179,7 @@ export const router = createBrowserRouter([
         <AdminLayout />
       </ProtectedRoute>
     ),
-    errorElement: <RouteErrorBoundary />,
+    errorElement: <RouteFallback />,
     children: [
       {
         path: "dashboard",
