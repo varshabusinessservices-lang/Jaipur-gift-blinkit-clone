@@ -20,6 +20,11 @@ export function getFirebaseAdmin() {
       console.warn('Firebase Admin SDK is not configured. Missing environment variables.');
     }
   }
-  return { auth: getAuth(), messaging: getMessaging() };
+
+  const hasApp = getApps().length > 0;
+  return {
+    auth: hasApp ? getAuth() : (null as any),
+    messaging: hasApp ? getMessaging() : (null as any),
+  };
 }
 

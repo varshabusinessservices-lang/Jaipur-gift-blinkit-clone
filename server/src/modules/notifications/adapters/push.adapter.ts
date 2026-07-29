@@ -8,19 +8,23 @@ export class PushAdapter {
     if (mode === 'live' || (process.env.FIREBASE_ADMIN_PROJECT_ID && options.pushToken && !options.pushToken.startsWith('mock'))) {
       try {
         const { messaging } = getFirebaseAdmin();
-        const response = await messaging.send({
-          token: options.pushToken,
-          notification: {
-            title: options.title,
-            body: options.body,
-          },
-          data: options.data ? Object.fromEntries(Object.entries(options.data).map(([k, v]) => [k, String(v)])) : undefined,
-        });
-        return {
-          success: true,
-          providerMessageId: response,
-          durationMs: Date.now() - start,
-        };
+        if (!messaging) {
+          console.warn('[FCM Push] Messaging not initialized, falling back to log.');
+        } else {
+          const response = await messaging.send({
+            token: options.pushToken,
+            notification: {
+              title: options.title,
+              body: options.body,
+            },
+            data: options.data ? Object.fromEntries(Object.entries(options.data).map(([k, v]) => [k, String(v)])) : undefined,
+          });
+          return {
+            success: true,
+            providerMessageId: response,
+            durationMs: Date.now() - start,
+          };
+        }
       } catch (err: any) {
         console.error('[FCM Push Error]', err);
         throw err;
