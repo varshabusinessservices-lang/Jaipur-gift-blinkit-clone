@@ -180,13 +180,16 @@ const TreeNodeItem: React.FC<TreeNodeItemProps> = ({
             <Eye className="w-4 h-4" />
           </button>
 
+          {node.level < 3 && (
           <button
             onClick={() => onAddSubcategory(node.id)}
-            className="p-1.5 text-slate-500 hover:text-emerald-600 hover:bg-white rounded-md border border-transparent hover:border-slate-200 transition-all cursor-pointer"
-            title="Add Subcategory"
+            className="p-1.5 text-slate-500 hover:text-emerald-600 hover:bg-white rounded-md border border-transparent hover:border-slate-200 transition-all cursor-pointer flex items-center"
+            title={node.level === 1 ? 'Add Child Category' : 'Add Sub-Child Category'}
           >
-            <Plus className="w-4 h-4" />
+            <Plus className="w-4 h-4" /> <span className="ml-1 text-xs hidden lg:inline">{node.level === 1 ? 'Add Child' : 'Add Sub-Child'}</span>
           </button>
+          )}
+            
 
           <button
             onClick={() => onEdit(node)}

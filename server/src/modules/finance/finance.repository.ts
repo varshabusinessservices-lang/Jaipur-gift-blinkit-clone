@@ -147,13 +147,15 @@ export class FinanceRepository {
 
     try {
       if (!shouldAllowFallback()) {
-        return await prisma.walletLedger.create({
+        const account = await prisma.walletAccount.findUnique({ where: { customerId: data.customerId } });
+        return await prisma.walletLedgerEntry.create({
           data: {
-            ledgerNumber,
+            walletAccountId: account?.id || 'acc_default',
             customerId: data.customerId,
             transactionType: data.transactionType,
+            direction: data.transactionType === 'DEBIT' ? 'DEBIT' : 'CREDIT',
             amount: Math.abs(data.amount),
-            balanceAfter,
+            bucketType: 'SELF_LOADED',
             referenceType: data.referenceType,
             referenceId: data.referenceId,
             narration: data.narration,
@@ -170,7 +172,7 @@ export class FinanceRepository {
   async getWalletHistory(customerId: string): Promise<any[]> {
     try {
       if (!shouldAllowFallback()) {
-        return await prisma.walletLedger.findMany({
+        return await prisma.walletLedgerEntry.findMany({
           where: { customerId },
           orderBy: { createdAt: 'desc' },
         });

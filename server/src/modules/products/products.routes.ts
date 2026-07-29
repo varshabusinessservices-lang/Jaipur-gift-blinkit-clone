@@ -1,6 +1,11 @@
 import { Router } from 'express';
 import * as productController from './products.controller';
 import productVariationRouter from './productVariation.routes';
+import multer from 'multer';
+
+const upload = multer({
+  limits: { fileSize: 10 * 1024 * 1024 }, // 10 MB limit
+});
 
 export const productRouter = Router();
 
@@ -12,6 +17,9 @@ productRouter.get('/options', productController.getProductOptions);
 
 // List products
 productRouter.get('/', productController.listProducts);
+
+// Media upload endpoint
+productRouter.post('/media', upload.single('file'), productController.uploadProductMedia);
 
 // Variation combination preview utility
 productRouter.post('/preview-combinations', productController.previewVariationCombinations);

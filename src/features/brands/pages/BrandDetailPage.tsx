@@ -92,24 +92,13 @@ export function BrandDetailPage() {
         </div>
       </div>
 
-      {/* Banner Preview if available */}
-      {brand.bannerUrl && (
-        <div className="w-full h-48 rounded-xl overflow-hidden border border-slate-200 shadow-sm relative bg-slate-900">
-          <img
-            src={brand.bannerUrl}
-            alt={`${brand.name} Banner`}
-            className="w-full h-full object-cover opacity-90"
-          />
-        </div>
-      )}
-
       {/* Profile Card */}
       <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-sm grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="md:col-span-1 flex flex-col items-center text-center p-4 bg-slate-50 rounded-xl border border-slate-100">
           {brand.logoUrl ? (
             <img
               src={brand.logoUrl}
-              alt={brand.name}
+              alt={brand.logoAltText || brand.name}
               className="w-24 h-24 rounded-2xl object-cover border-2 border-white shadow-md mb-3"
             />
           ) : (
@@ -209,15 +198,11 @@ export function BrandDetailPage() {
           <div className="space-y-2 text-xs">
             <div className="flex justify-between p-2 bg-slate-50 rounded border border-slate-100">
               <span className="text-slate-500">Logo File ID:</span>
-              <span className="font-mono text-indigo-600 font-semibold">{brand.logoFileId || 'None'}</span>
-            </div>
-            <div className="flex justify-between p-2 bg-slate-50 rounded border border-slate-100">
-              <span className="text-slate-500">Banner File ID:</span>
-              <span className="font-mono text-indigo-600 font-semibold">{brand.bannerFileId || 'None'}</span>
+              <span className="font-mono text-indigo-600 font-semibold">{brand.logoFileId || 'None'} {brand.logoAltText && `(${brand.logoAltText})`}</span>
             </div>
             <div className="flex justify-between p-2 bg-slate-50 rounded border border-slate-100">
               <span className="text-slate-500">SEO Image File ID:</span>
-              <span className="font-mono text-indigo-600 font-semibold">{brand.seoImageFileId || 'None'}</span>
+              <span className="font-mono text-indigo-600 font-semibold">{brand.seoImageFileId || 'None'} {brand.seoImageAltText && `(${brand.seoImageAltText})`}</span>
             </div>
           </div>
         </div>

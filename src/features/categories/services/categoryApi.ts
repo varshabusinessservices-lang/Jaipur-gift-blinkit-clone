@@ -5,7 +5,8 @@ import {
   CategoryFormData, 
   CategoryFilterState, 
   CategoryStatus,
-  CategoryReorderPayload 
+  CategoryReorderPayload,
+  DeleteCategoryPayload
 } from '../types/category';
 
 const API_BASE = config.apiBaseUrl;
@@ -307,6 +308,31 @@ function flattenTree(nodes: CategoryTreeNode[]): Category[] {
   return result;
 }
 
+async function categoryFetch(url: string, options: RequestInit = {}, operationName: string): Promise<Response> {
+  const method = options.method || 'GET';
+  const parsedUrl = new URL(url, window.location.origin);
+  const apiOrigin = parsedUrl.origin;
+  const pathname = parsedUrl.pathname + parsedUrl.search;
+  const apiMode = config.adminUseMockApi ? 'MOCK' : 'REAL';
+
+  const response = await fetch(url, options);
+  const requestId = response.headers.get('x-request-id') || 'N/A';
+
+  if (import.meta.env.DEV || process.env.NODE_ENV !== 'production') {
+    console.log(`[CategoryAPI:${operationName}]`, {
+      operation: operationName,
+      method,
+      pathname,
+      apiOrigin,
+      apiMode,
+      status: response.status,
+      requestId,
+    });
+  }
+
+  return response;
+}
+
 export const categoryApi = {
   /**
    * Get category tree
@@ -318,12 +344,12 @@ export const categoryApi = {
     }
 
     const token = localStorage.getItem('admin_token');
-    const res = await fetch(`${API_BASE}/admin/categories/tree`, {
+    const res = await categoryFetch(`${API_BASE}/admin/categories/tree`, {
       headers: {
         'Content-Type': 'application/json',
         ...(token ? { Authorization: `Bearer ${token}` } : {}),
       },
-    });
+    }, 'getCategoryTree');
 
     const data = await res.json();
     if (!res.ok) throw new Error(data.message || 'Failed to fetch category tree');
@@ -401,12 +427,12 @@ export const categoryApi = {
     if (filters.limit) queryParams.set('limit', String(filters.limit));
 
     const token = localStorage.getItem('admin_token');
-    const res = await fetch(`${API_BASE}/admin/categories?${queryParams.toString()}`, {
+    const res = await categoryFetch(`${API_BASE}/admin/categories?${queryParams.toString()}`, {
       headers: {
         'Content-Type': 'application/json',
         ...(token ? { Authorization: `Bearer ${token}` } : {}),
       },
-    });
+    }, 'getCategories');
 
     const data = await res.json();
     if (!res.ok) throw new Error(data.message || 'Failed to fetch categories');
@@ -446,12 +472,12 @@ export const categoryApi = {
     }
 
     const token = localStorage.getItem('admin_token');
-    const res = await fetch(`${API_BASE}/admin/categories/${id}`, {
+    const res = await categoryFetch(`${API_BASE}/admin/categories/${id}`, {
       headers: {
         'Content-Type': 'application/json',
         ...(token ? { Authorization: `Bearer ${token}` } : {}),
       },
-    });
+    }, 'getCategoryById');
 
     const data = await res.json();
     if (!res.ok) throw new Error(data.message || 'Category not found');
@@ -540,23 +566,68 @@ export const categoryApi = {
     }
 
     const token = localStorage.getItem('admin_token');
-    const res = await fetch(`${API_BASE}/admin/categories`, {
+    const res = await categoryFetch(`${API_BASE}/admin/categories`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         ...(token ? { Authorization: `Bearer ${token}` } : {}),
       },
       body: JSON.stringify(formData),
-    });
+    }, 'createCategory');
 
     const data = await res.json();
     if (!res.ok) throw new Error(data.message || 'Failed to create category');
     return data.data;
   },
 
-  /**
-   * Update category
-   */
+  async createParentCategory(formData: CategoryFormData): Promise<Category> {
+    if (config.adminUseMockApi) return this.createCategory(formData);
+    const token = localStorage.getItem('admin_token');
+    const res = await categoryFetch(`${API_BASE}/admin/categories/parent`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      },
+      body: JSON.stringify(formData),
+    }, 'createParentCategory');
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.message || 'Failed to create parent category');
+    return data.data;
+  },
+
+  async createChildCategory(formData: CategoryFormData): Promise<Category> {
+    if (config.adminUseMockApi) return this.createCategory(formData);
+    const token = localStorage.getItem('admin_token');
+    const res = await categoryFetch(`${API_BASE}/admin/categories/child`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      },
+      body: JSON.stringify(formData),
+    }, 'createChildCategory');
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.message || 'Failed to create child category');
+    return data.data;
+  },
+
+  async createSubChildCategory(formData: CategoryFormData): Promise<Category> {
+    if (config.adminUseMockApi) return this.createCategory(formData);
+    const token = localStorage.getItem('admin_token');
+    const res = await categoryFetch(`${API_BASE}/admin/categories/sub-child`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      },
+      body: JSON.stringify(formData),
+    }, 'createSubChildCategory');
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.message || 'Failed to create sub-child category');
+    return data.data;
+  },
+
   async updateCategory(id: string, formData: Partial<CategoryFormData>): Promise<Category> {
     if (config.adminUseMockApi) {
       await new Promise((r) => setTimeout(r, 300));
@@ -564,7 +635,6 @@ export const categoryApi = {
       const cat = flat.find((c) => c.id === id);
       if (!cat) throw new Error(`Category with ID ${id} not found`);
 
-      // Circular parent check in mock mode
       if (formData.parentId && formData.parentId === id) {
         throw new Error('A category cannot be its own parent.');
       }
@@ -574,14 +644,14 @@ export const categoryApi = {
     }
 
     const token = localStorage.getItem('admin_token');
-    const res = await fetch(`${API_BASE}/admin/categories/${id}`, {
+    const res = await categoryFetch(`${API_BASE}/admin/categories/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
         ...(token ? { Authorization: `Bearer ${token}` } : {}),
       },
       body: JSON.stringify(formData),
-    });
+    }, 'updateCategory');
 
     const data = await res.json();
     if (!res.ok) throw new Error(data.message || 'Failed to update category');
@@ -601,14 +671,14 @@ export const categoryApi = {
     }
 
     const token = localStorage.getItem('admin_token');
-    const res = await fetch(`${API_BASE}/admin/categories/${id}/status`, {
+    const res = await categoryFetch(`${API_BASE}/admin/categories/${id}/status`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
         ...(token ? { Authorization: `Bearer ${token}` } : {}),
       },
       body: JSON.stringify({ status }),
-    });
+    }, 'updateStatus');
 
     const data = await res.json();
     if (!res.ok) throw new Error(data.message || 'Failed to update status');
@@ -633,14 +703,14 @@ export const categoryApi = {
     }
 
     const token = localStorage.getItem('admin_token');
-    const res = await fetch(`${API_BASE}/admin/categories/reorder`, {
+    const res = await categoryFetch(`${API_BASE}/admin/categories/reorder`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         ...(token ? { Authorization: `Bearer ${token}` } : {}),
       },
       body: JSON.stringify(payload),
-    });
+    }, 'reorderCategories');
 
     const data = await res.json();
     if (!res.ok) throw new Error(data.message || 'Failed to reorder categories');
@@ -648,39 +718,86 @@ export const categoryApi = {
 
   /**
    * Soft delete category
-   * SAFETY CHECK: Verify subcategories do not exist before deleting!
+   * Supports strategies: SINGLE, CASCADE_DESCENDANTS, MOVE_DESCENDANTS, DEACTIVATE_BRANCH
    */
-  async deleteCategory(id: string): Promise<void> {
+  async deleteCategory(id: string, payload?: DeleteCategoryPayload): Promise<any> {
     if (config.adminUseMockApi) {
       await new Promise((r) => setTimeout(r, 200));
       const flat = flattenTree(mockCategories);
       const cat = flat.find((c) => c.id === id);
 
       if (cat) {
-        // Safety check for active children
+        const mode = payload?.mode || 'SINGLE';
         const children = flat.filter((ch) => ch.parentId === id && !ch.deletedAt);
-        if (children.length > 0) {
-          throw new Error(
-            `Cannot delete category '${cat.name}' because it contains ${children.length} subcategory/subcategories. Please move or delete subcategories first.`
-          );
+
+        if (mode === 'SINGLE') {
+          if (children.length > 0) {
+            const err: any = new Error(
+              `Cannot delete category '${cat.name}' because it contains ${children.length} subcategory/subcategories.`
+            );
+            err.code = 'CATEGORY_HAS_DESCENDANTS';
+            err.data = {
+              categoryId: id,
+              categoryName: cat.name,
+              directChildrenCount: children.length,
+              totalDescendantsCount: children.length
+            };
+            throw err;
+          }
+          cat.deletedAt = new Date().toISOString();
+          cat.status = 'ARCHIVED';
+        } else if (mode === 'CASCADE_DESCENDANTS') {
+          const cascadeDelete = (parentId: string) => {
+            const direct = flat.filter((ch) => ch.parentId === parentId);
+            for (const d of direct) {
+              d.deletedAt = new Date().toISOString();
+              d.status = 'ARCHIVED';
+              cascadeDelete(d.id);
+            }
+          };
+          cat.deletedAt = new Date().toISOString();
+          cat.status = 'ARCHIVED';
+          cascadeDelete(id);
+        } else if (mode === 'MOVE_DESCENDANTS') {
+          const newParentId = payload?.targetParentId || null;
+          children.forEach((ch) => {
+            ch.parentId = newParentId;
+          });
+          cat.deletedAt = new Date().toISOString();
+          cat.status = 'ARCHIVED';
+        } else if (mode === 'DEACTIVATE_BRANCH') {
+          const deactivateBranch = (parentId: string) => {
+            const direct = flat.filter((ch) => ch.parentId === parentId);
+            for (const d of direct) {
+              d.status = 'INACTIVE';
+              deactivateBranch(d.id);
+            }
+          };
+          cat.status = 'INACTIVE';
+          deactivateBranch(id);
         }
-        cat.deletedAt = new Date().toISOString();
-        cat.status = 'ARCHIVED';
       }
-      return;
+      return { success: true };
     }
 
     const token = localStorage.getItem('admin_token');
-    const res = await fetch(`${API_BASE}/admin/categories/${id}`, {
+    const res = await categoryFetch(`${API_BASE}/admin/categories/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
         ...(token ? { Authorization: `Bearer ${token}` } : {}),
       },
-    });
+      ...(payload ? { body: JSON.stringify(payload) } : {}),
+    }, 'deleteCategory');
 
     const data = await res.json();
-    if (!res.ok) throw new Error(data.message || 'Failed to delete category');
+    if (!res.ok) {
+      const err: any = new Error(data.message || 'Failed to delete category');
+      if (data.code) err.code = data.code;
+      if (data.data) err.data = data.data;
+      throw err;
+    }
+    return data;
   },
 
   /**
@@ -699,13 +816,13 @@ export const categoryApi = {
     }
 
     const token = localStorage.getItem('admin_token');
-    const res = await fetch(`${API_BASE}/admin/categories/${id}/restore`, {
+    const res = await categoryFetch(`${API_BASE}/admin/categories/${id}/restore`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         ...(token ? { Authorization: `Bearer ${token}` } : {}),
       },
-    });
+    }, 'restoreCategory');
 
     const data = await res.json();
     if (!res.ok) throw new Error(data.message || 'Failed to restore category');
@@ -728,13 +845,13 @@ export const categoryApi = {
     formData.append('role', role);
 
     const token = localStorage.getItem('admin_token');
-    const res = await fetch(`${API_BASE}/admin/categories/media`, {
+    const res = await categoryFetch(`${API_BASE}/admin/categories/media`, {
       method: 'POST',
       headers: {
         ...(token ? { Authorization: `Bearer ${token}` } : {}),
       },
       body: formData,
-    });
+    }, 'uploadMedia');
 
     const data = await res.json();
     if (!res.ok) throw new Error(data.message || 'Failed to upload image');

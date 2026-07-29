@@ -94,5 +94,113 @@
     "storeId": "store-1785165002787",
     "productId": "prod-gift-box-1",
     "updatedAt": "2026-07-27T15:10:02.787Z"
+  },
+  {
+    "id": "inv-1785209577909-wql4g5",
+    "available": 50,
+    "reserved": 5,
+    "inProduction": 10,
+    "damaged": 0,
+    "returned": 0,
+    "transferred": 0,
+    "storeId": "store-1785209577909",
+    "productId": "prod-gift-box-1",
+    "updatedAt": "2026-07-28T03:32:57.909Z"
+  },
+  {
+    "id": "inv-1785210256339-abg7jy",
+    "available": 50,
+    "reserved": 5,
+    "inProduction": 10,
+    "damaged": 0,
+    "returned": 0,
+    "transferred": 0,
+    "storeId": "store-1785210256338",
+    "productId": "prod-gift-box-1",
+    "updatedAt": "2026-07-28T03:44:16.339Z"
+  },
+  {
+    "id": "inv-1785224215689-tofuvh",
+    "available": 50,
+    "reserved": 5,
+    "inProduction": 10,
+    "damaged": 0,
+    "returned": 0,
+    "transferred": 0,
+    "storeId": "store-1785224215688",
+    "productId": "prod-gift-box-1",
+    "updatedAt": "2026-07-28T07:36:55.689Z"
+  },
+  {
+    "id": "inv-1785224458821-rkkm5e",
+    "available": 50,
+    "reserved": 5,
+    "inProduction": 10,
+    "damaged": 0,
+    "returned": 0,
+    "transferred": 0,
+    "storeId": "store-1785224458821",
+    "productId": "prod-gift-box-1",
+    "updatedAt": "2026-07-28T07:40:58.821Z"
+  },
+  {
+    "id": "inv-1785226784414-zct2we",
+    "available": 50,
+    "reserved": 5,
+    "inProduction": 10,
+    "damaged": 0,
+    "returned": 0,
+    "transferred": 0,
+    "storeId": "store-1785226784413",
+    "productId": "prod-gift-box-1",
+    "updatedAt": "2026-07-28T08:19:44.414Z"
+  },
+  {
+    "id": "inv-1785227070721-yyb8fj",
+    "available": 50,
+    "reserved": 5,
+    "inProduction": 10,
+    "damaged": 0,
+    "returned": 0,
+    "transferred": 0,
+    "storeId": "store-1785227070720",
+    "productId": "prod-gift-box-1",
+    "updatedAt": "2026-07-28T08:24:30.721Z"
+  },
+  {
+    "id": "inv-1785227211728-vwibaz",
+    "available": 50,
+    "reserved": 5,
+    "inProduction": 10,
+    "damaged": 0,
+    "returned": 0,
+    "transferred": 0,
+    "storeId": "store-1785227211728",
+    "productId": "prod-gift-box-1",
+    "updatedAt": "2026-07-28T08:26:51.728Z"
+  },
+  {
+    "id": "inv-1785227851186-navac4",
+    "available": 50,
+    "reserved": 5,
+    "inProduction": 10,
+    "damaged": 0,
+    "returned": 0,
+    "transferred": 0,
+    "storeId": "store-1785227851185",
+    "productId": "prod-gift-box-1",
+    "updatedAt": "2026-07-28T08:37:31.186Z"
+  },
+  {
+    "id": "inv-1785229256384-x0wdyw",
+    "available": 50,
+    "reserved": 5,
+    "inProduction": 10,
+    "damaged": 0,
+    "returned": 0,
+    "transferred": 0,
+    "storeId": "store-1785229256383",
+    "productId": "prod-gift-box-1",
+    "updatedAt": "2026-07-28T09:00:56.384Z"
   }
 ]

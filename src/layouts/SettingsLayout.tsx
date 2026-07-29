@@ -15,6 +15,7 @@ const settingsNavigation = [
   { name: "Authentication", href: "/admin/settings/authentication", icon: Shield },
   { name: "Email", href: "/admin/settings/email", icon: Mail },
   { name: "Payment", href: "/admin/settings/payment", icon: CreditCard },
+  { name: "Wallet & Rewards", href: "/admin/settings/wallet", icon: Gift },
   { name: "Notification", href: "/admin/settings/notification", icon: Bell },
   { name: "Delivery Boy", href: "/admin/settings/delivery-boy", icon: Truck },
   { name: "Delivery Zones", href: "/admin/settings/delivery-zones", icon: Map },

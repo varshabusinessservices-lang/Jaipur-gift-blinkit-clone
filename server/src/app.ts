@@ -3,17 +3,17 @@ import helmet from 'helmet';
 import cors from 'cors';
 import compression from 'compression';
 import morgan from 'morgan';
+import path from 'path';
 import { env } from './config/env';
 import { v1Routes } from './routes/v1.routes';
-import { errorHandler } from './middlewares/error-handler';
-import { notFoundHandler } from './middlewares/not-found';
+import { checkHealth } from './modules/health/health.controller';
 import { requestIdMiddleware } from './middlewares/request-id';
 
 export const app = express();
 
-// Security and utility middlewares
+// 1. Security and utility middlewares
 app.set('trust proxy', 1);
-app.use(helmet());
+app.use(helmet({ contentSecurityPolicy: false }));
 app.use(cors({ origin: env.CORS_ALLOWED_ORIGINS }));
 app.use(compression());
 app.use(express.json({ limit: '1mb' }));
@@ -24,9 +24,12 @@ if (env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
 
-// API Routes
+// 2. Direct health endpoint (/api/health)
+app.get('/api/health', checkHealth);
+
+// 3. API v1 Routes (/api/v1)
 app.use(env.API_PREFIX, v1Routes);
 
-// 404 & Error Handling
-app.use(notFoundHandler);
-app.use(errorHandler);
+// 4. Static media uploads route
+app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));
+

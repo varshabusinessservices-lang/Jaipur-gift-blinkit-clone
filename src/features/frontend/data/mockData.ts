@@ -1,4 +1,5 @@
 import { Category, Product, Banner } from '../types';
+import { defaultPersonalisationTemplates } from './personalisationTemplates';
 
 export const categoriesData: Category[] = [
   {
@@ -72,24 +73,33 @@ export const bannersData: Banner[] = [
     title: 'Customised Photo Frames & Lamps',
     subtitle: 'Express 10-Min Delivery across Jaipur with Free Gift Message',
     imageUrl: 'https://images.unsplash.com/photo-1544816155-12df9643f363?w=1200&q=80',
-    linkCategory: 'Photo Frame',
-    badgeText: 'Trending 30% OFF'
+    mobileImageUrl: 'https://images.unsplash.com/photo-1544816155-12df9643f363?w=600&q=80',
+    linkCategory: 'photo-frame',
+    badgeText: 'Trending 30% OFF',
+    isActive: true,
+    sortOrder: 1
   },
   {
     id: 'banner-2',
     title: 'Exquisite Personalised Jewellery',
-    subtitle: 'Name engraved pendants & gold-plated bracelets',
+    subtitle: 'Name engraved pendants & gold-plated bracelets delivered instantly',
     imageUrl: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1200&q=80',
-    linkCategory: 'Jewellery',
-    badgeText: 'New Arrivals'
+    mobileImageUrl: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600&q=80',
+    linkCategory: 'jewellery',
+    badgeText: 'New Arrivals',
+    isActive: true,
+    sortOrder: 2
   },
   {
     id: 'banner-3',
     title: 'Magical Photo Mugs & Sipper Bottles',
     subtitle: 'Start your morning with cherished memories in 10 minutes',
     imageUrl: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=1200&q=80',
-    linkCategory: 'Mugs',
-    badgeText: 'Best Seller'
+    mobileImageUrl: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&q=80',
+    linkCategory: 'mugs',
+    badgeText: 'Best Seller',
+    isActive: true,
+    sortOrder: 3
   }
 ];
 
@@ -101,59 +111,102 @@ const defaultReviews = [
   { id: 'rev-5', author: 'Vikram Singh', rating: 5, comment: 'Best gifting service in Jaipur. 10/10 recommendation!', date: '3 weeks ago' }
 ];
 
-// Helper to generate 6 products per category (3 single, 3 variation)
 export const generateProducts = (): Product[] => {
   const list: Product[] = [];
-  const categoriesList = ['Customised Gifts', 'No Customised', 'Jewellery', 'Mugs', 'Photo Frame', 'Mouse Pad', 'Bottle'];
+  const categoriesList = [
+    { name: 'Customised Gifts', slug: 'customised', tpl: 'SINGLE_PHOTO_NAME' },
+    { name: 'No Customised', slug: 'no-customised', tpl: undefined },
+    { name: 'Jewellery', slug: 'jewellery', tpl: 'PHOTO_NAME_MESSAGE' },
+    { name: 'Mugs', slug: 'mugs', tpl: 'MUG_CUSTOM' },
+    { name: 'Photo Frame', slug: 'photo-frame', tpl: 'COUPLE_ANNIVERSARY' },
+    { name: 'Mouse Pad', slug: 'mouse-pad', tpl: 'FULLY_CUSTOM' },
+    { name: 'Bottle', slug: 'bottle', tpl: 'SINGLE_PHOTO_NAME' }
+  ];
 
-  categoriesList.forEach((catName, catIdx) => {
+  categoriesList.forEach((catObj, catIdx) => {
     // 3 Single Products
     for (let i = 1; i <= 3; i++) {
       const id = `prod-${catIdx}-s-${i}`;
+      const slug = `product-${catIdx}-single-${i}`;
       list.push({
         id,
-        name: `${catName} Signature Item ${i}`,
-        subtitle: `Handcrafted premium quality ${catName.toLowerCase()} for your loved ones`,
+        slug,
+        name: `${catObj.name} Signature Item ${i}`,
+        subtitle: `Handcrafted premium quality ${catObj.name.toLowerCase()} for your loved ones in Jaipur`,
+        description: `Experience the finest craftsmanship with our ${catObj.name} Signature Item ${i}. Each piece is carefully inspected, packed in a luxury gift box, and delivered to your doorstep within 10 minutes. Fully customisable with names, photos, or heartfelt messages.`,
         price: 499 + i * 150,
         originalPrice: 799 + i * 200,
         discountBadge: `${20 + i * 5}% OFF`,
         rating: 4.8,
         reviewCount: 140 + i * 15,
-        imageUrl: getCategorySampleImage(catName, i),
+        imageUrl: getCategorySampleImage(catObj.name, i),
+        galleryImages: [
+          getCategorySampleImage(catObj.name, i),
+          getCategorySampleImage(catObj.name, i + 1),
+          getCategorySampleImage(catObj.name, i + 2)
+        ],
         deliveryTime: '10 mins',
-        category: catName,
-        isPersonalisable: catName !== 'No Customised',
+        category: catObj.name,
+        isPersonalisable: !!catObj.tpl,
+        personalisationTemplateCode: catObj.tpl,
         productType: 'single',
-        reviews: defaultReviews
+        reviews: defaultReviews,
+        bundleProductIds: [],
+        stock: 50,
+        isFeatured: i === 1,
+        isBestSeller: i === 2,
+        isSameDayDelivery: true,
+        isNewArrival: i === 3
       });
     }
 
     // 3 Variation Products
     for (let i = 1; i <= 3; i++) {
       const id = `prod-${catIdx}-v-${i}`;
+      const slug = `product-${catIdx}-variation-${i}`;
       list.push({
         id,
-        name: `Deluxe Custom ${catName} Edition ${i}`,
-        subtitle: `Multi-option customisable ${catName.toLowerCase()} with premium gift wrap`,
+        slug,
+        name: `Deluxe Custom ${catObj.name} Edition ${i}`,
+        subtitle: `Multi-option customisable ${catObj.name.toLowerCase()} with premium gift wrap`,
+        description: `Our Deluxe Custom ${catObj.name} Edition ${i} offers multiple variant options and exquisite luxury packaging. Ideal for birthdays, anniversaries, and corporate gifting.`,
         price: 799 + i * 200,
         originalPrice: 1199 + i * 250,
         discountBadge: `${25 + i * 5}% OFF`,
         rating: 4.9,
         reviewCount: 210 + i * 25,
-        imageUrl: getCategorySampleImage(catName, i + 3),
+        imageUrl: getCategorySampleImage(catObj.name, i + 3),
+        galleryImages: [
+          getCategorySampleImage(catObj.name, i + 3),
+          getCategorySampleImage(catObj.name, i + 4)
+        ],
         deliveryTime: '10 mins',
-        category: catName,
+        category: catObj.name,
         isPersonalisable: true,
+        personalisationTemplateCode: catObj.tpl || 'SINGLE_PHOTO_NAME',
         productType: 'variation',
         variations: [
           { id: `${id}-v1`, name: 'Standard Edition', price: 799 + i * 200, originalPrice: 1199 + i * 250, stock: 25 },
           { id: `${id}-v2`, name: 'Premium Gift Box Edition', price: 999 + i * 200, originalPrice: 1499 + i * 250, stock: 15 },
           { id: `${id}-v3`, name: 'Royal Gold Luxury Edition', price: 1299 + i * 200, originalPrice: 1899 + i * 250, stock: 10 }
         ],
-        reviews: defaultReviews
+        reviews: defaultReviews,
+        bundleProductIds: [],
+        stock: 30,
+        isFeatured: true,
+        isBestSeller: true,
+        isSameDayDelivery: true,
+        isNewArrival: false
       });
     }
   });
+
+  // Assign bundle products cross-references
+  for (let i = 0; i < list.length; i++) {
+    const next1 = list[(i + 1) % list.length].id;
+    const next2 = list[(i + 2) % list.length].id;
+    list[i].bundleProductIds = [next1, next2];
+  }
 
   return list;
 };

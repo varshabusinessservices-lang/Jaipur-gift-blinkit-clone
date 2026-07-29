@@ -1,7 +1,10 @@
 import React from 'react';
 import { clsx } from 'clsx';
 
-interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
+interface CardProps extends React.ComponentProps<"div"> {
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
+  children?: React.ReactNode;
+  className?: string;
   hoverEffect?: boolean;
 }
 

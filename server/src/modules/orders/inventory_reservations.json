@@ -1568,5 +1568,2075 @@
     "orderId": "66bee7bd-efc8-4348-8c16-e2ae9b2d3661",
     "createdAt": "2026-07-27T15:09:51.032Z",
     "updatedAt": "2026-07-27T15:09:51.032Z"
+  },
+  {
+    "id": "64fe827a-270d-4fa0-bc20-2e2a4e78a2e8",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "8298bb3a-782c-439b-b5bc-d02f6e33c996",
+    "createdAt": "2026-07-28T03:32:49.564Z",
+    "updatedAt": "2026-07-28T03:32:49.564Z"
+  },
+  {
+    "id": "668ba7ec-0833-40f6-a005-4fa5bb278145",
+    "productId": "prod-gift-ret-personalized",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "1ce19c51-1078-49d4-8455-55de8c062565",
+    "createdAt": "2026-07-28T03:32:49.753Z",
+    "updatedAt": "2026-07-28T03:32:49.753Z"
+  },
+  {
+    "id": "93847b7c-716a-4f40-8232-8aa144a6bbcc",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "9eeeafd2-dd83-4d2f-a1e3-679061e66069",
+    "createdAt": "2026-07-28T03:32:49.953Z",
+    "updatedAt": "2026-07-28T03:32:49.953Z"
+  },
+  {
+    "id": "c775fe27-4f85-42cd-9873-78ab2a98b33c",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "734ee388-4d3d-4b16-985a-6f3e8022676a",
+    "createdAt": "2026-07-28T03:32:50.132Z",
+    "updatedAt": "2026-07-28T03:32:50.132Z"
+  },
+  {
+    "id": "20124002-4927-4cb4-bee9-dce145f8d486",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "6fefd6e8-cde7-4980-8e29-e048c4a20ade",
+    "createdAt": "2026-07-28T03:32:50.313Z",
+    "updatedAt": "2026-07-28T03:32:50.313Z"
+  },
+  {
+    "id": "e5be2742-e4ca-4dce-918c-3d78391ebb12",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "4add8e9a-6847-4be1-8d53-0c5217dcb6e2",
+    "createdAt": "2026-07-28T03:32:50.486Z",
+    "updatedAt": "2026-07-28T03:32:50.486Z"
+  },
+  {
+    "id": "a03b7546-c8d8-44e5-98ea-75d1959bed57",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "1b29c416-0c88-418d-bebc-3f288c405692",
+    "createdAt": "2026-07-28T03:32:50.681Z",
+    "updatedAt": "2026-07-28T03:32:50.681Z"
+  },
+  {
+    "id": "9abd3cfe-37b8-4fbd-8277-2f65bc860847",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "d16e1e08-d7a9-4d7a-9faa-a74644532c41",
+    "createdAt": "2026-07-28T03:32:52.300Z",
+    "updatedAt": "2026-07-28T03:32:52.300Z"
+  },
+  {
+    "id": "b4bcce23-ac9d-4ae3-beb0-25725bf41232",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "1e33ed39-79c9-44a9-a098-2556960067c6",
+    "createdAt": "2026-07-28T03:32:52.498Z",
+    "updatedAt": "2026-07-28T03:32:52.498Z"
+  },
+  {
+    "id": "c24a647a-f339-4165-9011-e3b31cd9f4f5",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "6a61d72b-0e77-427b-8b2c-3e0536aa51a3",
+    "createdAt": "2026-07-28T03:32:52.722Z",
+    "updatedAt": "2026-07-28T03:32:52.722Z"
+  },
+  {
+    "id": "3429bcd7-7dff-4f9c-a730-49fc5e0d36bd",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "7d5c58e9-1111-44ff-8cbf-e188424225c2",
+    "createdAt": "2026-07-28T03:32:52.919Z",
+    "updatedAt": "2026-07-28T03:32:52.919Z"
+  },
+  {
+    "id": "e7095067-69c3-47b8-811f-e94bd72850ce",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "b3737103-ff51-47fe-bd58-70bc7a8c271f",
+    "createdAt": "2026-07-28T03:32:53.132Z",
+    "updatedAt": "2026-07-28T03:32:53.132Z"
+  },
+  {
+    "id": "60d8b57b-8e6d-4d60-92cf-4f2b47134844",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "5565fc65-379d-4be5-95a8-a7497e496b1c",
+    "createdAt": "2026-07-28T03:32:53.318Z",
+    "updatedAt": "2026-07-28T03:32:53.318Z"
+  },
+  {
+    "id": "a1175441-a3c4-4d14-b423-783c2fe94db9",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "eacd40fc-1dd4-472d-a012-7f8c1e3f4594",
+    "createdAt": "2026-07-28T03:32:53.501Z",
+    "updatedAt": "2026-07-28T03:32:53.501Z"
+  },
+  {
+    "id": "4837aeeb-08b0-481f-b76d-69f7292baa29",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "8dca30fe-f4f7-4e62-8d69-189cb652a696",
+    "createdAt": "2026-07-28T03:32:55.256Z",
+    "updatedAt": "2026-07-28T03:32:55.256Z"
+  },
+  {
+    "id": "c61f9250-27d3-4ffa-87d6-1872801908a3",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "4bd5e745-ff53-4c9b-9c79-dc67691cd548",
+    "createdAt": "2026-07-28T03:32:55.460Z",
+    "updatedAt": "2026-07-28T03:32:55.460Z"
+  },
+  {
+    "id": "2b5e7871-c831-4a4a-908e-b324ec2212dd",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "29850098-2d93-4eeb-81b3-31349e9113bb",
+    "createdAt": "2026-07-28T03:32:55.655Z",
+    "updatedAt": "2026-07-28T03:32:55.655Z"
+  },
+  {
+    "id": "b389b3c0-5bb4-48fb-9a3d-0b4532b972ab",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "3d53afe6-20f1-48e7-8ed5-a47d49e6337d",
+    "createdAt": "2026-07-28T03:32:55.849Z",
+    "updatedAt": "2026-07-28T03:32:55.849Z"
+  },
+  {
+    "id": "70d5dd9d-6e9d-4393-aa29-e1ed51d617bd",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "97ea49f6-4797-46b9-aa95-d36199f2d529",
+    "createdAt": "2026-07-28T03:32:56.055Z",
+    "updatedAt": "2026-07-28T03:32:56.055Z"
+  },
+  {
+    "id": "5fec2517-018a-4ea8-b298-c3995968bc63",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "5f34706a-73e6-4f63-bca6-c3f829164ee4",
+    "createdAt": "2026-07-28T03:32:56.235Z",
+    "updatedAt": "2026-07-28T03:32:56.235Z"
+  },
+  {
+    "id": "74264c38-f12a-4c4c-b47d-3a8502f55b2c",
+    "productId": "prod-test-1",
+    "variationId": null,
+    "quantity": 2,
+    "status": "RESERVED",
+    "orderId": "0977575b-b662-4fd3-9aa8-b86105826b56",
+    "createdAt": "2026-07-28T03:32:59.619Z",
+    "updatedAt": "2026-07-28T03:32:59.619Z"
+  },
+  {
+    "id": "695ebe8b-d37d-4560-90dd-2bef4ddd9390",
+    "productId": "prod-test-1",
+    "variationId": null,
+    "quantity": 4,
+    "status": "RESERVED",
+    "orderId": "46a23530-4ccb-4913-970d-f8f87ed6e92e",
+    "createdAt": "2026-07-28T03:32:59.906Z",
+    "updatedAt": "2026-07-28T03:32:59.906Z"
+  },
+  {
+    "id": "1ed14a2d-74aa-4b53-97c8-c932aeb82551",
+    "productId": "prod-test-1",
+    "variationId": null,
+    "quantity": 2,
+    "status": "RESERVED",
+    "orderId": "76eae4b5-c43b-4146-b31f-bb55d853aa0c",
+    "createdAt": "2026-07-28T03:33:00.105Z",
+    "updatedAt": "2026-07-28T03:33:00.105Z"
+  },
+  {
+    "id": "5ec02928-b0b8-40e7-a1db-5ba99486b3f1",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "84b559bf-f22d-4e43-8852-cb4803e4b386",
+    "createdAt": "2026-07-28T03:43:57.368Z",
+    "updatedAt": "2026-07-28T03:43:57.368Z"
+  },
+  {
+    "id": "92192f1e-1fc5-4c2e-be1d-4a413b86ccce",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "fffd5b92-1c3a-4e42-ba84-adf64272a0d2",
+    "createdAt": "2026-07-28T03:43:57.559Z",
+    "updatedAt": "2026-07-28T03:43:57.559Z"
+  },
+  {
+    "id": "46068842-6169-4733-be96-7d16090a1c90",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "d35afa86-c3f1-4bae-b916-cc72599b0099",
+    "createdAt": "2026-07-28T03:43:57.764Z",
+    "updatedAt": "2026-07-28T03:43:57.764Z"
+  },
+  {
+    "id": "af92134b-5f26-4bf3-82dd-b98e2b131e33",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "54c1ea43-0904-4a18-87eb-c41b34c24c9d",
+    "createdAt": "2026-07-28T03:43:57.972Z",
+    "updatedAt": "2026-07-28T03:43:57.972Z"
+  },
+  {
+    "id": "ba7c05a6-a4e6-45f9-93b2-f49c447eb9db",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "2a288c8e-706d-482e-af20-7badb5e33732",
+    "createdAt": "2026-07-28T03:43:58.205Z",
+    "updatedAt": "2026-07-28T03:43:58.205Z"
+  },
+  {
+    "id": "9c05586a-dafd-4878-a2f7-74a916d82337",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "e62e928c-42fd-4f97-97dd-8d7e89ebe524",
+    "createdAt": "2026-07-28T03:43:58.410Z",
+    "updatedAt": "2026-07-28T03:43:58.410Z"
+  },
+  {
+    "id": "c7200b17-271d-4720-983e-4a036ed5c59a",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "71d8ac04-aebb-4f69-a8d2-d1e0e172ed9a",
+    "createdAt": "2026-07-28T03:43:58.627Z",
+    "updatedAt": "2026-07-28T03:43:58.627Z"
+  },
+  {
+    "id": "2d5129b2-531c-495e-b3c2-32d8f4070cbe",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "1affb8b5-ec4c-4115-9c2b-4307622029df",
+    "createdAt": "2026-07-28T03:43:59.475Z",
+    "updatedAt": "2026-07-28T03:43:59.475Z"
+  },
+  {
+    "id": "5be7033a-75d0-4523-922e-3dd0e677aeac",
+    "productId": "prod-gift-ret-personalized",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "cac33f27-034e-4a4b-85a3-1046b5aca204",
+    "createdAt": "2026-07-28T03:43:59.676Z",
+    "updatedAt": "2026-07-28T03:43:59.676Z"
+  },
+  {
+    "id": "0500a18b-a77b-4e0f-a4c8-308ec044409b",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "9f504321-276a-467f-8b77-fcffac68e5d9",
+    "createdAt": "2026-07-28T03:43:59.871Z",
+    "updatedAt": "2026-07-28T03:43:59.871Z"
+  },
+  {
+    "id": "78a2c596-cb62-455d-85a6-1d0734192e7f",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "a573a974-c889-4bd7-b0ff-6fdc996d7005",
+    "createdAt": "2026-07-28T03:44:00.047Z",
+    "updatedAt": "2026-07-28T03:44:00.047Z"
+  },
+  {
+    "id": "9aa8cee7-eeba-4e3b-8fe2-69c08996db7e",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "05ad7c96-470e-4027-9613-16f6589f258d",
+    "createdAt": "2026-07-28T03:44:00.225Z",
+    "updatedAt": "2026-07-28T03:44:00.226Z"
+  },
+  {
+    "id": "8ee5ceb6-d5a5-4c1a-bc06-c4239f958477",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "46fe9aa3-ac00-44ed-836e-1750c7d031c9",
+    "createdAt": "2026-07-28T03:44:00.401Z",
+    "updatedAt": "2026-07-28T03:44:00.401Z"
+  },
+  {
+    "id": "578e458d-c52a-4cf0-95c3-15de05a7bd2f",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "836f5ea4-cd82-4f4a-9b66-5c14a324af7f",
+    "createdAt": "2026-07-28T03:44:00.578Z",
+    "updatedAt": "2026-07-28T03:44:00.578Z"
+  },
+  {
+    "id": "af2103a6-7619-4ea3-837b-acaf2b342c4e",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "40122653-73e7-4a95-85db-b75c474b4cb6",
+    "createdAt": "2026-07-28T03:44:01.454Z",
+    "updatedAt": "2026-07-28T03:44:01.454Z"
+  },
+  {
+    "id": "84110800-dd4d-4903-b1c4-079a46f6d38e",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "20793240-17e1-4c35-9e6b-05304a823360",
+    "createdAt": "2026-07-28T03:44:01.656Z",
+    "updatedAt": "2026-07-28T03:44:01.656Z"
+  },
+  {
+    "id": "95220c42-5f86-4c37-ad3e-18a8edc0223c",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "a17e7641-ba9d-44ec-87df-837f7fb845e1",
+    "createdAt": "2026-07-28T03:44:01.864Z",
+    "updatedAt": "2026-07-28T03:44:01.864Z"
+  },
+  {
+    "id": "60741b96-58e6-4ad1-b5f7-a517260e809d",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "f24a3ce7-6bd0-441f-bb54-4d00ead6b9dd",
+    "createdAt": "2026-07-28T03:44:02.048Z",
+    "updatedAt": "2026-07-28T03:44:02.048Z"
+  },
+  {
+    "id": "03786e5a-334f-4e51-bc49-f0b2e8378af5",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "0e2fd333-2696-468e-a956-6ac83c202dbf",
+    "createdAt": "2026-07-28T03:44:02.273Z",
+    "updatedAt": "2026-07-28T03:44:02.273Z"
+  },
+  {
+    "id": "4a51f8f1-b4fc-45e8-89fb-43c53f9acdd3",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "8719e0a3-c9fa-4b9a-b747-2e7f2a34efed",
+    "createdAt": "2026-07-28T03:44:02.459Z",
+    "updatedAt": "2026-07-28T03:44:02.459Z"
+  },
+  {
+    "id": "3b60fe37-e3dd-4aef-9162-74a1649668b8",
+    "productId": "prod-test-1",
+    "variationId": null,
+    "quantity": 2,
+    "status": "RESERVED",
+    "orderId": "12a99031-ecab-4d6d-8d04-f5341ba0107d",
+    "createdAt": "2026-07-28T03:44:03.267Z",
+    "updatedAt": "2026-07-28T03:44:03.267Z"
+  },
+  {
+    "id": "02928074-8359-4a2f-b65e-af28111cf92e",
+    "productId": "prod-test-1",
+    "variationId": null,
+    "quantity": 4,
+    "status": "RESERVED",
+    "orderId": "59563251-02b7-4799-bd89-bf3e7f14894d",
+    "createdAt": "2026-07-28T03:44:03.560Z",
+    "updatedAt": "2026-07-28T03:44:03.560Z"
+  },
+  {
+    "id": "a7659ef2-dde3-4429-bb06-37475aa90fd8",
+    "productId": "prod-test-1",
+    "variationId": null,
+    "quantity": 2,
+    "status": "RESERVED",
+    "orderId": "4203a5c9-5f8b-4bae-b4d4-9ea802b0243c",
+    "createdAt": "2026-07-28T03:44:03.752Z",
+    "updatedAt": "2026-07-28T03:44:03.752Z"
+  },
+  {
+    "id": "16d725a3-1847-40bc-bab4-91c47cf8b787",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "d5553444-9493-43e8-8478-37b1e21aea72",
+    "createdAt": "2026-07-28T07:36:46.629Z",
+    "updatedAt": "2026-07-28T07:36:46.629Z"
+  },
+  {
+    "id": "32bbebe0-239a-448d-8e62-3f96beabd4b8",
+    "productId": "prod-gift-ret-personalized",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "c7a8b276-da6a-4f2b-96ee-00516f94d47c",
+    "createdAt": "2026-07-28T07:36:46.850Z",
+    "updatedAt": "2026-07-28T07:36:46.850Z"
+  },
+  {
+    "id": "b683a310-e110-4bf1-b488-46ac3c25cc26",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "cd41ba04-135a-469a-9c69-d2e42db19468",
+    "createdAt": "2026-07-28T07:36:47.065Z",
+    "updatedAt": "2026-07-28T07:36:47.065Z"
+  },
+  {
+    "id": "bb2dec25-471c-4af5-b25d-b61b9368aed6",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "42abbd4b-2fa3-4ae9-9b43-265b4c1b7b5d",
+    "createdAt": "2026-07-28T07:36:47.267Z",
+    "updatedAt": "2026-07-28T07:36:47.267Z"
+  },
+  {
+    "id": "fee55938-5438-4ced-abed-70938502fc96",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "e509d7a3-b7f0-4a07-9be4-af7efd4ce4f9",
+    "createdAt": "2026-07-28T07:36:47.493Z",
+    "updatedAt": "2026-07-28T07:36:47.493Z"
+  },
+  {
+    "id": "1cd53a2d-c6ad-4ab2-b4cb-4a7835e9f835",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "74094af8-03ae-4ed3-a442-8821965ef0fe",
+    "createdAt": "2026-07-28T07:36:47.705Z",
+    "updatedAt": "2026-07-28T07:36:47.705Z"
+  },
+  {
+    "id": "6dac2b5a-ae5e-4df7-8063-a867bb5c6906",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "27080f73-acc8-4d13-addc-a63f49d6746a",
+    "createdAt": "2026-07-28T07:36:47.934Z",
+    "updatedAt": "2026-07-28T07:36:47.934Z"
+  },
+  {
+    "id": "8d7b56e9-3f13-4812-9e18-82abf4134c63",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "c19565b1-db5c-4202-9dcd-d63ef1088b49",
+    "createdAt": "2026-07-28T07:36:50.134Z",
+    "updatedAt": "2026-07-28T07:36:50.134Z"
+  },
+  {
+    "id": "82cfae0b-388d-4e0e-be55-cdac54702dc7",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "5a05fc0c-01a7-4dc9-a8ad-892125bb7e22",
+    "createdAt": "2026-07-28T07:36:50.385Z",
+    "updatedAt": "2026-07-28T07:36:50.385Z"
+  },
+  {
+    "id": "22928392-cfbf-4849-962b-1f14ea9ecc88",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "6e82e8d3-5741-4fb9-81b1-25b6e8d865c2",
+    "createdAt": "2026-07-28T07:36:50.616Z",
+    "updatedAt": "2026-07-28T07:36:50.616Z"
+  },
+  {
+    "id": "fa1719c3-4098-4ccf-8548-2266c50153a0",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "63a45994-abb3-4559-bc99-46bc48b11b07",
+    "createdAt": "2026-07-28T07:36:50.848Z",
+    "updatedAt": "2026-07-28T07:36:50.848Z"
+  },
+  {
+    "id": "c5b5219a-7288-42f7-9ef8-89521a13ee1f",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "9e1d5175-4928-469f-bdb1-dd2ef0955c0a",
+    "createdAt": "2026-07-28T07:36:51.104Z",
+    "updatedAt": "2026-07-28T07:36:51.104Z"
+  },
+  {
+    "id": "24185926-6157-4d7c-b418-73ebbf809aa5",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "e440a0b7-540b-4c09-b848-ee0df5462a00",
+    "createdAt": "2026-07-28T07:36:51.328Z",
+    "updatedAt": "2026-07-28T07:36:51.328Z"
+  },
+  {
+    "id": "fd8a5a77-5885-4123-9ba0-ea5147e55882",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "e71c29a2-610e-4a78-8763-c6afb977b6e7",
+    "createdAt": "2026-07-28T07:36:51.549Z",
+    "updatedAt": "2026-07-28T07:36:51.549Z"
+  },
+  {
+    "id": "552f6ac8-0dfd-49fd-8ae9-6e1d3dde533d",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "1afebd85-af45-475f-9fd1-f49adcf5ef90",
+    "createdAt": "2026-07-28T07:36:52.907Z",
+    "updatedAt": "2026-07-28T07:36:52.907Z"
+  },
+  {
+    "id": "1d92c073-0a38-4143-bd9f-b36d91abda64",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "add7ae5b-d803-4b6b-9ce4-59a85443e83d",
+    "createdAt": "2026-07-28T07:36:53.147Z",
+    "updatedAt": "2026-07-28T07:36:53.147Z"
+  },
+  {
+    "id": "25c87bc9-025a-438e-b95e-8287e2bdfc83",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "9d18973b-25b6-47a7-b0e3-057b5f22cd7b",
+    "createdAt": "2026-07-28T07:36:53.373Z",
+    "updatedAt": "2026-07-28T07:36:53.373Z"
+  },
+  {
+    "id": "279d1045-f985-4dfc-a7f4-5084c8af47e5",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "7d1e84c4-8d93-4d71-993a-3145416ed17d",
+    "createdAt": "2026-07-28T07:36:53.598Z",
+    "updatedAt": "2026-07-28T07:36:53.598Z"
+  },
+  {
+    "id": "5611a502-f020-4713-9451-3c65337bd032",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "6b75e63c-a95a-4632-991f-744f87a3de9b",
+    "createdAt": "2026-07-28T07:36:53.833Z",
+    "updatedAt": "2026-07-28T07:36:53.833Z"
+  },
+  {
+    "id": "8164fe20-3b6d-49bc-9144-c20aca794483",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "07861553-a0d5-4425-acbe-d4967c926002",
+    "createdAt": "2026-07-28T07:36:54.049Z",
+    "updatedAt": "2026-07-28T07:36:54.049Z"
+  },
+  {
+    "id": "3494fa11-7d80-4126-a745-62ffe3954238",
+    "productId": "prod-test-1",
+    "variationId": null,
+    "quantity": 2,
+    "status": "RESERVED",
+    "orderId": "340b72d7-7102-4138-814c-f48c3458b4c7",
+    "createdAt": "2026-07-28T07:36:57.557Z",
+    "updatedAt": "2026-07-28T07:36:57.557Z"
+  },
+  {
+    "id": "2f9b9421-e076-4c7a-b5c8-81cc0d42b96a",
+    "productId": "prod-test-1",
+    "variationId": null,
+    "quantity": 4,
+    "status": "RESERVED",
+    "orderId": "95192752-8819-47b3-a7fb-9369550137a1",
+    "createdAt": "2026-07-28T07:36:57.922Z",
+    "updatedAt": "2026-07-28T07:36:57.922Z"
+  },
+  {
+    "id": "83486148-85ad-42e0-b5e4-e3624fc45295",
+    "productId": "prod-test-1",
+    "variationId": null,
+    "quantity": 2,
+    "status": "RESERVED",
+    "orderId": "460fdf51-2c93-4dc6-988f-f92709243e97",
+    "createdAt": "2026-07-28T07:36:58.135Z",
+    "updatedAt": "2026-07-28T07:36:58.135Z"
+  },
+  {
+    "id": "4161814d-3912-4353-a76a-1e7d9ee4e992",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "0758c525-598c-42dc-b191-a59d9bd3e6a4",
+    "createdAt": "2026-07-28T07:40:34.698Z",
+    "updatedAt": "2026-07-28T07:40:34.698Z"
+  },
+  {
+    "id": "d63a437c-7e1c-4107-8764-d18bbf3d1f5e",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "898bcbd0-d6af-4d06-8223-1af488f0900c",
+    "createdAt": "2026-07-28T07:40:34.923Z",
+    "updatedAt": "2026-07-28T07:40:34.923Z"
+  },
+  {
+    "id": "1a83ffcb-9b89-4d99-82ba-1607499f2cf4",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "b56d5365-64b8-4d35-ba6f-819a9ae9b206",
+    "createdAt": "2026-07-28T07:40:35.157Z",
+    "updatedAt": "2026-07-28T07:40:35.157Z"
+  },
+  {
+    "id": "282881cd-4cd8-459a-accc-46f013331136",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "151f0f62-795c-43c7-8911-9a9742de7a81",
+    "createdAt": "2026-07-28T07:40:35.384Z",
+    "updatedAt": "2026-07-28T07:40:35.384Z"
+  },
+  {
+    "id": "abccee79-98d8-42d6-8081-920e3e05f5d7",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "d9c9360e-3e35-41f7-acc5-5c9db4ff86da",
+    "createdAt": "2026-07-28T07:40:35.619Z",
+    "updatedAt": "2026-07-28T07:40:35.619Z"
+  },
+  {
+    "id": "99ac46ec-d1e1-4636-b657-850cfba28db7",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "1acc6b48-0a03-445a-98fd-d56bab76562a",
+    "createdAt": "2026-07-28T07:40:35.837Z",
+    "updatedAt": "2026-07-28T07:40:35.837Z"
+  },
+  {
+    "id": "55d0fdd6-cdba-46e0-a09f-850532249a55",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "48d54956-1851-4b13-8936-6f7d17153e5c",
+    "createdAt": "2026-07-28T07:40:36.054Z",
+    "updatedAt": "2026-07-28T07:40:36.054Z"
+  },
+  {
+    "id": "0ea4f066-87ec-4329-9d03-ba2a671fc274",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "490bf84a-8f20-40ee-a034-242563422177",
+    "createdAt": "2026-07-28T07:40:36.987Z",
+    "updatedAt": "2026-07-28T07:40:36.987Z"
+  },
+  {
+    "id": "3b54ad58-0228-4c84-9688-d5e7ccff22e0",
+    "productId": "prod-gift-ret-personalized",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "a3fa325b-c2f1-4224-98e6-2eec4cb9666e",
+    "createdAt": "2026-07-28T07:40:37.237Z",
+    "updatedAt": "2026-07-28T07:40:37.237Z"
+  },
+  {
+    "id": "b0fe9be3-33c3-4972-b038-ee074499824a",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "5793bbc0-6366-41fc-9860-a5be6eac8d7e",
+    "createdAt": "2026-07-28T07:40:37.459Z",
+    "updatedAt": "2026-07-28T07:40:37.459Z"
+  },
+  {
+    "id": "7fb82351-537e-49ee-8a8f-8df42041df11",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "ba2f1c64-eb24-436f-b05d-c0b97b4afac0",
+    "createdAt": "2026-07-28T07:40:37.671Z",
+    "updatedAt": "2026-07-28T07:40:37.671Z"
+  },
+  {
+    "id": "f152867f-4b5a-4795-9ea6-e18ab8c923aa",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "d5cee54f-babe-4cee-a369-35badd36d8be",
+    "createdAt": "2026-07-28T07:40:37.884Z",
+    "updatedAt": "2026-07-28T07:40:37.884Z"
+  },
+  {
+    "id": "4c0ba028-8d08-4d01-b7f6-3d294d0a6779",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "c254e33c-d882-49ed-8f5d-e0ef4cf4308c",
+    "createdAt": "2026-07-28T07:40:38.106Z",
+    "updatedAt": "2026-07-28T07:40:38.106Z"
+  },
+  {
+    "id": "da778c95-4595-4ad9-b4f7-05a2b81dd087",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "852e18f6-c4b7-45a2-86e2-dc587c39b048",
+    "createdAt": "2026-07-28T07:40:38.333Z",
+    "updatedAt": "2026-07-28T07:40:38.333Z"
+  },
+  {
+    "id": "7f6c6239-2534-4fb6-af80-2fb5cdc8cc89",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "407a46b1-5bd2-4df9-a72f-d717f76f7fca",
+    "createdAt": "2026-07-28T07:40:39.242Z",
+    "updatedAt": "2026-07-28T07:40:39.242Z"
+  },
+  {
+    "id": "62d95884-1be8-4cfe-9d67-656eb1763b06",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "7e47091c-9e81-494a-9053-bd03a0d92586",
+    "createdAt": "2026-07-28T07:40:39.473Z",
+    "updatedAt": "2026-07-28T07:40:39.473Z"
+  },
+  {
+    "id": "bd112642-f2be-40dd-9439-ed812daf9207",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "5efb6a5c-7859-4690-b92c-1921a89afb84",
+    "createdAt": "2026-07-28T07:40:39.699Z",
+    "updatedAt": "2026-07-28T07:40:39.699Z"
+  },
+  {
+    "id": "f7dae9d6-8ad5-4e6f-a92d-b1d6094ae7a3",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "29db9787-6c38-45f0-9a1e-b921179fc814",
+    "createdAt": "2026-07-28T07:40:39.935Z",
+    "updatedAt": "2026-07-28T07:40:39.935Z"
+  },
+  {
+    "id": "a6fac9a5-e1b9-41b5-a796-478ce21f778a",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "5f77aab4-d373-4dc6-81ec-360062758db5",
+    "createdAt": "2026-07-28T07:40:40.205Z",
+    "updatedAt": "2026-07-28T07:40:40.205Z"
+  },
+  {
+    "id": "f644ec3e-06de-4f0a-a3bd-3986c0f0cff1",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "7272ca19-49f6-40f8-86c9-b929bb12f66d",
+    "createdAt": "2026-07-28T07:40:40.423Z",
+    "updatedAt": "2026-07-28T07:40:40.423Z"
+  },
+  {
+    "id": "e2b164a2-453c-410f-ba7b-835d78f749a7",
+    "productId": "prod-test-1",
+    "variationId": null,
+    "quantity": 2,
+    "status": "RESERVED",
+    "orderId": "beff6da6-9350-481d-8cf4-eefc03464835",
+    "createdAt": "2026-07-28T07:40:42.985Z",
+    "updatedAt": "2026-07-28T07:40:42.985Z"
+  },
+  {
+    "id": "039f6a66-d67d-4980-afd0-8c22c215e229",
+    "productId": "prod-test-1",
+    "variationId": null,
+    "quantity": 4,
+    "status": "RESERVED",
+    "orderId": "b057475c-5af0-4d46-a262-a648ac230b84",
+    "createdAt": "2026-07-28T07:40:43.384Z",
+    "updatedAt": "2026-07-28T07:40:43.384Z"
+  },
+  {
+    "id": "bc0da866-ebdc-4352-af9f-8e3fb013c9bc",
+    "productId": "prod-test-1",
+    "variationId": null,
+    "quantity": 2,
+    "status": "RESERVED",
+    "orderId": "0166b833-1aa2-4d27-bb79-f3d18887ab2c",
+    "createdAt": "2026-07-28T07:40:43.594Z",
+    "updatedAt": "2026-07-28T07:40:43.594Z"
+  },
+  {
+    "id": "4f7b858c-b4f7-44ed-b721-36b5c1070667",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "649d0701-608e-481d-a37b-1d03efa1c63f",
+    "createdAt": "2026-07-28T08:19:10.849Z",
+    "updatedAt": "2026-07-28T08:19:10.849Z"
+  },
+  {
+    "id": "af7fc711-e018-42eb-94d6-b7fbf01df7cc",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "49cc710a-7a5e-41cc-be4a-0d5ebf06743e",
+    "createdAt": "2026-07-28T08:19:11.110Z",
+    "updatedAt": "2026-07-28T08:19:11.110Z"
+  },
+  {
+    "id": "ab1d0d14-f875-4af2-a66a-fd1a43946145",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "9d8f920d-a171-4861-bec9-7f735e2a450f",
+    "createdAt": "2026-07-28T08:19:11.371Z",
+    "updatedAt": "2026-07-28T08:19:11.371Z"
+  },
+  {
+    "id": "deb026de-9e17-40d8-82c6-4031e4a473a3",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "40ffc537-23d5-45ea-9b35-4d97d255b01f",
+    "createdAt": "2026-07-28T08:19:11.636Z",
+    "updatedAt": "2026-07-28T08:19:11.636Z"
+  },
+  {
+    "id": "da3d1f7c-ab88-483f-8fe2-bdf7500489f9",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "297fe5c7-8f01-4188-a848-b594498246ba",
+    "createdAt": "2026-07-28T08:19:11.933Z",
+    "updatedAt": "2026-07-28T08:19:11.933Z"
+  },
+  {
+    "id": "49d0ec59-f313-456a-9702-65e5ecef41b0",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "113b7041-e409-4054-bef4-509e0c0e2084",
+    "createdAt": "2026-07-28T08:19:12.171Z",
+    "updatedAt": "2026-07-28T08:19:12.171Z"
+  },
+  {
+    "id": "69ef5103-5a6d-4a05-89ec-387de1e73e46",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "cfa00300-899e-46e4-825e-bd3c00f267d0",
+    "createdAt": "2026-07-28T08:19:12.428Z",
+    "updatedAt": "2026-07-28T08:19:12.428Z"
+  },
+  {
+    "id": "9ecb916d-d340-4bc3-a222-e7010e320b84",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "e9844aeb-5c61-4f3f-81b4-5e02d77229eb",
+    "createdAt": "2026-07-28T08:19:13.430Z",
+    "updatedAt": "2026-07-28T08:19:13.430Z"
+  },
+  {
+    "id": "7190f122-75e8-42bb-b694-7224aa66499e",
+    "productId": "prod-gift-ret-personalized",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "c28e1db0-7cbb-45a9-bb54-d8e99434e211",
+    "createdAt": "2026-07-28T08:19:13.700Z",
+    "updatedAt": "2026-07-28T08:19:13.700Z"
+  },
+  {
+    "id": "869bec94-e0b8-4339-a33d-636e8dd623d4",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "24aa7c0c-83d6-4cc4-afc1-1a6847df1ff0",
+    "createdAt": "2026-07-28T08:19:13.956Z",
+    "updatedAt": "2026-07-28T08:19:13.956Z"
+  },
+  {
+    "id": "c799ad1d-a427-4e20-b7e2-783a47a79b28",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "ff538b09-c36b-4380-8018-66c405989875",
+    "createdAt": "2026-07-28T08:19:14.196Z",
+    "updatedAt": "2026-07-28T08:19:14.196Z"
+  },
+  {
+    "id": "829a7487-b088-4e6c-941d-bf8460d373cd",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "029580c7-2a05-4a6d-a8ef-3104cd7ba439",
+    "createdAt": "2026-07-28T08:19:14.466Z",
+    "updatedAt": "2026-07-28T08:19:14.466Z"
+  },
+  {
+    "id": "026762a6-90e0-47a0-a8e4-0a6c1521e660",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "98986de0-58fe-4708-9c23-f61689738c8f",
+    "createdAt": "2026-07-28T08:19:14.704Z",
+    "updatedAt": "2026-07-28T08:19:14.704Z"
+  },
+  {
+    "id": "92d541e7-d866-48e7-b711-57e221eb65dc",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "7b3e1b32-1e0e-43a8-8ea0-343a8166af2a",
+    "createdAt": "2026-07-28T08:19:14.952Z",
+    "updatedAt": "2026-07-28T08:19:14.952Z"
+  },
+  {
+    "id": "ec68211a-4c8c-42dc-953a-809f3cf94df5",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "655a4dda-edfa-43db-a321-d3768b4abc72",
+    "createdAt": "2026-07-28T08:19:15.896Z",
+    "updatedAt": "2026-07-28T08:19:15.896Z"
+  },
+  {
+    "id": "2aedc8b4-d99c-4a29-b26a-1d842cee82a8",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "a36451bd-50b9-43c8-9d64-327e3ce84b6e",
+    "createdAt": "2026-07-28T08:19:16.184Z",
+    "updatedAt": "2026-07-28T08:19:16.184Z"
+  },
+  {
+    "id": "a4c97304-b53e-47c3-80bf-004b6bd09ac2",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "4a2665f2-7983-40b3-84ba-d579aa143f6e",
+    "createdAt": "2026-07-28T08:19:16.445Z",
+    "updatedAt": "2026-07-28T08:19:16.445Z"
+  },
+  {
+    "id": "93909afd-3184-4e8a-9001-f9503423f69d",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "da4ecd69-03e7-4e1a-9752-818fb773ba5a",
+    "createdAt": "2026-07-28T08:19:16.686Z",
+    "updatedAt": "2026-07-28T08:19:16.686Z"
+  },
+  {
+    "id": "2801536b-702c-4636-b9b6-6cfe40242b6d",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "fb25268f-5043-4a2f-b977-21017acad852",
+    "createdAt": "2026-07-28T08:19:16.949Z",
+    "updatedAt": "2026-07-28T08:19:16.949Z"
+  },
+  {
+    "id": "7a7e9dda-7c92-48eb-bfb2-4398fdea4dd9",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "cc73e393-735f-4774-9a73-4f0738b0f602",
+    "createdAt": "2026-07-28T08:19:17.193Z",
+    "updatedAt": "2026-07-28T08:19:17.193Z"
+  },
+  {
+    "id": "59cc8300-14c2-4a9d-b37d-2108a1ea8488",
+    "productId": "prod-test-1",
+    "variationId": null,
+    "quantity": 2,
+    "status": "RESERVED",
+    "orderId": "c0e26186-c527-4eb9-bef0-b3c2a08e9766",
+    "createdAt": "2026-07-28T08:19:20.069Z",
+    "updatedAt": "2026-07-28T08:19:20.069Z"
+  },
+  {
+    "id": "45edf3b1-47b8-45fe-94be-e214c4662f53",
+    "productId": "prod-test-1",
+    "variationId": null,
+    "quantity": 4,
+    "status": "RESERVED",
+    "orderId": "1cbe7e0a-20a7-44c3-9700-e788553402ae",
+    "createdAt": "2026-07-28T08:19:20.515Z",
+    "updatedAt": "2026-07-28T08:19:20.515Z"
+  },
+  {
+    "id": "e1f0931f-a0dd-402f-b18f-9a7d779d3bd8",
+    "productId": "prod-test-1",
+    "variationId": null,
+    "quantity": 2,
+    "status": "RESERVED",
+    "orderId": "9ed38ede-97a2-4e5b-9806-e88fb856c221",
+    "createdAt": "2026-07-28T08:19:20.741Z",
+    "updatedAt": "2026-07-28T08:19:20.741Z"
+  },
+  {
+    "id": "dbf67bc6-b167-4e83-98b3-62f56ef147f5",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "1d5b4070-e647-4811-8d3a-ba97dda0958e",
+    "createdAt": "2026-07-28T08:23:56.848Z",
+    "updatedAt": "2026-07-28T08:23:56.848Z"
+  },
+  {
+    "id": "f3b65d98-516c-4abe-ab75-2dc2f0225940",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "4e182b6d-9b41-4a20-812f-3ff91a28cfff",
+    "createdAt": "2026-07-28T08:23:57.322Z",
+    "updatedAt": "2026-07-28T08:23:57.322Z"
+  },
+  {
+    "id": "98a2ead3-9151-4b54-8084-bf19d11673ae",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "8506fed4-dbbe-40c7-9576-6b78f40cf494",
+    "createdAt": "2026-07-28T08:23:57.856Z",
+    "updatedAt": "2026-07-28T08:23:57.856Z"
+  },
+  {
+    "id": "eff1111a-9078-4a7f-8e1c-1fdba3b567fa",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "2db111f8-2f38-45e4-b353-d93cd669a225",
+    "createdAt": "2026-07-28T08:23:58.310Z",
+    "updatedAt": "2026-07-28T08:23:58.310Z"
+  },
+  {
+    "id": "a61ca89a-94eb-4e3d-a248-2216ddd1e217",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "a0481103-9f34-4700-b25a-6d214d792a40",
+    "createdAt": "2026-07-28T08:23:58.876Z",
+    "updatedAt": "2026-07-28T08:23:58.876Z"
+  },
+  {
+    "id": "5649db9b-cc8e-42d2-9cdb-ac1722540f33",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "fd34a33f-1fe3-4f83-81a4-4da1e64bacc8",
+    "createdAt": "2026-07-28T08:23:59.369Z",
+    "updatedAt": "2026-07-28T08:23:59.369Z"
+  },
+  {
+    "id": "e93b85a2-44dd-498b-b566-065b846f779f",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "1ea54f25-1b48-4a68-ab67-0c19c6e69a1e",
+    "createdAt": "2026-07-28T08:23:59.786Z",
+    "updatedAt": "2026-07-28T08:23:59.786Z"
+  },
+  {
+    "id": "c4ab3f9a-aabf-42bc-b245-6f57bb310364",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "f70917cd-c360-4250-b8c7-765d84677ea3",
+    "createdAt": "2026-07-28T08:24:01.543Z",
+    "updatedAt": "2026-07-28T08:24:01.543Z"
+  },
+  {
+    "id": "3e911c6c-8fac-4fe4-a7bf-f0ffcf68353e",
+    "productId": "prod-gift-ret-personalized",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "8b3b94a9-ca47-4024-966b-a91fc7cbffb7",
+    "createdAt": "2026-07-28T08:24:02.069Z",
+    "updatedAt": "2026-07-28T08:24:02.069Z"
+  },
+  {
+    "id": "99c3fd13-b4e9-4565-a796-d0e7338faee4",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "7856510e-7035-43b1-8a4b-b638cde0906f",
+    "createdAt": "2026-07-28T08:24:02.467Z",
+    "updatedAt": "2026-07-28T08:24:02.467Z"
+  },
+  {
+    "id": "ff58c054-cf3d-4e9e-aba8-e2d820ecd833",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "fb8e03de-630f-4b06-9120-304dc03bbe72",
+    "createdAt": "2026-07-28T08:24:02.866Z",
+    "updatedAt": "2026-07-28T08:24:02.866Z"
+  },
+  {
+    "id": "71582be6-28f5-42e1-bc2a-db4011e83ffe",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "109b32bb-83b3-4d64-92ec-3a29cc6494b6",
+    "createdAt": "2026-07-28T08:24:03.275Z",
+    "updatedAt": "2026-07-28T08:24:03.275Z"
+  },
+  {
+    "id": "c6d04442-b664-466f-9562-ccf1f66b3228",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "584b940f-fbff-4408-ba03-db49572a80f2",
+    "createdAt": "2026-07-28T08:24:03.599Z",
+    "updatedAt": "2026-07-28T08:24:03.599Z"
+  },
+  {
+    "id": "e510fa0f-b5bc-4a6d-a283-9f746a11453f",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "19dfc503-3d04-44e6-9bd0-9e9755dcb9a1",
+    "createdAt": "2026-07-28T08:24:03.959Z",
+    "updatedAt": "2026-07-28T08:24:03.959Z"
+  },
+  {
+    "id": "11b8167a-85f9-42a0-b211-ce4c59fad54a",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "f3587ea4-313d-4ab6-86d3-1043845c993c",
+    "createdAt": "2026-07-28T08:24:05.290Z",
+    "updatedAt": "2026-07-28T08:24:05.290Z"
+  },
+  {
+    "id": "c67b21ea-7987-452a-98e6-bec2569f25e1",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "3e15c918-8755-4719-9f63-ec73f45c5120",
+    "createdAt": "2026-07-28T08:24:05.678Z",
+    "updatedAt": "2026-07-28T08:24:05.678Z"
+  },
+  {
+    "id": "8f989a02-4f29-4de2-8bcf-276bc3ec369a",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "9c5f6801-0591-46e9-9108-d09c74bdaf75",
+    "createdAt": "2026-07-28T08:24:06.102Z",
+    "updatedAt": "2026-07-28T08:24:06.102Z"
+  },
+  {
+    "id": "eec95195-d519-4d58-8efd-d0013497a7ec",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "49791f55-dd3e-4138-b175-de2118ceb0f6",
+    "createdAt": "2026-07-28T08:24:06.651Z",
+    "updatedAt": "2026-07-28T08:24:06.651Z"
+  },
+  {
+    "id": "baf13697-ad5b-4743-b256-80a7f8c5a971",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "a5d5c355-ef39-4bda-a9bd-7ea488069f51",
+    "createdAt": "2026-07-28T08:24:07.088Z",
+    "updatedAt": "2026-07-28T08:24:07.088Z"
+  },
+  {
+    "id": "2cda9694-f007-4fb9-ab1a-8f26594060a6",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "d3fc3d68-f9a9-4d58-b95b-3d2dfc2744e0",
+    "createdAt": "2026-07-28T08:24:07.508Z",
+    "updatedAt": "2026-07-28T08:24:07.508Z"
+  },
+  {
+    "id": "2591e213-f1b2-482e-950c-fd5053137167",
+    "productId": "prod-test-1",
+    "variationId": null,
+    "quantity": 2,
+    "status": "RESERVED",
+    "orderId": "12637d58-e689-4d2b-8e3b-1721dbbf79f4",
+    "createdAt": "2026-07-28T08:24:12.106Z",
+    "updatedAt": "2026-07-28T08:24:12.106Z"
+  },
+  {
+    "id": "72e9685a-3477-4560-a896-35708375f8b2",
+    "productId": "prod-test-1",
+    "variationId": null,
+    "quantity": 4,
+    "status": "RESERVED",
+    "orderId": "0182739c-e01a-4684-b48b-5115aa948ebd",
+    "createdAt": "2026-07-28T08:24:12.745Z",
+    "updatedAt": "2026-07-28T08:24:12.745Z"
+  },
+  {
+    "id": "87069e00-e990-4f98-a2d5-1d1f7faa5979",
+    "productId": "prod-test-1",
+    "variationId": null,
+    "quantity": 2,
+    "status": "RESERVED",
+    "orderId": "d46ff83e-d3ed-4258-b5a0-4bf44cffb6e1",
+    "createdAt": "2026-07-28T08:24:13.098Z",
+    "updatedAt": "2026-07-28T08:24:13.098Z"
+  },
+  {
+    "id": "adcc1365-4844-4036-ad2c-df43830885e7",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "ada4cbff-a255-4a24-a8a2-cf822037b3a1",
+    "createdAt": "2026-07-28T08:26:29.043Z",
+    "updatedAt": "2026-07-28T08:26:29.043Z"
+  },
+  {
+    "id": "da25b4bb-db8e-438e-ba50-6cac2b8e8069",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "3a0257a3-73f8-4322-8075-6bc001ca519f",
+    "createdAt": "2026-07-28T08:26:29.317Z",
+    "updatedAt": "2026-07-28T08:26:29.317Z"
+  },
+  {
+    "id": "2d41c175-8416-40da-ab1a-69e866f88e77",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "f83b1061-6a61-4152-9fc8-8d20eec18922",
+    "createdAt": "2026-07-28T08:26:29.590Z",
+    "updatedAt": "2026-07-28T08:26:29.590Z"
+  },
+  {
+    "id": "03c32afc-fc06-43ca-9b57-365b53924d3f",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "8c110e43-4448-488c-9b86-aaa0f8cb07de",
+    "createdAt": "2026-07-28T08:26:29.880Z",
+    "updatedAt": "2026-07-28T08:26:29.880Z"
+  },
+  {
+    "id": "5c61ad68-1ebe-4b50-a636-de8c1f358bd7",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "afb08045-0e47-4d22-ba07-38238e8faf57",
+    "createdAt": "2026-07-28T08:26:30.185Z",
+    "updatedAt": "2026-07-28T08:26:30.185Z"
+  },
+  {
+    "id": "ce6cc0bb-fcd5-491d-9487-0848223a2cff",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "31d29773-32ee-4590-889b-5b2fabb9dfe2",
+    "createdAt": "2026-07-28T08:26:30.449Z",
+    "updatedAt": "2026-07-28T08:26:30.449Z"
+  },
+  {
+    "id": "2b6f0801-2fac-4f50-8e60-b2c0a299dcd5",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "9d100b30-f52c-45d8-882c-5d8141a91ec1",
+    "createdAt": "2026-07-28T08:26:30.702Z",
+    "updatedAt": "2026-07-28T08:26:30.702Z"
+  },
+  {
+    "id": "c54fa1fd-fd21-41be-baab-cfb32bce5ded",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "bcc1bdf0-6f2f-4271-8752-2746db8f96f2",
+    "createdAt": "2026-07-28T08:26:31.687Z",
+    "updatedAt": "2026-07-28T08:26:31.687Z"
+  },
+  {
+    "id": "d0e61276-b4e8-4043-b50a-4be1dae47be1",
+    "productId": "prod-gift-ret-personalized",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "b3c6ce92-92f9-45de-bd40-17994c08856b",
+    "createdAt": "2026-07-28T08:26:31.987Z",
+    "updatedAt": "2026-07-28T08:26:31.987Z"
+  },
+  {
+    "id": "006693bd-e90b-4e66-b791-a40e998b81f2",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "331530a0-91d8-428d-a449-7afba172c9b3",
+    "createdAt": "2026-07-28T08:26:32.250Z",
+    "updatedAt": "2026-07-28T08:26:32.250Z"
+  },
+  {
+    "id": "ba1ff6f6-750d-43ee-ab84-064058ec8306",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "e859e468-a0be-4635-a593-e01dbe1e5c46",
+    "createdAt": "2026-07-28T08:26:32.506Z",
+    "updatedAt": "2026-07-28T08:26:32.506Z"
+  },
+  {
+    "id": "dbe83c83-5d95-481c-ab90-1faacc50da09",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "dd9560e5-be17-4d5c-8795-81f26b900d4a",
+    "createdAt": "2026-07-28T08:26:32.811Z",
+    "updatedAt": "2026-07-28T08:26:32.811Z"
+  },
+  {
+    "id": "d2f866e9-032d-40bd-8078-8ecb6f0f746e",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "d375ab54-8da6-49df-9e14-52a9f3640f0f",
+    "createdAt": "2026-07-28T08:26:33.092Z",
+    "updatedAt": "2026-07-28T08:26:33.092Z"
+  },
+  {
+    "id": "4c81735e-fb2a-4736-9c44-d7d2ec4f1c71",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "48d3c6a5-305c-4958-ab97-0df9fbec9537",
+    "createdAt": "2026-07-28T08:26:33.354Z",
+    "updatedAt": "2026-07-28T08:26:33.354Z"
+  },
+  {
+    "id": "35a128ce-2cee-49fa-a2c5-f30b1e02f91d",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "caba9ed8-842c-4827-a9df-58271e22c648",
+    "createdAt": "2026-07-28T08:26:34.284Z",
+    "updatedAt": "2026-07-28T08:26:34.284Z"
+  },
+  {
+    "id": "ce737404-863b-403f-b5ba-07e18d501868",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "1d04b5a7-ec06-4466-bf9b-58dd3c444c4d",
+    "createdAt": "2026-07-28T08:26:34.565Z",
+    "updatedAt": "2026-07-28T08:26:34.565Z"
+  },
+  {
+    "id": "f0760170-084c-4346-8c63-0bb353d77387",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "26669609-2c1e-4b08-9ee5-e6c45ae40db0",
+    "createdAt": "2026-07-28T08:26:34.818Z",
+    "updatedAt": "2026-07-28T08:26:34.818Z"
+  },
+  {
+    "id": "df32af67-5a17-48e4-b7fe-4eecaefc2e8a",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "08506d76-dece-4d73-8f96-93fe5bc6f21c",
+    "createdAt": "2026-07-28T08:26:35.092Z",
+    "updatedAt": "2026-07-28T08:26:35.092Z"
+  },
+  {
+    "id": "8e19a874-20bd-425f-9c1c-283d0df79ce3",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "4456352f-b12a-48db-97c2-ab1aae3bdbdf",
+    "createdAt": "2026-07-28T08:26:35.379Z",
+    "updatedAt": "2026-07-28T08:26:35.379Z"
+  },
+  {
+    "id": "8bbf8bbe-40d3-4646-9a6a-2924431f2c39",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "eeabd8eb-63eb-47b5-a358-18a79610499a",
+    "createdAt": "2026-07-28T08:26:35.638Z",
+    "updatedAt": "2026-07-28T08:26:35.638Z"
+  },
+  {
+    "id": "022b571c-9626-48b4-907b-cb7c504b3579",
+    "productId": "prod-test-1",
+    "variationId": null,
+    "quantity": 2,
+    "status": "RESERVED",
+    "orderId": "c1e89d31-b40d-43d1-b226-1a706dcde5b9",
+    "createdAt": "2026-07-28T08:26:38.409Z",
+    "updatedAt": "2026-07-28T08:26:38.409Z"
+  },
+  {
+    "id": "f52857f6-3376-47e0-9549-2c967c20e5c0",
+    "productId": "prod-test-1",
+    "variationId": null,
+    "quantity": 4,
+    "status": "RESERVED",
+    "orderId": "9c8f13e6-e9b2-42bc-86f9-0ac2a65a66aa",
+    "createdAt": "2026-07-28T08:26:38.822Z",
+    "updatedAt": "2026-07-28T08:26:38.822Z"
+  },
+  {
+    "id": "10fd6122-f3a0-4150-a04f-7364636049b8",
+    "productId": "prod-test-1",
+    "variationId": null,
+    "quantity": 2,
+    "status": "RESERVED",
+    "orderId": "0e849f52-be9a-4af2-b211-37cf22b3a011",
+    "createdAt": "2026-07-28T08:26:39.071Z",
+    "updatedAt": "2026-07-28T08:26:39.071Z"
+  },
+  {
+    "id": "a5900760-d8c0-4fdb-8f52-948e494fa36e",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "2acb8acf-5bb5-491e-a6ed-09218f73a5a5",
+    "createdAt": "2026-07-28T08:36:59.038Z",
+    "updatedAt": "2026-07-28T08:36:59.038Z"
+  },
+  {
+    "id": "15650fb8-76d8-47ba-8dbe-0512441b4b09",
+    "productId": "prod-gift-ret-personalized",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "2488b6d1-0be6-4106-b375-755e5b0a14df",
+    "createdAt": "2026-07-28T08:36:59.332Z",
+    "updatedAt": "2026-07-28T08:36:59.332Z"
+  },
+  {
+    "id": "3e6343ac-0d9f-424f-b276-ee12c52f6299",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "c7c6459e-3786-4c3c-b54e-be56eb1ebc52",
+    "createdAt": "2026-07-28T08:36:59.621Z",
+    "updatedAt": "2026-07-28T08:36:59.621Z"
+  },
+  {
+    "id": "1adf380c-0d5a-4f52-851c-88163d4b7a05",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "876f5430-8bd5-445c-95f5-24492ac06cc4",
+    "createdAt": "2026-07-28T08:36:59.925Z",
+    "updatedAt": "2026-07-28T08:36:59.925Z"
+  },
+  {
+    "id": "9aae43a7-9597-4877-bd30-cd8904b524b8",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "e9c46e11-2923-428a-a33f-9ce5f398ddad",
+    "createdAt": "2026-07-28T08:37:00.197Z",
+    "updatedAt": "2026-07-28T08:37:00.197Z"
+  },
+  {
+    "id": "1dceb714-6add-4d61-a914-9d0ef061255d",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "88451113-6f15-4a42-9c02-6e20135930e0",
+    "createdAt": "2026-07-28T08:37:00.484Z",
+    "updatedAt": "2026-07-28T08:37:00.484Z"
+  },
+  {
+    "id": "a2e374bc-06ad-4183-b31a-9399829ababe",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "3aba0fcf-6155-4148-bda0-c9c87e515e3b",
+    "createdAt": "2026-07-28T08:37:00.769Z",
+    "updatedAt": "2026-07-28T08:37:00.769Z"
+  },
+  {
+    "id": "1449dbcd-6ee9-4546-baf2-d4c6d0e7d270",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "d05f9709-c23e-44da-871e-8dc22c0f5c88",
+    "createdAt": "2026-07-28T08:37:01.782Z",
+    "updatedAt": "2026-07-28T08:37:01.782Z"
+  },
+  {
+    "id": "b3c0ef52-7e9a-4ac1-b168-7c6dda99f462",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "8085aa79-9cd0-4f1b-8043-e36ca31bb07b",
+    "createdAt": "2026-07-28T08:37:02.089Z",
+    "updatedAt": "2026-07-28T08:37:02.089Z"
+  },
+  {
+    "id": "4f5b2e06-a29e-4ed8-a2b3-acab241e4a15",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "fb650637-a38f-4c29-a41f-95261df9bf71",
+    "createdAt": "2026-07-28T08:37:02.392Z",
+    "updatedAt": "2026-07-28T08:37:02.392Z"
+  },
+  {
+    "id": "304ba604-d0d2-40b7-b573-828c56a982b7",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "bf93bbae-79b5-403e-961a-a2f27a8bcb30",
+    "createdAt": "2026-07-28T08:37:02.728Z",
+    "updatedAt": "2026-07-28T08:37:02.728Z"
+  },
+  {
+    "id": "66ab9d16-c403-4ca5-ade8-4c866dce7d87",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "583ca2cd-7ab7-4f8b-acfb-7bfa862c5367",
+    "createdAt": "2026-07-28T08:37:03.115Z",
+    "updatedAt": "2026-07-28T08:37:03.115Z"
+  },
+  {
+    "id": "d515d058-6049-42b4-bf18-fdd58b1043e9",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "15e4ad9b-2a03-4cdc-bd43-4daa6d32e8b9",
+    "createdAt": "2026-07-28T08:37:03.420Z",
+    "updatedAt": "2026-07-28T08:37:03.420Z"
+  },
+  {
+    "id": "576eb5fc-f274-4091-bba1-09ef36a3e719",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "c6910d31-3ef6-49f7-8767-ec29639f1e25",
+    "createdAt": "2026-07-28T08:37:03.708Z",
+    "updatedAt": "2026-07-28T08:37:03.708Z"
+  },
+  {
+    "id": "fb752d05-21d1-4284-8719-14131705f4c0",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "a6575e5f-72f3-438d-86c2-55b25d90094e",
+    "createdAt": "2026-07-28T08:37:04.734Z",
+    "updatedAt": "2026-07-28T08:37:04.734Z"
+  },
+  {
+    "id": "eb78ea90-22be-435b-950b-96fe043e614e",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "2be4dd1c-c36d-48fd-a14f-d9c769495bbf",
+    "createdAt": "2026-07-28T08:37:05.058Z",
+    "updatedAt": "2026-07-28T08:37:05.058Z"
+  },
+  {
+    "id": "f6586e6a-631b-44f4-a7ea-b865e96f56f9",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "b514a6ae-b840-4fef-93f7-88dc00f0ecc3",
+    "createdAt": "2026-07-28T08:37:05.374Z",
+    "updatedAt": "2026-07-28T08:37:05.374Z"
+  },
+  {
+    "id": "086afa88-bc59-4230-b788-8abf227d0e08",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "4d541f29-2214-46b9-b77e-c0673cc33b1d",
+    "createdAt": "2026-07-28T08:37:05.675Z",
+    "updatedAt": "2026-07-28T08:37:05.675Z"
+  },
+  {
+    "id": "2b21bedf-cd68-434a-b90a-bc92e59dd8b9",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "e6c14563-3e1c-4d8a-8a6e-2f7a4c25847f",
+    "createdAt": "2026-07-28T08:37:06.020Z",
+    "updatedAt": "2026-07-28T08:37:06.020Z"
+  },
+  {
+    "id": "4c1782f8-ce97-4aa5-8a79-d4d5f47d5b27",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "2e2e2e87-9fc0-4c33-a680-6d358b1dacf4",
+    "createdAt": "2026-07-28T08:37:06.328Z",
+    "updatedAt": "2026-07-28T08:37:06.328Z"
+  },
+  {
+    "id": "3bc1dace-58f1-4502-81a2-8213ab80b619",
+    "productId": "prod-test-1",
+    "variationId": null,
+    "quantity": 2,
+    "status": "RESERVED",
+    "orderId": "f1c7e344-5366-4392-925b-19ce1f03f38c",
+    "createdAt": "2026-07-28T08:37:09.306Z",
+    "updatedAt": "2026-07-28T08:37:09.306Z"
+  },
+  {
+    "id": "a67fe7c3-d53e-4faa-bc7d-28d818154ac0",
+    "productId": "prod-test-1",
+    "variationId": null,
+    "quantity": 4,
+    "status": "RESERVED",
+    "orderId": "d0a6b868-9847-42ed-9e32-f669d37c82e1",
+    "createdAt": "2026-07-28T08:37:09.765Z",
+    "updatedAt": "2026-07-28T08:37:09.765Z"
+  },
+  {
+    "id": "e826cd66-d63c-482f-a5aa-3ab97c21d764",
+    "productId": "prod-test-1",
+    "variationId": null,
+    "quantity": 2,
+    "status": "RESERVED",
+    "orderId": "c5e22d35-f664-457e-8703-4914175f3522",
+    "createdAt": "2026-07-28T08:37:10.019Z",
+    "updatedAt": "2026-07-28T08:37:10.019Z"
+  },
+  {
+    "id": "2de6308e-4731-483a-abe2-c024d2274337",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "35135682-7c40-4fc4-895e-a202ef849704",
+    "createdAt": "2026-07-28T09:00:15.204Z",
+    "updatedAt": "2026-07-28T09:00:15.204Z"
+  },
+  {
+    "id": "348a571d-8c15-4739-9820-c09fa57e421e",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "f6c3ec32-d317-4829-b769-3e1792f78365",
+    "createdAt": "2026-07-28T09:00:15.545Z",
+    "updatedAt": "2026-07-28T09:00:15.545Z"
+  },
+  {
+    "id": "dc146dd2-fe1c-4d68-a2c6-09d2cf4ac2d5",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "91b17a02-6ab2-4035-a46e-c99eb6524b5b",
+    "createdAt": "2026-07-28T09:00:15.840Z",
+    "updatedAt": "2026-07-28T09:00:15.840Z"
+  },
+  {
+    "id": "c2b7e1d7-0032-4d3e-8831-25df16af19b1",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "078f5d45-9d9b-4db6-a0b4-fcc3d4ec7a8d",
+    "createdAt": "2026-07-28T09:00:16.158Z",
+    "updatedAt": "2026-07-28T09:00:16.158Z"
+  },
+  {
+    "id": "88725e83-9643-4fa2-a1b3-9b90e0807c1e",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "fb8bbabc-9ea2-4b15-8bd1-2af7ce12d84a",
+    "createdAt": "2026-07-28T09:00:16.491Z",
+    "updatedAt": "2026-07-28T09:00:16.491Z"
+  },
+  {
+    "id": "8e702ea5-9cab-47f4-ade8-92957c20b69d",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "de04b2c5-041a-49f0-8ae4-8a3317733e18",
+    "createdAt": "2026-07-28T09:00:16.784Z",
+    "updatedAt": "2026-07-28T09:00:16.784Z"
+  },
+  {
+    "id": "dd0fa113-8d57-49bf-9c3e-065b40ffdad2",
+    "productId": "prod-gift-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "74adf2e8-80f0-4e2b-9ece-7c2f5075e17e",
+    "createdAt": "2026-07-28T09:00:17.058Z",
+    "updatedAt": "2026-07-28T09:00:17.058Z"
+  },
+  {
+    "id": "41fde7cc-1f27-471d-9a3b-4d46f29dea77",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "811121d4-bcad-4d03-bdc9-a2e9431f00fd",
+    "createdAt": "2026-07-28T09:00:18.078Z",
+    "updatedAt": "2026-07-28T09:00:18.078Z"
+  },
+  {
+    "id": "987425b5-7649-4e0a-95b0-2c7f62bb9911",
+    "productId": "prod-gift-ret-personalized",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "1d5ec57d-7db4-46fe-8a4d-297e7154d9f0",
+    "createdAt": "2026-07-28T09:00:18.369Z",
+    "updatedAt": "2026-07-28T09:00:18.369Z"
+  },
+  {
+    "id": "244c6f86-d764-46f3-8061-fb3a23d484a8",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "234208f9-7fd5-4834-8a6f-42f83299cca8",
+    "createdAt": "2026-07-28T09:00:18.651Z",
+    "updatedAt": "2026-07-28T09:00:18.651Z"
+  },
+  {
+    "id": "cf870895-5fe2-489d-bdcb-105a97ed07a7",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "9fff7785-0cf1-4424-a5ca-9a6323211e46",
+    "createdAt": "2026-07-28T09:00:18.918Z",
+    "updatedAt": "2026-07-28T09:00:18.918Z"
+  },
+  {
+    "id": "f6c6550b-3447-48cc-bee6-44931a3e7e90",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "68d52ab3-cecd-42f2-adce-8c8c9df2e821",
+    "createdAt": "2026-07-28T09:00:19.214Z",
+    "updatedAt": "2026-07-28T09:00:19.214Z"
+  },
+  {
+    "id": "581faf43-9e26-4de2-8f5b-7b2160bffe74",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "60f0fa18-b81c-4e29-af9a-6ab783e8f373",
+    "createdAt": "2026-07-28T09:00:19.490Z",
+    "updatedAt": "2026-07-28T09:00:19.490Z"
+  },
+  {
+    "id": "1467a94b-4141-4611-a13b-c5ad999aa646",
+    "productId": "prod-gift-ret-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "64fa1b83-5aec-4d89-a6a6-16182931ac7a",
+    "createdAt": "2026-07-28T09:00:19.774Z",
+    "updatedAt": "2026-07-28T09:00:19.774Z"
+  },
+  {
+    "id": "c849769a-1db0-4493-a274-df7e2a5eae25",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "a521b024-7d06-4096-9ce7-6077c09c57d2",
+    "createdAt": "2026-07-28T09:00:21.281Z",
+    "updatedAt": "2026-07-28T09:00:21.281Z"
+  },
+  {
+    "id": "31027d00-a871-4a98-ba29-f5abb144c86d",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "4abca157-a903-4d59-ad3d-4dbc0b8f07d5",
+    "createdAt": "2026-07-28T09:00:21.908Z",
+    "updatedAt": "2026-07-28T09:00:21.908Z"
+  },
+  {
+    "id": "62488038-66ba-4e96-be7a-7bd20091d309",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "8824ca55-928d-45a1-b334-f6a539229006",
+    "createdAt": "2026-07-28T09:00:22.478Z",
+    "updatedAt": "2026-07-28T09:00:22.478Z"
+  },
+  {
+    "id": "bbf7bf8b-1c7b-4e16-9102-ad20fb5a731b",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "441027fe-6a77-47c3-bb9a-5ec14096957b",
+    "createdAt": "2026-07-28T09:00:23.058Z",
+    "updatedAt": "2026-07-28T09:00:23.058Z"
+  },
+  {
+    "id": "1cde3c3c-de4c-4305-97bb-5e1a586cec65",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "3b11e068-593b-48cd-88de-c8ee40b3688a",
+    "createdAt": "2026-07-28T09:00:23.620Z",
+    "updatedAt": "2026-07-28T09:00:23.620Z"
+  },
+  {
+    "id": "8bd819f5-ea6d-4e13-9c22-2527710e1b4a",
+    "productId": "prod-mug-1",
+    "variationId": null,
+    "quantity": 1,
+    "status": "RESERVED",
+    "orderId": "9a2ede43-7bcd-464f-b85e-d2035cd1806e",
+    "createdAt": "2026-07-28T09:00:24.121Z",
+    "updatedAt": "2026-07-28T09:00:24.121Z"
+  },
+  {
+    "id": "77041f76-52f6-4ad5-a779-73db68998bd6",
+    "productId": "prod-test-1",
+    "variationId": null,
+    "quantity": 2,
+    "status": "RESERVED",
+    "orderId": "75f1ca09-2667-494f-b6b5-0141c1405c99",
+    "createdAt": "2026-07-28T09:00:29.200Z",
+    "updatedAt": "2026-07-28T09:00:29.200Z"
+  },
+  {
+    "id": "e57f310d-a45b-453f-bb32-ee1448b00762",
+    "productId": "prod-test-1",
+    "variationId": null,
+    "quantity": 4,
+    "status": "RESERVED",
+    "orderId": "1f578027-e8b6-4a4e-ac72-a96f348d2c58",
+    "createdAt": "2026-07-28T09:00:29.906Z",
+    "updatedAt": "2026-07-28T09:00:29.906Z"
+  },
+  {
+    "id": "a65cb688-fb40-4e91-8ca3-553cece278c1",
+    "productId": "prod-test-1",
+    "variationId": null,
+    "quantity": 2,
+    "status": "RESERVED",
+    "orderId": "e6fc724b-ecfd-4048-96b9-4478f468e4f6",
+    "createdAt": "2026-07-28T09:00:30.375Z",
+    "updatedAt": "2026-07-28T09:00:30.375Z"
   }
 ]

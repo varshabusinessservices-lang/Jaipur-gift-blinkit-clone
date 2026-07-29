@@ -1,93 +1,123 @@
-import React from 'react';
-import { ShieldCheck, Zap, HeartHandshake, Phone, Mail, MapPin } from 'lucide-react';
+import React, { useState } from 'react';
+import { Sparkles, ShieldCheck, Clock, Gift, ChevronDown, ChevronUp, Phone, Mail, MapPin } from 'lucide-react';
 
 export const Footer = () => {
+  const [openSection, setOpenSection] = useState<string | null>(null);
+
+  const toggle = (sec: string) => {
+    setOpenSection(openSection === sec ? null : sec);
+  };
+
   return (
-    <footer className="bg-slate-900 text-slate-300 pt-16 pb-12 border-t border-slate-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        {/* Trust Highlights */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pb-12 border-b border-slate-800">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-2xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center shrink-0">
-              <Zap className="h-6 w-6" />
+    <footer className="bg-slate-100 dark:bg-slate-950 text-slate-700 dark:text-slate-300 border-t border-slate-200 dark:border-slate-800 transition-colors mt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* Top Trust Features */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pb-12 border-b border-slate-200 dark:border-slate-800">
+          <div className="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-slate-900 shadow-sm">
+            <div className="w-12 h-12 rounded-xl bg-indigo-50 dark:bg-indigo-950 text-indigo-600 flex items-center justify-center shrink-0">
+              <Clock className="h-6 w-6" />
             </div>
             <div>
-              <h4 className="font-bold text-white text-sm">10-Minute Lightning Delivery</h4>
-              <p className="text-xs text-slate-400 mt-0.5">Express instant dispatch across all zones in Jaipur.</p>
+              <h4 className="text-xs font-black text-slate-900 dark:text-white uppercase tracking-wider">10-Minute Delivery</h4>
+              <p className="text-[11px] text-slate-500">Lightning quick delivery across Jaipur</p>
             </div>
           </div>
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-2xl bg-emerald-600/20 text-emerald-400 flex items-center justify-center shrink-0">
+
+          <div className="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-slate-900 shadow-sm">
+            <div className="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-950 text-emerald-600 flex items-center justify-center shrink-0">
               <ShieldCheck className="h-6 w-6" />
             </div>
             <div>
-              <h4 className="font-bold text-white text-sm">100% Authentic & Fresh</h4>
-              <p className="text-xs text-slate-400 mt-0.5">Sourced directly from finest artisan bakeries & sweets kitchens.</p>
+              <h4 className="text-xs font-black text-slate-900 dark:text-white uppercase tracking-wider">100% Authentic</h4>
+              <p className="text-[11px] text-slate-500">Handcrafted premium quality gifts</p>
             </div>
           </div>
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-2xl bg-amber-600/20 text-amber-400 flex items-center justify-center shrink-0">
-              <HeartHandshake className="h-6 w-6" />
+
+          <div className="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-slate-900 shadow-sm">
+            <div className="w-12 h-12 rounded-xl bg-rose-50 dark:bg-rose-950 text-rose-600 flex items-center justify-center shrink-0">
+              <Gift className="h-6 w-6" />
             </div>
             <div>
-              <h4 className="font-bold text-white text-sm">Personalised Gift Messages</h4>
-              <p className="text-xs text-slate-400 mt-0.5">Custom gift cards, handwritten notes & photo memories.</p>
+              <h4 className="text-xs font-black text-slate-900 dark:text-white uppercase tracking-wider">Free Gift Message</h4>
+              <p className="text-[11px] text-slate-500">Luxurious gift wrapping included</p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-slate-900 shadow-sm">
+            <div className="w-12 h-12 rounded-xl bg-amber-50 dark:bg-amber-950 text-amber-600 flex items-center justify-center shrink-0">
+              <Sparkles className="h-6 w-6" />
+            </div>
+            <div>
+              <h4 className="text-xs font-black text-slate-900 dark:text-white uppercase tracking-wider">Personalisation Experts</h4>
+              <p className="text-[11px] text-slate-500">Precision engraving & photo printing</p>
             </div>
           </div>
         </div>
 
-        {/* Main Footer Links */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
-          <div className="col-span-2 space-y-4">
+        {/* Footer Links & Accordions */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 py-12 border-b border-slate-200 dark:border-slate-800">
+          {/* Brand Col */}
+          <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-indigo-600 rounded-xl flex items-center justify-center text-white font-black text-sm">
-                JG
+              <div className="w-9 h-9 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-black shadow-md">
+                <Sparkles className="h-4 w-4" />
               </div>
-              <span className="font-extrabold text-white text-lg">Jaipur Gifting</span>
+              <span className="text-base font-black text-slate-900 dark:text-white">Jaipur Gifting</span>
             </div>
-            <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
-              Jaipur's premier ultra-fast gifting and luxury hamper service. Delivering smiles in 10 minutes across Malviya Nagar, C-Scheme, Vaishali Nagar, and Raja Park.
+            <p className="text-xs text-slate-500 leading-relaxed">
+              Jaipur's premier express gifting platform. Delivering smiles in 10 minutes with exquisite customised gifts, fresh flowers, cakes, jewellery, and photo frames.
             </p>
-            <div className="space-y-1 text-xs text-slate-400">
-              <p className="flex items-center gap-2"><MapPin className="h-3.5 w-3.5 text-indigo-400" /> C-12, Malviya Nagar, Jaipur, Rajasthan 302017</p>
-              <p className="flex items-center gap-2"><Phone className="h-3.5 w-3.5 text-indigo-400" /> +91 98765 43210</p>
-              <p className="flex items-center gap-2"><Mail className="h-3.5 w-3.5 text-indigo-400" /> support@jaipurgifting.com</p>
+            <div className="space-y-2 text-xs text-slate-600 dark:text-slate-400">
+              <div className="flex items-center gap-2"><MapPin className="h-4 w-4 text-indigo-600" /> C-12, Malviya Nagar, Jaipur, Rajasthan 302017</div>
+              <div className="flex items-center gap-2"><Phone className="h-4 w-4 text-indigo-600" /> +91 98765 43210</div>
+              <div className="flex items-center gap-2"><Mail className="h-4 w-4 text-indigo-600" /> support@jaipurgifting.com</div>
             </div>
           </div>
 
+          {/* Links 1 */}
           <div>
-            <h5 className="font-bold text-white text-sm mb-4">Categories</h5>
-            <ul className="space-y-2 text-xs text-slate-400">
-              <li><a href="#" className="hover:text-white transition-colors">Luxury Mithai</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Birthday Cakes</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Diwali Hampers</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Fresh Flowers</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Personalised Gifts</a></li>
+            <h4 className="text-xs font-black text-slate-900 dark:text-white uppercase tracking-wider mb-4">Popular Categories</h4>
+            <ul className="space-y-2.5 text-xs font-semibold">
+              <li><a href="/category/customised" className="hover:text-indigo-600">Customised Gifts</a></li>
+              <li><a href="/category/jewellery" className="hover:text-indigo-600">Exquisite Jewellery</a></li>
+              <li><a href="/category/mugs" className="hover:text-indigo-600">Photo Mugs & Sippers</a></li>
+              <li><a href="/category/photo-frame" className="hover:text-indigo-600">Personalised Frames & Lamps</a></li>
+              <li><a href="/category/bottle" className="hover:text-indigo-600">Steel Bottles</a></li>
             </ul>
           </div>
 
+          {/* Links 2 */}
           <div>
-            <h5 className="font-bold text-white text-sm mb-4">Customer Policies</h5>
-            <ul className="space-y-2 text-xs text-slate-400">
-              <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Return & Refund</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Delivery FAQ</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Security & Razorpay</a></li>
+            <h4 className="text-xs font-black text-slate-900 dark:text-white uppercase tracking-wider mb-4">Customer Services</h4>
+            <ul className="space-y-2.5 text-xs font-semibold">
+              <li><a href="/profile/orders" className="hover:text-indigo-600">Track Order Status</a></li>
+              <li><a href="/profile" className="hover:text-indigo-600">My Account & Wallet</a></li>
+              <li><a href="#" className="hover:text-indigo-600">Express Delivery Zones</a></li>
+              <li><a href="#" className="hover:text-indigo-600">Corporate & Bulk Gifting</a></li>
+              <li><a href="#" className="hover:text-indigo-600">FAQ & Help Center</a></li>
             </ul>
           </div>
 
+          {/* Links 3 */}
           <div>
-            <h5 className="font-bold text-white text-sm mb-4">Experience App</h5>
-            <p className="text-xs text-slate-400 mb-3">Download for Android & iOS for exclusive 10-min instant delivery discounts.</p>
-            <div className="bg-slate-800 p-3 rounded-xl border border-slate-700 text-center text-xs font-semibold text-white">
-              📱 Google Play / App Store Ready
-            </div>
+            <h4 className="text-xs font-black text-slate-900 dark:text-white uppercase tracking-wider mb-4">Policies & Safety</h4>
+            <ul className="space-y-2.5 text-xs font-semibold">
+              <li><a href="#" className="hover:text-indigo-600">Privacy Policy</a></li>
+              <li><a href="#" className="hover:text-indigo-600">Terms of Service</a></li>
+              <li><a href="#" className="hover:text-indigo-600">Cancellation & Refund Policy</a></li>
+              <li><a href="#" className="hover:text-indigo-600">Secure Razorpay Payments</a></li>
+            </ul>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
-          © 2026 Jaipur Gifting Enterprise. All rights reserved. Powered by Blinkit Architecture & Google Maps.
+        {/* Bottom copyright */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+          <p>© 2026 Jaipur Gifting Technologies Pvt. Ltd. All rights reserved.</p>
+          <div className="flex items-center gap-6">
+            <span>Privacy</span>
+            <span>Terms</span>
+            <span>Security</span>
+          </div>
         </div>
       </div>
     </footer>

@@ -5,9 +5,9 @@
       "name": "Baby Birth Frame Form",
       "description": "New descriptive update",
       "status": "ACTIVE",
-      "version": 19,
+      "version": 28,
       "createdAt": "2026-07-25T22:46:32.364Z",
-      "updatedAt": "2026-07-27T15:10:01.466Z",
+      "updatedAt": "2026-07-28T09:00:55.791Z",
       "fields": [
         {
           "id": "field-baby-name",
@@ -5107,20 +5107,2315 @@
           "formId": "form-baby-frame"
         }
       ]
+    },
+    {
+      "id": "form-baby-frame",
+      "name": "Baby Birth Frame Form",
+      "description": "New descriptive update",
+      "status": "ACTIVE",
+      "version": 19,
+      "createdAt": "2026-07-25T22:46:32.364Z",
+      "updatedAt": "2026-07-27T15:10:01.466Z",
+      "fields": [
+        {
+          "id": "field-baby-name",
+          "label": "Baby's Full Name",
+          "placeholder": "Enter baby's name",
+          "helpText": "Ensure correct spelling as this is printed on the frame",
+          "fieldType": "TEXT",
+          "required": true,
+          "sortOrder": 1,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "minLength": 2,
+              "maxLength": 50,
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-dob",
+          "label": "Date of Birth",
+          "placeholder": "Select baby's birth date",
+          "helpText": "Date of birth",
+          "fieldType": "DATE",
+          "required": true,
+          "sortOrder": 2,
+          "status": "ACTIVE",
+          "validationJson": {
+            "date": {
+              "futureAllowed": false,
+              "pastAllowed": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-time",
+          "label": "Birth Time",
+          "placeholder": "e.g. 09:45 AM",
+          "helpText": "Time of birth",
+          "fieldType": "TIME",
+          "required": true,
+          "sortOrder": 3,
+          "status": "ACTIVE",
+          "validationJson": {},
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-weight",
+          "label": "Birth Weight (kg/grams)",
+          "placeholder": "e.g. 3.2 kg",
+          "helpText": "Weight at the time of birth",
+          "fieldType": "TEXT",
+          "required": true,
+          "sortOrder": 4,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "maxLength": 20,
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-hospital-name",
+          "label": "Hospital Name",
+          "placeholder": "e.g. City Maternity Hospital",
+          "helpText": "Optional clinic or hospital name",
+          "fieldType": "TEXT",
+          "required": false,
+          "sortOrder": 5,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "full_width"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-mother-name",
+          "label": "Mother's Name",
+          "placeholder": "Mother's full name",
+          "fieldType": "TEXT",
+          "required": true,
+          "sortOrder": 6,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "minLength": 2,
+              "maxLength": 50,
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-father-name",
+          "label": "Father's Name",
+          "placeholder": "Father's full name",
+          "fieldType": "TEXT",
+          "required": true,
+          "sortOrder": 7,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "minLength": 2,
+              "maxLength": 50,
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-doctor-name",
+          "label": "Doctor's Name",
+          "placeholder": "Doctor or obstetrician",
+          "fieldType": "TEXT",
+          "required": false,
+          "sortOrder": 8,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-main-photo",
+          "label": "1 Main Baby Photo",
+          "helpText": "High resolution close-up photo of the baby. Recommended min. 1000x1000px.",
+          "fieldType": "MAIN_PHOTO",
+          "required": true,
+          "sortOrder": 9,
+          "status": "ACTIVE",
+          "validationJson": {},
+          "settingsJson": {
+            "section": "Photos",
+            "layout": "full_width",
+            "imageSettings": {
+              "minImages": 1,
+              "maxImages": 1,
+              "maxSizeBytes": 10485760,
+              "minResolution": "1000x1000",
+              "allowedFormats": [
+                "jpg",
+                "jpeg",
+                "png",
+                "webp"
+              ],
+              "cropRequired": true,
+              "backgroundRemovalRequired": false,
+              "imageQualityCheckEnabled": true
+            }
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-supporting-photos",
+          "label": "Supporting Baby Photos",
+          "helpText": "Provide 5 to 20 supporting photos to design the frame grid background.",
+          "fieldType": "SUPPORTING_PHOTOS",
+          "required": true,
+          "sortOrder": 10,
+          "status": "ACTIVE",
+          "validationJson": {},
+          "settingsJson": {
+            "section": "Photos",
+            "layout": "full_width",
+            "imageSettings": {
+              "minImages": 5,
+              "maxImages": 20,
+              "maxSizeBytes": 5242880,
+              "minResolution": "600x600",
+              "allowedFormats": [
+                "jpg",
+                "jpeg",
+                "png"
+              ],
+              "cropRequired": false,
+              "imageQualityCheckEnabled": true
+            }
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-whatsapp",
+          "label": "WhatsApp Number for Design Approval",
+          "placeholder": "Enter 10-digit WhatsApp number",
+          "helpText": "We will share draft designs on this number for approval before printing.",
+          "fieldType": "WHATSAPP",
+          "required": true,
+          "sortOrder": 11,
+          "status": "ACTIVE",
+          "validationJson": {
+            "phone": {
+              "countryCode": "+91",
+              "length": 10
+            },
+            "whatsapp": {
+              "isWhatsApp": true,
+              "required": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "full_width"
+          },
+          "formId": "form-baby-frame"
+        }
+      ]
+    },
+    {
+      "id": "form-baby-frame",
+      "name": "Baby Birth Frame Form",
+      "description": "New descriptive update",
+      "status": "ACTIVE",
+      "version": 20,
+      "createdAt": "2026-07-25T22:46:32.364Z",
+      "updatedAt": "2026-07-28T03:32:54.428Z",
+      "fields": [
+        {
+          "id": "field-baby-name",
+          "label": "Baby's Full Name",
+          "placeholder": "Enter baby's name",
+          "helpText": "Ensure correct spelling as this is printed on the frame",
+          "fieldType": "TEXT",
+          "required": true,
+          "sortOrder": 1,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "minLength": 2,
+              "maxLength": 50,
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-dob",
+          "label": "Date of Birth",
+          "placeholder": "Select baby's birth date",
+          "helpText": "Date of birth",
+          "fieldType": "DATE",
+          "required": true,
+          "sortOrder": 2,
+          "status": "ACTIVE",
+          "validationJson": {
+            "date": {
+              "futureAllowed": false,
+              "pastAllowed": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-time",
+          "label": "Birth Time",
+          "placeholder": "e.g. 09:45 AM",
+          "helpText": "Time of birth",
+          "fieldType": "TIME",
+          "required": true,
+          "sortOrder": 3,
+          "status": "ACTIVE",
+          "validationJson": {},
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-weight",
+          "label": "Birth Weight (kg/grams)",
+          "placeholder": "e.g. 3.2 kg",
+          "helpText": "Weight at the time of birth",
+          "fieldType": "TEXT",
+          "required": true,
+          "sortOrder": 4,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "maxLength": 20,
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-hospital-name",
+          "label": "Hospital Name",
+          "placeholder": "e.g. City Maternity Hospital",
+          "helpText": "Optional clinic or hospital name",
+          "fieldType": "TEXT",
+          "required": false,
+          "sortOrder": 5,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "full_width"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-mother-name",
+          "label": "Mother's Name",
+          "placeholder": "Mother's full name",
+          "fieldType": "TEXT",
+          "required": true,
+          "sortOrder": 6,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "minLength": 2,
+              "maxLength": 50,
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-father-name",
+          "label": "Father's Name",
+          "placeholder": "Father's full name",
+          "fieldType": "TEXT",
+          "required": true,
+          "sortOrder": 7,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "minLength": 2,
+              "maxLength": 50,
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-doctor-name",
+          "label": "Doctor's Name",
+          "placeholder": "Doctor or obstetrician",
+          "fieldType": "TEXT",
+          "required": false,
+          "sortOrder": 8,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-main-photo",
+          "label": "1 Main Baby Photo",
+          "helpText": "High resolution close-up photo of the baby. Recommended min. 1000x1000px.",
+          "fieldType": "MAIN_PHOTO",
+          "required": true,
+          "sortOrder": 9,
+          "status": "ACTIVE",
+          "validationJson": {},
+          "settingsJson": {
+            "section": "Photos",
+            "layout": "full_width",
+            "imageSettings": {
+              "minImages": 1,
+              "maxImages": 1,
+              "maxSizeBytes": 10485760,
+              "minResolution": "1000x1000",
+              "allowedFormats": [
+                "jpg",
+                "jpeg",
+                "png",
+                "webp"
+              ],
+              "cropRequired": true,
+              "backgroundRemovalRequired": false,
+              "imageQualityCheckEnabled": true
+            }
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-supporting-photos",
+          "label": "Supporting Baby Photos",
+          "helpText": "Provide 5 to 20 supporting photos to design the frame grid background.",
+          "fieldType": "SUPPORTING_PHOTOS",
+          "required": true,
+          "sortOrder": 10,
+          "status": "ACTIVE",
+          "validationJson": {},
+          "settingsJson": {
+            "section": "Photos",
+            "layout": "full_width",
+            "imageSettings": {
+              "minImages": 5,
+              "maxImages": 20,
+              "maxSizeBytes": 5242880,
+              "minResolution": "600x600",
+              "allowedFormats": [
+                "jpg",
+                "jpeg",
+                "png"
+              ],
+              "cropRequired": false,
+              "imageQualityCheckEnabled": true
+            }
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-whatsapp",
+          "label": "WhatsApp Number for Design Approval",
+          "placeholder": "Enter 10-digit WhatsApp number",
+          "helpText": "We will share draft designs on this number for approval before printing.",
+          "fieldType": "WHATSAPP",
+          "required": true,
+          "sortOrder": 11,
+          "status": "ACTIVE",
+          "validationJson": {
+            "phone": {
+              "countryCode": "+91",
+              "length": 10
+            },
+            "whatsapp": {
+              "isWhatsApp": true,
+              "required": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "full_width"
+          },
+          "formId": "form-baby-frame"
+        }
+      ]
+    },
+    {
+      "id": "form-baby-frame",
+      "name": "Baby Birth Frame Form",
+      "description": "New descriptive update",
+      "status": "ACTIVE",
+      "version": 21,
+      "createdAt": "2026-07-25T22:46:32.364Z",
+      "updatedAt": "2026-07-28T03:44:14.900Z",
+      "fields": [
+        {
+          "id": "field-baby-name",
+          "label": "Baby's Full Name",
+          "placeholder": "Enter baby's name",
+          "helpText": "Ensure correct spelling as this is printed on the frame",
+          "fieldType": "TEXT",
+          "required": true,
+          "sortOrder": 1,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "minLength": 2,
+              "maxLength": 50,
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-dob",
+          "label": "Date of Birth",
+          "placeholder": "Select baby's birth date",
+          "helpText": "Date of birth",
+          "fieldType": "DATE",
+          "required": true,
+          "sortOrder": 2,
+          "status": "ACTIVE",
+          "validationJson": {
+            "date": {
+              "futureAllowed": false,
+              "pastAllowed": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-time",
+          "label": "Birth Time",
+          "placeholder": "e.g. 09:45 AM",
+          "helpText": "Time of birth",
+          "fieldType": "TIME",
+          "required": true,
+          "sortOrder": 3,
+          "status": "ACTIVE",
+          "validationJson": {},
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-weight",
+          "label": "Birth Weight (kg/grams)",
+          "placeholder": "e.g. 3.2 kg",
+          "helpText": "Weight at the time of birth",
+          "fieldType": "TEXT",
+          "required": true,
+          "sortOrder": 4,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "maxLength": 20,
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-hospital-name",
+          "label": "Hospital Name",
+          "placeholder": "e.g. City Maternity Hospital",
+          "helpText": "Optional clinic or hospital name",
+          "fieldType": "TEXT",
+          "required": false,
+          "sortOrder": 5,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "full_width"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-mother-name",
+          "label": "Mother's Name",
+          "placeholder": "Mother's full name",
+          "fieldType": "TEXT",
+          "required": true,
+          "sortOrder": 6,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "minLength": 2,
+              "maxLength": 50,
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-father-name",
+          "label": "Father's Name",
+          "placeholder": "Father's full name",
+          "fieldType": "TEXT",
+          "required": true,
+          "sortOrder": 7,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "minLength": 2,
+              "maxLength": 50,
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-doctor-name",
+          "label": "Doctor's Name",
+          "placeholder": "Doctor or obstetrician",
+          "fieldType": "TEXT",
+          "required": false,
+          "sortOrder": 8,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-main-photo",
+          "label": "1 Main Baby Photo",
+          "helpText": "High resolution close-up photo of the baby. Recommended min. 1000x1000px.",
+          "fieldType": "MAIN_PHOTO",
+          "required": true,
+          "sortOrder": 9,
+          "status": "ACTIVE",
+          "validationJson": {},
+          "settingsJson": {
+            "section": "Photos",
+            "layout": "full_width",
+            "imageSettings": {
+              "minImages": 1,
+              "maxImages": 1,
+              "maxSizeBytes": 10485760,
+              "minResolution": "1000x1000",
+              "allowedFormats": [
+                "jpg",
+                "jpeg",
+                "png",
+                "webp"
+              ],
+              "cropRequired": true,
+              "backgroundRemovalRequired": false,
+              "imageQualityCheckEnabled": true
+            }
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-supporting-photos",
+          "label": "Supporting Baby Photos",
+          "helpText": "Provide 5 to 20 supporting photos to design the frame grid background.",
+          "fieldType": "SUPPORTING_PHOTOS",
+          "required": true,
+          "sortOrder": 10,
+          "status": "ACTIVE",
+          "validationJson": {},
+          "settingsJson": {
+            "section": "Photos",
+            "layout": "full_width",
+            "imageSettings": {
+              "minImages": 5,
+              "maxImages": 20,
+              "maxSizeBytes": 5242880,
+              "minResolution": "600x600",
+              "allowedFormats": [
+                "jpg",
+                "jpeg",
+                "png"
+              ],
+              "cropRequired": false,
+              "imageQualityCheckEnabled": true
+            }
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-whatsapp",
+          "label": "WhatsApp Number for Design Approval",
+          "placeholder": "Enter 10-digit WhatsApp number",
+          "helpText": "We will share draft designs on this number for approval before printing.",
+          "fieldType": "WHATSAPP",
+          "required": true,
+          "sortOrder": 11,
+          "status": "ACTIVE",
+          "validationJson": {
+            "phone": {
+              "countryCode": "+91",
+              "length": 10
+            },
+            "whatsapp": {
+              "isWhatsApp": true,
+              "required": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "full_width"
+          },
+          "formId": "form-baby-frame"
+        }
+      ]
+    },
+    {
+      "id": "form-baby-frame",
+      "name": "Baby Birth Frame Form",
+      "description": "New descriptive update",
+      "status": "ACTIVE",
+      "version": 22,
+      "createdAt": "2026-07-25T22:46:32.364Z",
+      "updatedAt": "2026-07-28T07:36:52.128Z",
+      "fields": [
+        {
+          "id": "field-baby-name",
+          "label": "Baby's Full Name",
+          "placeholder": "Enter baby's name",
+          "helpText": "Ensure correct spelling as this is printed on the frame",
+          "fieldType": "TEXT",
+          "required": true,
+          "sortOrder": 1,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "minLength": 2,
+              "maxLength": 50,
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-dob",
+          "label": "Date of Birth",
+          "placeholder": "Select baby's birth date",
+          "helpText": "Date of birth",
+          "fieldType": "DATE",
+          "required": true,
+          "sortOrder": 2,
+          "status": "ACTIVE",
+          "validationJson": {
+            "date": {
+              "futureAllowed": false,
+              "pastAllowed": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-time",
+          "label": "Birth Time",
+          "placeholder": "e.g. 09:45 AM",
+          "helpText": "Time of birth",
+          "fieldType": "TIME",
+          "required": true,
+          "sortOrder": 3,
+          "status": "ACTIVE",
+          "validationJson": {},
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-weight",
+          "label": "Birth Weight (kg/grams)",
+          "placeholder": "e.g. 3.2 kg",
+          "helpText": "Weight at the time of birth",
+          "fieldType": "TEXT",
+          "required": true,
+          "sortOrder": 4,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "maxLength": 20,
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-hospital-name",
+          "label": "Hospital Name",
+          "placeholder": "e.g. City Maternity Hospital",
+          "helpText": "Optional clinic or hospital name",
+          "fieldType": "TEXT",
+          "required": false,
+          "sortOrder": 5,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "full_width"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-mother-name",
+          "label": "Mother's Name",
+          "placeholder": "Mother's full name",
+          "fieldType": "TEXT",
+          "required": true,
+          "sortOrder": 6,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "minLength": 2,
+              "maxLength": 50,
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-father-name",
+          "label": "Father's Name",
+          "placeholder": "Father's full name",
+          "fieldType": "TEXT",
+          "required": true,
+          "sortOrder": 7,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "minLength": 2,
+              "maxLength": 50,
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-doctor-name",
+          "label": "Doctor's Name",
+          "placeholder": "Doctor or obstetrician",
+          "fieldType": "TEXT",
+          "required": false,
+          "sortOrder": 8,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-main-photo",
+          "label": "1 Main Baby Photo",
+          "helpText": "High resolution close-up photo of the baby. Recommended min. 1000x1000px.",
+          "fieldType": "MAIN_PHOTO",
+          "required": true,
+          "sortOrder": 9,
+          "status": "ACTIVE",
+          "validationJson": {},
+          "settingsJson": {
+            "section": "Photos",
+            "layout": "full_width",
+            "imageSettings": {
+              "minImages": 1,
+              "maxImages": 1,
+              "maxSizeBytes": 10485760,
+              "minResolution": "1000x1000",
+              "allowedFormats": [
+                "jpg",
+                "jpeg",
+                "png",
+                "webp"
+              ],
+              "cropRequired": true,
+              "backgroundRemovalRequired": false,
+              "imageQualityCheckEnabled": true
+            }
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-supporting-photos",
+          "label": "Supporting Baby Photos",
+          "helpText": "Provide 5 to 20 supporting photos to design the frame grid background.",
+          "fieldType": "SUPPORTING_PHOTOS",
+          "required": true,
+          "sortOrder": 10,
+          "status": "ACTIVE",
+          "validationJson": {},
+          "settingsJson": {
+            "section": "Photos",
+            "layout": "full_width",
+            "imageSettings": {
+              "minImages": 5,
+              "maxImages": 20,
+              "maxSizeBytes": 5242880,
+              "minResolution": "600x600",
+              "allowedFormats": [
+                "jpg",
+                "jpeg",
+                "png"
+              ],
+              "cropRequired": false,
+              "imageQualityCheckEnabled": true
+            }
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-whatsapp",
+          "label": "WhatsApp Number for Design Approval",
+          "placeholder": "Enter 10-digit WhatsApp number",
+          "helpText": "We will share draft designs on this number for approval before printing.",
+          "fieldType": "WHATSAPP",
+          "required": true,
+          "sortOrder": 11,
+          "status": "ACTIVE",
+          "validationJson": {
+            "phone": {
+              "countryCode": "+91",
+              "length": 10
+            },
+            "whatsapp": {
+              "isWhatsApp": true,
+              "required": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "full_width"
+          },
+          "formId": "form-baby-frame"
+        }
+      ]
+    },
+    {
+      "id": "form-baby-frame",
+      "name": "Baby Birth Frame Form",
+      "description": "New descriptive update",
+      "status": "ACTIVE",
+      "version": 23,
+      "createdAt": "2026-07-25T22:46:32.364Z",
+      "updatedAt": "2026-07-28T07:40:56.746Z",
+      "fields": [
+        {
+          "id": "field-baby-name",
+          "label": "Baby's Full Name",
+          "placeholder": "Enter baby's name",
+          "helpText": "Ensure correct spelling as this is printed on the frame",
+          "fieldType": "TEXT",
+          "required": true,
+          "sortOrder": 1,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "minLength": 2,
+              "maxLength": 50,
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-dob",
+          "label": "Date of Birth",
+          "placeholder": "Select baby's birth date",
+          "helpText": "Date of birth",
+          "fieldType": "DATE",
+          "required": true,
+          "sortOrder": 2,
+          "status": "ACTIVE",
+          "validationJson": {
+            "date": {
+              "futureAllowed": false,
+              "pastAllowed": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-time",
+          "label": "Birth Time",
+          "placeholder": "e.g. 09:45 AM",
+          "helpText": "Time of birth",
+          "fieldType": "TIME",
+          "required": true,
+          "sortOrder": 3,
+          "status": "ACTIVE",
+          "validationJson": {},
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-weight",
+          "label": "Birth Weight (kg/grams)",
+          "placeholder": "e.g. 3.2 kg",
+          "helpText": "Weight at the time of birth",
+          "fieldType": "TEXT",
+          "required": true,
+          "sortOrder": 4,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "maxLength": 20,
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-hospital-name",
+          "label": "Hospital Name",
+          "placeholder": "e.g. City Maternity Hospital",
+          "helpText": "Optional clinic or hospital name",
+          "fieldType": "TEXT",
+          "required": false,
+          "sortOrder": 5,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "full_width"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-mother-name",
+          "label": "Mother's Name",
+          "placeholder": "Mother's full name",
+          "fieldType": "TEXT",
+          "required": true,
+          "sortOrder": 6,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "minLength": 2,
+              "maxLength": 50,
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-father-name",
+          "label": "Father's Name",
+          "placeholder": "Father's full name",
+          "fieldType": "TEXT",
+          "required": true,
+          "sortOrder": 7,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "minLength": 2,
+              "maxLength": 50,
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-doctor-name",
+          "label": "Doctor's Name",
+          "placeholder": "Doctor or obstetrician",
+          "fieldType": "TEXT",
+          "required": false,
+          "sortOrder": 8,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-main-photo",
+          "label": "1 Main Baby Photo",
+          "helpText": "High resolution close-up photo of the baby. Recommended min. 1000x1000px.",
+          "fieldType": "MAIN_PHOTO",
+          "required": true,
+          "sortOrder": 9,
+          "status": "ACTIVE",
+          "validationJson": {},
+          "settingsJson": {
+            "section": "Photos",
+            "layout": "full_width",
+            "imageSettings": {
+              "minImages": 1,
+              "maxImages": 1,
+              "maxSizeBytes": 10485760,
+              "minResolution": "1000x1000",
+              "allowedFormats": [
+                "jpg",
+                "jpeg",
+                "png",
+                "webp"
+              ],
+              "cropRequired": true,
+              "backgroundRemovalRequired": false,
+              "imageQualityCheckEnabled": true
+            }
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-supporting-photos",
+          "label": "Supporting Baby Photos",
+          "helpText": "Provide 5 to 20 supporting photos to design the frame grid background.",
+          "fieldType": "SUPPORTING_PHOTOS",
+          "required": true,
+          "sortOrder": 10,
+          "status": "ACTIVE",
+          "validationJson": {},
+          "settingsJson": {
+            "section": "Photos",
+            "layout": "full_width",
+            "imageSettings": {
+              "minImages": 5,
+              "maxImages": 20,
+              "maxSizeBytes": 5242880,
+              "minResolution": "600x600",
+              "allowedFormats": [
+                "jpg",
+                "jpeg",
+                "png"
+              ],
+              "cropRequired": false,
+              "imageQualityCheckEnabled": true
+            }
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-whatsapp",
+          "label": "WhatsApp Number for Design Approval",
+          "placeholder": "Enter 10-digit WhatsApp number",
+          "helpText": "We will share draft designs on this number for approval before printing.",
+          "fieldType": "WHATSAPP",
+          "required": true,
+          "sortOrder": 11,
+          "status": "ACTIVE",
+          "validationJson": {
+            "phone": {
+              "countryCode": "+91",
+              "length": 10
+            },
+            "whatsapp": {
+              "isWhatsApp": true,
+              "required": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "full_width"
+          },
+          "formId": "form-baby-frame"
+        }
+      ]
+    },
+    {
+      "id": "form-baby-frame",
+      "name": "Baby Birth Frame Form",
+      "description": "New descriptive update",
+      "status": "ACTIVE",
+      "version": 24,
+      "createdAt": "2026-07-25T22:46:32.364Z",
+      "updatedAt": "2026-07-28T08:19:43.069Z",
+      "fields": [
+        {
+          "id": "field-baby-name",
+          "label": "Baby's Full Name",
+          "placeholder": "Enter baby's name",
+          "helpText": "Ensure correct spelling as this is printed on the frame",
+          "fieldType": "TEXT",
+          "required": true,
+          "sortOrder": 1,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "minLength": 2,
+              "maxLength": 50,
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-dob",
+          "label": "Date of Birth",
+          "placeholder": "Select baby's birth date",
+          "helpText": "Date of birth",
+          "fieldType": "DATE",
+          "required": true,
+          "sortOrder": 2,
+          "status": "ACTIVE",
+          "validationJson": {
+            "date": {
+              "futureAllowed": false,
+              "pastAllowed": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-time",
+          "label": "Birth Time",
+          "placeholder": "e.g. 09:45 AM",
+          "helpText": "Time of birth",
+          "fieldType": "TIME",
+          "required": true,
+          "sortOrder": 3,
+          "status": "ACTIVE",
+          "validationJson": {},
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-weight",
+          "label": "Birth Weight (kg/grams)",
+          "placeholder": "e.g. 3.2 kg",
+          "helpText": "Weight at the time of birth",
+          "fieldType": "TEXT",
+          "required": true,
+          "sortOrder": 4,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "maxLength": 20,
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-hospital-name",
+          "label": "Hospital Name",
+          "placeholder": "e.g. City Maternity Hospital",
+          "helpText": "Optional clinic or hospital name",
+          "fieldType": "TEXT",
+          "required": false,
+          "sortOrder": 5,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "full_width"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-mother-name",
+          "label": "Mother's Name",
+          "placeholder": "Mother's full name",
+          "fieldType": "TEXT",
+          "required": true,
+          "sortOrder": 6,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "minLength": 2,
+              "maxLength": 50,
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-father-name",
+          "label": "Father's Name",
+          "placeholder": "Father's full name",
+          "fieldType": "TEXT",
+          "required": true,
+          "sortOrder": 7,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "minLength": 2,
+              "maxLength": 50,
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-doctor-name",
+          "label": "Doctor's Name",
+          "placeholder": "Doctor or obstetrician",
+          "fieldType": "TEXT",
+          "required": false,
+          "sortOrder": 8,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-main-photo",
+          "label": "1 Main Baby Photo",
+          "helpText": "High resolution close-up photo of the baby. Recommended min. 1000x1000px.",
+          "fieldType": "MAIN_PHOTO",
+          "required": true,
+          "sortOrder": 9,
+          "status": "ACTIVE",
+          "validationJson": {},
+          "settingsJson": {
+            "section": "Photos",
+            "layout": "full_width",
+            "imageSettings": {
+              "minImages": 1,
+              "maxImages": 1,
+              "maxSizeBytes": 10485760,
+              "minResolution": "1000x1000",
+              "allowedFormats": [
+                "jpg",
+                "jpeg",
+                "png",
+                "webp"
+              ],
+              "cropRequired": true,
+              "backgroundRemovalRequired": false,
+              "imageQualityCheckEnabled": true
+            }
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-supporting-photos",
+          "label": "Supporting Baby Photos",
+          "helpText": "Provide 5 to 20 supporting photos to design the frame grid background.",
+          "fieldType": "SUPPORTING_PHOTOS",
+          "required": true,
+          "sortOrder": 10,
+          "status": "ACTIVE",
+          "validationJson": {},
+          "settingsJson": {
+            "section": "Photos",
+            "layout": "full_width",
+            "imageSettings": {
+              "minImages": 5,
+              "maxImages": 20,
+              "maxSizeBytes": 5242880,
+              "minResolution": "600x600",
+              "allowedFormats": [
+                "jpg",
+                "jpeg",
+                "png"
+              ],
+              "cropRequired": false,
+              "imageQualityCheckEnabled": true
+            }
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-whatsapp",
+          "label": "WhatsApp Number for Design Approval",
+          "placeholder": "Enter 10-digit WhatsApp number",
+          "helpText": "We will share draft designs on this number for approval before printing.",
+          "fieldType": "WHATSAPP",
+          "required": true,
+          "sortOrder": 11,
+          "status": "ACTIVE",
+          "validationJson": {
+            "phone": {
+              "countryCode": "+91",
+              "length": 10
+            },
+            "whatsapp": {
+              "isWhatsApp": true,
+              "required": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "full_width"
+          },
+          "formId": "form-baby-frame"
+        }
+      ]
+    },
+    {
+      "id": "form-baby-frame",
+      "name": "Baby Birth Frame Form",
+      "description": "New descriptive update",
+      "status": "ACTIVE",
+      "version": 25,
+      "createdAt": "2026-07-25T22:46:32.364Z",
+      "updatedAt": "2026-07-28T08:24:28.276Z",
+      "fields": [
+        {
+          "id": "field-baby-name",
+          "label": "Baby's Full Name",
+          "placeholder": "Enter baby's name",
+          "helpText": "Ensure correct spelling as this is printed on the frame",
+          "fieldType": "TEXT",
+          "required": true,
+          "sortOrder": 1,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "minLength": 2,
+              "maxLength": 50,
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-dob",
+          "label": "Date of Birth",
+          "placeholder": "Select baby's birth date",
+          "helpText": "Date of birth",
+          "fieldType": "DATE",
+          "required": true,
+          "sortOrder": 2,
+          "status": "ACTIVE",
+          "validationJson": {
+            "date": {
+              "futureAllowed": false,
+              "pastAllowed": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-time",
+          "label": "Birth Time",
+          "placeholder": "e.g. 09:45 AM",
+          "helpText": "Time of birth",
+          "fieldType": "TIME",
+          "required": true,
+          "sortOrder": 3,
+          "status": "ACTIVE",
+          "validationJson": {},
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-weight",
+          "label": "Birth Weight (kg/grams)",
+          "placeholder": "e.g. 3.2 kg",
+          "helpText": "Weight at the time of birth",
+          "fieldType": "TEXT",
+          "required": true,
+          "sortOrder": 4,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "maxLength": 20,
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-hospital-name",
+          "label": "Hospital Name",
+          "placeholder": "e.g. City Maternity Hospital",
+          "helpText": "Optional clinic or hospital name",
+          "fieldType": "TEXT",
+          "required": false,
+          "sortOrder": 5,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "full_width"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-mother-name",
+          "label": "Mother's Name",
+          "placeholder": "Mother's full name",
+          "fieldType": "TEXT",
+          "required": true,
+          "sortOrder": 6,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "minLength": 2,
+              "maxLength": 50,
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-father-name",
+          "label": "Father's Name",
+          "placeholder": "Father's full name",
+          "fieldType": "TEXT",
+          "required": true,
+          "sortOrder": 7,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "minLength": 2,
+              "maxLength": 50,
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-doctor-name",
+          "label": "Doctor's Name",
+          "placeholder": "Doctor or obstetrician",
+          "fieldType": "TEXT",
+          "required": false,
+          "sortOrder": 8,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-main-photo",
+          "label": "1 Main Baby Photo",
+          "helpText": "High resolution close-up photo of the baby. Recommended min. 1000x1000px.",
+          "fieldType": "MAIN_PHOTO",
+          "required": true,
+          "sortOrder": 9,
+          "status": "ACTIVE",
+          "validationJson": {},
+          "settingsJson": {
+            "section": "Photos",
+            "layout": "full_width",
+            "imageSettings": {
+              "minImages": 1,
+              "maxImages": 1,
+              "maxSizeBytes": 10485760,
+              "minResolution": "1000x1000",
+              "allowedFormats": [
+                "jpg",
+                "jpeg",
+                "png",
+                "webp"
+              ],
+              "cropRequired": true,
+              "backgroundRemovalRequired": false,
+              "imageQualityCheckEnabled": true
+            }
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-supporting-photos",
+          "label": "Supporting Baby Photos",
+          "helpText": "Provide 5 to 20 supporting photos to design the frame grid background.",
+          "fieldType": "SUPPORTING_PHOTOS",
+          "required": true,
+          "sortOrder": 10,
+          "status": "ACTIVE",
+          "validationJson": {},
+          "settingsJson": {
+            "section": "Photos",
+            "layout": "full_width",
+            "imageSettings": {
+              "minImages": 5,
+              "maxImages": 20,
+              "maxSizeBytes": 5242880,
+              "minResolution": "600x600",
+              "allowedFormats": [
+                "jpg",
+                "jpeg",
+                "png"
+              ],
+              "cropRequired": false,
+              "imageQualityCheckEnabled": true
+            }
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-whatsapp",
+          "label": "WhatsApp Number for Design Approval",
+          "placeholder": "Enter 10-digit WhatsApp number",
+          "helpText": "We will share draft designs on this number for approval before printing.",
+          "fieldType": "WHATSAPP",
+          "required": true,
+          "sortOrder": 11,
+          "status": "ACTIVE",
+          "validationJson": {
+            "phone": {
+              "countryCode": "+91",
+              "length": 10
+            },
+            "whatsapp": {
+              "isWhatsApp": true,
+              "required": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "full_width"
+          },
+          "formId": "form-baby-frame"
+        }
+      ]
+    },
+    {
+      "id": "form-baby-frame",
+      "name": "Baby Birth Frame Form",
+      "description": "New descriptive update",
+      "status": "ACTIVE",
+      "version": 26,
+      "createdAt": "2026-07-25T22:46:32.364Z",
+      "updatedAt": "2026-07-28T08:26:48.122Z",
+      "fields": [
+        {
+          "id": "field-baby-name",
+          "label": "Baby's Full Name",
+          "placeholder": "Enter baby's name",
+          "helpText": "Ensure correct spelling as this is printed on the frame",
+          "fieldType": "TEXT",
+          "required": true,
+          "sortOrder": 1,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "minLength": 2,
+              "maxLength": 50,
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-dob",
+          "label": "Date of Birth",
+          "placeholder": "Select baby's birth date",
+          "helpText": "Date of birth",
+          "fieldType": "DATE",
+          "required": true,
+          "sortOrder": 2,
+          "status": "ACTIVE",
+          "validationJson": {
+            "date": {
+              "futureAllowed": false,
+              "pastAllowed": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-time",
+          "label": "Birth Time",
+          "placeholder": "e.g. 09:45 AM",
+          "helpText": "Time of birth",
+          "fieldType": "TIME",
+          "required": true,
+          "sortOrder": 3,
+          "status": "ACTIVE",
+          "validationJson": {},
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-weight",
+          "label": "Birth Weight (kg/grams)",
+          "placeholder": "e.g. 3.2 kg",
+          "helpText": "Weight at the time of birth",
+          "fieldType": "TEXT",
+          "required": true,
+          "sortOrder": 4,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "maxLength": 20,
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-hospital-name",
+          "label": "Hospital Name",
+          "placeholder": "e.g. City Maternity Hospital",
+          "helpText": "Optional clinic or hospital name",
+          "fieldType": "TEXT",
+          "required": false,
+          "sortOrder": 5,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "full_width"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-mother-name",
+          "label": "Mother's Name",
+          "placeholder": "Mother's full name",
+          "fieldType": "TEXT",
+          "required": true,
+          "sortOrder": 6,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "minLength": 2,
+              "maxLength": 50,
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-father-name",
+          "label": "Father's Name",
+          "placeholder": "Father's full name",
+          "fieldType": "TEXT",
+          "required": true,
+          "sortOrder": 7,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "minLength": 2,
+              "maxLength": 50,
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-doctor-name",
+          "label": "Doctor's Name",
+          "placeholder": "Doctor or obstetrician",
+          "fieldType": "TEXT",
+          "required": false,
+          "sortOrder": 8,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-main-photo",
+          "label": "1 Main Baby Photo",
+          "helpText": "High resolution close-up photo of the baby. Recommended min. 1000x1000px.",
+          "fieldType": "MAIN_PHOTO",
+          "required": true,
+          "sortOrder": 9,
+          "status": "ACTIVE",
+          "validationJson": {},
+          "settingsJson": {
+            "section": "Photos",
+            "layout": "full_width",
+            "imageSettings": {
+              "minImages": 1,
+              "maxImages": 1,
+              "maxSizeBytes": 10485760,
+              "minResolution": "1000x1000",
+              "allowedFormats": [
+                "jpg",
+                "jpeg",
+                "png",
+                "webp"
+              ],
+              "cropRequired": true,
+              "backgroundRemovalRequired": false,
+              "imageQualityCheckEnabled": true
+            }
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-supporting-photos",
+          "label": "Supporting Baby Photos",
+          "helpText": "Provide 5 to 20 supporting photos to design the frame grid background.",
+          "fieldType": "SUPPORTING_PHOTOS",
+          "required": true,
+          "sortOrder": 10,
+          "status": "ACTIVE",
+          "validationJson": {},
+          "settingsJson": {
+            "section": "Photos",
+            "layout": "full_width",
+            "imageSettings": {
+              "minImages": 5,
+              "maxImages": 20,
+              "maxSizeBytes": 5242880,
+              "minResolution": "600x600",
+              "allowedFormats": [
+                "jpg",
+                "jpeg",
+                "png"
+              ],
+              "cropRequired": false,
+              "imageQualityCheckEnabled": true
+            }
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-whatsapp",
+          "label": "WhatsApp Number for Design Approval",
+          "placeholder": "Enter 10-digit WhatsApp number",
+          "helpText": "We will share draft designs on this number for approval before printing.",
+          "fieldType": "WHATSAPP",
+          "required": true,
+          "sortOrder": 11,
+          "status": "ACTIVE",
+          "validationJson": {
+            "phone": {
+              "countryCode": "+91",
+              "length": 10
+            },
+            "whatsapp": {
+              "isWhatsApp": true,
+              "required": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "full_width"
+          },
+          "formId": "form-baby-frame"
+        }
+      ]
+    },
+    {
+      "id": "form-baby-frame",
+      "name": "Baby Birth Frame Form",
+      "description": "New descriptive update",
+      "status": "ACTIVE",
+      "version": 27,
+      "createdAt": "2026-07-25T22:46:32.364Z",
+      "updatedAt": "2026-07-28T08:37:26.804Z",
+      "fields": [
+        {
+          "id": "field-baby-name",
+          "label": "Baby's Full Name",
+          "placeholder": "Enter baby's name",
+          "helpText": "Ensure correct spelling as this is printed on the frame",
+          "fieldType": "TEXT",
+          "required": true,
+          "sortOrder": 1,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "minLength": 2,
+              "maxLength": 50,
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-dob",
+          "label": "Date of Birth",
+          "placeholder": "Select baby's birth date",
+          "helpText": "Date of birth",
+          "fieldType": "DATE",
+          "required": true,
+          "sortOrder": 2,
+          "status": "ACTIVE",
+          "validationJson": {
+            "date": {
+              "futureAllowed": false,
+              "pastAllowed": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-time",
+          "label": "Birth Time",
+          "placeholder": "e.g. 09:45 AM",
+          "helpText": "Time of birth",
+          "fieldType": "TIME",
+          "required": true,
+          "sortOrder": 3,
+          "status": "ACTIVE",
+          "validationJson": {},
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-weight",
+          "label": "Birth Weight (kg/grams)",
+          "placeholder": "e.g. 3.2 kg",
+          "helpText": "Weight at the time of birth",
+          "fieldType": "TEXT",
+          "required": true,
+          "sortOrder": 4,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "maxLength": 20,
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-hospital-name",
+          "label": "Hospital Name",
+          "placeholder": "e.g. City Maternity Hospital",
+          "helpText": "Optional clinic or hospital name",
+          "fieldType": "TEXT",
+          "required": false,
+          "sortOrder": 5,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "full_width"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-mother-name",
+          "label": "Mother's Name",
+          "placeholder": "Mother's full name",
+          "fieldType": "TEXT",
+          "required": true,
+          "sortOrder": 6,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "minLength": 2,
+              "maxLength": 50,
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-father-name",
+          "label": "Father's Name",
+          "placeholder": "Father's full name",
+          "fieldType": "TEXT",
+          "required": true,
+          "sortOrder": 7,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "minLength": 2,
+              "maxLength": 50,
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-doctor-name",
+          "label": "Doctor's Name",
+          "placeholder": "Doctor or obstetrician",
+          "fieldType": "TEXT",
+          "required": false,
+          "sortOrder": 8,
+          "status": "ACTIVE",
+          "validationJson": {
+            "text": {
+              "trim": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "2_column"
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-main-photo",
+          "label": "1 Main Baby Photo",
+          "helpText": "High resolution close-up photo of the baby. Recommended min. 1000x1000px.",
+          "fieldType": "MAIN_PHOTO",
+          "required": true,
+          "sortOrder": 9,
+          "status": "ACTIVE",
+          "validationJson": {},
+          "settingsJson": {
+            "section": "Photos",
+            "layout": "full_width",
+            "imageSettings": {
+              "minImages": 1,
+              "maxImages": 1,
+              "maxSizeBytes": 10485760,
+              "minResolution": "1000x1000",
+              "allowedFormats": [
+                "jpg",
+                "jpeg",
+                "png",
+                "webp"
+              ],
+              "cropRequired": true,
+              "backgroundRemovalRequired": false,
+              "imageQualityCheckEnabled": true
+            }
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-supporting-photos",
+          "label": "Supporting Baby Photos",
+          "helpText": "Provide 5 to 20 supporting photos to design the frame grid background.",
+          "fieldType": "SUPPORTING_PHOTOS",
+          "required": true,
+          "sortOrder": 10,
+          "status": "ACTIVE",
+          "validationJson": {},
+          "settingsJson": {
+            "section": "Photos",
+            "layout": "full_width",
+            "imageSettings": {
+              "minImages": 5,
+              "maxImages": 20,
+              "maxSizeBytes": 5242880,
+              "minResolution": "600x600",
+              "allowedFormats": [
+                "jpg",
+                "jpeg",
+                "png"
+              ],
+              "cropRequired": false,
+              "imageQualityCheckEnabled": true
+            }
+          },
+          "formId": "form-baby-frame"
+        },
+        {
+          "id": "field-baby-whatsapp",
+          "label": "WhatsApp Number for Design Approval",
+          "placeholder": "Enter 10-digit WhatsApp number",
+          "helpText": "We will share draft designs on this number for approval before printing.",
+          "fieldType": "WHATSAPP",
+          "required": true,
+          "sortOrder": 11,
+          "status": "ACTIVE",
+          "validationJson": {
+            "phone": {
+              "countryCode": "+91",
+              "length": 10
+            },
+            "whatsapp": {
+              "isWhatsApp": true,
+              "required": true
+            }
+          },
+          "settingsJson": {
+            "section": "Customer Details",
+            "layout": "full_width"
+          },
+          "formId": "form-baby-frame"
+        }
+      ]
     }
   ],
   "assignments": [
     {
-      "id": "assign-x3uedn0o6",
+      "id": "assign-ptlh8plp6",
       "formId": "form-baby-frame",
       "productId": "test-product-123",
-      "createdAt": "2026-07-27T15:10:01.444Z"
+      "createdAt": "2026-07-28T09:00:55.763Z"
     },
     {
-      "id": "assign-vroozw4xb",
+      "id": "assign-5k20rs8ja",
       "formId": "form-photo-mosaic",
       "variationId": "test-var-456",
-      "createdAt": "2026-07-27T15:10:01.451Z"
+      "createdAt": "2026-07-28T09:00:55.774Z"
     }
   ],
   "globalSettings": {

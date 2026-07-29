@@ -99,8 +99,7 @@ export class CustomersRepository {
         where: { id },
         include: {
           addresses: true,
-          wallet: true,
-          referralCode: true,
+          walletAccount: true,
         }
       });
     } catch (err) {
@@ -175,8 +174,7 @@ export class CustomersRepository {
         where,
         orderBy: { createdAt: 'desc' },
         include: {
-          wallet: true,
-          referralCode: true,
+          walletAccount: true,
         }
       });
       return { items, total };
@@ -438,7 +436,7 @@ export class CustomersRepository {
   // ==========================================
   async createWallet(data: any): Promise<any> {
     try {
-      return await prisma.customerWallet.create({ data });
+      return await prisma.walletAccount.create({ data: { customerId: data.customerId, status: 'ACTIVE' } });
     } catch (err) {
       if (!shouldAllowFallback()) throw err;
       const wallets = readJsonFile<any>(WALLETS_FILE);
@@ -458,7 +456,7 @@ export class CustomersRepository {
 
   async getWalletByCustomerId(customerId: string): Promise<any | null> {
     try {
-      return await prisma.customerWallet.findUnique({ where: { customerId } });
+      return await prisma.walletAccount.findUnique({ where: { customerId } });
     } catch (err) {
       if (!shouldAllowFallback()) throw err;
       const wallets = readJsonFile<any>(WALLETS_FILE);
@@ -468,9 +466,9 @@ export class CustomersRepository {
 
   async updateWalletBalance(id: string, balance: number): Promise<any> {
     try {
-      return await prisma.customerWallet.update({
+      return await prisma.walletAccount.update({
         where: { id },
-        data: { balance },
+        data: { cachedAvailableBalance: balance },
       });
     } catch (err) {
       if (!shouldAllowFallback()) throw err;
@@ -487,7 +485,16 @@ export class CustomersRepository {
 
   async createTransaction(data: any): Promise<any> {
     try {
-      return await prisma.walletTransaction.create({ data });
+      return await prisma.walletLedgerEntry.create({
+        data: {
+          walletAccountId: String(data.walletId || 'acc_default'),
+          customerId: data.customerId,
+          transactionType: 'CREDIT',
+          direction: 'CREDIT',
+          amount: data.amount || 0,
+          bucketType: 'SELF_LOADED',
+        } as any,
+      });
     } catch (err) {
       if (!shouldAllowFallback()) throw err;
       const transactions = readJsonFile<any>(TRANSACTIONS_FILE);
@@ -504,8 +511,8 @@ export class CustomersRepository {
 
   async listTransactionsByWalletId(walletId: string): Promise<any[]> {
     try {
-      return await prisma.walletTransaction.findMany({
-        where: { walletId },
+      return await prisma.walletLedgerEntry.findMany({
+        where: { walletAccountId: walletId },
         orderBy: { createdAt: 'desc' },
       });
     } catch (err) {
@@ -521,77 +528,48 @@ export class CustomersRepository {
   // 6. REFERRAL METHODS
   // ==========================================
   async createReferralCode(data: any): Promise<any> {
-    try {
-      return await prisma.customerReferralCode.create({ data });
-    } catch (err) {
-      if (!shouldAllowFallback()) throw err;
-      const codes = readJsonFile<any>(REFERRAL_CODES_FILE);
-      const newCode = {
-        id: crypto.randomUUID(),
-        ...data,
-        totalReferredCount: 0,
-        totalEarned: 0,
-        createdAt: new Date(),
-        updatedAt: new Date(),
-      };
-      codes.push(newCode);
-      writeJsonFile(REFERRAL_CODES_FILE, codes);
-      return newCode;
-    }
+    const codes = readJsonFile<any>(REFERRAL_CODES_FILE);
+    const newCode = {
+      id: crypto.randomUUID(),
+      ...data,
+      totalReferredCount: 0,
+      totalEarned: 0,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    };
+    codes.push(newCode);
+    writeJsonFile(REFERRAL_CODES_FILE, codes);
+    return newCode;
   }
 
   async getReferralCodeByCode(code: string): Promise<any | null> {
-    try {
-      return await prisma.customerReferralCode.findUnique({
-        where: { code: code.toUpperCase() },
-        include: { customer: true },
-      });
-    } catch (err) {
-      if (!shouldAllowFallback()) throw err;
-      const codes = readJsonFile<any>(REFERRAL_CODES_FILE);
-      const item = codes.find((c) => c.code === code.toUpperCase()) || null;
-      if (!item) return null;
-      const customer = await this.findCustomerById(item.customerId);
-      return { ...item, customer };
-    }
+    const codes = readJsonFile<any>(REFERRAL_CODES_FILE);
+    const item = codes.find((c: any) => c.code === code.toUpperCase()) || null;
+    if (!item) return null;
+    const customer = await this.findCustomerById(item.customerId);
+    return { ...item, customer };
   }
 
   async getReferralCodeByCustomerId(customerId: string): Promise<any | null> {
-    try {
-      return await prisma.customerReferralCode.findUnique({ where: { customerId } });
-    } catch (err) {
-      if (!shouldAllowFallback()) throw err;
-      const codes = readJsonFile<any>(REFERRAL_CODES_FILE);
-      return codes.find((c) => c.customerId === customerId) || null;
-    }
+    const codes = readJsonFile<any>(REFERRAL_CODES_FILE);
+    return codes.find((c: any) => c.customerId === customerId) || null;
   }
 
   async incrementReferralCodeEarnings(id: string, amount: number): Promise<any> {
-    try {
-      return await prisma.customerReferralCode.update({
-        where: { id },
-        data: {
-          totalReferredCount: { increment: 1 },
-          totalEarned: { increment: amount },
-        },
-      });
-    } catch (err) {
-      if (!shouldAllowFallback()) throw err;
-      const codes = readJsonFile<any>(REFERRAL_CODES_FILE);
-      const idx = codes.findIndex((c) => c.id === id);
-      if (idx !== -1) {
-        codes[idx].totalReferredCount = (codes[idx].totalReferredCount || 0) + 1;
-        codes[idx].totalEarned = Number(codes[idx].totalEarned || 0) + amount;
-        codes[idx].updatedAt = new Date();
-        writeJsonFile(REFERRAL_CODES_FILE, codes);
-      }
-      return codes[idx];
+    const codes = readJsonFile<any>(REFERRAL_CODES_FILE);
+    const idx = codes.findIndex((c: any) => c.id === id);
+    if (idx !== -1) {
+      codes[idx].totalReferredCount = (codes[idx].totalReferredCount || 0) + 1;
+      codes[idx].totalEarned = Number(codes[idx].totalEarned || 0) + amount;
+      codes[idx].updatedAt = new Date();
+      writeJsonFile(REFERRAL_CODES_FILE, codes);
     }
+    return codes[idx];
   }
 
   async createReferralRelationship(data: any): Promise<any> {
     try {
-      return await prisma.customerReferralRelationship.create({ data });
+      return await prisma.referralRelationship.create({ data });
     } catch (err) {
       if (!shouldAllowFallback()) throw err;
       const relationships = readJsonFile<any>(REFERRAL_RELATIONSHIPS_FILE);
@@ -610,17 +588,17 @@ export class CustomersRepository {
 
   async getReferralRelationshipByRefereeId(refereeId: string): Promise<any | null> {
     try {
-      return await prisma.customerReferralRelationship.findUnique({ where: { refereeId } });
+      return await prisma.referralRelationship.findFirst({ where: { newCustomerId: refereeId } });
     } catch (err) {
       if (!shouldAllowFallback()) throw err;
       const relationships = readJsonFile<any>(REFERRAL_RELATIONSHIPS_FILE);
-      return relationships.find((r) => r.refereeId === refereeId) || null;
+      return relationships.find((r: any) => r.newCustomerId === refereeId || r.refereeId === refereeId) || null;
     }
   }
 
   async listReferralRelationshipsByReferrerId(referrerId: string): Promise<any[]> {
     try {
-      return await prisma.customerReferralRelationship.findMany({
+      return await prisma.referralRelationship.findMany({
         where: { referrerId },
         orderBy: { createdAt: 'desc' },
       });
@@ -635,7 +613,7 @@ export class CustomersRepository {
 
   async updateReferralRelationship(id: string, data: any): Promise<any> {
     try {
-      return await prisma.customerReferralRelationship.update({ where: { id }, data });
+      return await prisma.referralRelationship.update({ where: { id }, data });
     } catch (err) {
       if (!shouldAllowFallback()) throw err;
       const relationships = readJsonFile<any>(REFERRAL_RELATIONSHIPS_FILE);

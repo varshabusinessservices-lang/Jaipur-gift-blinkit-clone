@@ -10,6 +10,11 @@ export const categoryRouter = Router();
 
 // List & Tree
 categoryRouter.get('/', categoryController.getCategories);
+categoryRouter.get('/parents', categoryController.getParentCategories);
+categoryRouter.get('/children', categoryController.getChildCategories);
+categoryRouter.post('/parent', categoryController.createParentCategory);
+categoryRouter.post('/child', categoryController.createChildCategory);
+categoryRouter.post('/sub-child', categoryController.createSubChildCategory);
 categoryRouter.get('/tree', categoryController.getCategoryTree);
 
 // Reorder
@@ -26,3 +31,4 @@ categoryRouter.patch('/:id', categoryController.updateCategory);
 categoryRouter.patch('/:id/status', categoryController.updateCategoryStatus);
 categoryRouter.delete('/:id', categoryController.deleteCategory);
 categoryRouter.post('/:id/restore', categoryController.restoreCategory);
+categoryRouter.post('/:id/move', categoryController.moveCategory);

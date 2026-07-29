@@ -1,8 +1,8 @@
 [
   {
-    "id": "a30ffe37-5bd2-442c-bc08-17a617fe1828",
-    "startedAt": "2026-07-27T15:09:53.902Z",
-    "completedAt": "2026-07-27T15:09:53.910Z",
+    "id": "2b119241-f8ef-45f4-b561-9b68ddb70342",
+    "startedAt": "2026-07-28T09:00:35.989Z",
+    "completedAt": "2026-07-28T09:00:36.047Z",
     "status": "COMPLETED",
     "dryRun": true,
     "scannedCount": 1,
@@ -11,6 +11,6 @@
     "skippedCount": 1,
     "failedCount": 0,
     "errorSummaryJson": null,
-    "createdAt": "2026-07-27T15:09:53.915Z"
+    "createdAt": "2026-07-28T09:00:36.052Z"
   }
 ]

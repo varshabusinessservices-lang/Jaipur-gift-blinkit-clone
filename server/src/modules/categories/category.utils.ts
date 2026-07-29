@@ -4,6 +4,26 @@ import { CategoryTreeNode } from './category.types';
 export const MAX_CATEGORY_DEPTH = parseInt(process.env.CATEGORY_MAX_DEPTH || '6', 10);
 
 /**
+ * Resolves media URL to a clean path or full HTTPS URL.
+ */
+export function resolveMediaUrl(url: string | null | undefined): string | null {
+  if (!url) return null;
+  const trimmed = String(url).trim();
+  if (!trimmed) return null;
+
+  if (trimmed.startsWith('blob:')) {
+    return null;
+  }
+
+  if (trimmed.startsWith('http://') || trimmed.startsWith('https://') || trimmed.startsWith('data:') || trimmed.startsWith('//')) {
+    return trimmed;
+  }
+
+  const cleanPath = trimmed.startsWith('/') ? trimmed : `/${trimmed}`;
+  return cleanPath.replace(/\/+/g, '/');
+}
+
+/**
  * Converts a category name to a clean, URL-friendly slug.
  */
 export function slugifyCategoryName(name: string): string {

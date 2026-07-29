@@ -38,6 +38,7 @@ export function CategoryListPage() {
     setFormModalOpen,
     editingCategory,
     defaultParentId,
+    categoryFormMode,
 
     detailModalOpen,
     setDetailModalOpen,
@@ -108,7 +109,8 @@ export function CategoryListPage() {
             onClick={() => openCreateModal(null)}
             className="px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold transition-all shadow-md shadow-indigo-500/20 flex items-center gap-1.5 cursor-pointer"
           >
-            <Plus className="w-4 h-4" /> Add Root Category
+            <Plus className="w-4 h-4" /> Add Parent Category</button>
+          <button onClick={() => openCreateModal(null, "CHILD")} className="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition-all shadow-md shadow-emerald-500/20 flex items-center gap-1.5 cursor-pointer"><Plus className="w-4 h-4" /> Add Child Category
           </button>
         </div>
       </div>
@@ -238,7 +240,7 @@ export function CategoryListPage() {
           data={treeData}
           onSelect={openDetailModal}
           onEdit={openEditModal}
-          onAddSubcategory={(parentId) => openCreateModal(parentId)}
+          onAddSubcategory={(parentId) => openCreateModal(parentId, undefined)}
           onDelete={openDeleteModal}
           onStatusToggle={handleStatusToggle}
           onReorder={openReorderModal}
@@ -270,6 +272,7 @@ export function CategoryListPage() {
         }}
         editingCategory={editingCategory}
         defaultParentId={defaultParentId}
+        categoryFormMode={categoryFormMode as 'PARENT' | 'CHILD' | 'SUB_CHILD'}
         flatCategoriesList={flatCategoriesList}
       />
 
@@ -304,6 +307,7 @@ export function CategoryListPage() {
         onClose={() => setDeleteModalOpen(false)}
         onConfirm={handleDelete}
         category={categoryToDelete}
+        flatCategoriesList={flatCategoriesList}
       />
 
     </div>

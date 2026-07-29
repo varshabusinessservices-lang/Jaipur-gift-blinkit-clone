@@ -8,8 +8,9 @@ export interface CreateBrandDto {
   description?: string | null;
   shortDescription?: string | null;
   logoFileId?: string | null;
-  bannerFileId?: string | null;
+  logoAltText?: string | null;
   seoImageFileId?: string | null;
+  seoImageAltText?: string | null;
   websiteUrl?: string | null;
   status?: BrandStatus;
   isFeatured?: boolean;
@@ -27,8 +28,9 @@ export interface UpdateBrandDto {
   description?: string | null;
   shortDescription?: string | null;
   logoFileId?: string | null;
-  bannerFileId?: string | null;
+  logoAltText?: string | null;
   seoImageFileId?: string | null;
+  seoImageAltText?: string | null;
   websiteUrl?: string | null;
   status?: BrandStatus;
   isFeatured?: boolean;

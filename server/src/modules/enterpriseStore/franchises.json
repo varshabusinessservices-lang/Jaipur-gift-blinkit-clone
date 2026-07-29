@@ -70,5 +70,86 @@
     "storeName": "Jaipur Gifting - Malviya Nagar Franchise",
     "commissionPercentage": 12.5,
     "royaltyPercentage": 5
+  },
+  {
+    "id": "fran-1785209577914-hqrbq8",
+    "status": "ACTIVE",
+    "createdAt": "2026-07-28T03:32:57.914Z",
+    "franchiseOwner": "Rajesh Sharma",
+    "storeName": "Jaipur Gifting - Malviya Nagar Franchise",
+    "commissionPercentage": 12.5,
+    "royaltyPercentage": 5
+  },
+  {
+    "id": "fran-1785210256385-a48zcb",
+    "status": "ACTIVE",
+    "createdAt": "2026-07-28T03:44:16.385Z",
+    "franchiseOwner": "Rajesh Sharma",
+    "storeName": "Jaipur Gifting - Malviya Nagar Franchise",
+    "commissionPercentage": 12.5,
+    "royaltyPercentage": 5
+  },
+  {
+    "id": "fran-1785224215697-k3gn57",
+    "status": "ACTIVE",
+    "createdAt": "2026-07-28T07:36:55.697Z",
+    "franchiseOwner": "Rajesh Sharma",
+    "storeName": "Jaipur Gifting - Malviya Nagar Franchise",
+    "commissionPercentage": 12.5,
+    "royaltyPercentage": 5
+  },
+  {
+    "id": "fran-1785224458828-ssqx33",
+    "status": "ACTIVE",
+    "createdAt": "2026-07-28T07:40:58.828Z",
+    "franchiseOwner": "Rajesh Sharma",
+    "storeName": "Jaipur Gifting - Malviya Nagar Franchise",
+    "commissionPercentage": 12.5,
+    "royaltyPercentage": 5
+  },
+  {
+    "id": "fran-1785226784445-z70jbd",
+    "status": "ACTIVE",
+    "createdAt": "2026-07-28T08:19:44.445Z",
+    "franchiseOwner": "Rajesh Sharma",
+    "storeName": "Jaipur Gifting - Malviya Nagar Franchise",
+    "commissionPercentage": 12.5,
+    "royaltyPercentage": 5
+  },
+  {
+    "id": "fran-1785227070726-cppbv3",
+    "status": "ACTIVE",
+    "createdAt": "2026-07-28T08:24:30.726Z",
+    "franchiseOwner": "Rajesh Sharma",
+    "storeName": "Jaipur Gifting - Malviya Nagar Franchise",
+    "commissionPercentage": 12.5,
+    "royaltyPercentage": 5
+  },
+  {
+    "id": "fran-1785227211734-7y1cdk",
+    "status": "ACTIVE",
+    "createdAt": "2026-07-28T08:26:51.734Z",
+    "franchiseOwner": "Rajesh Sharma",
+    "storeName": "Jaipur Gifting - Malviya Nagar Franchise",
+    "commissionPercentage": 12.5,
+    "royaltyPercentage": 5
+  },
+  {
+    "id": "fran-1785227851197-a9hucu",
+    "status": "ACTIVE",
+    "createdAt": "2026-07-28T08:37:31.197Z",
+    "franchiseOwner": "Rajesh Sharma",
+    "storeName": "Jaipur Gifting - Malviya Nagar Franchise",
+    "commissionPercentage": 12.5,
+    "royaltyPercentage": 5
+  },
+  {
+    "id": "fran-1785229256392-j50yus",
+    "status": "ACTIVE",
+    "createdAt": "2026-07-28T09:00:56.392Z",
+    "franchiseOwner": "Rajesh Sharma",
+    "storeName": "Jaipur Gifting - Malviya Nagar Franchise",
+    "commissionPercentage": 12.5,
+    "royaltyPercentage": 5
   }
 ]

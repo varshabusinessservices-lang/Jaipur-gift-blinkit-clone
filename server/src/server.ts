@@ -1,6 +1,8 @@
 import { app } from './app';
 import { env } from './config/env';
 import { prisma } from './database/prisma';
+import { notFoundHandler } from './middlewares/not-found';
+import { errorHandler } from './middlewares/error-handler';
 import path from 'path';
 import express from 'express';
 
@@ -35,7 +37,7 @@ async function startServer() {
       }
     }
 
-    // If not production, we mount vite middleware to serve frontend
+    // 5. Frontend catch-all where applicable
     if (env.NODE_ENV !== 'production' && process.env.VITE_DEV_SERVER !== 'false') {
       const { createServer: createViteServer } = await import('vite');
       const vite = await createViteServer({
@@ -46,13 +48,22 @@ async function startServer() {
     } else if (env.NODE_ENV === 'production') {
       const distPath = path.join(process.cwd(), 'dist');
       app.use(express.static(distPath));
-      app.get('*', (req, res) => {
+      app.get('*', (req, res, next) => {
+        if (req.path.startsWith('/api')) {
+          return next();
+        }
         res.sendFile(path.join(distPath, 'index.html'));
       });
     }
 
-    const server = app.listen(env.PORT, '0.0.0.0', () => {
-      console.log(`[server]: Server is running at http://localhost:${env.PORT}`);
+    // 6. Global 404 handler (must come after API and static routes)
+    app.use(notFoundHandler);
+
+    // 7. Global Error handler
+    app.use(errorHandler);
+
+    const server = app.listen(3000, '0.0.0.0', () => {
+      console.log(`[server]: Server is running at http://localhost:${3000}`);
     });
 
     // Graceful shutdown

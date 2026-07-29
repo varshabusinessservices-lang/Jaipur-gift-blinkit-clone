@@ -7,7 +7,7 @@ import {
   LayoutDashboard, ShoppingCart, Settings, Users, LogOut, 
   Menu, X, Search, Bell, Package, Tag, Truck, RefreshCcw, 
   Gift, Layers, Percent, FileText, Image as ImageIcon,
-  UserCheck, DollarSign, Building2, ShieldCheck
+  UserCheck, DollarSign, Building2, ShieldCheck, Palette, LayoutTemplate
 } from "lucide-react";
 import { useEffect } from "react";
 import { config } from "../config/env";
@@ -65,12 +65,28 @@ const navigation = [
     ]
   },
   {
+    title: "Financial Management",
+    items: [
+      { name: "Wallet", href: "/admin/wallet", icon: DollarSign },
+      { name: "Rewards", href: "/admin/rewards", icon: Gift },
+      { name: "Referrals", href: "/admin/referrals", icon: Users },
+    ]
+  },
+  {
     title: "Analytics",
     items: [
       { name: "Finance & BI", href: "/admin/finance", icon: DollarSign },
       { name: "Enterprise Stores", href: "/admin/enterprise", icon: Building2 },
       { name: "Production Readiness", href: "/admin/production", icon: ShieldCheck },
       { name: "Reports", href: "/admin/reports", icon: FileText },
+    ]
+  },
+  {
+    title: "Appearance",
+    items: [
+      { name: "Theme Dashboard", href: "/admin/theme/dashboard", icon: LayoutDashboard },
+      { name: "Global Styles", href: "/admin/theme/global", icon: Palette },
+      { name: "Home Page Builder", href: "/admin/theme/home", icon: LayoutTemplate },
     ]
   },
   {

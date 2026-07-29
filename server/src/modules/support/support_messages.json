@@ -178,5 +178,167 @@
     "message": "Sure, we have updated your pickup slot to 5 PM.",
     "attachmentsJson": "[]",
     "createdAt": "2026-07-27T15:09:47.674Z"
+  },
+  {
+    "id": "msg-1785209570734",
+    "senderType": "CUSTOMER",
+    "senderName": "Customer",
+    "message": "Can pickup be scheduled for evening?",
+    "attachmentsJson": "[]",
+    "ticketId": "tkt-1785209570734",
+    "createdAt": "2026-07-28T03:32:50.734Z"
+  },
+  {
+    "id": "msg-1785209570735",
+    "ticketId": "tkt-1785209570734",
+    "senderType": "ADMIN",
+    "senderName": "Support Agent Rajesh",
+    "message": "Sure, we have updated your pickup slot to 5 PM.",
+    "attachmentsJson": "[]",
+    "createdAt": "2026-07-28T03:32:50.736Z"
+  },
+  {
+    "id": "msg-1785210240638",
+    "senderType": "CUSTOMER",
+    "senderName": "Customer",
+    "message": "Can pickup be scheduled for evening?",
+    "attachmentsJson": "[]",
+    "ticketId": "tkt-1785210240638",
+    "createdAt": "2026-07-28T03:44:00.639Z"
+  },
+  {
+    "id": "msg-1785210240640",
+    "ticketId": "tkt-1785210240638",
+    "senderType": "ADMIN",
+    "senderName": "Support Agent Rajesh",
+    "message": "Sure, we have updated your pickup slot to 5 PM.",
+    "attachmentsJson": "[]",
+    "createdAt": "2026-07-28T03:44:00.640Z"
+  },
+  {
+    "id": "msg-1785224208010",
+    "senderType": "CUSTOMER",
+    "senderName": "Customer",
+    "message": "Can pickup be scheduled for evening?",
+    "attachmentsJson": "[]",
+    "ticketId": "tkt-1785224208010",
+    "createdAt": "2026-07-28T07:36:48.010Z"
+  },
+  {
+    "id": "msg-1785224208011",
+    "ticketId": "tkt-1785224208010",
+    "senderType": "ADMIN",
+    "senderName": "Support Agent Rajesh",
+    "message": "Sure, we have updated your pickup slot to 5 PM.",
+    "attachmentsJson": "[]",
+    "createdAt": "2026-07-28T07:36:48.011Z"
+  },
+  {
+    "id": "msg-1785224438405",
+    "senderType": "CUSTOMER",
+    "senderName": "Customer",
+    "message": "Can pickup be scheduled for evening?",
+    "attachmentsJson": "[]",
+    "ticketId": "tkt-1785224438405",
+    "createdAt": "2026-07-28T07:40:38.406Z"
+  },
+  {
+    "id": "msg-1785224438406",
+    "ticketId": "tkt-1785224438405",
+    "senderType": "ADMIN",
+    "senderName": "Support Agent Rajesh",
+    "message": "Sure, we have updated your pickup slot to 5 PM.",
+    "attachmentsJson": "[]",
+    "createdAt": "2026-07-28T07:40:38.407Z"
+  },
+  {
+    "id": "msg-1785226755041",
+    "senderType": "CUSTOMER",
+    "senderName": "Customer",
+    "message": "Can pickup be scheduled for evening?",
+    "attachmentsJson": "[]",
+    "ticketId": "tkt-1785226755041",
+    "createdAt": "2026-07-28T08:19:15.041Z"
+  },
+  {
+    "id": "msg-1785226755042",
+    "ticketId": "tkt-1785226755041",
+    "senderType": "ADMIN",
+    "senderName": "Support Agent Rajesh",
+    "message": "Sure, we have updated your pickup slot to 5 PM.",
+    "attachmentsJson": "[]",
+    "createdAt": "2026-07-28T08:19:15.043Z"
+  },
+  {
+    "id": "msg-1785227044083",
+    "senderType": "CUSTOMER",
+    "senderName": "Customer",
+    "message": "Can pickup be scheduled for evening?",
+    "attachmentsJson": "[]",
+    "ticketId": "tkt-1785227044083",
+    "createdAt": "2026-07-28T08:24:04.084Z"
+  },
+  {
+    "id": "msg-1785227044085",
+    "ticketId": "tkt-1785227044083",
+    "senderType": "ADMIN",
+    "senderName": "Support Agent Rajesh",
+    "message": "Sure, we have updated your pickup slot to 5 PM.",
+    "attachmentsJson": "[]",
+    "createdAt": "2026-07-28T08:24:04.085Z"
+  },
+  {
+    "id": "msg-1785227193451",
+    "senderType": "CUSTOMER",
+    "senderName": "Customer",
+    "message": "Can pickup be scheduled for evening?",
+    "attachmentsJson": "[]",
+    "ticketId": "tkt-1785227193451",
+    "createdAt": "2026-07-28T08:26:33.451Z"
+  },
+  {
+    "id": "msg-1785227193452",
+    "ticketId": "tkt-1785227193451",
+    "senderType": "ADMIN",
+    "senderName": "Support Agent Rajesh",
+    "message": "Sure, we have updated your pickup slot to 5 PM.",
+    "attachmentsJson": "[]",
+    "createdAt": "2026-07-28T08:26:33.453Z"
+  },
+  {
+    "id": "msg-1785227820858",
+    "senderType": "CUSTOMER",
+    "senderName": "Customer",
+    "message": "Can pickup be scheduled for evening?",
+    "attachmentsJson": "[]",
+    "ticketId": "tkt-1785227820858",
+    "createdAt": "2026-07-28T08:37:00.858Z"
+  },
+  {
+    "id": "msg-1785227820867",
+    "ticketId": "tkt-1785227820858",
+    "senderType": "ADMIN",
+    "senderName": "Support Agent Rajesh",
+    "message": "Sure, we have updated your pickup slot to 5 PM.",
+    "attachmentsJson": "[]",
+    "createdAt": "2026-07-28T08:37:00.867Z"
+  },
+  {
+    "id": "msg-1785229219867",
+    "senderType": "CUSTOMER",
+    "senderName": "Customer",
+    "message": "Can pickup be scheduled for evening?",
+    "attachmentsJson": "[]",
+    "ticketId": "tkt-1785229219867",
+    "createdAt": "2026-07-28T09:00:19.868Z"
+  },
+  {
+    "id": "msg-1785229219869",
+    "ticketId": "tkt-1785229219867",
+    "senderType": "ADMIN",
+    "senderName": "Support Agent Rajesh",
+    "message": "Sure, we have updated your pickup slot to 5 PM.",
+    "attachmentsJson": "[]",
+    "createdAt": "2026-07-28T09:00:19.869Z"
   }
 ]

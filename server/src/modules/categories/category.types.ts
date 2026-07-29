@@ -27,6 +27,18 @@ export interface CreateCategoryDto {
   iconFileId?: string | null;
   desktopBannerFileId?: string | null;
   mobileBannerFileId?: string | null;
+  categoryType?: 'PARENT' | 'CHILD' | 'SUB_CHILD';
+  level?: number;
+  mobileImageFileId?: string | null;
+  showInNavigation?: boolean;
+  showInSearch?: boolean;
+  showOnDesktop?: boolean;
+  showOnMobile?: boolean;
+  imageAltText?: string | null;
+  bannerAltText?: string | null;
+  bgColour?: string | null;
+  textColour?: string | null;
+
   status?: CategoryStatusType;
   isFeatured?: boolean;
   showOnHomepage?: boolean;
@@ -43,6 +55,14 @@ export interface CategoryReorderItem {
   id: string;
   parentId?: string | null;
   sortOrder: number;
+}
+
+export type DeleteCategoryMode = 'SINGLE' | 'CASCADE_DESCENDANTS' | 'MOVE_DESCENDANTS' | 'DEACTIVATE_BRANCH';
+
+export interface DeleteCategoryOptions {
+  mode?: DeleteCategoryMode;
+  targetParentId?: string | null;
+  reason?: string;
 }
 
 export interface CategoryTreeNode {

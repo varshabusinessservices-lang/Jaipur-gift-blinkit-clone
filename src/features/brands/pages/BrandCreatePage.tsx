@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useCreateBrand } from '../hooks/useBrands';
 import { BrandFormData, BrandStatus } from '../types/brand';
-import { ArrowLeft, Save, Tag, Image, Globe, Search, ChevronRight, AlertCircle } from 'lucide-react';
+import { ArrowLeft, Save, Tag, Image, Globe, Search, ChevronRight, AlertCircle, Upload, X } from 'lucide-react';
+import { brandApi } from '../services/brandApi';
 
 export function BrandCreatePage() {
   const navigate = useNavigate();
@@ -15,8 +16,11 @@ export function BrandCreatePage() {
     shortDescription: '',
     description: '',
     logoFileId: '',
-    bannerFileId: '',
+    logoAltText: '',
     seoImageFileId: '',
+    seoImageAltText: '',
+    logoUrl: '',
+    seoImageUrl: '',
     websiteUrl: '',
     status: 'ACTIVE',
     isFeatured: false,
@@ -28,6 +32,8 @@ export function BrandCreatePage() {
 
   const [autoSlug, setAutoSlug] = useState(true);
   const [errorMessage, setErrorMessage] = useState('');
+  const [uploadingRole, setUploadingRole] = useState<string | null>(null);
+  const [uploadError, setUploadError] = useState<string | null>(null);
 
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const name = e.target.value;
@@ -45,12 +51,62 @@ export function BrandCreatePage() {
     }));
   };
 
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>, role: string) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    try {
+      setUploadingRole(role);
+      setUploadError(null);
+      const res = await brandApi.uploadMedia(file, role);
+
+      if (role === 'BRAND_LOGO') {
+        setFormData((prev) => ({
+          ...prev,
+          logoFileId: res.fileAssetId,
+          logoUrl: res.url,
+        }));
+      } else if (role === 'SEO_IMAGE') {
+        setFormData((prev) => ({
+          ...prev,
+          seoImageFileId: res.fileAssetId,
+          seoImageUrl: res.url,
+        }));
+      }
+    } catch (err: any) {
+      setUploadError(err.message || 'Failed to upload media asset');
+    } finally {
+      setUploadingRole(null);
+    }
+  };
+
+  const handleRemoveFile = (role: string) => {
+    if (role === 'BRAND_LOGO') {
+      setFormData((prev) => ({
+        ...prev,
+        logoFileId: '',
+        logoUrl: '',
+      }));
+    } else if (role === 'SEO_IMAGE') {
+      setFormData((prev) => ({
+        ...prev,
+        seoImageFileId: '',
+        seoImageUrl: '',
+      }));
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage('');
 
     if (!formData.name.trim() || formData.name.trim().length < 2) {
       setErrorMessage('Brand name must be at least 2 characters.');
+      return;
+    }
+
+    if (!formData.logoFileId) {
+      setErrorMessage('Brand Logo is mandatory.');
       return;
     }
 
@@ -188,47 +244,170 @@ export function BrandCreatePage() {
         </div>
 
         {/* Media Attachments */}
-        <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4">
+        <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-6">
           <h2 className="text-base font-bold text-slate-900 flex items-center gap-2 border-b border-slate-100 pb-3">
             <Image className="h-4 w-4 text-indigo-600" />
-            Media & Asset References
+            Brand Media
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div>
-              <label className="block text-sm font-semibold text-slate-700 mb-1">Logo File Asset ID</label>
-              <input
-                type="text"
-                value={formData.logoFileId || ''}
-                onChange={(e) => setFormData((prev) => ({ ...prev, logoFileId: e.target.value }))}
-                placeholder="e.g. img-logo-001"
-                className="w-full px-3.5 py-2 border border-slate-300 rounded-lg text-sm font-mono text-slate-900 focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500"
-              />
-              <p className="text-[11px] text-slate-400 mt-1">Role: BRAND_LOGO (Max 2MB)</p>
+          {uploadError && (
+            <div className="p-3 bg-rose-50 border border-rose-200 rounded-lg text-rose-700 text-xs flex items-center gap-2">
+              <AlertCircle className="h-4 w-4 flex-shrink-0" />
+              <span>{uploadError}</span>
+            </div>
+          )}
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* BRAND LOGO (MANDATORY) */}
+            <div className="p-4 border border-slate-200 rounded-xl bg-slate-50 space-y-4">
+              <div>
+                <label className="block text-sm font-bold text-slate-700 uppercase tracking-wider mb-1">
+                  Brand Logo <span className="text-rose-500">*</span>
+                </label>
+                <p className="text-xs text-slate-500">Mandatory logo representing the brand across the storefront.</p>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-24 h-24 rounded-lg bg-slate-200 border border-slate-300 overflow-hidden flex items-center justify-center text-slate-400 shrink-0 relative group">
+                  {formData.logoUrl ? (
+                    <>
+                      <img src={formData.logoUrl} alt={formData.logoAltText || 'Brand Logo'} className="w-full h-full object-cover" />
+                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+                        <button
+                          type="button"
+                          onClick={() => handleRemoveFile('BRAND_LOGO')}
+                          className="p-1.5 bg-white text-rose-600 rounded-full hover:bg-rose-50 shadow-sm transition-colors cursor-pointer"
+                          title="Remove Logo"
+                        >
+                          <X className="w-4 h-4" />
+                        </button>
+                      </div>
+                    </>
+                  ) : (
+                    <Image className="w-10 h-10 text-slate-400" />
+                  )}
+                </div>
+
+                <div className="flex-1 space-y-2">
+                  <input
+                    type="file"
+                    accept="image/*"
+                    id="brand-logo-upload"
+                    className="hidden"
+                    onChange={(e) => handleFileUpload(e, 'BRAND_LOGO')}
+                  />
+                  <div className="flex items-center gap-2">
+                    <label
+                      htmlFor="brand-logo-upload"
+                      className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-white border border-slate-300 text-xs font-semibold text-slate-700 hover:bg-slate-100 cursor-pointer transition-colors shadow-xs"
+                    >
+                      <Upload className="w-3.5 h-3.5" />
+                      {uploadingRole === 'BRAND_LOGO' ? 'Uploading...' : formData.logoUrl ? 'Replace Image' : 'Choose File'}
+                    </label>
+                    {formData.logoUrl && (
+                      <button
+                        type="button"
+                        onClick={() => handleRemoveFile('BRAND_LOGO')}
+                        className="px-3 py-2 border border-rose-200 text-rose-600 rounded-lg text-xs font-semibold hover:bg-rose-50 transition-colors"
+                      >
+                        Remove
+                      </button>
+                    )}
+                  </div>
+                  <p className="text-[11px] text-slate-500">Recommended: Square PNG / WebP, max 2MB.</p>
+                </div>
+              </div>
+
+              {formData.logoUrl && (
+                <div className="pt-2 border-t border-slate-200">
+                  <label className="block text-[11px] font-bold text-slate-600 uppercase mb-1">
+                    Logo Alt Text
+                  </label>
+                  <input
+                    type="text"
+                    value={formData.logoAltText || ''}
+                    onChange={(e) => setFormData(prev => ({ ...prev, logoAltText: e.target.value }))}
+                    placeholder="e.g. Photo Frame Studio customized wooden gifts logo"
+                    className="w-full px-3 py-2 border border-slate-300 rounded-lg text-xs text-slate-800 focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+              )}
             </div>
 
-            <div>
-              <label className="block text-sm font-semibold text-slate-700 mb-1">Banner File Asset ID</label>
-              <input
-                type="text"
-                value={formData.bannerFileId || ''}
-                onChange={(e) => setFormData((prev) => ({ ...prev, bannerFileId: e.target.value }))}
-                placeholder="e.g. img-banner-001"
-                className="w-full px-3.5 py-2 border border-slate-300 rounded-lg text-sm font-mono text-slate-900 focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500"
-              />
-              <p className="text-[11px] text-slate-400 mt-1">Role: BRAND_BANNER (Max 8MB)</p>
-            </div>
+            {/* SEO IMAGE (OPTIONAL) */}
+            <div className="p-4 border border-slate-200 rounded-xl bg-slate-50 space-y-4">
+              <div>
+                <label className="block text-sm font-bold text-slate-700 uppercase tracking-wider mb-1">
+                  SEO Image (Optional)
+                </label>
+                <p className="text-xs text-slate-500">Image displayed when sharing the brand link on social media.</p>
+              </div>
 
-            <div>
-              <label className="block text-sm font-semibold text-slate-700 mb-1">SEO Image File Asset ID</label>
-              <input
-                type="text"
-                value={formData.seoImageFileId || ''}
-                onChange={(e) => setFormData((prev) => ({ ...prev, seoImageFileId: e.target.value }))}
-                placeholder="e.g. img-seo-001"
-                className="w-full px-3.5 py-2 border border-slate-300 rounded-lg text-sm font-mono text-slate-900 focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500"
-              />
-              <p className="text-[11px] text-slate-400 mt-1">Role: SEO_IMAGE (Max 5MB)</p>
+              <div className="flex items-start gap-4">
+                <div className="w-24 h-24 rounded-lg bg-slate-200 border border-slate-300 overflow-hidden flex items-center justify-center text-slate-400 shrink-0 relative group">
+                  {formData.seoImageUrl ? (
+                    <>
+                      <img src={formData.seoImageUrl} alt={formData.seoImageAltText || 'SEO'} className="w-full h-full object-cover" />
+                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+                        <button
+                          type="button"
+                          onClick={() => handleRemoveFile('SEO_IMAGE')}
+                          className="p-1.5 bg-white text-rose-600 rounded-full hover:bg-rose-50 shadow-sm transition-colors cursor-pointer"
+                          title="Remove SEO Image"
+                        >
+                          <X className="w-4 h-4" />
+                        </button>
+                      </div>
+                    </>
+                  ) : (
+                    <Image className="w-10 h-10 text-slate-400" />
+                  )}
+                </div>
+
+                <div className="flex-1 space-y-2">
+                  <input
+                    type="file"
+                    accept="image/*"
+                    id="brand-seo-upload"
+                    className="hidden"
+                    onChange={(e) => handleFileUpload(e, 'SEO_IMAGE')}
+                  />
+                  <div className="flex items-center gap-2">
+                    <label
+                      htmlFor="brand-seo-upload"
+                      className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-white border border-slate-300 text-xs font-semibold text-slate-700 hover:bg-slate-100 cursor-pointer transition-colors shadow-xs"
+                    >
+                      <Upload className="w-3.5 h-3.5" />
+                      {uploadingRole === 'SEO_IMAGE' ? 'Uploading...' : formData.seoImageUrl ? 'Replace Image' : 'Choose File'}
+                    </label>
+                    {formData.seoImageUrl && (
+                      <button
+                        type="button"
+                        onClick={() => handleRemoveFile('SEO_IMAGE')}
+                        className="px-3 py-2 border border-rose-200 text-rose-600 rounded-lg text-xs font-semibold hover:bg-rose-50 transition-colors"
+                      >
+                        Remove
+                      </button>
+                    )}
+                  </div>
+                  <p className="text-[11px] text-slate-500">Recommended: Landscape PNG / WebP, max 5MB.</p>
+                </div>
+              </div>
+
+              {formData.seoImageUrl && (
+                <div className="pt-2 border-t border-slate-200">
+                  <label className="block text-[11px] font-bold text-slate-600 uppercase mb-1">
+                    SEO Image Alt Text
+                  </label>
+                  <input
+                    type="text"
+                    value={formData.seoImageAltText || ''}
+                    onChange={(e) => setFormData(prev => ({ ...prev, seoImageAltText: e.target.value }))}
+                    placeholder="e.g. Photo Frame Studio gallery display social share preview"
+                    className="w-full px-3 py-2 border border-slate-300 rounded-lg text-xs text-slate-800 focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+              )}
             </div>
           </div>
         </div>

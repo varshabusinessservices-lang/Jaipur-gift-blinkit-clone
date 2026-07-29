@@ -102,7 +102,7 @@ export function BrandListPage() {
             </span>
           </h1>
           <p className="text-sm text-slate-500 mt-0.5">
-            Manage in-house and third-party product brand identities, logos, banners, and SEO metadata.
+            Manage in-house and third-party product brand identities, logos, and SEO metadata.
           </p>
         </div>
 
@@ -242,7 +242,7 @@ export function BrandListPage() {
                         {brand.logoUrl ? (
                           <img
                             src={brand.logoUrl}
-                            alt={brand.name}
+                            alt={brand.logoAltText || brand.name}
                             className="w-10 h-10 rounded-lg object-cover border border-slate-200 bg-slate-100 flex-shrink-0"
                           />
                         ) : (

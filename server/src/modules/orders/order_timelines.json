@@ -2787,5 +2787,3740 @@
     "description": "Reason: Customer changed mind",
     "id": "834f9fe8-bc74-453c-b3cf-d7f3003b778c",
     "createdAt": "2026-07-27T15:09:51.097Z"
+  },
+  {
+    "id": "dfb03a5c-63fa-492b-96d1-99533d310632",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-776255 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "8298bb3a-782c-439b-b5bc-d02f6e33c996",
+    "createdAt": "2026-07-28T03:32:49.564Z"
+  },
+  {
+    "orderId": "8298bb3a-782c-439b-b5bc-d02f6e33c996",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "79e3758c-aa70-4f79-afa8-b5aaffc66c65",
+    "createdAt": "2026-07-28T03:32:49.626Z"
+  },
+  {
+    "id": "daf72ac2-c5df-4883-9260-38f3d0bdce4d",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-174122 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "1ce19c51-1078-49d4-8455-55de8c062565",
+    "createdAt": "2026-07-28T03:32:49.753Z"
+  },
+  {
+    "orderId": "1ce19c51-1078-49d4-8455-55de8c062565",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "4dfd426a-3d7a-4da9-bac8-141ff129256d",
+    "createdAt": "2026-07-28T03:32:49.815Z"
+  },
+  {
+    "id": "5fbd1e9d-9b9a-4708-b778-ab0efdedc785",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-240550 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "9eeeafd2-dd83-4d2f-a1e3-679061e66069",
+    "createdAt": "2026-07-28T03:32:49.953Z"
+  },
+  {
+    "orderId": "9eeeafd2-dd83-4d2f-a1e3-679061e66069",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "5d12d07c-f33a-441e-bf23-a3d73a65286a",
+    "createdAt": "2026-07-28T03:32:50.012Z"
+  },
+  {
+    "id": "4b27b7d7-b349-4924-9289-c79f8f43cd53",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-244032 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "734ee388-4d3d-4b16-985a-6f3e8022676a",
+    "createdAt": "2026-07-28T03:32:50.132Z"
+  },
+  {
+    "orderId": "734ee388-4d3d-4b16-985a-6f3e8022676a",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "5cf92c21-435b-4421-aee4-98fbca094afc",
+    "createdAt": "2026-07-28T03:32:50.195Z"
+  },
+  {
+    "id": "2a2addb9-0a36-4897-9351-c6b809043c7d",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-739867 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "6fefd6e8-cde7-4980-8e29-e048c4a20ade",
+    "createdAt": "2026-07-28T03:32:50.313Z"
+  },
+  {
+    "orderId": "6fefd6e8-cde7-4980-8e29-e048c4a20ade",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "ff225ead-6e19-47a3-ac38-b1c806f59e27",
+    "createdAt": "2026-07-28T03:32:50.371Z"
+  },
+  {
+    "id": "d292b429-4212-4b29-8b53-73bf8b667d23",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-352605 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "4add8e9a-6847-4be1-8d53-0c5217dcb6e2",
+    "createdAt": "2026-07-28T03:32:50.486Z"
+  },
+  {
+    "orderId": "4add8e9a-6847-4be1-8d53-0c5217dcb6e2",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "3ed6815d-41d1-41d2-a3d4-523c3020ccf9",
+    "createdAt": "2026-07-28T03:32:50.549Z"
+  },
+  {
+    "id": "43e15e1b-6ee9-4d42-8f33-bbca119eb2e9",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-362123 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "1b29c416-0c88-418d-bebc-3f288c405692",
+    "createdAt": "2026-07-28T03:32:50.681Z"
+  },
+  {
+    "orderId": "1b29c416-0c88-418d-bebc-3f288c405692",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "6a29a9d5-bd36-48a6-b8a5-0dbc9eb9e2e7",
+    "createdAt": "2026-07-28T03:32:50.733Z"
+  },
+  {
+    "id": "25d9af71-08af-4179-bcb9-4fb0e824a1e8",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-323484 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "d16e1e08-d7a9-4d7a-9faa-a74644532c41",
+    "createdAt": "2026-07-28T03:32:52.300Z"
+  },
+  {
+    "orderId": "d16e1e08-d7a9-4d7a-9faa-a74644532c41",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "ee46a458-9d73-4ea3-a205-2dadb9830632",
+    "createdAt": "2026-07-28T03:32:52.365Z"
+  },
+  {
+    "id": "fa7e2606-0ea1-4f6d-9e6d-c5f3093b7501",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-889825 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "1e33ed39-79c9-44a9-a098-2556960067c6",
+    "createdAt": "2026-07-28T03:32:52.498Z"
+  },
+  {
+    "orderId": "1e33ed39-79c9-44a9-a098-2556960067c6",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "9db3ca1d-67e3-4858-8a0d-bb2d03f63223",
+    "createdAt": "2026-07-28T03:32:52.573Z"
+  },
+  {
+    "id": "5073eb48-5f72-4328-83ae-2ebb52b794f4",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-918765 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "6a61d72b-0e77-427b-8b2c-3e0536aa51a3",
+    "createdAt": "2026-07-28T03:32:52.722Z"
+  },
+  {
+    "orderId": "6a61d72b-0e77-427b-8b2c-3e0536aa51a3",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "ea5cb492-789f-4462-9fa9-ee3536844874",
+    "createdAt": "2026-07-28T03:32:52.780Z"
+  },
+  {
+    "orderId": "6a61d72b-0e77-427b-8b2c-3e0536aa51a3",
+    "status": "OUT_FOR_DELIVERY",
+    "title": "Out For Delivery",
+    "description": "Your package is out for delivery with our delivery partner.",
+    "id": "502f493b-196a-4842-a66d-a43fb9953ee8",
+    "createdAt": "2026-07-28T03:32:52.799Z"
+  },
+  {
+    "id": "aee4e81e-c5ac-4421-acd6-c1d8ef180689",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-747849 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "7d5c58e9-1111-44ff-8cbf-e188424225c2",
+    "createdAt": "2026-07-28T03:32:52.919Z"
+  },
+  {
+    "orderId": "7d5c58e9-1111-44ff-8cbf-e188424225c2",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "1bc80b4c-a7bd-4d93-9ec1-ef4f73ce7d49",
+    "createdAt": "2026-07-28T03:32:52.972Z"
+  },
+  {
+    "orderId": "7d5c58e9-1111-44ff-8cbf-e188424225c2",
+    "status": "OUT_FOR_DELIVERY",
+    "title": "Out For Delivery",
+    "description": "Your package is out for delivery with our delivery partner.",
+    "id": "41d6e00e-72bb-4d20-b155-dd78338342a1",
+    "createdAt": "2026-07-28T03:32:52.996Z"
+  },
+  {
+    "orderId": "7d5c58e9-1111-44ff-8cbf-e188424225c2",
+    "status": "DELIVERED",
+    "title": "Delivered",
+    "description": "Order successfully delivered. Thank you for shopping with Jaipur Gifting!",
+    "id": "46fbe0cd-36e5-4ea0-8edf-876905989b20",
+    "createdAt": "2026-07-28T03:32:53.007Z"
+  },
+  {
+    "id": "4bcc0993-5797-48c6-b46a-a86bca4e3bcf",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-490588 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "b3737103-ff51-47fe-bd58-70bc7a8c271f",
+    "createdAt": "2026-07-28T03:32:53.132Z"
+  },
+  {
+    "orderId": "b3737103-ff51-47fe-bd58-70bc7a8c271f",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "493d383e-ca24-4a13-8164-ba418fe24489",
+    "createdAt": "2026-07-28T03:32:53.190Z"
+  },
+  {
+    "orderId": "b3737103-ff51-47fe-bd58-70bc7a8c271f",
+    "status": "DELIVERED",
+    "title": "Delivered",
+    "description": "Successfully delivered to Mrs. Sharma.",
+    "id": "a7354571-742a-441f-a363-6a31606448d4",
+    "createdAt": "2026-07-28T03:32:53.204Z"
+  },
+  {
+    "id": "01a3fca9-d4fe-45a2-9c2e-79634004bae7",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-607475 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "5565fc65-379d-4be5-95a8-a7497e496b1c",
+    "createdAt": "2026-07-28T03:32:53.318Z"
+  },
+  {
+    "orderId": "5565fc65-379d-4be5-95a8-a7497e496b1c",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "d3924283-bf4d-4963-b3e9-b4654ff2537a",
+    "createdAt": "2026-07-28T03:32:53.377Z"
+  },
+  {
+    "id": "1586598e-f8ad-4206-9d04-e95dfa0e65a4",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-811748 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "eacd40fc-1dd4-472d-a012-7f8c1e3f4594",
+    "createdAt": "2026-07-28T03:32:53.501Z"
+  },
+  {
+    "orderId": "eacd40fc-1dd4-472d-a012-7f8c1e3f4594",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "e421752f-2f44-4f5a-8f64-a0e730eaa86b",
+    "createdAt": "2026-07-28T03:32:53.573Z"
+  },
+  {
+    "id": "84bfbe0e-fb12-4c8f-9409-f498666dd33b",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-191023 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "8dca30fe-f4f7-4e62-8d69-189cb652a696",
+    "createdAt": "2026-07-28T03:32:55.256Z"
+  },
+  {
+    "orderId": "8dca30fe-f4f7-4e62-8d69-189cb652a696",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "1317d858-db7c-438b-9530-3b9a1e4c3584",
+    "createdAt": "2026-07-28T03:32:55.317Z"
+  },
+  {
+    "id": "395c0d22-1b36-482f-9212-52abc2ce91d7",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-449699 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "4bd5e745-ff53-4c9b-9c79-dc67691cd548",
+    "createdAt": "2026-07-28T03:32:55.460Z"
+  },
+  {
+    "orderId": "4bd5e745-ff53-4c9b-9c79-dc67691cd548",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "8f9e57ab-b62f-46a7-bdd6-1159e9693b49",
+    "createdAt": "2026-07-28T03:32:55.518Z"
+  },
+  {
+    "id": "cb4737e9-ce06-4833-9326-692bfda6f9b1",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-619503 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "29850098-2d93-4eeb-81b3-31349e9113bb",
+    "createdAt": "2026-07-28T03:32:55.655Z"
+  },
+  {
+    "orderId": "29850098-2d93-4eeb-81b3-31349e9113bb",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "2883589f-4081-432e-9ee5-7becb2713b43",
+    "createdAt": "2026-07-28T03:32:55.713Z"
+  },
+  {
+    "id": "5090dc33-7175-46a3-a0ea-64475205904b",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-632212 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "3d53afe6-20f1-48e7-8ed5-a47d49e6337d",
+    "createdAt": "2026-07-28T03:32:55.849Z"
+  },
+  {
+    "orderId": "3d53afe6-20f1-48e7-8ed5-a47d49e6337d",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "1790c188-9a64-40e1-8def-96664124c7db",
+    "createdAt": "2026-07-28T03:32:55.910Z"
+  },
+  {
+    "orderId": "3d53afe6-20f1-48e7-8ed5-a47d49e6337d",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Ready For Dispatch",
+    "description": "All production items successfully manufactured, QC passed, and packed.",
+    "id": "0b0be7fe-76be-458f-be50-cb1153db48e2",
+    "createdAt": "2026-07-28T03:32:55.928Z"
+  },
+  {
+    "id": "12398c3d-ba72-43fb-98cf-a40ca5be77de",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-548577 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "97ea49f6-4797-46b9-aa95-d36199f2d529",
+    "createdAt": "2026-07-28T03:32:56.055Z"
+  },
+  {
+    "orderId": "97ea49f6-4797-46b9-aa95-d36199f2d529",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "2f4e19a3-df1b-4fcf-ab6c-983645beb393",
+    "createdAt": "2026-07-28T03:32:56.116Z"
+  },
+  {
+    "id": "58fbdf30-3ca4-47cf-aaa2-132640290195",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-431203 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "5f34706a-73e6-4f63-bca6-c3f829164ee4",
+    "createdAt": "2026-07-28T03:32:56.235Z"
+  },
+  {
+    "orderId": "5f34706a-73e6-4f63-bca6-c3f829164ee4",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "671dec9e-daaa-4a47-b3a4-ae1c8f255e96",
+    "createdAt": "2026-07-28T03:32:56.292Z"
+  },
+  {
+    "id": "bccf658a-d937-4089-bb34-dca57fcc98a1",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-172380 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "0977575b-b662-4fd3-9aa8-b86105826b56",
+    "createdAt": "2026-07-28T03:32:59.619Z"
+  },
+  {
+    "id": "70b6680c-978b-49d8-9ef9-46763154f23c",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-507335 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "46a23530-4ccb-4913-970d-f8f87ed6e92e",
+    "createdAt": "2026-07-28T03:32:59.906Z"
+  },
+  {
+    "id": "31ff379f-e046-4608-af65-756d34a6fa86",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-561108 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "76eae4b5-c43b-4146-b31f-bb55d853aa0c",
+    "createdAt": "2026-07-28T03:33:00.105Z"
+  },
+  {
+    "orderId": "76eae4b5-c43b-4146-b31f-bb55d853aa0c",
+    "status": "CANCELLED",
+    "title": "Order Cancelled",
+    "description": "Reason: Customer changed mind",
+    "id": "709ab8cc-2306-4974-8bc2-a99437f0820a",
+    "createdAt": "2026-07-28T03:33:00.169Z"
+  },
+  {
+    "id": "31e36a80-b449-41ca-9e7b-871d372419b4",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-298381 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "84b559bf-f22d-4e43-8852-cb4803e4b386",
+    "createdAt": "2026-07-28T03:43:57.368Z"
+  },
+  {
+    "orderId": "84b559bf-f22d-4e43-8852-cb4803e4b386",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "20529353-05a6-4f19-be21-104b4f86fcf0",
+    "createdAt": "2026-07-28T03:43:57.428Z"
+  },
+  {
+    "id": "bea76ebf-89c4-4948-b3f9-070f3573f965",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-141633 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "fffd5b92-1c3a-4e42-ba84-adf64272a0d2",
+    "createdAt": "2026-07-28T03:43:57.559Z"
+  },
+  {
+    "orderId": "fffd5b92-1c3a-4e42-ba84-adf64272a0d2",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "2da34dc3-6ab7-489a-8a07-932a87fd507c",
+    "createdAt": "2026-07-28T03:43:57.615Z"
+  },
+  {
+    "id": "e81d513c-6e8f-41ab-a51c-d62ad034229d",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-452413 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "d35afa86-c3f1-4bae-b916-cc72599b0099",
+    "createdAt": "2026-07-28T03:43:57.764Z"
+  },
+  {
+    "orderId": "d35afa86-c3f1-4bae-b916-cc72599b0099",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "25b4d42f-5306-4afa-9d44-9cd3dc21fadc",
+    "createdAt": "2026-07-28T03:43:57.824Z"
+  },
+  {
+    "orderId": "d35afa86-c3f1-4bae-b916-cc72599b0099",
+    "status": "OUT_FOR_DELIVERY",
+    "title": "Out For Delivery",
+    "description": "Your package is out for delivery with our delivery partner.",
+    "id": "335332ad-f806-4a27-af19-43aac12b1cd9",
+    "createdAt": "2026-07-28T03:43:57.848Z"
+  },
+  {
+    "id": "9348d205-f6cb-4761-898a-a33090151125",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-263562 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "54c1ea43-0904-4a18-87eb-c41b34c24c9d",
+    "createdAt": "2026-07-28T03:43:57.972Z"
+  },
+  {
+    "orderId": "54c1ea43-0904-4a18-87eb-c41b34c24c9d",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "0a23b967-f8b9-4c77-b282-c12d688cfce3",
+    "createdAt": "2026-07-28T03:43:58.043Z"
+  },
+  {
+    "orderId": "54c1ea43-0904-4a18-87eb-c41b34c24c9d",
+    "status": "OUT_FOR_DELIVERY",
+    "title": "Out For Delivery",
+    "description": "Your package is out for delivery with our delivery partner.",
+    "id": "399905ba-8698-4fbc-a313-67b55cf28600",
+    "createdAt": "2026-07-28T03:43:58.070Z"
+  },
+  {
+    "orderId": "54c1ea43-0904-4a18-87eb-c41b34c24c9d",
+    "status": "DELIVERED",
+    "title": "Delivered",
+    "description": "Order successfully delivered. Thank you for shopping with Jaipur Gifting!",
+    "id": "2ed9479b-61fa-4519-84a5-498fbaca27a6",
+    "createdAt": "2026-07-28T03:43:58.083Z"
+  },
+  {
+    "id": "e603c52d-615b-4be1-b35c-87ec5a98aaa7",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-714351 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "2a288c8e-706d-482e-af20-7badb5e33732",
+    "createdAt": "2026-07-28T03:43:58.205Z"
+  },
+  {
+    "orderId": "2a288c8e-706d-482e-af20-7badb5e33732",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "872d42ab-31b8-4d4f-853b-52cfc1c1c27e",
+    "createdAt": "2026-07-28T03:43:58.268Z"
+  },
+  {
+    "orderId": "2a288c8e-706d-482e-af20-7badb5e33732",
+    "status": "DELIVERED",
+    "title": "Delivered",
+    "description": "Successfully delivered to Mrs. Sharma.",
+    "id": "f2a19418-5e56-4469-a54a-ed5d2474d86a",
+    "createdAt": "2026-07-28T03:43:58.284Z"
+  },
+  {
+    "id": "9f068c22-9862-4c99-9a85-d044c0f99b7a",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-690949 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "e62e928c-42fd-4f97-97dd-8d7e89ebe524",
+    "createdAt": "2026-07-28T03:43:58.410Z"
+  },
+  {
+    "orderId": "e62e928c-42fd-4f97-97dd-8d7e89ebe524",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "68252df2-eb24-46ee-9a45-b953ef3931ee",
+    "createdAt": "2026-07-28T03:43:58.491Z"
+  },
+  {
+    "id": "c61e672e-3eaa-4cd3-9ca5-d7ec8da5857f",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-782216 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "71d8ac04-aebb-4f69-a8d2-d1e0e172ed9a",
+    "createdAt": "2026-07-28T03:43:58.627Z"
+  },
+  {
+    "orderId": "71d8ac04-aebb-4f69-a8d2-d1e0e172ed9a",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "90fff83f-80e8-4081-b8b6-a0297fa5919d",
+    "createdAt": "2026-07-28T03:43:58.682Z"
+  },
+  {
+    "id": "0f0b2abf-c16a-49af-bd49-6d6155bc47fd",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-357865 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "1affb8b5-ec4c-4115-9c2b-4307622029df",
+    "createdAt": "2026-07-28T03:43:59.475Z"
+  },
+  {
+    "orderId": "1affb8b5-ec4c-4115-9c2b-4307622029df",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "f473e871-2b7f-41ea-8222-e2e0024ed1f4",
+    "createdAt": "2026-07-28T03:43:59.533Z"
+  },
+  {
+    "id": "d0a3d4fd-bcb2-4b0e-8325-f2fecb54a9d0",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-149509 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "cac33f27-034e-4a4b-85a3-1046b5aca204",
+    "createdAt": "2026-07-28T03:43:59.676Z"
+  },
+  {
+    "orderId": "cac33f27-034e-4a4b-85a3-1046b5aca204",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "182dead9-08bd-4bcf-bde7-89e5d5b159b8",
+    "createdAt": "2026-07-28T03:43:59.737Z"
+  },
+  {
+    "id": "b76c3e82-1542-42e4-904d-cbca6fb71dbf",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-797368 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "9f504321-276a-467f-8b77-fcffac68e5d9",
+    "createdAt": "2026-07-28T03:43:59.871Z"
+  },
+  {
+    "orderId": "9f504321-276a-467f-8b77-fcffac68e5d9",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "33efcdf8-5ca1-40c1-a62f-89c79be0ba23",
+    "createdAt": "2026-07-28T03:43:59.928Z"
+  },
+  {
+    "id": "8aa5f5c2-ee8f-4653-98be-92e56dd9c51d",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-188978 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "a573a974-c889-4bd7-b0ff-6fdc996d7005",
+    "createdAt": "2026-07-28T03:44:00.047Z"
+  },
+  {
+    "orderId": "a573a974-c889-4bd7-b0ff-6fdc996d7005",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "67819a1a-fabd-447f-82fc-039e2fba29eb",
+    "createdAt": "2026-07-28T03:44:00.104Z"
+  },
+  {
+    "id": "b844e5fe-86a4-44b1-89db-f2a6fffcb34b",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-950938 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "05ad7c96-470e-4027-9613-16f6589f258d",
+    "createdAt": "2026-07-28T03:44:00.225Z"
+  },
+  {
+    "orderId": "05ad7c96-470e-4027-9613-16f6589f258d",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "91756348-cc52-466b-89d7-38d955dc06c9",
+    "createdAt": "2026-07-28T03:44:00.278Z"
+  },
+  {
+    "id": "b40a0241-45d5-4fd2-88a7-1c03a91c2e61",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-692381 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "46fe9aa3-ac00-44ed-836e-1750c7d031c9",
+    "createdAt": "2026-07-28T03:44:00.401Z"
+  },
+  {
+    "orderId": "46fe9aa3-ac00-44ed-836e-1750c7d031c9",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "749f524e-a670-46d1-a735-b8bd55c00946",
+    "createdAt": "2026-07-28T03:44:00.458Z"
+  },
+  {
+    "id": "81fb5e49-54f1-49f0-913f-cba5c7ae166c",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-407039 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "836f5ea4-cd82-4f4a-9b66-5c14a324af7f",
+    "createdAt": "2026-07-28T03:44:00.578Z"
+  },
+  {
+    "orderId": "836f5ea4-cd82-4f4a-9b66-5c14a324af7f",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "77cde99f-f290-4892-8cf6-6a72d3da36ae",
+    "createdAt": "2026-07-28T03:44:00.637Z"
+  },
+  {
+    "id": "bc3ea7e4-a312-4002-aea8-18d0fa405b15",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-371565 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "40122653-73e7-4a95-85db-b75c474b4cb6",
+    "createdAt": "2026-07-28T03:44:01.454Z"
+  },
+  {
+    "orderId": "40122653-73e7-4a95-85db-b75c474b4cb6",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "f1cff470-edba-47c0-9e64-f7d28e3bff62",
+    "createdAt": "2026-07-28T03:44:01.516Z"
+  },
+  {
+    "id": "048188c5-ce19-4906-9a40-bf2e68a7e27d",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-545144 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "20793240-17e1-4c35-9e6b-05304a823360",
+    "createdAt": "2026-07-28T03:44:01.656Z"
+  },
+  {
+    "orderId": "20793240-17e1-4c35-9e6b-05304a823360",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "e6da0e15-35ae-4a9b-81a1-dd2c03a450c1",
+    "createdAt": "2026-07-28T03:44:01.718Z"
+  },
+  {
+    "id": "1535ec69-1845-45b8-8492-fd990b2a5442",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-502818 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "a17e7641-ba9d-44ec-87df-837f7fb845e1",
+    "createdAt": "2026-07-28T03:44:01.864Z"
+  },
+  {
+    "orderId": "a17e7641-ba9d-44ec-87df-837f7fb845e1",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "03ee0c5c-c33b-4800-bca9-95ed92b8ae9d",
+    "createdAt": "2026-07-28T03:44:01.918Z"
+  },
+  {
+    "id": "8576a6e8-b662-454f-8c04-230226a187cd",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-276572 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "f24a3ce7-6bd0-441f-bb54-4d00ead6b9dd",
+    "createdAt": "2026-07-28T03:44:02.048Z"
+  },
+  {
+    "orderId": "f24a3ce7-6bd0-441f-bb54-4d00ead6b9dd",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "88c8cc05-1716-4e51-a18c-e15ebf1b99b6",
+    "createdAt": "2026-07-28T03:44:02.108Z"
+  },
+  {
+    "orderId": "f24a3ce7-6bd0-441f-bb54-4d00ead6b9dd",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Ready For Dispatch",
+    "description": "All production items successfully manufactured, QC passed, and packed.",
+    "id": "f290dc4a-8482-47ac-9d6b-73380d1ab30a",
+    "createdAt": "2026-07-28T03:44:02.134Z"
+  },
+  {
+    "id": "a6503730-3e11-4e62-9c36-1584476d5aed",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-996698 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "0e2fd333-2696-468e-a956-6ac83c202dbf",
+    "createdAt": "2026-07-28T03:44:02.273Z"
+  },
+  {
+    "orderId": "0e2fd333-2696-468e-a956-6ac83c202dbf",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "4af451b2-baee-4230-a9ee-f1e004cb2e08",
+    "createdAt": "2026-07-28T03:44:02.332Z"
+  },
+  {
+    "id": "b1e2cdc0-2ecb-4fbf-ac56-fb5c151842bb",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-424944 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "8719e0a3-c9fa-4b9a-b747-2e7f2a34efed",
+    "createdAt": "2026-07-28T03:44:02.459Z"
+  },
+  {
+    "orderId": "8719e0a3-c9fa-4b9a-b747-2e7f2a34efed",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "9c9dfd0d-fcc6-47ce-867b-346e26587edb",
+    "createdAt": "2026-07-28T03:44:02.519Z"
+  },
+  {
+    "id": "4982caf5-f801-424b-b433-42668c735eb3",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-501750 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "12a99031-ecab-4d6d-8d04-f5341ba0107d",
+    "createdAt": "2026-07-28T03:44:03.267Z"
+  },
+  {
+    "id": "37ee509a-cabf-43ec-9017-f21a1025d92c",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-476699 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "59563251-02b7-4799-bd89-bf3e7f14894d",
+    "createdAt": "2026-07-28T03:44:03.560Z"
+  },
+  {
+    "id": "eb408042-33f5-46ab-a144-331fde0f244c",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-699724 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "4203a5c9-5f8b-4bae-b4d4-9ea802b0243c",
+    "createdAt": "2026-07-28T03:44:03.752Z"
+  },
+  {
+    "orderId": "4203a5c9-5f8b-4bae-b4d4-9ea802b0243c",
+    "status": "CANCELLED",
+    "title": "Order Cancelled",
+    "description": "Reason: Customer changed mind",
+    "id": "ef801823-8a17-4806-bceb-11808db0baf9",
+    "createdAt": "2026-07-28T03:44:03.823Z"
+  },
+  {
+    "id": "c9bd8a9c-c4ab-4ba1-9748-d4d3de416439",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-277439 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "d5553444-9493-43e8-8478-37b1e21aea72",
+    "createdAt": "2026-07-28T07:36:46.629Z"
+  },
+  {
+    "orderId": "d5553444-9493-43e8-8478-37b1e21aea72",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "66d6b1f5-0cf8-4917-87c1-0c29673f6aad",
+    "createdAt": "2026-07-28T07:36:46.705Z"
+  },
+  {
+    "id": "dd7b8661-e37c-48f1-bc03-e61a5eb0f6f9",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-432456 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "c7a8b276-da6a-4f2b-96ee-00516f94d47c",
+    "createdAt": "2026-07-28T07:36:46.850Z"
+  },
+  {
+    "orderId": "c7a8b276-da6a-4f2b-96ee-00516f94d47c",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "39ead629-8ed2-4531-9e8a-986be55ca359",
+    "createdAt": "2026-07-28T07:36:46.916Z"
+  },
+  {
+    "id": "b876ac95-17c8-40f6-8ddb-b3292e668720",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-896527 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "cd41ba04-135a-469a-9c69-d2e42db19468",
+    "createdAt": "2026-07-28T07:36:47.065Z"
+  },
+  {
+    "orderId": "cd41ba04-135a-469a-9c69-d2e42db19468",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "d0ef7b02-acb5-4069-bbd3-2bea848e3ad7",
+    "createdAt": "2026-07-28T07:36:47.131Z"
+  },
+  {
+    "id": "68de74e9-f0c2-4cb3-a2a5-a3175d7e2fd0",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-642757 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "42abbd4b-2fa3-4ae9-9b43-265b4c1b7b5d",
+    "createdAt": "2026-07-28T07:36:47.267Z"
+  },
+  {
+    "orderId": "42abbd4b-2fa3-4ae9-9b43-265b4c1b7b5d",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "5e399a0a-59a2-466e-85ab-437bd72901e8",
+    "createdAt": "2026-07-28T07:36:47.351Z"
+  },
+  {
+    "id": "0b93b0d4-b5af-4e5d-8e3e-3082a11abd25",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-848732 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "e509d7a3-b7f0-4a07-9be4-af7efd4ce4f9",
+    "createdAt": "2026-07-28T07:36:47.493Z"
+  },
+  {
+    "orderId": "e509d7a3-b7f0-4a07-9be4-af7efd4ce4f9",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "41f2de29-fb75-4d70-a5dd-8090c2e9213c",
+    "createdAt": "2026-07-28T07:36:47.559Z"
+  },
+  {
+    "id": "da26d775-297e-4129-afdb-d7455f135b91",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-161114 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "74094af8-03ae-4ed3-a442-8821965ef0fe",
+    "createdAt": "2026-07-28T07:36:47.705Z"
+  },
+  {
+    "orderId": "74094af8-03ae-4ed3-a442-8821965ef0fe",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "de26689b-4598-4da6-a434-94af6695442b",
+    "createdAt": "2026-07-28T07:36:47.778Z"
+  },
+  {
+    "id": "52e8032f-fb49-4597-a56a-ee911af080bc",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-996585 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "27080f73-acc8-4d13-addc-a63f49d6746a",
+    "createdAt": "2026-07-28T07:36:47.934Z"
+  },
+  {
+    "orderId": "27080f73-acc8-4d13-addc-a63f49d6746a",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "78b6dbe7-3caf-4fce-bb57-92ccb9ebe15f",
+    "createdAt": "2026-07-28T07:36:48.008Z"
+  },
+  {
+    "id": "4d7c445b-9a74-4b2d-a115-687825102250",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-102373 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "c19565b1-db5c-4202-9dcd-d63ef1088b49",
+    "createdAt": "2026-07-28T07:36:50.134Z"
+  },
+  {
+    "orderId": "c19565b1-db5c-4202-9dcd-d63ef1088b49",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "2be739b0-9cbb-422d-ae28-7263fd79aac0",
+    "createdAt": "2026-07-28T07:36:50.219Z"
+  },
+  {
+    "id": "b1dd94f1-f350-4f5c-a811-94f98708999d",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-944535 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "5a05fc0c-01a7-4dc9-a8ad-892125bb7e22",
+    "createdAt": "2026-07-28T07:36:50.385Z"
+  },
+  {
+    "orderId": "5a05fc0c-01a7-4dc9-a8ad-892125bb7e22",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "3bbd8489-0896-4644-8351-7960031d751e",
+    "createdAt": "2026-07-28T07:36:50.458Z"
+  },
+  {
+    "id": "83ab7f13-eccf-4bd0-97db-b233d524f47b",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-665416 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "6e82e8d3-5741-4fb9-81b1-25b6e8d865c2",
+    "createdAt": "2026-07-28T07:36:50.616Z"
+  },
+  {
+    "orderId": "6e82e8d3-5741-4fb9-81b1-25b6e8d865c2",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "698be2e6-a839-4fb0-8534-3502ebf4dae8",
+    "createdAt": "2026-07-28T07:36:50.684Z"
+  },
+  {
+    "orderId": "6e82e8d3-5741-4fb9-81b1-25b6e8d865c2",
+    "status": "OUT_FOR_DELIVERY",
+    "title": "Out For Delivery",
+    "description": "Your package is out for delivery with our delivery partner.",
+    "id": "4c60cb2e-e569-429d-a35e-27c40be4e85f",
+    "createdAt": "2026-07-28T07:36:50.710Z"
+  },
+  {
+    "id": "b80fdfb5-ee69-46e8-b442-f40526695865",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-852096 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "63a45994-abb3-4559-bc99-46bc48b11b07",
+    "createdAt": "2026-07-28T07:36:50.848Z"
+  },
+  {
+    "orderId": "63a45994-abb3-4559-bc99-46bc48b11b07",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "f76aad64-974e-41e5-9121-bca0acc3f09b",
+    "createdAt": "2026-07-28T07:36:50.915Z"
+  },
+  {
+    "orderId": "63a45994-abb3-4559-bc99-46bc48b11b07",
+    "status": "OUT_FOR_DELIVERY",
+    "title": "Out For Delivery",
+    "description": "Your package is out for delivery with our delivery partner.",
+    "id": "0101d399-f17e-4de3-b5b0-5197892475d3",
+    "createdAt": "2026-07-28T07:36:50.943Z"
+  },
+  {
+    "orderId": "63a45994-abb3-4559-bc99-46bc48b11b07",
+    "status": "DELIVERED",
+    "title": "Delivered",
+    "description": "Order successfully delivered. Thank you for shopping with Jaipur Gifting!",
+    "id": "93e55f1e-2c43-4197-bac6-518072e1e141",
+    "createdAt": "2026-07-28T07:36:50.958Z"
+  },
+  {
+    "id": "3b6974d4-4c3f-4443-857c-25619f312ac5",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-757422 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "9e1d5175-4928-469f-bdb1-dd2ef0955c0a",
+    "createdAt": "2026-07-28T07:36:51.104Z"
+  },
+  {
+    "orderId": "9e1d5175-4928-469f-bdb1-dd2ef0955c0a",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "8130186c-0484-4b88-93ef-5391a28e3a23",
+    "createdAt": "2026-07-28T07:36:51.169Z"
+  },
+  {
+    "orderId": "9e1d5175-4928-469f-bdb1-dd2ef0955c0a",
+    "status": "DELIVERED",
+    "title": "Delivered",
+    "description": "Successfully delivered to Mrs. Sharma.",
+    "id": "f041fd43-f6b1-4460-af4c-556a2e901c44",
+    "createdAt": "2026-07-28T07:36:51.188Z"
+  },
+  {
+    "id": "b31c3353-9b08-48fe-be0f-b535d8d3aeb0",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-116863 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "e440a0b7-540b-4c09-b848-ee0df5462a00",
+    "createdAt": "2026-07-28T07:36:51.328Z"
+  },
+  {
+    "orderId": "e440a0b7-540b-4c09-b848-ee0df5462a00",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "1e566221-c899-4c22-9c44-5b7f930cef87",
+    "createdAt": "2026-07-28T07:36:51.397Z"
+  },
+  {
+    "id": "c0d94f1e-08f4-4f1f-bdfe-99bec8f8f095",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-827564 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "e71c29a2-610e-4a78-8763-c6afb977b6e7",
+    "createdAt": "2026-07-28T07:36:51.549Z"
+  },
+  {
+    "orderId": "e71c29a2-610e-4a78-8763-c6afb977b6e7",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "c69dee3a-9f45-4fa3-812b-5c4c3b0bd94f",
+    "createdAt": "2026-07-28T07:36:51.615Z"
+  },
+  {
+    "id": "0cff2edf-d29a-470a-a609-fd7e55871fa6",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-104465 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "1afebd85-af45-475f-9fd1-f49adcf5ef90",
+    "createdAt": "2026-07-28T07:36:52.907Z"
+  },
+  {
+    "orderId": "1afebd85-af45-475f-9fd1-f49adcf5ef90",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "b55d693c-f6d0-4a53-b414-1b4feb45bff9",
+    "createdAt": "2026-07-28T07:36:52.976Z"
+  },
+  {
+    "id": "57dbae7a-6813-4b0e-a29e-c442b18d0d89",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-812850 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "add7ae5b-d803-4b6b-9ce4-59a85443e83d",
+    "createdAt": "2026-07-28T07:36:53.147Z"
+  },
+  {
+    "orderId": "add7ae5b-d803-4b6b-9ce4-59a85443e83d",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "ebc6276d-da06-42a6-8398-b1b643215222",
+    "createdAt": "2026-07-28T07:36:53.219Z"
+  },
+  {
+    "id": "9cc9e5d7-09e7-4c6b-b84d-c1768a7c054b",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-414859 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "9d18973b-25b6-47a7-b0e3-057b5f22cd7b",
+    "createdAt": "2026-07-28T07:36:53.373Z"
+  },
+  {
+    "orderId": "9d18973b-25b6-47a7-b0e3-057b5f22cd7b",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "3fd7a872-7f60-45c9-82ef-bdb826f24397",
+    "createdAt": "2026-07-28T07:36:53.449Z"
+  },
+  {
+    "id": "cb3e44ea-ec5c-434e-8805-704662d9de04",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-384296 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "7d1e84c4-8d93-4d71-993a-3145416ed17d",
+    "createdAt": "2026-07-28T07:36:53.598Z"
+  },
+  {
+    "orderId": "7d1e84c4-8d93-4d71-993a-3145416ed17d",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "002d2f49-938e-4bb8-b1ec-7aa061047eb8",
+    "createdAt": "2026-07-28T07:36:53.668Z"
+  },
+  {
+    "orderId": "7d1e84c4-8d93-4d71-993a-3145416ed17d",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Ready For Dispatch",
+    "description": "All production items successfully manufactured, QC passed, and packed.",
+    "id": "7e8e9d58-1e5a-4fcb-9630-738eb52a87ce",
+    "createdAt": "2026-07-28T07:36:53.693Z"
+  },
+  {
+    "id": "2cdf5303-3708-4553-aede-e0adffa88deb",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-567869 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "6b75e63c-a95a-4632-991f-744f87a3de9b",
+    "createdAt": "2026-07-28T07:36:53.833Z"
+  },
+  {
+    "orderId": "6b75e63c-a95a-4632-991f-744f87a3de9b",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "352d910e-22ae-4516-a43b-480e1a0f04b0",
+    "createdAt": "2026-07-28T07:36:53.903Z"
+  },
+  {
+    "id": "1226a524-4d69-4952-81d9-703b77118ff2",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-119361 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "07861553-a0d5-4425-acbe-d4967c926002",
+    "createdAt": "2026-07-28T07:36:54.049Z"
+  },
+  {
+    "orderId": "07861553-a0d5-4425-acbe-d4967c926002",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "3e567bbf-46d6-49a4-b8e8-ed1f55470740",
+    "createdAt": "2026-07-28T07:36:54.115Z"
+  },
+  {
+    "id": "132f7260-6c9a-454f-b978-d0f79964de46",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-713544 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "340b72d7-7102-4138-814c-f48c3458b4c7",
+    "createdAt": "2026-07-28T07:36:57.557Z"
+  },
+  {
+    "id": "d786265f-3f91-4d6f-87e3-6c8f6026ecc7",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-334411 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "95192752-8819-47b3-a7fb-9369550137a1",
+    "createdAt": "2026-07-28T07:36:57.922Z"
+  },
+  {
+    "id": "83094046-be92-4693-9a0a-5350b8936216",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-157375 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "460fdf51-2c93-4dc6-988f-f92709243e97",
+    "createdAt": "2026-07-28T07:36:58.135Z"
+  },
+  {
+    "orderId": "460fdf51-2c93-4dc6-988f-f92709243e97",
+    "status": "CANCELLED",
+    "title": "Order Cancelled",
+    "description": "Reason: Customer changed mind",
+    "id": "df5e4cd5-4d55-4d73-9b9c-2c66d131a4d8",
+    "createdAt": "2026-07-28T07:36:58.207Z"
+  },
+  {
+    "id": "a2e9dbd8-beb0-4d52-b387-f05809b1c73e",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-894541 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "0758c525-598c-42dc-b191-a59d9bd3e6a4",
+    "createdAt": "2026-07-28T07:40:34.698Z"
+  },
+  {
+    "orderId": "0758c525-598c-42dc-b191-a59d9bd3e6a4",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "d3db5013-0fbd-4263-a7cd-d6a9eee6a5e8",
+    "createdAt": "2026-07-28T07:40:34.772Z"
+  },
+  {
+    "id": "af6868b6-928d-44f7-97a5-e5e79d20c666",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-195885 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "898bcbd0-d6af-4d06-8223-1af488f0900c",
+    "createdAt": "2026-07-28T07:40:34.923Z"
+  },
+  {
+    "orderId": "898bcbd0-d6af-4d06-8223-1af488f0900c",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "f9a224e9-4a5f-4683-b7e2-ff7665251009",
+    "createdAt": "2026-07-28T07:40:34.997Z"
+  },
+  {
+    "id": "c45ba333-f462-44eb-85ac-b4c72cc1296a",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-988214 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "b56d5365-64b8-4d35-ba6f-819a9ae9b206",
+    "createdAt": "2026-07-28T07:40:35.157Z"
+  },
+  {
+    "orderId": "b56d5365-64b8-4d35-ba6f-819a9ae9b206",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "c60bfacb-87da-4453-8dec-2aabe9a80c30",
+    "createdAt": "2026-07-28T07:40:35.224Z"
+  },
+  {
+    "orderId": "b56d5365-64b8-4d35-ba6f-819a9ae9b206",
+    "status": "OUT_FOR_DELIVERY",
+    "title": "Out For Delivery",
+    "description": "Your package is out for delivery with our delivery partner.",
+    "id": "51834fb9-9e19-47f7-9548-aab6bfd2113c",
+    "createdAt": "2026-07-28T07:40:35.249Z"
+  },
+  {
+    "id": "d261072e-0e80-4701-a3e1-0325a7b34e72",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-426457 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "151f0f62-795c-43c7-8911-9a9742de7a81",
+    "createdAt": "2026-07-28T07:40:35.384Z"
+  },
+  {
+    "orderId": "151f0f62-795c-43c7-8911-9a9742de7a81",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "13406798-5b8f-4d9b-891e-cd18c454998c",
+    "createdAt": "2026-07-28T07:40:35.448Z"
+  },
+  {
+    "orderId": "151f0f62-795c-43c7-8911-9a9742de7a81",
+    "status": "OUT_FOR_DELIVERY",
+    "title": "Out For Delivery",
+    "description": "Your package is out for delivery with our delivery partner.",
+    "id": "b2694514-2e2a-4b2e-a406-ec8e11a65210",
+    "createdAt": "2026-07-28T07:40:35.470Z"
+  },
+  {
+    "orderId": "151f0f62-795c-43c7-8911-9a9742de7a81",
+    "status": "DELIVERED",
+    "title": "Delivered",
+    "description": "Order successfully delivered. Thank you for shopping with Jaipur Gifting!",
+    "id": "20dd4225-c2b8-4817-8e0a-66b680345c2c",
+    "createdAt": "2026-07-28T07:40:35.484Z"
+  },
+  {
+    "id": "1909bd80-b07d-4c0a-9a2b-e12cc72d1133",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-447569 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "d9c9360e-3e35-41f7-acc5-5c9db4ff86da",
+    "createdAt": "2026-07-28T07:40:35.619Z"
+  },
+  {
+    "orderId": "d9c9360e-3e35-41f7-acc5-5c9db4ff86da",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "fb0e633b-85f8-4328-9bc0-cebf4608282c",
+    "createdAt": "2026-07-28T07:40:35.683Z"
+  },
+  {
+    "orderId": "d9c9360e-3e35-41f7-acc5-5c9db4ff86da",
+    "status": "DELIVERED",
+    "title": "Delivered",
+    "description": "Successfully delivered to Mrs. Sharma.",
+    "id": "b8e818de-c2f0-4711-b5e5-d4f17be3cc52",
+    "createdAt": "2026-07-28T07:40:35.709Z"
+  },
+  {
+    "id": "f55df0fb-fbd1-4be2-8c2c-8e1069e13b0d",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-614733 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "1acc6b48-0a03-445a-98fd-d56bab76562a",
+    "createdAt": "2026-07-28T07:40:35.837Z"
+  },
+  {
+    "orderId": "1acc6b48-0a03-445a-98fd-d56bab76562a",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "60072168-69a6-42b6-adea-26623a2623ae",
+    "createdAt": "2026-07-28T07:40:35.912Z"
+  },
+  {
+    "id": "558a8194-2443-41e3-886e-7558161c5a5a",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-670818 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "48d54956-1851-4b13-8936-6f7d17153e5c",
+    "createdAt": "2026-07-28T07:40:36.054Z"
+  },
+  {
+    "orderId": "48d54956-1851-4b13-8936-6f7d17153e5c",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "3cb1e616-ff89-46a2-a7b3-702ec95b3a69",
+    "createdAt": "2026-07-28T07:40:36.141Z"
+  },
+  {
+    "id": "e451158d-d49e-4cf4-8708-a09f98967a26",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-513117 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "490bf84a-8f20-40ee-a034-242563422177",
+    "createdAt": "2026-07-28T07:40:36.987Z"
+  },
+  {
+    "orderId": "490bf84a-8f20-40ee-a034-242563422177",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "bbbe9f61-f1b2-4018-ae85-357119710f7e",
+    "createdAt": "2026-07-28T07:40:37.078Z"
+  },
+  {
+    "id": "8b9b0488-0896-41b6-b373-ee0c6641b3ef",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-538151 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "a3fa325b-c2f1-4224-98e6-2eec4cb9666e",
+    "createdAt": "2026-07-28T07:40:37.237Z"
+  },
+  {
+    "orderId": "a3fa325b-c2f1-4224-98e6-2eec4cb9666e",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "152e2b43-f6ef-4f01-b8a8-5a2f6c82ce85",
+    "createdAt": "2026-07-28T07:40:37.310Z"
+  },
+  {
+    "id": "8766eb87-2662-40b3-a447-7153381b3999",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-913585 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "5793bbc0-6366-41fc-9860-a5be6eac8d7e",
+    "createdAt": "2026-07-28T07:40:37.459Z"
+  },
+  {
+    "orderId": "5793bbc0-6366-41fc-9860-a5be6eac8d7e",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "d813aedc-2daa-4d66-9ea5-ac1e7b9fd28b",
+    "createdAt": "2026-07-28T07:40:37.529Z"
+  },
+  {
+    "id": "1d9e6d6f-4e45-47b2-8708-49a0f9b36ce5",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-114614 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "ba2f1c64-eb24-436f-b05d-c0b97b4afac0",
+    "createdAt": "2026-07-28T07:40:37.671Z"
+  },
+  {
+    "orderId": "ba2f1c64-eb24-436f-b05d-c0b97b4afac0",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "9cfd8ee1-1347-4152-9cff-43b1093524b6",
+    "createdAt": "2026-07-28T07:40:37.745Z"
+  },
+  {
+    "id": "8ef807fb-5239-44d0-b122-9c2f0c0fb07b",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-939560 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "d5cee54f-babe-4cee-a369-35badd36d8be",
+    "createdAt": "2026-07-28T07:40:37.884Z"
+  },
+  {
+    "orderId": "d5cee54f-babe-4cee-a369-35badd36d8be",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "8d26864b-14f4-440f-ba43-1a6b99a3af32",
+    "createdAt": "2026-07-28T07:40:37.952Z"
+  },
+  {
+    "id": "b5751719-bdad-4bbe-9339-8efb6dd19a9a",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-673454 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "c254e33c-d882-49ed-8f5d-e0ef4cf4308c",
+    "createdAt": "2026-07-28T07:40:38.106Z"
+  },
+  {
+    "orderId": "c254e33c-d882-49ed-8f5d-e0ef4cf4308c",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "2bf50ec1-e2cd-42ea-bcba-36a41ed08567",
+    "createdAt": "2026-07-28T07:40:38.184Z"
+  },
+  {
+    "id": "d0078a7f-e036-4511-af92-29456fa3ba29",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-288507 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "852e18f6-c4b7-45a2-86e2-dc587c39b048",
+    "createdAt": "2026-07-28T07:40:38.333Z"
+  },
+  {
+    "orderId": "852e18f6-c4b7-45a2-86e2-dc587c39b048",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "5b446548-61e2-4280-9e60-7d515c79c922",
+    "createdAt": "2026-07-28T07:40:38.404Z"
+  },
+  {
+    "id": "3f57f322-df31-47fe-a170-418043ff584b",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-522525 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "407a46b1-5bd2-4df9-a72f-d717f76f7fca",
+    "createdAt": "2026-07-28T07:40:39.242Z"
+  },
+  {
+    "orderId": "407a46b1-5bd2-4df9-a72f-d717f76f7fca",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "a743b7d0-a9de-481b-affc-493d9b950c7a",
+    "createdAt": "2026-07-28T07:40:39.315Z"
+  },
+  {
+    "id": "b5e5fb04-4dbf-4785-b9a7-b09b3909c30c",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-884333 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "7e47091c-9e81-494a-9053-bd03a0d92586",
+    "createdAt": "2026-07-28T07:40:39.473Z"
+  },
+  {
+    "orderId": "7e47091c-9e81-494a-9053-bd03a0d92586",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "9996572a-c6fa-406c-b848-736e53c1a122",
+    "createdAt": "2026-07-28T07:40:39.550Z"
+  },
+  {
+    "id": "3f7ff4a7-4760-4df5-95ab-e6177bd63934",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-883835 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "5efb6a5c-7859-4690-b92c-1921a89afb84",
+    "createdAt": "2026-07-28T07:40:39.699Z"
+  },
+  {
+    "orderId": "5efb6a5c-7859-4690-b92c-1921a89afb84",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "bff8e554-7674-4278-bfa3-08b7f0c78a4d",
+    "createdAt": "2026-07-28T07:40:39.766Z"
+  },
+  {
+    "id": "055fb72a-19c1-42d3-9eb6-1e173ba8599f",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-235875 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "29db9787-6c38-45f0-9a1e-b921179fc814",
+    "createdAt": "2026-07-28T07:40:39.935Z"
+  },
+  {
+    "orderId": "29db9787-6c38-45f0-9a1e-b921179fc814",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "d1622266-3f80-4453-b01b-88e6f22c3958",
+    "createdAt": "2026-07-28T07:40:40.022Z"
+  },
+  {
+    "orderId": "29db9787-6c38-45f0-9a1e-b921179fc814",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Ready For Dispatch",
+    "description": "All production items successfully manufactured, QC passed, and packed.",
+    "id": "03cdfb31-e3b5-4b76-b12f-64fe84b05f94",
+    "createdAt": "2026-07-28T07:40:40.058Z"
+  },
+  {
+    "id": "09224699-38c8-45af-a060-c56ff99c3f9f",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-140946 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "5f77aab4-d373-4dc6-81ec-360062758db5",
+    "createdAt": "2026-07-28T07:40:40.205Z"
+  },
+  {
+    "orderId": "5f77aab4-d373-4dc6-81ec-360062758db5",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "a6c55fd2-36e1-4f68-a017-46bf5ff78c3e",
+    "createdAt": "2026-07-28T07:40:40.276Z"
+  },
+  {
+    "id": "81f3c2df-e745-42a4-8598-85c7448fbdf0",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-921527 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "7272ca19-49f6-40f8-86c9-b929bb12f66d",
+    "createdAt": "2026-07-28T07:40:40.423Z"
+  },
+  {
+    "orderId": "7272ca19-49f6-40f8-86c9-b929bb12f66d",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "964724ee-9a52-4a25-aa6b-021c7b6c848c",
+    "createdAt": "2026-07-28T07:40:40.486Z"
+  },
+  {
+    "id": "d2d078b9-9bc0-45ed-90db-59af5e0acd24",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-959769 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "beff6da6-9350-481d-8cf4-eefc03464835",
+    "createdAt": "2026-07-28T07:40:42.985Z"
+  },
+  {
+    "id": "73f13a25-5e5b-41dc-8097-00c0e9043f43",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-198094 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "b057475c-5af0-4d46-a262-a648ac230b84",
+    "createdAt": "2026-07-28T07:40:43.384Z"
+  },
+  {
+    "id": "b2b6fd2b-7956-4094-b61d-df3dcbae51fe",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-862017 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "0166b833-1aa2-4d27-bb79-f3d18887ab2c",
+    "createdAt": "2026-07-28T07:40:43.594Z"
+  },
+  {
+    "orderId": "0166b833-1aa2-4d27-bb79-f3d18887ab2c",
+    "status": "CANCELLED",
+    "title": "Order Cancelled",
+    "description": "Reason: Customer changed mind",
+    "id": "b8575151-a45f-4fac-918c-8427044a20a3",
+    "createdAt": "2026-07-28T07:40:43.659Z"
+  },
+  {
+    "id": "ce527359-485a-496d-b584-d13ce559289e",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-543003 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "649d0701-608e-481d-a37b-1d03efa1c63f",
+    "createdAt": "2026-07-28T08:19:10.849Z"
+  },
+  {
+    "orderId": "649d0701-608e-481d-a37b-1d03efa1c63f",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "4a40e3b8-90bc-48ed-a30f-eddfbc3e42f1",
+    "createdAt": "2026-07-28T08:19:10.938Z"
+  },
+  {
+    "id": "aada40b8-7a32-4f84-a3c2-80061622de60",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-750518 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "49cc710a-7a5e-41cc-be4a-0d5ebf06743e",
+    "createdAt": "2026-07-28T08:19:11.110Z"
+  },
+  {
+    "orderId": "49cc710a-7a5e-41cc-be4a-0d5ebf06743e",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "93426911-96a2-417e-a886-6f70273255e9",
+    "createdAt": "2026-07-28T08:19:11.205Z"
+  },
+  {
+    "id": "21aea406-c4f7-4300-b7f7-89725102e6b1",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-156426 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "9d8f920d-a171-4861-bec9-7f735e2a450f",
+    "createdAt": "2026-07-28T08:19:11.371Z"
+  },
+  {
+    "orderId": "9d8f920d-a171-4861-bec9-7f735e2a450f",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "26266db8-8236-4681-a258-b9b9d3f0e621",
+    "createdAt": "2026-07-28T08:19:11.452Z"
+  },
+  {
+    "orderId": "9d8f920d-a171-4861-bec9-7f735e2a450f",
+    "status": "OUT_FOR_DELIVERY",
+    "title": "Out For Delivery",
+    "description": "Your package is out for delivery with our delivery partner.",
+    "id": "dc4a4fda-4273-40d8-8ed3-5e08bdaeed4e",
+    "createdAt": "2026-07-28T08:19:11.486Z"
+  },
+  {
+    "id": "2445018f-c1dc-4569-bf33-f44f20c56392",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-721957 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "40ffc537-23d5-45ea-9b35-4d97d255b01f",
+    "createdAt": "2026-07-28T08:19:11.636Z"
+  },
+  {
+    "orderId": "40ffc537-23d5-45ea-9b35-4d97d255b01f",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "02751d4c-9b22-4c59-a55a-aa3e1c96deaa",
+    "createdAt": "2026-07-28T08:19:11.717Z"
+  },
+  {
+    "orderId": "40ffc537-23d5-45ea-9b35-4d97d255b01f",
+    "status": "OUT_FOR_DELIVERY",
+    "title": "Out For Delivery",
+    "description": "Your package is out for delivery with our delivery partner.",
+    "id": "1a3f91d2-0dbf-43be-8201-e0af53b53df7",
+    "createdAt": "2026-07-28T08:19:11.747Z"
+  },
+  {
+    "orderId": "40ffc537-23d5-45ea-9b35-4d97d255b01f",
+    "status": "DELIVERED",
+    "title": "Delivered",
+    "description": "Order successfully delivered. Thank you for shopping with Jaipur Gifting!",
+    "id": "79ca279b-56bc-47c4-8ffc-f44e2371890f",
+    "createdAt": "2026-07-28T08:19:11.769Z"
+  },
+  {
+    "id": "0b1f23dc-7f58-481f-9d3b-b303c868c007",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-552654 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "297fe5c7-8f01-4188-a848-b594498246ba",
+    "createdAt": "2026-07-28T08:19:11.933Z"
+  },
+  {
+    "orderId": "297fe5c7-8f01-4188-a848-b594498246ba",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "e8191d6f-89cb-458d-8541-6b1a24a47adb",
+    "createdAt": "2026-07-28T08:19:12.009Z"
+  },
+  {
+    "orderId": "297fe5c7-8f01-4188-a848-b594498246ba",
+    "status": "DELIVERED",
+    "title": "Delivered",
+    "description": "Successfully delivered to Mrs. Sharma.",
+    "id": "e67acd02-1601-49a4-9fd3-91d1d85e00fd",
+    "createdAt": "2026-07-28T08:19:12.032Z"
+  },
+  {
+    "id": "74d52bb5-4377-4cf3-9751-597b51231e78",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-292985 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "113b7041-e409-4054-bef4-509e0c0e2084",
+    "createdAt": "2026-07-28T08:19:12.171Z"
+  },
+  {
+    "orderId": "113b7041-e409-4054-bef4-509e0c0e2084",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "6d612b8e-12c6-4a02-8e41-f9243347d69e",
+    "createdAt": "2026-07-28T08:19:12.251Z"
+  },
+  {
+    "id": "479ae55b-2b6b-4b06-9123-38c8b92e3007",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-538147 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "cfa00300-899e-46e4-825e-bd3c00f267d0",
+    "createdAt": "2026-07-28T08:19:12.428Z"
+  },
+  {
+    "orderId": "cfa00300-899e-46e4-825e-bd3c00f267d0",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "b34a7c9e-97a7-492c-9cae-9e334a4f546b",
+    "createdAt": "2026-07-28T08:19:12.524Z"
+  },
+  {
+    "id": "a9bade9a-dff9-44de-ab52-a300154a9d7c",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-646800 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "e9844aeb-5c61-4f3f-81b4-5e02d77229eb",
+    "createdAt": "2026-07-28T08:19:13.430Z"
+  },
+  {
+    "orderId": "e9844aeb-5c61-4f3f-81b4-5e02d77229eb",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "d9c6d196-3c45-47d0-9113-6f38e5863210",
+    "createdAt": "2026-07-28T08:19:13.526Z"
+  },
+  {
+    "id": "ae3532b8-317a-4d64-83bd-8fbce1e874e0",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-290452 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "c28e1db0-7cbb-45a9-bb54-d8e99434e211",
+    "createdAt": "2026-07-28T08:19:13.700Z"
+  },
+  {
+    "orderId": "c28e1db0-7cbb-45a9-bb54-d8e99434e211",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "1dfcc3fe-9902-4790-afcf-bff436d69b28",
+    "createdAt": "2026-07-28T08:19:13.800Z"
+  },
+  {
+    "id": "85ab4bdb-e7f0-4391-b18c-6b17eb7033a8",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-815890 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "24aa7c0c-83d6-4cc4-afc1-1a6847df1ff0",
+    "createdAt": "2026-07-28T08:19:13.956Z"
+  },
+  {
+    "orderId": "24aa7c0c-83d6-4cc4-afc1-1a6847df1ff0",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "0dc2ab21-ca15-4a03-981a-72ab758390ca",
+    "createdAt": "2026-07-28T08:19:14.036Z"
+  },
+  {
+    "id": "74b5850d-b2ae-40fb-9a2c-b47d67d29238",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-662915 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "ff538b09-c36b-4380-8018-66c405989875",
+    "createdAt": "2026-07-28T08:19:14.196Z"
+  },
+  {
+    "orderId": "ff538b09-c36b-4380-8018-66c405989875",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "7d0f8691-74e9-4912-8e94-30dce41e3398",
+    "createdAt": "2026-07-28T08:19:14.276Z"
+  },
+  {
+    "id": "7e71e27e-0b4d-40e6-a41f-b4fe49d957a3",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-971211 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "029580c7-2a05-4a6d-a8ef-3104cd7ba439",
+    "createdAt": "2026-07-28T08:19:14.466Z"
+  },
+  {
+    "orderId": "029580c7-2a05-4a6d-a8ef-3104cd7ba439",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "a78151cd-9cce-4fd9-9f35-7b82a19aac92",
+    "createdAt": "2026-07-28T08:19:14.541Z"
+  },
+  {
+    "id": "39f8a087-bedf-4521-94ff-0b124defb017",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-378255 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "98986de0-58fe-4708-9c23-f61689738c8f",
+    "createdAt": "2026-07-28T08:19:14.704Z"
+  },
+  {
+    "orderId": "98986de0-58fe-4708-9c23-f61689738c8f",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "65f67944-0fde-4820-8732-979b2642edce",
+    "createdAt": "2026-07-28T08:19:14.791Z"
+  },
+  {
+    "id": "b567204a-3a78-4687-bb6c-67c14d8a1be3",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-967723 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "7b3e1b32-1e0e-43a8-8ea0-343a8166af2a",
+    "createdAt": "2026-07-28T08:19:14.952Z"
+  },
+  {
+    "orderId": "7b3e1b32-1e0e-43a8-8ea0-343a8166af2a",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "e7c7bcb2-fad1-4905-93b6-ec1c48081430",
+    "createdAt": "2026-07-28T08:19:15.039Z"
+  },
+  {
+    "id": "3d12db9a-651c-4aa7-a5fc-06351cac648e",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-146023 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "655a4dda-edfa-43db-a321-d3768b4abc72",
+    "createdAt": "2026-07-28T08:19:15.896Z"
+  },
+  {
+    "orderId": "655a4dda-edfa-43db-a321-d3768b4abc72",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "c78b056b-7f7b-4e77-a53f-64dcb2dda6e9",
+    "createdAt": "2026-07-28T08:19:16.000Z"
+  },
+  {
+    "id": "33f74d63-d680-419e-aedc-d20dd1633120",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-959908 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "a36451bd-50b9-43c8-9d64-327e3ce84b6e",
+    "createdAt": "2026-07-28T08:19:16.184Z"
+  },
+  {
+    "orderId": "a36451bd-50b9-43c8-9d64-327e3ce84b6e",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "07f81746-599c-4a24-b65e-814e163a267f",
+    "createdAt": "2026-07-28T08:19:16.275Z"
+  },
+  {
+    "id": "5fb0ae03-c288-42be-974c-22385a2ec5c4",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-740642 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "4a2665f2-7983-40b3-84ba-d579aa143f6e",
+    "createdAt": "2026-07-28T08:19:16.445Z"
+  },
+  {
+    "orderId": "4a2665f2-7983-40b3-84ba-d579aa143f6e",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "ea059ecb-a79a-42a7-9394-e88618bb339d",
+    "createdAt": "2026-07-28T08:19:16.524Z"
+  },
+  {
+    "id": "6be65dda-e319-43e4-afe0-6bf29936f217",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-338816 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "da4ecd69-03e7-4e1a-9752-818fb773ba5a",
+    "createdAt": "2026-07-28T08:19:16.686Z"
+  },
+  {
+    "orderId": "da4ecd69-03e7-4e1a-9752-818fb773ba5a",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "a25c11ae-b9d4-44af-87c7-4b6e84e3e4cc",
+    "createdAt": "2026-07-28T08:19:16.761Z"
+  },
+  {
+    "orderId": "da4ecd69-03e7-4e1a-9752-818fb773ba5a",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Ready For Dispatch",
+    "description": "All production items successfully manufactured, QC passed, and packed.",
+    "id": "a7164148-ca6e-4622-9089-45855160f352",
+    "createdAt": "2026-07-28T08:19:16.792Z"
+  },
+  {
+    "id": "6dd2085d-0666-4de3-99fb-75aec712890f",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-675796 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "fb25268f-5043-4a2f-b977-21017acad852",
+    "createdAt": "2026-07-28T08:19:16.949Z"
+  },
+  {
+    "orderId": "fb25268f-5043-4a2f-b977-21017acad852",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "4ed1f52e-8125-4961-96dd-c8908bb7b01c",
+    "createdAt": "2026-07-28T08:19:17.028Z"
+  },
+  {
+    "id": "030d37e9-2c70-4afc-aa11-d655d969caef",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-820017 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "cc73e393-735f-4774-9a73-4f0738b0f602",
+    "createdAt": "2026-07-28T08:19:17.193Z"
+  },
+  {
+    "orderId": "cc73e393-735f-4774-9a73-4f0738b0f602",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "f3f5efbf-8023-4c25-b1b4-20c6c444bbaf",
+    "createdAt": "2026-07-28T08:19:17.272Z"
+  },
+  {
+    "id": "f44de02d-e47b-4f10-aa4d-ccc847d8605c",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-731353 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "c0e26186-c527-4eb9-bef0-b3c2a08e9766",
+    "createdAt": "2026-07-28T08:19:20.069Z"
+  },
+  {
+    "id": "55289f53-f9f3-4318-9395-9be09372b975",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-791394 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "1cbe7e0a-20a7-44c3-9700-e788553402ae",
+    "createdAt": "2026-07-28T08:19:20.515Z"
+  },
+  {
+    "id": "6e8a4ba3-37f4-4481-8bd8-5cbc705dd85f",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-797571 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "9ed38ede-97a2-4e5b-9806-e88fb856c221",
+    "createdAt": "2026-07-28T08:19:20.741Z"
+  },
+  {
+    "orderId": "9ed38ede-97a2-4e5b-9806-e88fb856c221",
+    "status": "CANCELLED",
+    "title": "Order Cancelled",
+    "description": "Reason: Customer changed mind",
+    "id": "720853eb-ed74-47ff-bab1-a1a2cdce9b58",
+    "createdAt": "2026-07-28T08:19:20.819Z"
+  },
+  {
+    "id": "3b066df2-44ba-4ef4-b627-08953b31d123",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-858627 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "1d5b4070-e647-4811-8d3a-ba97dda0958e",
+    "createdAt": "2026-07-28T08:23:56.848Z"
+  },
+  {
+    "orderId": "1d5b4070-e647-4811-8d3a-ba97dda0958e",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "28267bb0-754f-4f09-97ec-25093623a153",
+    "createdAt": "2026-07-28T08:23:56.974Z"
+  },
+  {
+    "id": "12223625-0fe8-4df0-b762-2dffca7b5128",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-374735 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "4e182b6d-9b41-4a20-812f-3ff91a28cfff",
+    "createdAt": "2026-07-28T08:23:57.322Z"
+  },
+  {
+    "orderId": "4e182b6d-9b41-4a20-812f-3ff91a28cfff",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "ed51dd10-2c96-498e-b663-95933bf036f0",
+    "createdAt": "2026-07-28T08:23:57.480Z"
+  },
+  {
+    "id": "007a8522-66ef-4990-99cf-86718b576991",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-257121 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "8506fed4-dbbe-40c7-9576-6b78f40cf494",
+    "createdAt": "2026-07-28T08:23:57.856Z"
+  },
+  {
+    "orderId": "8506fed4-dbbe-40c7-9576-6b78f40cf494",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "fa0640e2-ca8f-4d60-b35e-a771dbbc8721",
+    "createdAt": "2026-07-28T08:23:57.990Z"
+  },
+  {
+    "orderId": "8506fed4-dbbe-40c7-9576-6b78f40cf494",
+    "status": "OUT_FOR_DELIVERY",
+    "title": "Out For Delivery",
+    "description": "Your package is out for delivery with our delivery partner.",
+    "id": "d2345908-6324-4f8f-ae9a-4874c4900e6a",
+    "createdAt": "2026-07-28T08:23:58.062Z"
+  },
+  {
+    "id": "750438c5-ac0b-4aec-b667-89b004722761",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-604147 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "2db111f8-2f38-45e4-b353-d93cd669a225",
+    "createdAt": "2026-07-28T08:23:58.310Z"
+  },
+  {
+    "orderId": "2db111f8-2f38-45e4-b353-d93cd669a225",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "4bc25aa1-e2b6-4813-b1f6-2c8c3a0e255c",
+    "createdAt": "2026-07-28T08:23:58.462Z"
+  },
+  {
+    "orderId": "2db111f8-2f38-45e4-b353-d93cd669a225",
+    "status": "OUT_FOR_DELIVERY",
+    "title": "Out For Delivery",
+    "description": "Your package is out for delivery with our delivery partner.",
+    "id": "f08b427a-8d0c-4510-b5a2-207f404b555a",
+    "createdAt": "2026-07-28T08:23:58.545Z"
+  },
+  {
+    "orderId": "2db111f8-2f38-45e4-b353-d93cd669a225",
+    "status": "DELIVERED",
+    "title": "Delivered",
+    "description": "Order successfully delivered. Thank you for shopping with Jaipur Gifting!",
+    "id": "3d0f4afc-f1f0-472e-b4ff-3af6f761f364",
+    "createdAt": "2026-07-28T08:23:58.567Z"
+  },
+  {
+    "id": "da8c9039-5fc4-476e-94a5-a1cb9673a995",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-824992 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "a0481103-9f34-4700-b25a-6d214d792a40",
+    "createdAt": "2026-07-28T08:23:58.876Z"
+  },
+  {
+    "orderId": "a0481103-9f34-4700-b25a-6d214d792a40",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "0603dbeb-b666-47fb-9839-5295ff737acb",
+    "createdAt": "2026-07-28T08:23:59.004Z"
+  },
+  {
+    "orderId": "a0481103-9f34-4700-b25a-6d214d792a40",
+    "status": "DELIVERED",
+    "title": "Delivered",
+    "description": "Successfully delivered to Mrs. Sharma.",
+    "id": "c64758f6-e6b0-4b7a-b7c0-0117ef8a8a77",
+    "createdAt": "2026-07-28T08:23:59.066Z"
+  },
+  {
+    "id": "b8f23e98-26ca-48e1-b893-64cbed4ef540",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-281889 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "fd34a33f-1fe3-4f83-81a4-4da1e64bacc8",
+    "createdAt": "2026-07-28T08:23:59.369Z"
+  },
+  {
+    "orderId": "fd34a33f-1fe3-4f83-81a4-4da1e64bacc8",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "007988fe-9403-4fe8-b969-366f3bbe9c7d",
+    "createdAt": "2026-07-28T08:23:59.481Z"
+  },
+  {
+    "id": "6b12d96c-9de7-4df8-8566-2fa377d49807",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-868806 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "1ea54f25-1b48-4a68-ab67-0c19c6e69a1e",
+    "createdAt": "2026-07-28T08:23:59.786Z"
+  },
+  {
+    "orderId": "1ea54f25-1b48-4a68-ab67-0c19c6e69a1e",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "9cad95a9-a986-4e8e-821e-d4a521f7fdd0",
+    "createdAt": "2026-07-28T08:23:59.968Z"
+  },
+  {
+    "id": "5897a0c4-50a9-4323-a2a2-53001956989b",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-547991 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "f70917cd-c360-4250-b8c7-765d84677ea3",
+    "createdAt": "2026-07-28T08:24:01.543Z"
+  },
+  {
+    "orderId": "f70917cd-c360-4250-b8c7-765d84677ea3",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "b85e6858-f52d-466d-97c8-86ca81d91374",
+    "createdAt": "2026-07-28T08:24:01.755Z"
+  },
+  {
+    "id": "e041269f-ae1c-406d-9679-783b51233083",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-124872 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "8b3b94a9-ca47-4024-966b-a91fc7cbffb7",
+    "createdAt": "2026-07-28T08:24:02.068Z"
+  },
+  {
+    "orderId": "8b3b94a9-ca47-4024-966b-a91fc7cbffb7",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "b9e01764-df1b-49d7-b5d8-622342653525",
+    "createdAt": "2026-07-28T08:24:02.200Z"
+  },
+  {
+    "id": "f7c0551a-ff15-4cb4-9bcd-48f033e62461",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-634573 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "7856510e-7035-43b1-8a4b-b638cde0906f",
+    "createdAt": "2026-07-28T08:24:02.467Z"
+  },
+  {
+    "orderId": "7856510e-7035-43b1-8a4b-b638cde0906f",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "1e8ec961-afa7-4bd4-95ac-6377e8594ef2",
+    "createdAt": "2026-07-28T08:24:02.584Z"
+  },
+  {
+    "id": "8d3e08c4-bdc1-41dc-a350-e1e4b9eb3f74",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-314953 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "fb8e03de-630f-4b06-9120-304dc03bbe72",
+    "createdAt": "2026-07-28T08:24:02.866Z"
+  },
+  {
+    "orderId": "fb8e03de-630f-4b06-9120-304dc03bbe72",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "63f90c82-992f-4601-bd54-854525b0a08c",
+    "createdAt": "2026-07-28T08:24:02.985Z"
+  },
+  {
+    "id": "e01c34f0-aa18-4aeb-9360-f7f8799b290d",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-959929 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "109b32bb-83b3-4d64-92ec-3a29cc6494b6",
+    "createdAt": "2026-07-28T08:24:03.275Z"
+  },
+  {
+    "orderId": "109b32bb-83b3-4d64-92ec-3a29cc6494b6",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "cdd49b6e-d56d-4b7b-a7ab-ab2b2d63a62f",
+    "createdAt": "2026-07-28T08:24:03.368Z"
+  },
+  {
+    "id": "7508f952-39e9-442a-8488-11374ca98e69",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-702200 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "584b940f-fbff-4408-ba03-db49572a80f2",
+    "createdAt": "2026-07-28T08:24:03.599Z"
+  },
+  {
+    "orderId": "584b940f-fbff-4408-ba03-db49572a80f2",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "c87202e1-4edd-49aa-84c8-9ec6ca62f56f",
+    "createdAt": "2026-07-28T08:24:03.703Z"
+  },
+  {
+    "id": "d4b6bbb4-05ca-4208-af64-357544aa1443",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-159130 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "19dfc503-3d04-44e6-9bd0-9e9755dcb9a1",
+    "createdAt": "2026-07-28T08:24:03.959Z"
+  },
+  {
+    "orderId": "19dfc503-3d04-44e6-9bd0-9e9755dcb9a1",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "fb07f940-4a92-4847-a6c1-e8cad18b68c8",
+    "createdAt": "2026-07-28T08:24:04.080Z"
+  },
+  {
+    "id": "3c0e83ff-4242-464d-882f-a1f8daad1e6b",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-506417 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "f3587ea4-313d-4ab6-86d3-1043845c993c",
+    "createdAt": "2026-07-28T08:24:05.290Z"
+  },
+  {
+    "orderId": "f3587ea4-313d-4ab6-86d3-1043845c993c",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "0a5dc953-3553-4653-9151-5fcfcfde19b0",
+    "createdAt": "2026-07-28T08:24:05.414Z"
+  },
+  {
+    "id": "e656269d-f331-402c-a7c9-838e67ed0344",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-883703 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "3e15c918-8755-4719-9f63-ec73f45c5120",
+    "createdAt": "2026-07-28T08:24:05.678Z"
+  },
+  {
+    "orderId": "3e15c918-8755-4719-9f63-ec73f45c5120",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "ac1ca365-7f3d-40e0-be67-e4be5a30bfb4",
+    "createdAt": "2026-07-28T08:24:05.797Z"
+  },
+  {
+    "id": "265357bd-b9c6-4bc5-bb1d-d74ad3ad5a89",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-884198 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "9c5f6801-0591-46e9-9108-d09c74bdaf75",
+    "createdAt": "2026-07-28T08:24:06.102Z"
+  },
+  {
+    "orderId": "9c5f6801-0591-46e9-9108-d09c74bdaf75",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "0f070cd0-84ab-4c6a-bddd-16fd39e09174",
+    "createdAt": "2026-07-28T08:24:06.212Z"
+  },
+  {
+    "id": "713ca5de-994f-4c55-b21c-729e23376b51",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-883370 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "49791f55-dd3e-4138-b175-de2118ceb0f6",
+    "createdAt": "2026-07-28T08:24:06.651Z"
+  },
+  {
+    "orderId": "49791f55-dd3e-4138-b175-de2118ceb0f6",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "2e4924da-06db-4a7e-a84b-3934a8dd4ca1",
+    "createdAt": "2026-07-28T08:24:06.772Z"
+  },
+  {
+    "orderId": "49791f55-dd3e-4138-b175-de2118ceb0f6",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Ready For Dispatch",
+    "description": "All production items successfully manufactured, QC passed, and packed.",
+    "id": "b274efd2-f139-41fe-b061-06db3123cab2",
+    "createdAt": "2026-07-28T08:24:06.805Z"
+  },
+  {
+    "id": "0c3ddc32-d2c1-49c8-ab84-46c879fa13c9",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-329977 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "a5d5c355-ef39-4bda-a9bd-7ea488069f51",
+    "createdAt": "2026-07-28T08:24:07.088Z"
+  },
+  {
+    "orderId": "a5d5c355-ef39-4bda-a9bd-7ea488069f51",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "40d6bc2d-213b-4a35-b5e3-d3631d54f062",
+    "createdAt": "2026-07-28T08:24:07.260Z"
+  },
+  {
+    "id": "bebeb17a-6d39-4d10-965f-eb827b4b179f",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-615995 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "d3fc3d68-f9a9-4d58-b95b-3d2dfc2744e0",
+    "createdAt": "2026-07-28T08:24:07.508Z"
+  },
+  {
+    "orderId": "d3fc3d68-f9a9-4d58-b95b-3d2dfc2744e0",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "a8fb0aad-221d-4e23-87ec-e17e337aef2a",
+    "createdAt": "2026-07-28T08:24:07.609Z"
+  },
+  {
+    "id": "87afcdb9-bca1-464d-80df-771766f9d237",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-812975 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "12637d58-e689-4d2b-8e3b-1721dbbf79f4",
+    "createdAt": "2026-07-28T08:24:12.106Z"
+  },
+  {
+    "id": "9918e322-3785-45b8-aa31-4ce62b832d37",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-779194 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "0182739c-e01a-4684-b48b-5115aa948ebd",
+    "createdAt": "2026-07-28T08:24:12.745Z"
+  },
+  {
+    "id": "2feb8a9c-beeb-4864-b00d-9843530f96f8",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-206791 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "d46ff83e-d3ed-4258-b5a0-4bf44cffb6e1",
+    "createdAt": "2026-07-28T08:24:13.098Z"
+  },
+  {
+    "orderId": "d46ff83e-d3ed-4258-b5a0-4bf44cffb6e1",
+    "status": "CANCELLED",
+    "title": "Order Cancelled",
+    "description": "Reason: Customer changed mind",
+    "id": "78d61993-8cde-486f-858c-a17453ae4358",
+    "createdAt": "2026-07-28T08:24:13.232Z"
+  },
+  {
+    "id": "3ba3e564-e13f-4287-b728-75af80ee9326",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-804545 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "ada4cbff-a255-4a24-a8a2-cf822037b3a1",
+    "createdAt": "2026-07-28T08:26:29.043Z"
+  },
+  {
+    "orderId": "ada4cbff-a255-4a24-a8a2-cf822037b3a1",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "069a8033-98a7-4a60-93c1-8f2305eb7307",
+    "createdAt": "2026-07-28T08:26:29.135Z"
+  },
+  {
+    "id": "067a40dd-6adb-4291-bc8c-96c191f32c57",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-978844 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "3a0257a3-73f8-4322-8075-6bc001ca519f",
+    "createdAt": "2026-07-28T08:26:29.317Z"
+  },
+  {
+    "orderId": "3a0257a3-73f8-4322-8075-6bc001ca519f",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "51f6e016-328c-4b79-8e78-dbc379ca22f3",
+    "createdAt": "2026-07-28T08:26:29.409Z"
+  },
+  {
+    "id": "21d0679e-fe2e-4726-a6a7-c48a1c9ed5f7",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-350697 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "f83b1061-6a61-4152-9fc8-8d20eec18922",
+    "createdAt": "2026-07-28T08:26:29.590Z"
+  },
+  {
+    "orderId": "f83b1061-6a61-4152-9fc8-8d20eec18922",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "9523f490-227a-4a15-a8f7-8bcddc678a7f",
+    "createdAt": "2026-07-28T08:26:29.675Z"
+  },
+  {
+    "orderId": "f83b1061-6a61-4152-9fc8-8d20eec18922",
+    "status": "OUT_FOR_DELIVERY",
+    "title": "Out For Delivery",
+    "description": "Your package is out for delivery with our delivery partner.",
+    "id": "2b7b6dbd-8f57-4a5a-a9c5-ea4730638100",
+    "createdAt": "2026-07-28T08:26:29.709Z"
+  },
+  {
+    "id": "d6a405e1-eb90-48bb-a25e-8615cace6982",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-558107 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "8c110e43-4448-488c-9b86-aaa0f8cb07de",
+    "createdAt": "2026-07-28T08:26:29.880Z"
+  },
+  {
+    "orderId": "8c110e43-4448-488c-9b86-aaa0f8cb07de",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "3ffc54fd-e7f2-4709-8e32-fe9339a87d80",
+    "createdAt": "2026-07-28T08:26:29.971Z"
+  },
+  {
+    "orderId": "8c110e43-4448-488c-9b86-aaa0f8cb07de",
+    "status": "OUT_FOR_DELIVERY",
+    "title": "Out For Delivery",
+    "description": "Your package is out for delivery with our delivery partner.",
+    "id": "743e07c0-17db-416d-b99a-2df5a36b188d",
+    "createdAt": "2026-07-28T08:26:30.000Z"
+  },
+  {
+    "orderId": "8c110e43-4448-488c-9b86-aaa0f8cb07de",
+    "status": "DELIVERED",
+    "title": "Delivered",
+    "description": "Order successfully delivered. Thank you for shopping with Jaipur Gifting!",
+    "id": "ea995405-e0dd-478b-8e5b-d79f3f0c48ee",
+    "createdAt": "2026-07-28T08:26:30.019Z"
+  },
+  {
+    "id": "cbcc6b5f-31c9-459d-b127-41b41fefbcc4",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-540730 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "afb08045-0e47-4d22-ba07-38238e8faf57",
+    "createdAt": "2026-07-28T08:26:30.185Z"
+  },
+  {
+    "orderId": "afb08045-0e47-4d22-ba07-38238e8faf57",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "c401aa30-5e58-4cfe-b8dd-df24400e2be2",
+    "createdAt": "2026-07-28T08:26:30.271Z"
+  },
+  {
+    "orderId": "afb08045-0e47-4d22-ba07-38238e8faf57",
+    "status": "DELIVERED",
+    "title": "Delivered",
+    "description": "Successfully delivered to Mrs. Sharma.",
+    "id": "04bd9f0e-f2ee-44e9-9e0e-d1165923dc1a",
+    "createdAt": "2026-07-28T08:26:30.296Z"
+  },
+  {
+    "id": "56b3c673-a177-4e26-91fa-8160a8ef6541",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-643781 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "31d29773-32ee-4590-889b-5b2fabb9dfe2",
+    "createdAt": "2026-07-28T08:26:30.449Z"
+  },
+  {
+    "orderId": "31d29773-32ee-4590-889b-5b2fabb9dfe2",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "d0887291-89a3-44b3-acc5-10455535ce94",
+    "createdAt": "2026-07-28T08:26:30.532Z"
+  },
+  {
+    "id": "567d3ac2-c3af-4b48-9f0c-c485001f8d73",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-167062 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "9d100b30-f52c-45d8-882c-5d8141a91ec1",
+    "createdAt": "2026-07-28T08:26:30.702Z"
+  },
+  {
+    "orderId": "9d100b30-f52c-45d8-882c-5d8141a91ec1",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "3307a0c4-5c50-45cf-a33b-b900acf5901f",
+    "createdAt": "2026-07-28T08:26:30.787Z"
+  },
+  {
+    "id": "8a12eafb-f01e-451b-981f-e43c06d2aa85",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-791943 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "bcc1bdf0-6f2f-4271-8752-2746db8f96f2",
+    "createdAt": "2026-07-28T08:26:31.687Z"
+  },
+  {
+    "orderId": "bcc1bdf0-6f2f-4271-8752-2746db8f96f2",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "bbc0b38f-29ea-4d2a-a374-b0c212bcac5b",
+    "createdAt": "2026-07-28T08:26:31.782Z"
+  },
+  {
+    "id": "0b9c96a6-f0ce-42ad-bd5d-b6f86391732b",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-826250 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "b3c6ce92-92f9-45de-bd40-17994c08856b",
+    "createdAt": "2026-07-28T08:26:31.987Z"
+  },
+  {
+    "orderId": "b3c6ce92-92f9-45de-bd40-17994c08856b",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "abe4c5c1-8863-4bc6-b22a-f0b164ade389",
+    "createdAt": "2026-07-28T08:26:32.077Z"
+  },
+  {
+    "id": "e4a804ad-3ee3-4038-b3e3-b28ece238942",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-510582 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "331530a0-91d8-428d-a449-7afba172c9b3",
+    "createdAt": "2026-07-28T08:26:32.250Z"
+  },
+  {
+    "orderId": "331530a0-91d8-428d-a449-7afba172c9b3",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "af396515-0a39-41cc-b23f-de0537769130",
+    "createdAt": "2026-07-28T08:26:32.331Z"
+  },
+  {
+    "id": "fd55f894-2215-4b3e-82c8-f1e12519c317",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-154711 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "e859e468-a0be-4635-a593-e01dbe1e5c46",
+    "createdAt": "2026-07-28T08:26:32.506Z"
+  },
+  {
+    "orderId": "e859e468-a0be-4635-a593-e01dbe1e5c46",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "b3f3f74e-44bf-45f8-8406-3dabb8e9fc53",
+    "createdAt": "2026-07-28T08:26:32.619Z"
+  },
+  {
+    "id": "d5e9e38f-3896-49a5-a3ba-c76d5477bb3a",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-607296 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "dd9560e5-be17-4d5c-8795-81f26b900d4a",
+    "createdAt": "2026-07-28T08:26:32.811Z"
+  },
+  {
+    "orderId": "dd9560e5-be17-4d5c-8795-81f26b900d4a",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "305ce8a3-c999-4cda-9c00-bcab92bde8b4",
+    "createdAt": "2026-07-28T08:26:32.903Z"
+  },
+  {
+    "id": "85495265-11a8-4408-972f-9003986536c7",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-292302 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "d375ab54-8da6-49df-9e14-52a9f3640f0f",
+    "createdAt": "2026-07-28T08:26:33.092Z"
+  },
+  {
+    "orderId": "d375ab54-8da6-49df-9e14-52a9f3640f0f",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "13d8b770-b8c4-42f6-9d22-97936c1683ff",
+    "createdAt": "2026-07-28T08:26:33.178Z"
+  },
+  {
+    "id": "56563aa6-2f52-4531-bb49-5eea00687ae6",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-929200 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "48d3c6a5-305c-4958-ab97-0df9fbec9537",
+    "createdAt": "2026-07-28T08:26:33.354Z"
+  },
+  {
+    "orderId": "48d3c6a5-305c-4958-ab97-0df9fbec9537",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "05e9a14b-eb99-424e-ad9f-6a423d0b360a",
+    "createdAt": "2026-07-28T08:26:33.449Z"
+  },
+  {
+    "id": "f4060f50-dba5-4a9e-897c-342195204a5d",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-947956 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "caba9ed8-842c-4827-a9df-58271e22c648",
+    "createdAt": "2026-07-28T08:26:34.284Z"
+  },
+  {
+    "orderId": "caba9ed8-842c-4827-a9df-58271e22c648",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "9c323a21-3792-4394-8b00-cf3ce0aa38c1",
+    "createdAt": "2026-07-28T08:26:34.376Z"
+  },
+  {
+    "id": "1437427e-c443-45c8-af7b-3fc31cf0e3f9",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-764408 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "1d04b5a7-ec06-4466-bf9b-58dd3c444c4d",
+    "createdAt": "2026-07-28T08:26:34.565Z"
+  },
+  {
+    "orderId": "1d04b5a7-ec06-4466-bf9b-58dd3c444c4d",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "13f527f8-2fdd-4d24-a403-4a227121516a",
+    "createdAt": "2026-07-28T08:26:34.650Z"
+  },
+  {
+    "id": "a95b0425-797d-4674-9c84-72458f0b2ddd",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-232344 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "26669609-2c1e-4b08-9ee5-e6c45ae40db0",
+    "createdAt": "2026-07-28T08:26:34.818Z"
+  },
+  {
+    "orderId": "26669609-2c1e-4b08-9ee5-e6c45ae40db0",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "b558fd9f-b633-4039-b3f4-7da835f81519",
+    "createdAt": "2026-07-28T08:26:34.909Z"
+  },
+  {
+    "id": "096df56b-1205-4367-ab1a-e3fe34b161ca",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-711124 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "08506d76-dece-4d73-8f96-93fe5bc6f21c",
+    "createdAt": "2026-07-28T08:26:35.092Z"
+  },
+  {
+    "orderId": "08506d76-dece-4d73-8f96-93fe5bc6f21c",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "42722ac4-cfed-4beb-a30c-c2a670e9d9c0",
+    "createdAt": "2026-07-28T08:26:35.177Z"
+  },
+  {
+    "orderId": "08506d76-dece-4d73-8f96-93fe5bc6f21c",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Ready For Dispatch",
+    "description": "All production items successfully manufactured, QC passed, and packed.",
+    "id": "9fe260b0-843d-4389-924b-c74198a3e7fb",
+    "createdAt": "2026-07-28T08:26:35.219Z"
+  },
+  {
+    "id": "f00bcaa2-e336-4840-b2b8-548f2be1ee55",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-261435 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "4456352f-b12a-48db-97c2-ab1aae3bdbdf",
+    "createdAt": "2026-07-28T08:26:35.379Z"
+  },
+  {
+    "orderId": "4456352f-b12a-48db-97c2-ab1aae3bdbdf",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "e8c1e94e-d6a9-4167-af5c-da2afa021968",
+    "createdAt": "2026-07-28T08:26:35.462Z"
+  },
+  {
+    "id": "85d97803-9c19-4da5-aeec-faa33a819ef5",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-543865 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "eeabd8eb-63eb-47b5-a358-18a79610499a",
+    "createdAt": "2026-07-28T08:26:35.638Z"
+  },
+  {
+    "orderId": "eeabd8eb-63eb-47b5-a358-18a79610499a",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "18b60e7a-fc1d-4df6-9d9f-eef9727c9694",
+    "createdAt": "2026-07-28T08:26:35.724Z"
+  },
+  {
+    "id": "5c4da09b-f56b-495f-9d6f-7dbdac335556",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-420484 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "c1e89d31-b40d-43d1-b226-1a706dcde5b9",
+    "createdAt": "2026-07-28T08:26:38.409Z"
+  },
+  {
+    "id": "b6fcc6b5-f3b5-40c6-8440-d5911a7a13aa",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-617424 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "9c8f13e6-e9b2-42bc-86f9-0ac2a65a66aa",
+    "createdAt": "2026-07-28T08:26:38.822Z"
+  },
+  {
+    "id": "1745f2ce-1202-48ce-b18c-279b248df8b0",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-553280 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "0e849f52-be9a-4af2-b211-37cf22b3a011",
+    "createdAt": "2026-07-28T08:26:39.071Z"
+  },
+  {
+    "orderId": "0e849f52-be9a-4af2-b211-37cf22b3a011",
+    "status": "CANCELLED",
+    "title": "Order Cancelled",
+    "description": "Reason: Customer changed mind",
+    "id": "385258ce-ecff-4c42-8a58-042bb31f4262",
+    "createdAt": "2026-07-28T08:26:39.158Z"
+  },
+  {
+    "id": "9bfc86e1-fa4f-41c6-912b-affb8616a8d0",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-402325 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "2acb8acf-5bb5-491e-a6ed-09218f73a5a5",
+    "createdAt": "2026-07-28T08:36:59.038Z"
+  },
+  {
+    "orderId": "2acb8acf-5bb5-491e-a6ed-09218f73a5a5",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "a21f10ba-c27b-4772-82a9-3131b22f89aa",
+    "createdAt": "2026-07-28T08:36:59.139Z"
+  },
+  {
+    "id": "85d2ed31-11e5-4e70-8bbd-2438c70fb1f6",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-238945 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "2488b6d1-0be6-4106-b375-755e5b0a14df",
+    "createdAt": "2026-07-28T08:36:59.332Z"
+  },
+  {
+    "orderId": "2488b6d1-0be6-4106-b375-755e5b0a14df",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "207c0879-66c4-4278-89ca-5da713c5d295",
+    "createdAt": "2026-07-28T08:36:59.429Z"
+  },
+  {
+    "id": "86d73274-5d30-454e-adbc-fc7e7f16b96c",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-726817 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "c7c6459e-3786-4c3c-b54e-be56eb1ebc52",
+    "createdAt": "2026-07-28T08:36:59.621Z"
+  },
+  {
+    "orderId": "c7c6459e-3786-4c3c-b54e-be56eb1ebc52",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "1277a601-b586-41b2-9570-54f93e269737",
+    "createdAt": "2026-07-28T08:36:59.714Z"
+  },
+  {
+    "id": "dc75bfc8-b486-477b-a4ed-5610a8d8dacb",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-771692 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "876f5430-8bd5-445c-95f5-24492ac06cc4",
+    "createdAt": "2026-07-28T08:36:59.925Z"
+  },
+  {
+    "orderId": "876f5430-8bd5-445c-95f5-24492ac06cc4",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "66470eef-0853-4a90-b148-e4328a69e038",
+    "createdAt": "2026-07-28T08:37:00.015Z"
+  },
+  {
+    "id": "1bac2d3b-4dc6-450a-afa8-743374a17c75",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-189895 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "e9c46e11-2923-428a-a33f-9ce5f398ddad",
+    "createdAt": "2026-07-28T08:37:00.197Z"
+  },
+  {
+    "orderId": "e9c46e11-2923-428a-a33f-9ce5f398ddad",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "9ca75ad7-f223-4945-a033-aa1ec4e2ab4c",
+    "createdAt": "2026-07-28T08:37:00.287Z"
+  },
+  {
+    "id": "66b5df90-aec9-4f51-b584-97bf50c74be9",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-430595 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "88451113-6f15-4a42-9c02-6e20135930e0",
+    "createdAt": "2026-07-28T08:37:00.484Z"
+  },
+  {
+    "orderId": "88451113-6f15-4a42-9c02-6e20135930e0",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "a87146ae-4265-40a9-9c9b-2e782835380d",
+    "createdAt": "2026-07-28T08:37:00.580Z"
+  },
+  {
+    "id": "b3f5c5d0-90aa-48ad-a6cb-48a744bbb3af",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-384825 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "3aba0fcf-6155-4148-bda0-c9c87e515e3b",
+    "createdAt": "2026-07-28T08:37:00.769Z"
+  },
+  {
+    "orderId": "3aba0fcf-6155-4148-bda0-c9c87e515e3b",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "5d6effe4-d34d-4531-a4ad-ad7cc4732f53",
+    "createdAt": "2026-07-28T08:37:00.856Z"
+  },
+  {
+    "id": "e2370a45-0c05-4154-a4f0-88def6ff0c5f",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-995841 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "d05f9709-c23e-44da-871e-8dc22c0f5c88",
+    "createdAt": "2026-07-28T08:37:01.781Z"
+  },
+  {
+    "orderId": "d05f9709-c23e-44da-871e-8dc22c0f5c88",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "2eed3caf-e98b-49e3-b7d3-204822713573",
+    "createdAt": "2026-07-28T08:37:01.876Z"
+  },
+  {
+    "id": "4ee5fc05-83d4-4506-84b0-bc58a35ac5e2",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-883956 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "8085aa79-9cd0-4f1b-8043-e36ca31bb07b",
+    "createdAt": "2026-07-28T08:37:02.089Z"
+  },
+  {
+    "orderId": "8085aa79-9cd0-4f1b-8043-e36ca31bb07b",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "1db01972-1d48-43bf-8de6-37ee4e36e248",
+    "createdAt": "2026-07-28T08:37:02.194Z"
+  },
+  {
+    "id": "46086f60-300f-4a47-97d3-1f609b7276e6",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-558899 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "fb650637-a38f-4c29-a41f-95261df9bf71",
+    "createdAt": "2026-07-28T08:37:02.392Z"
+  },
+  {
+    "orderId": "fb650637-a38f-4c29-a41f-95261df9bf71",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "c6e1dacc-8d70-4e9b-9da4-3c6fbcb1a9ec",
+    "createdAt": "2026-07-28T08:37:02.492Z"
+  },
+  {
+    "orderId": "fb650637-a38f-4c29-a41f-95261df9bf71",
+    "status": "OUT_FOR_DELIVERY",
+    "title": "Out For Delivery",
+    "description": "Your package is out for delivery with our delivery partner.",
+    "id": "5b307002-389b-40b5-8175-568b7a29cfdd",
+    "createdAt": "2026-07-28T08:37:02.531Z"
+  },
+  {
+    "id": "7a7f041f-4bbd-4bdd-a5e9-ae6c7a642658",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-469548 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "bf93bbae-79b5-403e-961a-a2f27a8bcb30",
+    "createdAt": "2026-07-28T08:37:02.728Z"
+  },
+  {
+    "orderId": "bf93bbae-79b5-403e-961a-a2f27a8bcb30",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "fea70daa-789a-42c8-923e-f4f84ff6cd32",
+    "createdAt": "2026-07-28T08:37:02.824Z"
+  },
+  {
+    "orderId": "bf93bbae-79b5-403e-961a-a2f27a8bcb30",
+    "status": "OUT_FOR_DELIVERY",
+    "title": "Out For Delivery",
+    "description": "Your package is out for delivery with our delivery partner.",
+    "id": "747ce874-1b09-4d32-9d1d-58a0a214556b",
+    "createdAt": "2026-07-28T08:37:02.877Z"
+  },
+  {
+    "orderId": "bf93bbae-79b5-403e-961a-a2f27a8bcb30",
+    "status": "DELIVERED",
+    "title": "Delivered",
+    "description": "Order successfully delivered. Thank you for shopping with Jaipur Gifting!",
+    "id": "f202db2d-b6a9-4850-be06-9dab42d6b43e",
+    "createdAt": "2026-07-28T08:37:02.909Z"
+  },
+  {
+    "id": "6c5e64ec-c44f-4b9f-9f83-a4b1bd9c5ee7",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-317771 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "583ca2cd-7ab7-4f8b-acfb-7bfa862c5367",
+    "createdAt": "2026-07-28T08:37:03.115Z"
+  },
+  {
+    "orderId": "583ca2cd-7ab7-4f8b-acfb-7bfa862c5367",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "e871fc88-ce57-49c9-9b15-ea129eae42ff",
+    "createdAt": "2026-07-28T08:37:03.211Z"
+  },
+  {
+    "orderId": "583ca2cd-7ab7-4f8b-acfb-7bfa862c5367",
+    "status": "DELIVERED",
+    "title": "Delivered",
+    "description": "Successfully delivered to Mrs. Sharma.",
+    "id": "9556882a-8cdc-49fa-a447-c45641cb7141",
+    "createdAt": "2026-07-28T08:37:03.243Z"
+  },
+  {
+    "id": "f75f1836-1115-47f8-b9ec-4b447c483978",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-633082 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "15e4ad9b-2a03-4cdc-bd43-4daa6d32e8b9",
+    "createdAt": "2026-07-28T08:37:03.420Z"
+  },
+  {
+    "orderId": "15e4ad9b-2a03-4cdc-bd43-4daa6d32e8b9",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "98134ef9-eefd-4751-b72f-4c93c0e8e18e",
+    "createdAt": "2026-07-28T08:37:03.516Z"
+  },
+  {
+    "id": "a8353ba7-7beb-4121-8c8f-8634682573e7",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-813484 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "c6910d31-3ef6-49f7-8767-ec29639f1e25",
+    "createdAt": "2026-07-28T08:37:03.708Z"
+  },
+  {
+    "orderId": "c6910d31-3ef6-49f7-8767-ec29639f1e25",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "2c7d2841-a15c-4b5d-b4b9-cab0b9a7ad55",
+    "createdAt": "2026-07-28T08:37:03.800Z"
+  },
+  {
+    "id": "918206d9-7095-4137-8f61-30c945eb97c7",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-137833 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "a6575e5f-72f3-438d-86c2-55b25d90094e",
+    "createdAt": "2026-07-28T08:37:04.734Z"
+  },
+  {
+    "orderId": "a6575e5f-72f3-438d-86c2-55b25d90094e",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "86ec65aa-934b-41ca-8316-e254fc7d8c05",
+    "createdAt": "2026-07-28T08:37:04.840Z"
+  },
+  {
+    "id": "2ebf01d9-e31b-40be-be9b-741a4674ca67",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-379207 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "2be4dd1c-c36d-48fd-a14f-d9c769495bbf",
+    "createdAt": "2026-07-28T08:37:05.058Z"
+  },
+  {
+    "orderId": "2be4dd1c-c36d-48fd-a14f-d9c769495bbf",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "149c782a-3558-4ae8-b309-faad7f6ad97b",
+    "createdAt": "2026-07-28T08:37:05.166Z"
+  },
+  {
+    "id": "a8c6bd87-de4a-4042-a8a4-ce1e9f3af88c",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-186934 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "b514a6ae-b840-4fef-93f7-88dc00f0ecc3",
+    "createdAt": "2026-07-28T08:37:05.373Z"
+  },
+  {
+    "orderId": "b514a6ae-b840-4fef-93f7-88dc00f0ecc3",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "91b254af-fa10-4041-954d-32c4bba69b14",
+    "createdAt": "2026-07-28T08:37:05.475Z"
+  },
+  {
+    "id": "3669da1c-102b-4f6b-8a09-b478e418c565",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-495544 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "4d541f29-2214-46b9-b77e-c0673cc33b1d",
+    "createdAt": "2026-07-28T08:37:05.675Z"
+  },
+  {
+    "orderId": "4d541f29-2214-46b9-b77e-c0673cc33b1d",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "9e563763-a9da-4805-b587-dc8e41f115e6",
+    "createdAt": "2026-07-28T08:37:05.782Z"
+  },
+  {
+    "orderId": "4d541f29-2214-46b9-b77e-c0673cc33b1d",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Ready For Dispatch",
+    "description": "All production items successfully manufactured, QC passed, and packed.",
+    "id": "e2015ecc-04ed-4a19-8fb2-3aaf3bc22533",
+    "createdAt": "2026-07-28T08:37:05.828Z"
+  },
+  {
+    "id": "9716fff9-d3eb-49f9-9ca6-b06123550fba",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-338399 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "e6c14563-3e1c-4d8a-8a6e-2f7a4c25847f",
+    "createdAt": "2026-07-28T08:37:06.020Z"
+  },
+  {
+    "orderId": "e6c14563-3e1c-4d8a-8a6e-2f7a4c25847f",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "0deee67e-e230-431f-8c03-1dc65895d60e",
+    "createdAt": "2026-07-28T08:37:06.121Z"
+  },
+  {
+    "id": "23622f7e-ce04-45d0-acdc-a6fe28a72c26",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-731528 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "2e2e2e87-9fc0-4c33-a680-6d358b1dacf4",
+    "createdAt": "2026-07-28T08:37:06.328Z"
+  },
+  {
+    "orderId": "2e2e2e87-9fc0-4c33-a680-6d358b1dacf4",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "12afe6d8-aaff-4876-9285-5c09d6330eb3",
+    "createdAt": "2026-07-28T08:37:06.419Z"
+  },
+  {
+    "id": "98254c51-77a4-462a-bb13-a3b810e38613",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-865041 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "f1c7e344-5366-4392-925b-19ce1f03f38c",
+    "createdAt": "2026-07-28T08:37:09.306Z"
+  },
+  {
+    "id": "cf9519ba-efe8-43ab-8eba-1a2b5e3c9026",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-796178 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "d0a6b868-9847-42ed-9e32-f669d37c82e1",
+    "createdAt": "2026-07-28T08:37:09.765Z"
+  },
+  {
+    "id": "c24ba4f8-ef38-4afd-9cd1-5d8439de8dcd",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-257735 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "c5e22d35-f664-457e-8703-4914175f3522",
+    "createdAt": "2026-07-28T08:37:10.019Z"
+  },
+  {
+    "orderId": "c5e22d35-f664-457e-8703-4914175f3522",
+    "status": "CANCELLED",
+    "title": "Order Cancelled",
+    "description": "Reason: Customer changed mind",
+    "id": "e9971324-ceaf-4a4b-b51d-80584cd2fd06",
+    "createdAt": "2026-07-28T08:37:10.115Z"
+  },
+  {
+    "id": "7bd4385b-471c-4d93-b80f-c09002b30011",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-741262 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "35135682-7c40-4fc4-895e-a202ef849704",
+    "createdAt": "2026-07-28T09:00:15.204Z"
+  },
+  {
+    "orderId": "35135682-7c40-4fc4-895e-a202ef849704",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "3d36f88b-03bb-42ea-a16f-eb860534b33a",
+    "createdAt": "2026-07-28T09:00:15.301Z"
+  },
+  {
+    "id": "618a7821-1a18-4d9f-841b-f8e27f641070",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-837039 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "f6c3ec32-d317-4829-b769-3e1792f78365",
+    "createdAt": "2026-07-28T09:00:15.545Z"
+  },
+  {
+    "orderId": "f6c3ec32-d317-4829-b769-3e1792f78365",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "0f339ace-fc86-4298-8d74-e8326a0be39b",
+    "createdAt": "2026-07-28T09:00:15.644Z"
+  },
+  {
+    "id": "bc4a4714-cd9e-449c-81c4-6f26cd601743",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-827013 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "91b17a02-6ab2-4035-a46e-c99eb6524b5b",
+    "createdAt": "2026-07-28T09:00:15.840Z"
+  },
+  {
+    "orderId": "91b17a02-6ab2-4035-a46e-c99eb6524b5b",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "2e7d7571-4119-46b8-94ab-0deb053b93aa",
+    "createdAt": "2026-07-28T09:00:15.938Z"
+  },
+  {
+    "orderId": "91b17a02-6ab2-4035-a46e-c99eb6524b5b",
+    "status": "OUT_FOR_DELIVERY",
+    "title": "Out For Delivery",
+    "description": "Your package is out for delivery with our delivery partner.",
+    "id": "cc60bc88-4fc4-461c-aa11-a382d6b9fa75",
+    "createdAt": "2026-07-28T09:00:15.979Z"
+  },
+  {
+    "id": "7eefdbb0-1521-49c9-a316-663fcc966252",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-731497 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "078f5d45-9d9b-4db6-a0b4-fcc3d4ec7a8d",
+    "createdAt": "2026-07-28T09:00:16.158Z"
+  },
+  {
+    "orderId": "078f5d45-9d9b-4db6-a0b4-fcc3d4ec7a8d",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "0fde157e-b2eb-477a-bece-7127aaf6ef2f",
+    "createdAt": "2026-07-28T09:00:16.249Z"
+  },
+  {
+    "orderId": "078f5d45-9d9b-4db6-a0b4-fcc3d4ec7a8d",
+    "status": "OUT_FOR_DELIVERY",
+    "title": "Out For Delivery",
+    "description": "Your package is out for delivery with our delivery partner.",
+    "id": "02f22c78-bda8-4711-aa0f-ae1c990ced64",
+    "createdAt": "2026-07-28T09:00:16.285Z"
+  },
+  {
+    "orderId": "078f5d45-9d9b-4db6-a0b4-fcc3d4ec7a8d",
+    "status": "DELIVERED",
+    "title": "Delivered",
+    "description": "Order successfully delivered. Thank you for shopping with Jaipur Gifting!",
+    "id": "31446219-1b14-4bad-9ed4-be69269a6d77",
+    "createdAt": "2026-07-28T09:00:16.323Z"
+  },
+  {
+    "id": "b63b14d2-64be-45ca-a76a-462d60dd7aa7",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-549470 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "fb8bbabc-9ea2-4b15-8bd1-2af7ce12d84a",
+    "createdAt": "2026-07-28T09:00:16.491Z"
+  },
+  {
+    "orderId": "fb8bbabc-9ea2-4b15-8bd1-2af7ce12d84a",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "634f0fe7-9931-4019-9ac2-ee22bc40efe2",
+    "createdAt": "2026-07-28T09:00:16.583Z"
+  },
+  {
+    "orderId": "fb8bbabc-9ea2-4b15-8bd1-2af7ce12d84a",
+    "status": "DELIVERED",
+    "title": "Delivered",
+    "description": "Successfully delivered to Mrs. Sharma.",
+    "id": "0b9130bf-bcdc-4ad4-b8d1-5dbbc2249e56",
+    "createdAt": "2026-07-28T09:00:16.612Z"
+  },
+  {
+    "id": "d7ffbaab-3bd9-453e-a6c2-914d3116020e",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-556374 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "de04b2c5-041a-49f0-8ae4-8a3317733e18",
+    "createdAt": "2026-07-28T09:00:16.784Z"
+  },
+  {
+    "orderId": "de04b2c5-041a-49f0-8ae4-8a3317733e18",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "08f4ba6e-29d8-41e8-9dc8-b00233ce7a40",
+    "createdAt": "2026-07-28T09:00:16.874Z"
+  },
+  {
+    "id": "b78ac222-ee3d-4c40-8094-cdf4f6e42b62",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-972121 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "74adf2e8-80f0-4e2b-9ece-7c2f5075e17e",
+    "createdAt": "2026-07-28T09:00:17.058Z"
+  },
+  {
+    "orderId": "74adf2e8-80f0-4e2b-9ece-7c2f5075e17e",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Status Updated to READY_FOR_DISPATCH",
+    "description": "Admin updated order status to READY_FOR_DISPATCH",
+    "id": "7048dd13-7d08-48f5-a59e-3f75706e97ac",
+    "createdAt": "2026-07-28T09:00:17.151Z"
+  },
+  {
+    "id": "197c07d2-aad4-4d9a-aa79-848a39b01be7",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-841383 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "811121d4-bcad-4d03-bdc9-a2e9431f00fd",
+    "createdAt": "2026-07-28T09:00:18.078Z"
+  },
+  {
+    "orderId": "811121d4-bcad-4d03-bdc9-a2e9431f00fd",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "79fce781-0a71-499c-a736-ae70b49d715e",
+    "createdAt": "2026-07-28T09:00:18.180Z"
+  },
+  {
+    "id": "c60614d6-245f-4b25-adfd-7b6cc2fc384e",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-574642 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "1d5ec57d-7db4-46fe-8a4d-297e7154d9f0",
+    "createdAt": "2026-07-28T09:00:18.369Z"
+  },
+  {
+    "orderId": "1d5ec57d-7db4-46fe-8a4d-297e7154d9f0",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "a1f3cbfd-095c-4cf5-9318-b519d82c9553",
+    "createdAt": "2026-07-28T09:00:18.467Z"
+  },
+  {
+    "id": "2019b1e3-f699-4f93-9eab-c9ef24a36ed0",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-761145 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "234208f9-7fd5-4834-8a6f-42f83299cca8",
+    "createdAt": "2026-07-28T09:00:18.651Z"
+  },
+  {
+    "orderId": "234208f9-7fd5-4834-8a6f-42f83299cca8",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "7f774747-3f59-4819-a245-04fafece7637",
+    "createdAt": "2026-07-28T09:00:18.743Z"
+  },
+  {
+    "id": "d8468ec5-73ed-4d01-945c-d8beac47a2a5",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-595814 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "9fff7785-0cf1-4424-a5ca-9a6323211e46",
+    "createdAt": "2026-07-28T09:00:18.918Z"
+  },
+  {
+    "orderId": "9fff7785-0cf1-4424-a5ca-9a6323211e46",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "c78ac654-7515-4927-b0c9-80ebe402c99d",
+    "createdAt": "2026-07-28T09:00:19.018Z"
+  },
+  {
+    "id": "a4333695-45a6-4f64-9bc6-6b626c86d1b1",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-874687 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "68d52ab3-cecd-42f2-adce-8c8c9df2e821",
+    "createdAt": "2026-07-28T09:00:19.214Z"
+  },
+  {
+    "orderId": "68d52ab3-cecd-42f2-adce-8c8c9df2e821",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "5a554e3e-e5dd-4695-88dd-fab740c1fd6d",
+    "createdAt": "2026-07-28T09:00:19.307Z"
+  },
+  {
+    "id": "c0e39087-f985-405b-989e-ca130d851c2f",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-561916 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "60f0fa18-b81c-4e29-af9a-6ab783e8f373",
+    "createdAt": "2026-07-28T09:00:19.490Z"
+  },
+  {
+    "orderId": "60f0fa18-b81c-4e29-af9a-6ab783e8f373",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "d6f2e621-05de-43ba-bd5b-2380a12cbe52",
+    "createdAt": "2026-07-28T09:00:19.588Z"
+  },
+  {
+    "id": "70de546a-f4ac-4d25-b0ac-5d51054810f4",
+    "status": "PAYMENT_PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-483676 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "64fa1b83-5aec-4d89-a6a6-16182931ac7a",
+    "createdAt": "2026-07-28T09:00:19.774Z"
+  },
+  {
+    "orderId": "64fa1b83-5aec-4d89-a6a6-16182931ac7a",
+    "status": "DELIVERED",
+    "title": "Status Updated to DELIVERED",
+    "description": "Admin updated order status to DELIVERED",
+    "id": "a92389e4-ebb4-46ec-9026-767f864ced99",
+    "createdAt": "2026-07-28T09:00:19.865Z"
+  },
+  {
+    "id": "db1fccfb-901f-4683-b76f-5d6de6a8606a",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-585627 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "a521b024-7d06-4096-9ce7-6077c09c57d2",
+    "createdAt": "2026-07-28T09:00:21.281Z"
+  },
+  {
+    "orderId": "a521b024-7d06-4096-9ce7-6077c09c57d2",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "fc3b2fcf-4f05-41b2-bce8-a8c7dbef6336",
+    "createdAt": "2026-07-28T09:00:21.496Z"
+  },
+  {
+    "id": "1f7bc543-4900-4a52-8897-5ce35a9cfaa6",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-395692 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "4abca157-a903-4d59-ad3d-4dbc0b8f07d5",
+    "createdAt": "2026-07-28T09:00:21.908Z"
+  },
+  {
+    "orderId": "4abca157-a903-4d59-ad3d-4dbc0b8f07d5",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "182215c4-9bbb-4041-8b54-6ee1b16807ec",
+    "createdAt": "2026-07-28T09:00:22.089Z"
+  },
+  {
+    "id": "656a2716-b946-4d2c-869e-e68cde84d720",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-963658 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "8824ca55-928d-45a1-b334-f6a539229006",
+    "createdAt": "2026-07-28T09:00:22.478Z"
+  },
+  {
+    "orderId": "8824ca55-928d-45a1-b334-f6a539229006",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "ce457b0e-0d20-4c67-a43b-dc6ba7ee8296",
+    "createdAt": "2026-07-28T09:00:22.656Z"
+  },
+  {
+    "id": "a430d122-3a8a-4290-9c6b-fd8999c4df2d",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-762838 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "441027fe-6a77-47c3-bb9a-5ec14096957b",
+    "createdAt": "2026-07-28T09:00:23.058Z"
+  },
+  {
+    "orderId": "441027fe-6a77-47c3-bb9a-5ec14096957b",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "0dcc11f3-f2b6-4436-be8f-6abbc810fe66",
+    "createdAt": "2026-07-28T09:00:23.276Z"
+  },
+  {
+    "orderId": "441027fe-6a77-47c3-bb9a-5ec14096957b",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Ready For Dispatch",
+    "description": "All production items successfully manufactured, QC passed, and packed.",
+    "id": "67c6394d-cd9e-453d-8aea-c3cf98df43d2",
+    "createdAt": "2026-07-28T09:00:23.346Z"
+  },
+  {
+    "id": "5250bd38-7332-404f-8a6f-cfda74b2fba0",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-384763 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "3b11e068-593b-48cd-88de-c8ee40b3688a",
+    "createdAt": "2026-07-28T09:00:23.620Z"
+  },
+  {
+    "orderId": "3b11e068-593b-48cd-88de-c8ee40b3688a",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "f3a57668-0639-40fc-8841-f53ef55f08bc",
+    "createdAt": "2026-07-28T09:00:23.781Z"
+  },
+  {
+    "id": "1c81f75e-5104-4258-981f-b380c914d3e3",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-866927 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "9a2ede43-7bcd-464f-b85e-d2035cd1806e",
+    "createdAt": "2026-07-28T09:00:24.121Z"
+  },
+  {
+    "orderId": "9a2ede43-7bcd-464f-b85e-d2035cd1806e",
+    "status": "READY_FOR_PRODUCTION",
+    "title": "Status Updated to READY_FOR_PRODUCTION",
+    "description": "Admin updated order status to READY_FOR_PRODUCTION",
+    "id": "63f57632-adcd-4f47-bca1-3286725a7aac",
+    "createdAt": "2026-07-28T09:00:24.281Z"
+  },
+  {
+    "id": "ea541ac5-a42b-459d-964b-534abf014b02",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-944647 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "75f1ca09-2667-494f-b6b5-0141c1405c99",
+    "createdAt": "2026-07-28T09:00:29.200Z"
+  },
+  {
+    "id": "871992d4-8cd6-467a-a18c-e8e49c8a38ce",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-375157 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "1f578027-e8b6-4a4e-ac72-a96f348d2c58",
+    "createdAt": "2026-07-28T09:00:29.906Z"
+  },
+  {
+    "id": "da7eddf6-fb3e-4997-baf9-937c928df3cc",
+    "status": "PENDING",
+    "title": "Order Created",
+    "description": "Order JG-2026-338869 created successfully from checkout session.",
+    "metadataJson": "{\"source\":\"CHECKOUT\"}",
+    "orderId": "e6fc724b-ecfd-4048-96b9-4478f468e4f6",
+    "createdAt": "2026-07-28T09:00:30.375Z"
+  },
+  {
+    "orderId": "e6fc724b-ecfd-4048-96b9-4478f468e4f6",
+    "status": "CANCELLED",
+    "title": "Order Cancelled",
+    "description": "Reason: Customer changed mind",
+    "id": "11dc89b5-2620-4f88-845e-5833c529cbcb",
+    "createdAt": "2026-07-28T09:00:30.570Z"
   }
 ]

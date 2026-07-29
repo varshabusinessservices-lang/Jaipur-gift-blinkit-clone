@@ -1318,5 +1318,1490 @@
     "metadataJson": "{\"taskNumber\":\"DT-2026-267799\"}",
     "taskId": "48a6948e-676b-4d8f-903f-c019b6dba577",
     "createdAt": "2026-07-27T15:09:49.727Z"
+  },
+  {
+    "id": "cb05494f-04cb-4c25-875f-eb7e5ddc7558",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-139507 created for order JG-2026-323484.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-139507\"}",
+    "taskId": "b8efc6b8-ceb2-4bfe-8ca7-1ed72014b001",
+    "createdAt": "2026-07-28T03:32:52.371Z"
+  },
+  {
+    "id": "4d6fa928-ccb8-4d7d-a2be-6bdcf9f9caaf",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-203936 created for order JG-2026-889825.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-203936\"}",
+    "taskId": "b1edbde4-fbde-4fc9-9872-2aaed143c074",
+    "createdAt": "2026-07-28T03:32:52.578Z"
+  },
+  {
+    "taskId": "b1edbde4-fbde-4fc9-9872-2aaed143c074",
+    "status": "ASSIGNED",
+    "title": "Rider Assigned",
+    "description": "Task assigned to rider Rajesh Rider (9829011111)",
+    "metadataJson": "{\"riderId\":\"rider-1\",\"riderName\":\"Rajesh Rider\"}",
+    "id": "8294f1f5-b095-4f2e-a73e-92ea2334ca37",
+    "createdAt": "2026-07-28T03:32:52.581Z"
+  },
+  {
+    "taskId": "b1edbde4-fbde-4fc9-9872-2aaed143c074",
+    "status": "ASSIGNED",
+    "title": "Rider Assigned",
+    "description": "Task assigned to rider Manoj Delivery (9829022222)",
+    "metadataJson": "{\"riderId\":\"rider-2\",\"riderName\":\"Manoj Delivery\"}",
+    "id": "b146f1fc-f3a1-444c-8425-32e800c2c0d1",
+    "createdAt": "2026-07-28T03:32:52.585Z"
+  },
+  {
+    "id": "8bec4ce6-c1b7-4a2b-b244-b026159feca8",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-695865 created for order JG-2026-918765.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-695865\"}",
+    "taskId": "6ea449ba-ce54-47dd-bbda-06bc63ec6377",
+    "createdAt": "2026-07-28T03:32:52.785Z"
+  },
+  {
+    "taskId": "6ea449ba-ce54-47dd-bbda-06bc63ec6377",
+    "status": "ASSIGNED",
+    "title": "Rider Assigned",
+    "description": "Task assigned to rider Rajesh Rider (9829011111)",
+    "metadataJson": "{\"riderId\":\"rider-1\",\"riderName\":\"Rajesh Rider\"}",
+    "id": "da6bc3a7-51e6-4e78-a080-a89d12f57c96",
+    "createdAt": "2026-07-28T03:32:52.788Z"
+  },
+  {
+    "taskId": "6ea449ba-ce54-47dd-bbda-06bc63ec6377",
+    "status": "ACCEPTED",
+    "title": "Rider Accepted Task",
+    "description": "Rider has accepted the delivery task and is heading to store.",
+    "id": "fd027edc-048b-4dda-9d71-7bc3b3b42b8d",
+    "createdAt": "2026-07-28T03:32:52.790Z"
+  },
+  {
+    "taskId": "6ea449ba-ce54-47dd-bbda-06bc63ec6377",
+    "status": "PICKED_UP",
+    "title": "Order Picked Up",
+    "description": "Package picked up from store, out for delivery.",
+    "id": "62cbf66b-de83-4ca1-991e-1cd0ff34fbf2",
+    "createdAt": "2026-07-28T03:32:52.793Z"
+  },
+  {
+    "taskId": "6ea449ba-ce54-47dd-bbda-06bc63ec6377",
+    "status": "OUT_FOR_DELIVERY",
+    "title": "Out For Delivery",
+    "description": "Rider is on the way to the delivery address.",
+    "id": "f8d0a952-3980-4a6e-b8da-bc4e35072cee",
+    "createdAt": "2026-07-28T03:32:52.802Z"
+  },
+  {
+    "taskId": "6ea449ba-ce54-47dd-bbda-06bc63ec6377",
+    "status": "ARRIVED",
+    "title": "Rider Arrived",
+    "description": "Rider has arrived at the delivery location.",
+    "id": "b4d26e89-ebec-42ea-99ef-e9fe92dbd697",
+    "createdAt": "2026-07-28T03:32:52.807Z"
+  },
+  {
+    "id": "ba942ac1-0dbf-4e3e-b6ca-22ff2bcd4669",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-791107 created for order JG-2026-747849.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-791107\"}",
+    "taskId": "5f7ef8bd-29ec-4a70-8a78-a8504a9abba1",
+    "createdAt": "2026-07-28T03:32:52.980Z"
+  },
+  {
+    "taskId": "5f7ef8bd-29ec-4a70-8a78-a8504a9abba1",
+    "status": "ASSIGNED",
+    "title": "Rider Assigned",
+    "description": "Task assigned to rider Rajesh Rider (9829011111)",
+    "metadataJson": "{\"riderId\":\"rider-1\",\"riderName\":\"Rajesh Rider\"}",
+    "id": "1cd9d193-41cb-4bcf-9d89-8c90fa3984f9",
+    "createdAt": "2026-07-28T03:32:52.984Z"
+  },
+  {
+    "taskId": "5f7ef8bd-29ec-4a70-8a78-a8504a9abba1",
+    "status": "PICKED_UP",
+    "title": "Order Picked Up",
+    "description": "Package picked up from store, out for delivery.",
+    "id": "3374ae7d-3e5e-4d48-918f-e9f5ad2a86f4",
+    "createdAt": "2026-07-28T03:32:52.990Z"
+  },
+  {
+    "taskId": "5f7ef8bd-29ec-4a70-8a78-a8504a9abba1",
+    "status": "DELIVERED",
+    "title": "Delivered Successfully",
+    "description": "OTP verified successfully and order delivered to recipient.",
+    "id": "1f2798bb-1d40-4896-a20f-5d86b9102f4a",
+    "createdAt": "2026-07-28T03:32:53.002Z"
+  },
+  {
+    "id": "a822151e-5bbc-4276-83a3-0fe762e394c6",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-954680 created for order JG-2026-490588.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-954680\"}",
+    "taskId": "efa88957-ec2e-4676-b1f6-e47c91465b3c",
+    "createdAt": "2026-07-28T03:32:53.195Z"
+  },
+  {
+    "taskId": "efa88957-ec2e-4676-b1f6-e47c91465b3c",
+    "status": "DELIVERED",
+    "title": "Proof of Delivery Captured & Delivered",
+    "description": "Delivered to Mrs. Sharma (Mother).",
+    "metadataJson": "{\"photoUrl\":\"\",\"recipientName\":\"Mrs. Sharma\",\"recipientRelation\":\"Mother\",\"signature\":\"\",\"notes\":\"Handed over securely\",\"capturedAt\":\"2026-07-28T03:32:53.197Z\"}",
+    "id": "9bd07e4d-af1b-4cca-a153-f1dbb2d0f6f5",
+    "createdAt": "2026-07-28T03:32:53.198Z"
+  },
+  {
+    "id": "df1267cd-e256-4284-aa5b-e09939c4c6ad",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-100442 created for order JG-2026-607475.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-100442\"}",
+    "taskId": "b5e40e8c-9d74-4147-af37-f7390441c2a3",
+    "createdAt": "2026-07-28T03:32:53.382Z"
+  },
+  {
+    "taskId": "b5e40e8c-9d74-4147-af37-f7390441c2a3",
+    "status": "FAILED",
+    "title": "Delivery Exception / Failure",
+    "description": "Reason: CUSTOMER_UNAVAILABLE. Notes: Called multiple times, phone switched off",
+    "metadataJson": "{\"reason\":\"CUSTOMER_UNAVAILABLE\",\"notes\":\"Called multiple times, phone switched off\",\"reportedAt\":\"2026-07-28T03:32:53.384Z\"}",
+    "id": "054a3de0-9563-434b-8f0a-09ec779d8f19",
+    "createdAt": "2026-07-28T03:32:53.385Z"
+  },
+  {
+    "id": "460d7abb-2362-4908-bcb7-bf5d73f3ae8a",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-172541 created for order JG-2026-811748.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-172541\"}",
+    "taskId": "409da0a6-63ef-47db-b327-ac38c343e4d5",
+    "createdAt": "2026-07-28T03:32:53.578Z"
+  },
+  {
+    "id": "47353fb0-1f7d-4a2a-89ff-e6647f631843",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-584719 created for order JG-2026-298381.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-584719\"}",
+    "taskId": "b1479374-f45c-43a3-9a23-37a5cfea2d4e",
+    "createdAt": "2026-07-28T03:43:57.434Z"
+  },
+  {
+    "id": "268d8bd3-3676-4161-8766-b66ee6773836",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-511795 created for order JG-2026-141633.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-511795\"}",
+    "taskId": "2e8e0029-bb54-4db6-ba6f-332dd62c1739",
+    "createdAt": "2026-07-28T03:43:57.621Z"
+  },
+  {
+    "taskId": "2e8e0029-bb54-4db6-ba6f-332dd62c1739",
+    "status": "ASSIGNED",
+    "title": "Rider Assigned",
+    "description": "Task assigned to rider Rajesh Rider (9829011111)",
+    "metadataJson": "{\"riderId\":\"rider-1\",\"riderName\":\"Rajesh Rider\"}",
+    "id": "6a30f315-6dce-4506-b5ff-6781ab08c6a2",
+    "createdAt": "2026-07-28T03:43:57.625Z"
+  },
+  {
+    "taskId": "2e8e0029-bb54-4db6-ba6f-332dd62c1739",
+    "status": "ASSIGNED",
+    "title": "Rider Assigned",
+    "description": "Task assigned to rider Manoj Delivery (9829022222)",
+    "metadataJson": "{\"riderId\":\"rider-2\",\"riderName\":\"Manoj Delivery\"}",
+    "id": "5f9c4558-f817-4288-978f-a383a4854ee7",
+    "createdAt": "2026-07-28T03:43:57.629Z"
+  },
+  {
+    "id": "b4bf2b3c-0e58-4771-ae5f-5148a8ee3c1e",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-660846 created for order JG-2026-452413.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-660846\"}",
+    "taskId": "4c3004b6-fcf9-4e54-a40a-42bead36bb6a",
+    "createdAt": "2026-07-28T03:43:57.829Z"
+  },
+  {
+    "taskId": "4c3004b6-fcf9-4e54-a40a-42bead36bb6a",
+    "status": "ASSIGNED",
+    "title": "Rider Assigned",
+    "description": "Task assigned to rider Rajesh Rider (9829011111)",
+    "metadataJson": "{\"riderId\":\"rider-1\",\"riderName\":\"Rajesh Rider\"}",
+    "id": "3dbda8b5-9d12-448c-aa7d-6e92d424c891",
+    "createdAt": "2026-07-28T03:43:57.833Z"
+  },
+  {
+    "taskId": "4c3004b6-fcf9-4e54-a40a-42bead36bb6a",
+    "status": "ACCEPTED",
+    "title": "Rider Accepted Task",
+    "description": "Rider has accepted the delivery task and is heading to store.",
+    "id": "3f1dd543-f607-4e7c-8ac4-03ca6746eb2e",
+    "createdAt": "2026-07-28T03:43:57.836Z"
+  },
+  {
+    "taskId": "4c3004b6-fcf9-4e54-a40a-42bead36bb6a",
+    "status": "PICKED_UP",
+    "title": "Order Picked Up",
+    "description": "Package picked up from store, out for delivery.",
+    "id": "7b91fd13-e4f4-42c8-9ab3-4936bd8486c1",
+    "createdAt": "2026-07-28T03:43:57.840Z"
+  },
+  {
+    "taskId": "4c3004b6-fcf9-4e54-a40a-42bead36bb6a",
+    "status": "OUT_FOR_DELIVERY",
+    "title": "Out For Delivery",
+    "description": "Rider is on the way to the delivery address.",
+    "id": "fd8de8f4-0d29-487c-84e2-f89d079116d1",
+    "createdAt": "2026-07-28T03:43:57.853Z"
+  },
+  {
+    "taskId": "4c3004b6-fcf9-4e54-a40a-42bead36bb6a",
+    "status": "ARRIVED",
+    "title": "Rider Arrived",
+    "description": "Rider has arrived at the delivery location.",
+    "id": "f2eb3246-6b9e-4661-990f-f7c801f1b35b",
+    "createdAt": "2026-07-28T03:43:57.858Z"
+  },
+  {
+    "id": "f6ff5126-d7ce-49db-af78-afb014e0e36a",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-483569 created for order JG-2026-263562.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-483569\"}",
+    "taskId": "14222b94-7f24-4711-af99-6fa9fb5591a2",
+    "createdAt": "2026-07-28T03:43:58.053Z"
+  },
+  {
+    "taskId": "14222b94-7f24-4711-af99-6fa9fb5591a2",
+    "status": "ASSIGNED",
+    "title": "Rider Assigned",
+    "description": "Task assigned to rider Rajesh Rider (9829011111)",
+    "metadataJson": "{\"riderId\":\"rider-1\",\"riderName\":\"Rajesh Rider\"}",
+    "id": "969213e7-c22a-4898-ba2f-1ae7d600c0a3",
+    "createdAt": "2026-07-28T03:43:58.060Z"
+  },
+  {
+    "taskId": "14222b94-7f24-4711-af99-6fa9fb5591a2",
+    "status": "PICKED_UP",
+    "title": "Order Picked Up",
+    "description": "Package picked up from store, out for delivery.",
+    "id": "75f7d3eb-e48c-404a-9e1c-c71f09075b8f",
+    "createdAt": "2026-07-28T03:43:58.063Z"
+  },
+  {
+    "taskId": "14222b94-7f24-4711-af99-6fa9fb5591a2",
+    "status": "DELIVERED",
+    "title": "Delivered Successfully",
+    "description": "OTP verified successfully and order delivered to recipient.",
+    "id": "ab3c3132-5985-4f9d-81c2-b870517a6e54",
+    "createdAt": "2026-07-28T03:43:58.076Z"
+  },
+  {
+    "id": "0aafb804-8032-4634-98f3-18ba171d4f10",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-760405 created for order JG-2026-714351.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-760405\"}",
+    "taskId": "4d9ee1c6-56ff-41a5-aa0e-a9e0ec389de4",
+    "createdAt": "2026-07-28T03:43:58.273Z"
+  },
+  {
+    "taskId": "4d9ee1c6-56ff-41a5-aa0e-a9e0ec389de4",
+    "status": "DELIVERED",
+    "title": "Proof of Delivery Captured & Delivered",
+    "description": "Delivered to Mrs. Sharma (Mother).",
+    "metadataJson": "{\"photoUrl\":\"\",\"recipientName\":\"Mrs. Sharma\",\"recipientRelation\":\"Mother\",\"signature\":\"\",\"notes\":\"Handed over securely\",\"capturedAt\":\"2026-07-28T03:43:58.275Z\"}",
+    "id": "40b8b028-022e-4f8e-a688-928378496a4a",
+    "createdAt": "2026-07-28T03:43:58.277Z"
+  },
+  {
+    "id": "a2b9eb87-6739-4ab9-b896-927d350a6b75",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-225933 created for order JG-2026-690949.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-225933\"}",
+    "taskId": "2c026f50-060e-4ba4-83ef-797be0e8387f",
+    "createdAt": "2026-07-28T03:43:58.498Z"
+  },
+  {
+    "taskId": "2c026f50-060e-4ba4-83ef-797be0e8387f",
+    "status": "FAILED",
+    "title": "Delivery Exception / Failure",
+    "description": "Reason: CUSTOMER_UNAVAILABLE. Notes: Called multiple times, phone switched off",
+    "metadataJson": "{\"reason\":\"CUSTOMER_UNAVAILABLE\",\"notes\":\"Called multiple times, phone switched off\",\"reportedAt\":\"2026-07-28T03:43:58.500Z\"}",
+    "id": "aa93b2dd-6e14-4e90-90ff-98ec8b7d21f7",
+    "createdAt": "2026-07-28T03:43:58.502Z"
+  },
+  {
+    "id": "2583921a-7dfe-476c-9200-e08d6582c3b8",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-702935 created for order JG-2026-782216.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-702935\"}",
+    "taskId": "8bc33b9e-a3b2-4e5e-88ec-7fd53e10a8d3",
+    "createdAt": "2026-07-28T03:43:58.698Z"
+  },
+  {
+    "id": "3a7de71a-da28-4a55-ae96-66e388bdb2e0",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-280822 created for order JG-2026-102373.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-280822\"}",
+    "taskId": "007d76f6-cf56-4b5f-9e9a-c1f79de29c9d",
+    "createdAt": "2026-07-28T07:36:50.228Z"
+  },
+  {
+    "id": "22e090b8-925b-4c8e-b435-50f6c4bf5d58",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-517787 created for order JG-2026-944535.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-517787\"}",
+    "taskId": "fb507327-36c9-4a0b-8b73-21dc225d3a9e",
+    "createdAt": "2026-07-28T07:36:50.468Z"
+  },
+  {
+    "taskId": "fb507327-36c9-4a0b-8b73-21dc225d3a9e",
+    "status": "ASSIGNED",
+    "title": "Rider Assigned",
+    "description": "Task assigned to rider Rajesh Rider (9829011111)",
+    "metadataJson": "{\"riderId\":\"rider-1\",\"riderName\":\"Rajesh Rider\"}",
+    "id": "d04782b1-66d3-4324-a92e-91bd5261276f",
+    "createdAt": "2026-07-28T07:36:50.474Z"
+  },
+  {
+    "taskId": "fb507327-36c9-4a0b-8b73-21dc225d3a9e",
+    "status": "ASSIGNED",
+    "title": "Rider Assigned",
+    "description": "Task assigned to rider Manoj Delivery (9829022222)",
+    "metadataJson": "{\"riderId\":\"rider-2\",\"riderName\":\"Manoj Delivery\"}",
+    "id": "7de57a71-724d-4c6e-87a1-e2a912beba5b",
+    "createdAt": "2026-07-28T07:36:50.480Z"
+  },
+  {
+    "id": "6d28a09f-e11f-481e-b851-3319b6b2fac0",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-866754 created for order JG-2026-665416.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-866754\"}",
+    "taskId": "7190eab9-d064-40ac-b295-c3052e4bc7fe",
+    "createdAt": "2026-07-28T07:36:50.692Z"
+  },
+  {
+    "taskId": "7190eab9-d064-40ac-b295-c3052e4bc7fe",
+    "status": "ASSIGNED",
+    "title": "Rider Assigned",
+    "description": "Task assigned to rider Rajesh Rider (9829011111)",
+    "metadataJson": "{\"riderId\":\"rider-1\",\"riderName\":\"Rajesh Rider\"}",
+    "id": "24f0ff4f-b3a9-4095-8312-e055284eccd8",
+    "createdAt": "2026-07-28T07:36:50.695Z"
+  },
+  {
+    "taskId": "7190eab9-d064-40ac-b295-c3052e4bc7fe",
+    "status": "ACCEPTED",
+    "title": "Rider Accepted Task",
+    "description": "Rider has accepted the delivery task and is heading to store.",
+    "id": "e66291a2-463e-4a1a-9b5f-64673520f227",
+    "createdAt": "2026-07-28T07:36:50.698Z"
+  },
+  {
+    "taskId": "7190eab9-d064-40ac-b295-c3052e4bc7fe",
+    "status": "PICKED_UP",
+    "title": "Order Picked Up",
+    "description": "Package picked up from store, out for delivery.",
+    "id": "844c4019-60e8-4bde-933e-0c4955456b6d",
+    "createdAt": "2026-07-28T07:36:50.702Z"
+  },
+  {
+    "taskId": "7190eab9-d064-40ac-b295-c3052e4bc7fe",
+    "status": "OUT_FOR_DELIVERY",
+    "title": "Out For Delivery",
+    "description": "Rider is on the way to the delivery address.",
+    "id": "61f9901b-508b-4117-bf73-c4210edfc5e2",
+    "createdAt": "2026-07-28T07:36:50.714Z"
+  },
+  {
+    "taskId": "7190eab9-d064-40ac-b295-c3052e4bc7fe",
+    "status": "ARRIVED",
+    "title": "Rider Arrived",
+    "description": "Rider has arrived at the delivery location.",
+    "id": "82ab4fb3-a492-44d3-b330-0e6ca5c7326c",
+    "createdAt": "2026-07-28T07:36:50.718Z"
+  },
+  {
+    "id": "ab8393ab-5895-4803-a5ae-1fa00ac80e95",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-583706 created for order JG-2026-852096.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-583706\"}",
+    "taskId": "b9ac3cf0-c870-4273-b48b-a0c61ec41204",
+    "createdAt": "2026-07-28T07:36:50.925Z"
+  },
+  {
+    "taskId": "b9ac3cf0-c870-4273-b48b-a0c61ec41204",
+    "status": "ASSIGNED",
+    "title": "Rider Assigned",
+    "description": "Task assigned to rider Rajesh Rider (9829011111)",
+    "metadataJson": "{\"riderId\":\"rider-1\",\"riderName\":\"Rajesh Rider\"}",
+    "id": "19c51390-a61f-41e5-93c9-43e9ebe5e907",
+    "createdAt": "2026-07-28T07:36:50.933Z"
+  },
+  {
+    "taskId": "b9ac3cf0-c870-4273-b48b-a0c61ec41204",
+    "status": "PICKED_UP",
+    "title": "Order Picked Up",
+    "description": "Package picked up from store, out for delivery.",
+    "id": "dba73134-9021-471c-a7b4-dc97ed8f6ae3",
+    "createdAt": "2026-07-28T07:36:50.936Z"
+  },
+  {
+    "taskId": "b9ac3cf0-c870-4273-b48b-a0c61ec41204",
+    "status": "DELIVERED",
+    "title": "Delivered Successfully",
+    "description": "OTP verified successfully and order delivered to recipient.",
+    "id": "acd91c50-c5c5-430b-a456-a4c4dd06fd5b",
+    "createdAt": "2026-07-28T07:36:50.950Z"
+  },
+  {
+    "id": "d7bf2333-b6d5-4d12-904a-ddd17d593f6b",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-187446 created for order JG-2026-757422.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-187446\"}",
+    "taskId": "a4675bc9-1ca5-4077-9f2c-9383da2f7f59",
+    "createdAt": "2026-07-28T07:36:51.175Z"
+  },
+  {
+    "taskId": "a4675bc9-1ca5-4077-9f2c-9383da2f7f59",
+    "status": "DELIVERED",
+    "title": "Proof of Delivery Captured & Delivered",
+    "description": "Delivered to Mrs. Sharma (Mother).",
+    "metadataJson": "{\"photoUrl\":\"\",\"recipientName\":\"Mrs. Sharma\",\"recipientRelation\":\"Mother\",\"signature\":\"\",\"notes\":\"Handed over securely\",\"capturedAt\":\"2026-07-28T07:36:51.177Z\"}",
+    "id": "3656cd61-c4ef-467a-9307-e4d5acfc5813",
+    "createdAt": "2026-07-28T07:36:51.179Z"
+  },
+  {
+    "id": "bc5de481-dff8-4eb4-8591-f6076c7e5df0",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-205501 created for order JG-2026-116863.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-205501\"}",
+    "taskId": "74547b96-e780-4925-85db-d69c40d1ae88",
+    "createdAt": "2026-07-28T07:36:51.404Z"
+  },
+  {
+    "taskId": "74547b96-e780-4925-85db-d69c40d1ae88",
+    "status": "FAILED",
+    "title": "Delivery Exception / Failure",
+    "description": "Reason: CUSTOMER_UNAVAILABLE. Notes: Called multiple times, phone switched off",
+    "metadataJson": "{\"reason\":\"CUSTOMER_UNAVAILABLE\",\"notes\":\"Called multiple times, phone switched off\",\"reportedAt\":\"2026-07-28T07:36:51.406Z\"}",
+    "id": "a8f23ead-76c4-48e9-a6ed-a0587f04678c",
+    "createdAt": "2026-07-28T07:36:51.407Z"
+  },
+  {
+    "id": "e7113dab-0b37-4de0-85e6-3bc100b66fc9",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-307624 created for order JG-2026-827564.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-307624\"}",
+    "taskId": "c890ba5e-ff4e-403e-a59e-0d49a19251e8",
+    "createdAt": "2026-07-28T07:36:51.622Z"
+  },
+  {
+    "id": "ef3655f9-cad6-4324-bb11-7a60c1fb8e9e",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-920419 created for order JG-2026-894541.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-920419\"}",
+    "taskId": "4561a44a-b656-49d8-b26a-07e93ebd5cd9",
+    "createdAt": "2026-07-28T07:40:34.784Z"
+  },
+  {
+    "id": "d85472d4-324b-4fa4-aaa8-fcd2c96c5726",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-265712 created for order JG-2026-195885.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-265712\"}",
+    "taskId": "797329d5-9298-4a30-86e8-0dd03900ae6f",
+    "createdAt": "2026-07-28T07:40:35.009Z"
+  },
+  {
+    "taskId": "797329d5-9298-4a30-86e8-0dd03900ae6f",
+    "status": "ASSIGNED",
+    "title": "Rider Assigned",
+    "description": "Task assigned to rider Rajesh Rider (9829011111)",
+    "metadataJson": "{\"riderId\":\"rider-1\",\"riderName\":\"Rajesh Rider\"}",
+    "id": "1ea83d7e-5f2e-4c36-a43e-96183fb6ef0f",
+    "createdAt": "2026-07-28T07:40:35.016Z"
+  },
+  {
+    "taskId": "797329d5-9298-4a30-86e8-0dd03900ae6f",
+    "status": "ASSIGNED",
+    "title": "Rider Assigned",
+    "description": "Task assigned to rider Manoj Delivery (9829022222)",
+    "metadataJson": "{\"riderId\":\"rider-2\",\"riderName\":\"Manoj Delivery\"}",
+    "id": "7ab7c1f6-a462-4ec6-9abc-122fd300d13a",
+    "createdAt": "2026-07-28T07:40:35.023Z"
+  },
+  {
+    "id": "457a2d42-5c27-4921-a076-2281d4ccb15d",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-563539 created for order JG-2026-988214.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-563539\"}",
+    "taskId": "e7ffde43-e60b-43c0-816e-0607b3a1172d",
+    "createdAt": "2026-07-28T07:40:35.232Z"
+  },
+  {
+    "taskId": "e7ffde43-e60b-43c0-816e-0607b3a1172d",
+    "status": "ASSIGNED",
+    "title": "Rider Assigned",
+    "description": "Task assigned to rider Rajesh Rider (9829011111)",
+    "metadataJson": "{\"riderId\":\"rider-1\",\"riderName\":\"Rajesh Rider\"}",
+    "id": "d3f6e610-72a6-45bf-a725-403044b00c0c",
+    "createdAt": "2026-07-28T07:40:35.235Z"
+  },
+  {
+    "taskId": "e7ffde43-e60b-43c0-816e-0607b3a1172d",
+    "status": "ACCEPTED",
+    "title": "Rider Accepted Task",
+    "description": "Rider has accepted the delivery task and is heading to store.",
+    "id": "b8964762-aedf-4edd-89e4-48ffea895888",
+    "createdAt": "2026-07-28T07:40:35.238Z"
+  },
+  {
+    "taskId": "e7ffde43-e60b-43c0-816e-0607b3a1172d",
+    "status": "PICKED_UP",
+    "title": "Order Picked Up",
+    "description": "Package picked up from store, out for delivery.",
+    "id": "52a9a600-cd47-4548-91c7-daa442cd5c9a",
+    "createdAt": "2026-07-28T07:40:35.241Z"
+  },
+  {
+    "taskId": "e7ffde43-e60b-43c0-816e-0607b3a1172d",
+    "status": "OUT_FOR_DELIVERY",
+    "title": "Out For Delivery",
+    "description": "Rider is on the way to the delivery address.",
+    "id": "785fe599-3e04-40b5-a4f2-4b9a4380c3eb",
+    "createdAt": "2026-07-28T07:40:35.253Z"
+  },
+  {
+    "taskId": "e7ffde43-e60b-43c0-816e-0607b3a1172d",
+    "status": "ARRIVED",
+    "title": "Rider Arrived",
+    "description": "Rider has arrived at the delivery location.",
+    "id": "49bb8ede-639e-48e7-a903-9ea48eebe3fc",
+    "createdAt": "2026-07-28T07:40:35.256Z"
+  },
+  {
+    "id": "5feb9dec-c321-4713-8246-34a4907bc3af",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-706142 created for order JG-2026-426457.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-706142\"}",
+    "taskId": "ecb9f0b2-0e53-4517-b27e-395617ceacfc",
+    "createdAt": "2026-07-28T07:40:35.455Z"
+  },
+  {
+    "taskId": "ecb9f0b2-0e53-4517-b27e-395617ceacfc",
+    "status": "ASSIGNED",
+    "title": "Rider Assigned",
+    "description": "Task assigned to rider Rajesh Rider (9829011111)",
+    "metadataJson": "{\"riderId\":\"rider-1\",\"riderName\":\"Rajesh Rider\"}",
+    "id": "68ff4764-97bc-4afb-8140-4d087cad968f",
+    "createdAt": "2026-07-28T07:40:35.459Z"
+  },
+  {
+    "taskId": "ecb9f0b2-0e53-4517-b27e-395617ceacfc",
+    "status": "PICKED_UP",
+    "title": "Order Picked Up",
+    "description": "Package picked up from store, out for delivery.",
+    "id": "18c57db7-90c8-43ab-8f2d-ff94dee3f8cf",
+    "createdAt": "2026-07-28T07:40:35.462Z"
+  },
+  {
+    "taskId": "ecb9f0b2-0e53-4517-b27e-395617ceacfc",
+    "status": "DELIVERED",
+    "title": "Delivered Successfully",
+    "description": "OTP verified successfully and order delivered to recipient.",
+    "id": "b47b1a67-b536-4b27-ae38-c957a3d86785",
+    "createdAt": "2026-07-28T07:40:35.476Z"
+  },
+  {
+    "id": "bb5171da-83de-4fee-9a94-ae9f7e65d975",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-140686 created for order JG-2026-447569.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-140686\"}",
+    "taskId": "f0cb2a54-6ed7-45a6-b6ce-0416d82dd628",
+    "createdAt": "2026-07-28T07:40:35.693Z"
+  },
+  {
+    "taskId": "f0cb2a54-6ed7-45a6-b6ce-0416d82dd628",
+    "status": "DELIVERED",
+    "title": "Proof of Delivery Captured & Delivered",
+    "description": "Delivered to Mrs. Sharma (Mother).",
+    "metadataJson": "{\"photoUrl\":\"\",\"recipientName\":\"Mrs. Sharma\",\"recipientRelation\":\"Mother\",\"signature\":\"\",\"notes\":\"Handed over securely\",\"capturedAt\":\"2026-07-28T07:40:35.698Z\"}",
+    "id": "3bb21e4e-e088-4cb3-a72f-3a389fa08e38",
+    "createdAt": "2026-07-28T07:40:35.700Z"
+  },
+  {
+    "id": "123453d1-b47b-4631-be42-64eef0464e73",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-284697 created for order JG-2026-614733.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-284697\"}",
+    "taskId": "692841b6-29e5-4f8f-a195-9b4a9ae5b9bb",
+    "createdAt": "2026-07-28T07:40:35.919Z"
+  },
+  {
+    "taskId": "692841b6-29e5-4f8f-a195-9b4a9ae5b9bb",
+    "status": "FAILED",
+    "title": "Delivery Exception / Failure",
+    "description": "Reason: CUSTOMER_UNAVAILABLE. Notes: Called multiple times, phone switched off",
+    "metadataJson": "{\"reason\":\"CUSTOMER_UNAVAILABLE\",\"notes\":\"Called multiple times, phone switched off\",\"reportedAt\":\"2026-07-28T07:40:35.920Z\"}",
+    "id": "845f732d-5315-4180-8736-de88ab1a440c",
+    "createdAt": "2026-07-28T07:40:35.922Z"
+  },
+  {
+    "id": "cc48e8a0-6889-4529-92d5-5234623cbb87",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-819508 created for order JG-2026-670818.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-819508\"}",
+    "taskId": "1e5522ff-83eb-4d76-b60f-d967402e0ba4",
+    "createdAt": "2026-07-28T07:40:36.151Z"
+  },
+  {
+    "id": "cd365b0e-3534-40dd-a834-7ae77aba3018",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-912511 created for order JG-2026-543003.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-912511\"}",
+    "taskId": "e9e791be-c62b-48da-8528-e0186ddc0000",
+    "createdAt": "2026-07-28T08:19:10.951Z"
+  },
+  {
+    "id": "459f69f4-0204-41a7-b8f6-c5e81d6486d9",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-118700 created for order JG-2026-750518.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-118700\"}",
+    "taskId": "24658319-1376-4403-a6c2-7a72ec19df5a",
+    "createdAt": "2026-07-28T08:19:11.219Z"
+  },
+  {
+    "taskId": "24658319-1376-4403-a6c2-7a72ec19df5a",
+    "status": "ASSIGNED",
+    "title": "Rider Assigned",
+    "description": "Task assigned to rider Rajesh Rider (9829011111)",
+    "metadataJson": "{\"riderId\":\"rider-1\",\"riderName\":\"Rajesh Rider\"}",
+    "id": "441416d5-3d25-44b8-8af5-fb5799449d84",
+    "createdAt": "2026-07-28T08:19:11.224Z"
+  },
+  {
+    "taskId": "24658319-1376-4403-a6c2-7a72ec19df5a",
+    "status": "ASSIGNED",
+    "title": "Rider Assigned",
+    "description": "Task assigned to rider Manoj Delivery (9829022222)",
+    "metadataJson": "{\"riderId\":\"rider-2\",\"riderName\":\"Manoj Delivery\"}",
+    "id": "da3cb6fc-b6d2-45a3-8f94-87e0874f313c",
+    "createdAt": "2026-07-28T08:19:11.228Z"
+  },
+  {
+    "id": "d74072ce-6834-4e37-ae45-39d1c3df08a2",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-328567 created for order JG-2026-156426.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-328567\"}",
+    "taskId": "33ac7507-532d-4b03-8e28-ae8653002505",
+    "createdAt": "2026-07-28T08:19:11.460Z"
+  },
+  {
+    "taskId": "33ac7507-532d-4b03-8e28-ae8653002505",
+    "status": "ASSIGNED",
+    "title": "Rider Assigned",
+    "description": "Task assigned to rider Rajesh Rider (9829011111)",
+    "metadataJson": "{\"riderId\":\"rider-1\",\"riderName\":\"Rajesh Rider\"}",
+    "id": "abadb687-52d5-4907-ba14-fc3b49c1bcba",
+    "createdAt": "2026-07-28T08:19:11.464Z"
+  },
+  {
+    "taskId": "33ac7507-532d-4b03-8e28-ae8653002505",
+    "status": "ACCEPTED",
+    "title": "Rider Accepted Task",
+    "description": "Rider has accepted the delivery task and is heading to store.",
+    "id": "b6e6205d-d963-4395-bb7b-69a7db8cdd7a",
+    "createdAt": "2026-07-28T08:19:11.468Z"
+  },
+  {
+    "taskId": "33ac7507-532d-4b03-8e28-ae8653002505",
+    "status": "PICKED_UP",
+    "title": "Order Picked Up",
+    "description": "Package picked up from store, out for delivery.",
+    "id": "5912e652-5767-424b-8c2e-59d6ba2414aa",
+    "createdAt": "2026-07-28T08:19:11.472Z"
+  },
+  {
+    "taskId": "33ac7507-532d-4b03-8e28-ae8653002505",
+    "status": "OUT_FOR_DELIVERY",
+    "title": "Out For Delivery",
+    "description": "Rider is on the way to the delivery address.",
+    "id": "1a373da5-5ba4-46b9-a73c-8387e4028aa1",
+    "createdAt": "2026-07-28T08:19:11.490Z"
+  },
+  {
+    "taskId": "33ac7507-532d-4b03-8e28-ae8653002505",
+    "status": "ARRIVED",
+    "title": "Rider Arrived",
+    "description": "Rider has arrived at the delivery location.",
+    "id": "8c7bcb35-52b2-497b-a025-f9df30e0335e",
+    "createdAt": "2026-07-28T08:19:11.493Z"
+  },
+  {
+    "id": "714f8a22-d3e9-4e00-bd3d-25bdf3b1f483",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-920031 created for order JG-2026-721957.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-920031\"}",
+    "taskId": "b31e1df2-9990-4f3c-af6c-bc11a4b98777",
+    "createdAt": "2026-07-28T08:19:11.726Z"
+  },
+  {
+    "taskId": "b31e1df2-9990-4f3c-af6c-bc11a4b98777",
+    "status": "ASSIGNED",
+    "title": "Rider Assigned",
+    "description": "Task assigned to rider Rajesh Rider (9829011111)",
+    "metadataJson": "{\"riderId\":\"rider-1\",\"riderName\":\"Rajesh Rider\"}",
+    "id": "063b35ce-eb9e-4677-8330-cba96d49abad",
+    "createdAt": "2026-07-28T08:19:11.731Z"
+  },
+  {
+    "taskId": "b31e1df2-9990-4f3c-af6c-bc11a4b98777",
+    "status": "PICKED_UP",
+    "title": "Order Picked Up",
+    "description": "Package picked up from store, out for delivery.",
+    "id": "0aa0abe4-a614-4959-9f03-d9bc9c5b6be4",
+    "createdAt": "2026-07-28T08:19:11.735Z"
+  },
+  {
+    "taskId": "b31e1df2-9990-4f3c-af6c-bc11a4b98777",
+    "status": "DELIVERED",
+    "title": "Delivered Successfully",
+    "description": "OTP verified successfully and order delivered to recipient.",
+    "id": "20137e35-a9d1-417f-b60f-9af337f917ea",
+    "createdAt": "2026-07-28T08:19:11.756Z"
+  },
+  {
+    "id": "a3f5c7e3-6104-409b-8fcf-d6386bcff5e8",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-185726 created for order JG-2026-552654.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-185726\"}",
+    "taskId": "496808e6-5537-4d27-a284-4d65a7be4d5f",
+    "createdAt": "2026-07-28T08:19:12.017Z"
+  },
+  {
+    "taskId": "496808e6-5537-4d27-a284-4d65a7be4d5f",
+    "status": "DELIVERED",
+    "title": "Proof of Delivery Captured & Delivered",
+    "description": "Delivered to Mrs. Sharma (Mother).",
+    "metadataJson": "{\"photoUrl\":\"\",\"recipientName\":\"Mrs. Sharma\",\"recipientRelation\":\"Mother\",\"signature\":\"\",\"notes\":\"Handed over securely\",\"capturedAt\":\"2026-07-28T08:19:12.019Z\"}",
+    "id": "10762467-e9eb-405a-9f99-cc273c57da34",
+    "createdAt": "2026-07-28T08:19:12.022Z"
+  },
+  {
+    "id": "23963817-22f5-44ae-a4aa-bd41731847f0",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-459467 created for order JG-2026-292985.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-459467\"}",
+    "taskId": "e6aa103b-837f-4ca2-ac77-6b9a56a3cfe0",
+    "createdAt": "2026-07-28T08:19:12.259Z"
+  },
+  {
+    "taskId": "e6aa103b-837f-4ca2-ac77-6b9a56a3cfe0",
+    "status": "FAILED",
+    "title": "Delivery Exception / Failure",
+    "description": "Reason: CUSTOMER_UNAVAILABLE. Notes: Called multiple times, phone switched off",
+    "metadataJson": "{\"reason\":\"CUSTOMER_UNAVAILABLE\",\"notes\":\"Called multiple times, phone switched off\",\"reportedAt\":\"2026-07-28T08:19:12.261Z\"}",
+    "id": "c108831b-0609-4c13-ab17-0d09cfc4755c",
+    "createdAt": "2026-07-28T08:19:12.263Z"
+  },
+  {
+    "id": "bf88f7e4-093c-4b4a-8931-180d03e568e5",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-895065 created for order JG-2026-538147.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-895065\"}",
+    "taskId": "ba57b8a8-c39b-4647-9ce7-0246863a22d1",
+    "createdAt": "2026-07-28T08:19:12.533Z"
+  },
+  {
+    "id": "8ff5366c-2479-4d50-80ea-18ee9f9b2066",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-602844 created for order JG-2026-858627.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-602844\"}",
+    "taskId": "dd4b8f1e-19b6-4cdc-9038-c8f9803fe0aa",
+    "createdAt": "2026-07-28T08:23:56.991Z"
+  },
+  {
+    "id": "be38d084-22f7-46da-942e-f1bc53d25a0a",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-957979 created for order JG-2026-374735.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-957979\"}",
+    "taskId": "f483ec05-3561-46f1-a9dc-7b841f05b7ea",
+    "createdAt": "2026-07-28T08:23:57.548Z"
+  },
+  {
+    "taskId": "f483ec05-3561-46f1-a9dc-7b841f05b7ea",
+    "status": "ASSIGNED",
+    "title": "Rider Assigned",
+    "description": "Task assigned to rider Rajesh Rider (9829011111)",
+    "metadataJson": "{\"riderId\":\"rider-1\",\"riderName\":\"Rajesh Rider\"}",
+    "id": "d00bf08a-5dc8-4ecb-a945-87261874dbb3",
+    "createdAt": "2026-07-28T08:23:57.555Z"
+  },
+  {
+    "taskId": "f483ec05-3561-46f1-a9dc-7b841f05b7ea",
+    "status": "ASSIGNED",
+    "title": "Rider Assigned",
+    "description": "Task assigned to rider Manoj Delivery (9829022222)",
+    "metadataJson": "{\"riderId\":\"rider-2\",\"riderName\":\"Manoj Delivery\"}",
+    "id": "03e25bc8-88ee-458d-95c1-3071ce1fa994",
+    "createdAt": "2026-07-28T08:23:57.561Z"
+  },
+  {
+    "id": "4866d069-a390-4e55-9af5-d3c7278142ab",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-762384 created for order JG-2026-257121.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-762384\"}",
+    "taskId": "e7efb830-28f9-4ad5-97da-fef62d20cec5",
+    "createdAt": "2026-07-28T08:23:58.006Z"
+  },
+  {
+    "taskId": "e7efb830-28f9-4ad5-97da-fef62d20cec5",
+    "status": "ASSIGNED",
+    "title": "Rider Assigned",
+    "description": "Task assigned to rider Rajesh Rider (9829011111)",
+    "metadataJson": "{\"riderId\":\"rider-1\",\"riderName\":\"Rajesh Rider\"}",
+    "id": "8c5295a4-2fd9-4561-9244-e6bda8a5838f",
+    "createdAt": "2026-07-28T08:23:58.044Z"
+  },
+  {
+    "taskId": "e7efb830-28f9-4ad5-97da-fef62d20cec5",
+    "status": "ACCEPTED",
+    "title": "Rider Accepted Task",
+    "description": "Rider has accepted the delivery task and is heading to store.",
+    "id": "95f87d78-2b27-42e7-8996-eb129dab5b33",
+    "createdAt": "2026-07-28T08:23:58.047Z"
+  },
+  {
+    "taskId": "e7efb830-28f9-4ad5-97da-fef62d20cec5",
+    "status": "PICKED_UP",
+    "title": "Order Picked Up",
+    "description": "Package picked up from store, out for delivery.",
+    "id": "6febfc82-71b7-44a1-94c6-2cc56ae0b427",
+    "createdAt": "2026-07-28T08:23:58.052Z"
+  },
+  {
+    "taskId": "e7efb830-28f9-4ad5-97da-fef62d20cec5",
+    "status": "OUT_FOR_DELIVERY",
+    "title": "Out For Delivery",
+    "description": "Rider is on the way to the delivery address.",
+    "id": "a8b0084d-736a-4a0e-9425-a846942b8893",
+    "createdAt": "2026-07-28T08:23:58.066Z"
+  },
+  {
+    "taskId": "e7efb830-28f9-4ad5-97da-fef62d20cec5",
+    "status": "ARRIVED",
+    "title": "Rider Arrived",
+    "description": "Rider has arrived at the delivery location.",
+    "id": "0419a225-7d75-48e1-ba07-1d5159a56b91",
+    "createdAt": "2026-07-28T08:23:58.070Z"
+  },
+  {
+    "id": "0ca89d8e-dce9-4dac-b11a-c400384334d1",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-460417 created for order JG-2026-604147.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-460417\"}",
+    "taskId": "c5671d83-ef6e-4dea-9df0-fa44a10c28c2",
+    "createdAt": "2026-07-28T08:23:58.471Z"
+  },
+  {
+    "taskId": "c5671d83-ef6e-4dea-9df0-fa44a10c28c2",
+    "status": "ASSIGNED",
+    "title": "Rider Assigned",
+    "description": "Task assigned to rider Rajesh Rider (9829011111)",
+    "metadataJson": "{\"riderId\":\"rider-1\",\"riderName\":\"Rajesh Rider\"}",
+    "id": "62fe91bb-bfb0-4b44-b2ca-89d411af712f",
+    "createdAt": "2026-07-28T08:23:58.479Z"
+  },
+  {
+    "taskId": "c5671d83-ef6e-4dea-9df0-fa44a10c28c2",
+    "status": "PICKED_UP",
+    "title": "Order Picked Up",
+    "description": "Package picked up from store, out for delivery.",
+    "id": "36e8e55a-7578-496b-ac9f-f9f1a6f381ad",
+    "createdAt": "2026-07-28T08:23:58.482Z"
+  },
+  {
+    "taskId": "c5671d83-ef6e-4dea-9df0-fa44a10c28c2",
+    "status": "DELIVERED",
+    "title": "Delivered Successfully",
+    "description": "OTP verified successfully and order delivered to recipient.",
+    "id": "1704d430-4054-4ef7-85be-4170b3696d4a",
+    "createdAt": "2026-07-28T08:23:58.553Z"
+  },
+  {
+    "id": "d3a8394b-f5fa-49b4-8691-2e625b423e4a",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-414162 created for order JG-2026-824992.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-414162\"}",
+    "taskId": "0e645ed4-bd89-4f2a-9946-c664c0d9b8d3",
+    "createdAt": "2026-07-28T08:23:59.047Z"
+  },
+  {
+    "taskId": "0e645ed4-bd89-4f2a-9946-c664c0d9b8d3",
+    "status": "DELIVERED",
+    "title": "Proof of Delivery Captured & Delivered",
+    "description": "Delivered to Mrs. Sharma (Mother).",
+    "metadataJson": "{\"photoUrl\":\"\",\"recipientName\":\"Mrs. Sharma\",\"recipientRelation\":\"Mother\",\"signature\":\"\",\"notes\":\"Handed over securely\",\"capturedAt\":\"2026-07-28T08:23:59.049Z\"}",
+    "id": "d983aee6-a579-4f31-a32b-c7bcddfe061d",
+    "createdAt": "2026-07-28T08:23:59.055Z"
+  },
+  {
+    "id": "a77198f7-e8ef-4c08-bceb-31b95993bbbc",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-790325 created for order JG-2026-281889.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-790325\"}",
+    "taskId": "556a0fff-354d-4827-9047-4d02ba2dd5f3",
+    "createdAt": "2026-07-28T08:23:59.489Z"
+  },
+  {
+    "taskId": "556a0fff-354d-4827-9047-4d02ba2dd5f3",
+    "status": "FAILED",
+    "title": "Delivery Exception / Failure",
+    "description": "Reason: CUSTOMER_UNAVAILABLE. Notes: Called multiple times, phone switched off",
+    "metadataJson": "{\"reason\":\"CUSTOMER_UNAVAILABLE\",\"notes\":\"Called multiple times, phone switched off\",\"reportedAt\":\"2026-07-28T08:23:59.492Z\"}",
+    "id": "c584f559-04b3-4f38-a1a0-d1cc81b0d6be",
+    "createdAt": "2026-07-28T08:23:59.494Z"
+  },
+  {
+    "id": "103c3605-21d6-49f6-b479-2d770e66a5c9",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-193453 created for order JG-2026-868806.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-193453\"}",
+    "taskId": "29872238-6825-4b15-81c4-b6fbc9519f90",
+    "createdAt": "2026-07-28T08:23:59.976Z"
+  },
+  {
+    "id": "54c75dd9-898c-4a54-9436-9fe1b9d9641b",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-197947 created for order JG-2026-804545.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-197947\"}",
+    "taskId": "53bcd582-a078-476d-9e95-ddb53449f151",
+    "createdAt": "2026-07-28T08:26:29.149Z"
+  },
+  {
+    "id": "e64d90b8-0a3a-4527-948a-7067e511786c",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-916971 created for order JG-2026-978844.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-916971\"}",
+    "taskId": "1078fac7-bcd0-4878-a1c8-47b29edf4805",
+    "createdAt": "2026-07-28T08:26:29.420Z"
+  },
+  {
+    "taskId": "1078fac7-bcd0-4878-a1c8-47b29edf4805",
+    "status": "ASSIGNED",
+    "title": "Rider Assigned",
+    "description": "Task assigned to rider Rajesh Rider (9829011111)",
+    "metadataJson": "{\"riderId\":\"rider-1\",\"riderName\":\"Rajesh Rider\"}",
+    "id": "8bfe181f-bac0-4ce8-92dd-6adebdf55a0a",
+    "createdAt": "2026-07-28T08:26:29.427Z"
+  },
+  {
+    "taskId": "1078fac7-bcd0-4878-a1c8-47b29edf4805",
+    "status": "ASSIGNED",
+    "title": "Rider Assigned",
+    "description": "Task assigned to rider Manoj Delivery (9829022222)",
+    "metadataJson": "{\"riderId\":\"rider-2\",\"riderName\":\"Manoj Delivery\"}",
+    "id": "d16f63e1-22ff-4c77-8367-6970e71452b2",
+    "createdAt": "2026-07-28T08:26:29.431Z"
+  },
+  {
+    "id": "d0d966f9-3057-4e26-9740-19e5755f9423",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-471409 created for order JG-2026-350697.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-471409\"}",
+    "taskId": "25fa9925-8203-4037-888f-c41594145cfd",
+    "createdAt": "2026-07-28T08:26:29.685Z"
+  },
+  {
+    "taskId": "25fa9925-8203-4037-888f-c41594145cfd",
+    "status": "ASSIGNED",
+    "title": "Rider Assigned",
+    "description": "Task assigned to rider Rajesh Rider (9829011111)",
+    "metadataJson": "{\"riderId\":\"rider-1\",\"riderName\":\"Rajesh Rider\"}",
+    "id": "71eeeadc-a3a8-4fc4-b687-07fdd0809f25",
+    "createdAt": "2026-07-28T08:26:29.690Z"
+  },
+  {
+    "taskId": "25fa9925-8203-4037-888f-c41594145cfd",
+    "status": "ACCEPTED",
+    "title": "Rider Accepted Task",
+    "description": "Rider has accepted the delivery task and is heading to store.",
+    "id": "a85986a6-31b5-4c90-996e-e07e9662cc2a",
+    "createdAt": "2026-07-28T08:26:29.694Z"
+  },
+  {
+    "taskId": "25fa9925-8203-4037-888f-c41594145cfd",
+    "status": "PICKED_UP",
+    "title": "Order Picked Up",
+    "description": "Package picked up from store, out for delivery.",
+    "id": "c1cb4cac-46d2-4fea-b02e-cd3675762440",
+    "createdAt": "2026-07-28T08:26:29.698Z"
+  },
+  {
+    "taskId": "25fa9925-8203-4037-888f-c41594145cfd",
+    "status": "OUT_FOR_DELIVERY",
+    "title": "Out For Delivery",
+    "description": "Rider is on the way to the delivery address.",
+    "id": "a407327c-32a7-46cf-8720-31fbebdb42e3",
+    "createdAt": "2026-07-28T08:26:29.714Z"
+  },
+  {
+    "taskId": "25fa9925-8203-4037-888f-c41594145cfd",
+    "status": "ARRIVED",
+    "title": "Rider Arrived",
+    "description": "Rider has arrived at the delivery location.",
+    "id": "5a100e87-7393-4c24-8f85-0c65c7f7e460",
+    "createdAt": "2026-07-28T08:26:29.718Z"
+  },
+  {
+    "id": "9e557fac-90ba-4de2-b379-e3c72269fb11",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-847069 created for order JG-2026-558107.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-847069\"}",
+    "taskId": "70158285-5117-4848-a61b-16d7077f659f",
+    "createdAt": "2026-07-28T08:26:29.981Z"
+  },
+  {
+    "taskId": "70158285-5117-4848-a61b-16d7077f659f",
+    "status": "ASSIGNED",
+    "title": "Rider Assigned",
+    "description": "Task assigned to rider Rajesh Rider (9829011111)",
+    "metadataJson": "{\"riderId\":\"rider-1\",\"riderName\":\"Rajesh Rider\"}",
+    "id": "0532b65c-91ec-4e34-bd1f-ea60f8bd7fe3",
+    "createdAt": "2026-07-28T08:26:29.986Z"
+  },
+  {
+    "taskId": "70158285-5117-4848-a61b-16d7077f659f",
+    "status": "PICKED_UP",
+    "title": "Order Picked Up",
+    "description": "Package picked up from store, out for delivery.",
+    "id": "721d596a-0bc2-4aa1-b477-a88183390542",
+    "createdAt": "2026-07-28T08:26:29.989Z"
+  },
+  {
+    "taskId": "70158285-5117-4848-a61b-16d7077f659f",
+    "status": "DELIVERED",
+    "title": "Delivered Successfully",
+    "description": "OTP verified successfully and order delivered to recipient.",
+    "id": "fbdd16b2-99c1-4beb-836b-1ca488d4a30a",
+    "createdAt": "2026-07-28T08:26:30.008Z"
+  },
+  {
+    "id": "18f35720-d681-4f73-b38c-333c3733a0db",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-817414 created for order JG-2026-540730.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-817414\"}",
+    "taskId": "665cd7ba-9281-4e9c-9609-d58494e9c6c1",
+    "createdAt": "2026-07-28T08:26:30.280Z"
+  },
+  {
+    "taskId": "665cd7ba-9281-4e9c-9609-d58494e9c6c1",
+    "status": "DELIVERED",
+    "title": "Proof of Delivery Captured & Delivered",
+    "description": "Delivered to Mrs. Sharma (Mother).",
+    "metadataJson": "{\"photoUrl\":\"\",\"recipientName\":\"Mrs. Sharma\",\"recipientRelation\":\"Mother\",\"signature\":\"\",\"notes\":\"Handed over securely\",\"capturedAt\":\"2026-07-28T08:26:30.283Z\"}",
+    "id": "f4779624-579c-4116-a4f0-2bb0458fa657",
+    "createdAt": "2026-07-28T08:26:30.285Z"
+  },
+  {
+    "id": "c14db532-f95b-417f-abc6-817f9e787c61",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-413811 created for order JG-2026-643781.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-413811\"}",
+    "taskId": "750cdbe0-f343-4407-a7ff-cb9ac9d41dae",
+    "createdAt": "2026-07-28T08:26:30.541Z"
+  },
+  {
+    "taskId": "750cdbe0-f343-4407-a7ff-cb9ac9d41dae",
+    "status": "FAILED",
+    "title": "Delivery Exception / Failure",
+    "description": "Reason: CUSTOMER_UNAVAILABLE. Notes: Called multiple times, phone switched off",
+    "metadataJson": "{\"reason\":\"CUSTOMER_UNAVAILABLE\",\"notes\":\"Called multiple times, phone switched off\",\"reportedAt\":\"2026-07-28T08:26:30.543Z\"}",
+    "id": "6e49c4b8-b1a8-4cf1-a6fc-644b3040c703",
+    "createdAt": "2026-07-28T08:26:30.546Z"
+  },
+  {
+    "id": "7bbb145d-36c7-40a4-a840-ee69546f2a68",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-864095 created for order JG-2026-167062.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-864095\"}",
+    "taskId": "390fbeec-5ee7-4e8c-8de2-979a172525c4",
+    "createdAt": "2026-07-28T08:26:30.800Z"
+  },
+  {
+    "id": "8a8ceda7-a7ba-496c-b725-882ccd1a7b5a",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-463785 created for order JG-2026-995841.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-463785\"}",
+    "taskId": "67377fc1-0ae8-44a1-8162-1b531f55edba",
+    "createdAt": "2026-07-28T08:37:01.892Z"
+  },
+  {
+    "id": "11900700-e1fa-4515-8c09-12979af61efb",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-265752 created for order JG-2026-883956.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-265752\"}",
+    "taskId": "07bfc3de-be5d-4ed8-8340-df177ed48489",
+    "createdAt": "2026-07-28T08:37:02.207Z"
+  },
+  {
+    "taskId": "07bfc3de-be5d-4ed8-8340-df177ed48489",
+    "status": "ASSIGNED",
+    "title": "Rider Assigned",
+    "description": "Task assigned to rider Rajesh Rider (9829011111)",
+    "metadataJson": "{\"riderId\":\"rider-1\",\"riderName\":\"Rajesh Rider\"}",
+    "id": "57545e38-f6ec-41f4-bd29-2cbc5a53a7f7",
+    "createdAt": "2026-07-28T08:37:02.214Z"
+  },
+  {
+    "taskId": "07bfc3de-be5d-4ed8-8340-df177ed48489",
+    "status": "ASSIGNED",
+    "title": "Rider Assigned",
+    "description": "Task assigned to rider Manoj Delivery (9829022222)",
+    "metadataJson": "{\"riderId\":\"rider-2\",\"riderName\":\"Manoj Delivery\"}",
+    "id": "a9ecc88e-3f87-4db7-8330-2ddd958e5527",
+    "createdAt": "2026-07-28T08:37:02.219Z"
+  },
+  {
+    "id": "60513c5a-763c-4320-8ab6-9cbde5c5960a",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-889048 created for order JG-2026-558899.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-889048\"}",
+    "taskId": "1a8ef211-03cd-46c7-89ec-8d02ddbeb644",
+    "createdAt": "2026-07-28T08:37:02.504Z"
+  },
+  {
+    "taskId": "1a8ef211-03cd-46c7-89ec-8d02ddbeb644",
+    "status": "ASSIGNED",
+    "title": "Rider Assigned",
+    "description": "Task assigned to rider Rajesh Rider (9829011111)",
+    "metadataJson": "{\"riderId\":\"rider-1\",\"riderName\":\"Rajesh Rider\"}",
+    "id": "d8a64b6c-fd6f-4b5d-ade5-d928a054583d",
+    "createdAt": "2026-07-28T08:37:02.509Z"
+  },
+  {
+    "taskId": "1a8ef211-03cd-46c7-89ec-8d02ddbeb644",
+    "status": "ACCEPTED",
+    "title": "Rider Accepted Task",
+    "description": "Rider has accepted the delivery task and is heading to store.",
+    "id": "7e7fae9f-c8ef-4aa2-8b9a-bebc496a731a",
+    "createdAt": "2026-07-28T08:37:02.514Z"
+  },
+  {
+    "taskId": "1a8ef211-03cd-46c7-89ec-8d02ddbeb644",
+    "status": "PICKED_UP",
+    "title": "Order Picked Up",
+    "description": "Package picked up from store, out for delivery.",
+    "id": "4f28a0de-89e9-4865-b96f-490747c24b0a",
+    "createdAt": "2026-07-28T08:37:02.518Z"
+  },
+  {
+    "taskId": "1a8ef211-03cd-46c7-89ec-8d02ddbeb644",
+    "status": "OUT_FOR_DELIVERY",
+    "title": "Out For Delivery",
+    "description": "Rider is on the way to the delivery address.",
+    "id": "ea3da0eb-09c2-434c-92c7-0909ff850e59",
+    "createdAt": "2026-07-28T08:37:02.536Z"
+  },
+  {
+    "taskId": "1a8ef211-03cd-46c7-89ec-8d02ddbeb644",
+    "status": "ARRIVED",
+    "title": "Rider Arrived",
+    "description": "Rider has arrived at the delivery location.",
+    "id": "a5e7fbce-92b2-43c7-81fe-b9fdd83bbae5",
+    "createdAt": "2026-07-28T08:37:02.541Z"
+  },
+  {
+    "id": "8277735f-ce18-4ab6-bc27-4452c7a42705",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-438909 created for order JG-2026-469548.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-438909\"}",
+    "taskId": "28f92400-af6a-4c1f-b70d-4dbc7877a48e",
+    "createdAt": "2026-07-28T08:37:02.835Z"
+  },
+  {
+    "taskId": "28f92400-af6a-4c1f-b70d-4dbc7877a48e",
+    "status": "ASSIGNED",
+    "title": "Rider Assigned",
+    "description": "Task assigned to rider Rajesh Rider (9829011111)",
+    "metadataJson": "{\"riderId\":\"rider-1\",\"riderName\":\"Rajesh Rider\"}",
+    "id": "c421cca7-6bb0-4dd3-a288-aac30a3cf5cb",
+    "createdAt": "2026-07-28T08:37:02.842Z"
+  },
+  {
+    "taskId": "28f92400-af6a-4c1f-b70d-4dbc7877a48e",
+    "status": "PICKED_UP",
+    "title": "Order Picked Up",
+    "description": "Package picked up from store, out for delivery.",
+    "id": "72ce7ffc-2195-43cf-bf61-7a62b1b150d8",
+    "createdAt": "2026-07-28T08:37:02.846Z"
+  },
+  {
+    "taskId": "28f92400-af6a-4c1f-b70d-4dbc7877a48e",
+    "status": "DELIVERED",
+    "title": "Delivered Successfully",
+    "description": "OTP verified successfully and order delivered to recipient.",
+    "id": "496d2a20-7ea9-4266-8257-9fe41e478366",
+    "createdAt": "2026-07-28T08:37:02.889Z"
+  },
+  {
+    "id": "1e09a1f9-965e-4c2d-981a-602bdfd4e2c5",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-311679 created for order JG-2026-317771.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-311679\"}",
+    "taskId": "97a8b554-62e4-4f56-ad50-5a836560edbd",
+    "createdAt": "2026-07-28T08:37:03.221Z"
+  },
+  {
+    "taskId": "97a8b554-62e4-4f56-ad50-5a836560edbd",
+    "status": "DELIVERED",
+    "title": "Proof of Delivery Captured & Delivered",
+    "description": "Delivered to Mrs. Sharma (Mother).",
+    "metadataJson": "{\"photoUrl\":\"\",\"recipientName\":\"Mrs. Sharma\",\"recipientRelation\":\"Mother\",\"signature\":\"\",\"notes\":\"Handed over securely\",\"capturedAt\":\"2026-07-28T08:37:03.224Z\"}",
+    "id": "dc6266c9-af3c-47a1-b2a0-704d7480e9af",
+    "createdAt": "2026-07-28T08:37:03.227Z"
+  },
+  {
+    "id": "d3e1e0df-6b5e-4068-abb4-d123db6d70d6",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-868608 created for order JG-2026-633082.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-868608\"}",
+    "taskId": "56365cf3-d3c1-458b-9723-70fd724b1f97",
+    "createdAt": "2026-07-28T08:37:03.528Z"
+  },
+  {
+    "taskId": "56365cf3-d3c1-458b-9723-70fd724b1f97",
+    "status": "FAILED",
+    "title": "Delivery Exception / Failure",
+    "description": "Reason: CUSTOMER_UNAVAILABLE. Notes: Called multiple times, phone switched off",
+    "metadataJson": "{\"reason\":\"CUSTOMER_UNAVAILABLE\",\"notes\":\"Called multiple times, phone switched off\",\"reportedAt\":\"2026-07-28T08:37:03.531Z\"}",
+    "id": "6c38e455-559b-4abd-8a7b-aaddbc108f27",
+    "createdAt": "2026-07-28T08:37:03.533Z"
+  },
+  {
+    "id": "a4130f66-473a-401c-aafd-57e7f67700a4",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-104118 created for order JG-2026-813484.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-104118\"}",
+    "taskId": "007d41d3-32ed-4cdb-b062-0bedc392b4ed",
+    "createdAt": "2026-07-28T08:37:03.817Z"
+  },
+  {
+    "id": "34b3f044-2563-4c89-a7f1-dd7b6b914f1d",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-848765 created for order JG-2026-741262.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-848765\"}",
+    "taskId": "30595845-1004-47a5-83ba-443e025ceae0",
+    "createdAt": "2026-07-28T09:00:15.317Z"
+  },
+  {
+    "id": "93a11538-b6b1-4cf9-b07e-8432fc81cbdb",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-835494 created for order JG-2026-837039.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-835494\"}",
+    "taskId": "c1b6d2b5-0970-44cf-a838-f65ee5f2bc49",
+    "createdAt": "2026-07-28T09:00:15.656Z"
+  },
+  {
+    "taskId": "c1b6d2b5-0970-44cf-a838-f65ee5f2bc49",
+    "status": "ASSIGNED",
+    "title": "Rider Assigned",
+    "description": "Task assigned to rider Rajesh Rider (9829011111)",
+    "metadataJson": "{\"riderId\":\"rider-1\",\"riderName\":\"Rajesh Rider\"}",
+    "id": "9140f070-1a5a-42e4-9b3d-8d2f6a073019",
+    "createdAt": "2026-07-28T09:00:15.662Z"
+  },
+  {
+    "taskId": "c1b6d2b5-0970-44cf-a838-f65ee5f2bc49",
+    "status": "ASSIGNED",
+    "title": "Rider Assigned",
+    "description": "Task assigned to rider Manoj Delivery (9829022222)",
+    "metadataJson": "{\"riderId\":\"rider-2\",\"riderName\":\"Manoj Delivery\"}",
+    "id": "02ad7e08-f5a7-4958-beea-42232b24907c",
+    "createdAt": "2026-07-28T09:00:15.667Z"
+  },
+  {
+    "id": "255c2577-f4db-4a81-9e8f-306190d36edc",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-932658 created for order JG-2026-827013.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-932658\"}",
+    "taskId": "84cf31e0-0d1c-4430-b32d-32db2ffd0091",
+    "createdAt": "2026-07-28T09:00:15.951Z"
+  },
+  {
+    "taskId": "84cf31e0-0d1c-4430-b32d-32db2ffd0091",
+    "status": "ASSIGNED",
+    "title": "Rider Assigned",
+    "description": "Task assigned to rider Rajesh Rider (9829011111)",
+    "metadataJson": "{\"riderId\":\"rider-1\",\"riderName\":\"Rajesh Rider\"}",
+    "id": "48a41ef6-2022-48d3-b46f-71635c7e56bf",
+    "createdAt": "2026-07-28T09:00:15.957Z"
+  },
+  {
+    "taskId": "84cf31e0-0d1c-4430-b32d-32db2ffd0091",
+    "status": "ACCEPTED",
+    "title": "Rider Accepted Task",
+    "description": "Rider has accepted the delivery task and is heading to store.",
+    "id": "3e447e73-538e-41ce-8dc3-35121bd30fc9",
+    "createdAt": "2026-07-28T09:00:15.961Z"
+  },
+  {
+    "taskId": "84cf31e0-0d1c-4430-b32d-32db2ffd0091",
+    "status": "PICKED_UP",
+    "title": "Order Picked Up",
+    "description": "Package picked up from store, out for delivery.",
+    "id": "2d272ffd-a0c5-4358-936b-75e3349ddee4",
+    "createdAt": "2026-07-28T09:00:15.966Z"
+  },
+  {
+    "taskId": "84cf31e0-0d1c-4430-b32d-32db2ffd0091",
+    "status": "OUT_FOR_DELIVERY",
+    "title": "Out For Delivery",
+    "description": "Rider is on the way to the delivery address.",
+    "id": "ad936f5b-1c32-4fdb-baae-85f80a2f77b0",
+    "createdAt": "2026-07-28T09:00:15.984Z"
+  },
+  {
+    "taskId": "84cf31e0-0d1c-4430-b32d-32db2ffd0091",
+    "status": "ARRIVED",
+    "title": "Rider Arrived",
+    "description": "Rider has arrived at the delivery location.",
+    "id": "3f1860f5-5d37-4d98-8900-73205a767d80",
+    "createdAt": "2026-07-28T09:00:15.991Z"
+  },
+  {
+    "id": "2ec58a14-81f5-45cc-8266-41c84dbf1fe3",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-769060 created for order JG-2026-731497.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-769060\"}",
+    "taskId": "ff752c93-bb02-4334-ab07-e783b62d24e6",
+    "createdAt": "2026-07-28T09:00:16.261Z"
+  },
+  {
+    "taskId": "ff752c93-bb02-4334-ab07-e783b62d24e6",
+    "status": "ASSIGNED",
+    "title": "Rider Assigned",
+    "description": "Task assigned to rider Rajesh Rider (9829011111)",
+    "metadataJson": "{\"riderId\":\"rider-1\",\"riderName\":\"Rajesh Rider\"}",
+    "id": "63db91a8-e6d7-4f7f-867b-144b83151bdd",
+    "createdAt": "2026-07-28T09:00:16.267Z"
+  },
+  {
+    "taskId": "ff752c93-bb02-4334-ab07-e783b62d24e6",
+    "status": "PICKED_UP",
+    "title": "Order Picked Up",
+    "description": "Package picked up from store, out for delivery.",
+    "id": "e8d4795d-84f3-411f-88d6-d35f30fd0a05",
+    "createdAt": "2026-07-28T09:00:16.271Z"
+  },
+  {
+    "taskId": "ff752c93-bb02-4334-ab07-e783b62d24e6",
+    "status": "DELIVERED",
+    "title": "Delivered Successfully",
+    "description": "OTP verified successfully and order delivered to recipient.",
+    "id": "f0c62b0c-0bff-448c-bfe4-12c5221b5122",
+    "createdAt": "2026-07-28T09:00:16.292Z"
+  },
+  {
+    "id": "49a62678-b515-43f1-b09a-c44eb44a0eee",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-159817 created for order JG-2026-549470.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-159817\"}",
+    "taskId": "acae9518-5659-4690-90c7-a804fd4c0804",
+    "createdAt": "2026-07-28T09:00:16.594Z"
+  },
+  {
+    "taskId": "acae9518-5659-4690-90c7-a804fd4c0804",
+    "status": "DELIVERED",
+    "title": "Proof of Delivery Captured & Delivered",
+    "description": "Delivered to Mrs. Sharma (Mother).",
+    "metadataJson": "{\"photoUrl\":\"\",\"recipientName\":\"Mrs. Sharma\",\"recipientRelation\":\"Mother\",\"signature\":\"\",\"notes\":\"Handed over securely\",\"capturedAt\":\"2026-07-28T09:00:16.596Z\"}",
+    "id": "5f605fcb-3874-42db-92f9-05b2580ab4b5",
+    "createdAt": "2026-07-28T09:00:16.598Z"
+  },
+  {
+    "id": "ad60cc13-0dfd-4904-891a-059defda9a5e",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-623247 created for order JG-2026-556374.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-623247\"}",
+    "taskId": "2c495d81-5ce6-4cbf-ac16-333f26439721",
+    "createdAt": "2026-07-28T09:00:16.885Z"
+  },
+  {
+    "taskId": "2c495d81-5ce6-4cbf-ac16-333f26439721",
+    "status": "FAILED",
+    "title": "Delivery Exception / Failure",
+    "description": "Reason: CUSTOMER_UNAVAILABLE. Notes: Called multiple times, phone switched off",
+    "metadataJson": "{\"reason\":\"CUSTOMER_UNAVAILABLE\",\"notes\":\"Called multiple times, phone switched off\",\"reportedAt\":\"2026-07-28T09:00:16.888Z\"}",
+    "id": "7f5a477e-4056-4e42-850e-70947316fa8a",
+    "createdAt": "2026-07-28T09:00:16.890Z"
+  },
+  {
+    "id": "9c5a8e59-7552-4a84-9eee-5b73d4487392",
+    "status": "NEW",
+    "title": "Delivery Task Created",
+    "description": "Delivery task DT-2026-418287 created for order JG-2026-972121.",
+    "metadataJson": "{\"taskNumber\":\"DT-2026-418287\"}",
+    "taskId": "b1869897-af1c-4cf3-b966-7c022a16b182",
+    "createdAt": "2026-07-28T09:00:17.161Z"
   }
 ]

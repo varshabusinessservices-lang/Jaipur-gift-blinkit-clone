@@ -830,6 +830,65 @@ export const productApi = {
     return body.data as ProductDetail;
   },
 
+  async listVariations(productId: string) {
+    const res = await fetch(`${API_BASE}/admin/products/${productId}/variations`);
+    if (!res.ok) throw new Error('Failed to fetch variations');
+    const body = await res.json();
+    return body;
+  },
+
+  async generateVariations(productId: string, input: any) {
+    const res = await fetch(`${API_BASE}/admin/products/${productId}/variations/generate`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(input),
+    });
+    if (!res.ok) throw new Error('Failed to generate variations');
+    const body = await res.json();
+    return body;
+  },
+
+  async bulkUpdateVariations(productId: string, data: any) {
+    const res = await fetch(`${API_BASE}/admin/products/${productId}/variations/bulk-update`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+    if (!res.ok) throw new Error('Failed to bulk update variations');
+    const body = await res.json();
+    return body;
+  },
+
+  async createVariation(productId: string, data: any) {
+    const res = await fetch(`${API_BASE}/admin/products/${productId}/variations`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+    if (!res.ok) throw new Error('Failed to create variation');
+    const body = await res.json();
+    return body;
+  },
+
+  async updateVariation(productId: string, variationId: string, data: any) {
+    const res = await fetch(`${API_BASE}/admin/products/${productId}/variations/${variationId}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+    if (!res.ok) throw new Error('Failed to update variation');
+    const body = await res.json();
+    return body;
+  },
+
+  async deleteVariation(productId: string, variationId: string) {
+    const res = await fetch(`${API_BASE}/admin/products/${productId}/variations/${variationId}`, {
+      method: 'DELETE',
+    });
+    if (!res.ok) throw new Error('Failed to delete variation');
+    return true;
+  },
+
   previewCombinations(selections: AttributeSelectionInput[], maxLimit = 100) {
     return generateVariationCombinations(selections, maxLimit);
   },

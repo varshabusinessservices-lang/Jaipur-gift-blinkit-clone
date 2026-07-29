@@ -1,10 +1,14 @@
-import { prisma } from '../../database/prisma';
+import fs from 'fs';
+import path from 'path';
+import { prisma, shouldAllowFallback } from '../../database/prisma';
 import { 
   CategoryFilterQuery, 
   CreateCategoryDto, 
   UpdateCategoryDto, 
   CategoryReorderItem,
-  CategoryTreeNode
+  CategoryTreeNode,
+  DeleteCategoryOptions,
+  DeleteCategoryMode
 } from './category.types';
 import { 
   slugifyCategoryName, 
@@ -12,11 +16,14 @@ import {
   isDepthAllowed, 
   buildCategoryTree, 
   isDescendant,
+  resolveMediaUrl,
   MAX_CATEGORY_DEPTH
 } from './category.utils';
 
-// In-memory mock category store for fallback mode when database server is unavailable
-const memoryCategories: any[] = [
+const CATEGORIES_FILE = path.join(process.cwd(), 'server', 'src', 'modules', 'categories', 'categories.json');
+
+// Default initial category seed
+const initialCategories: any[] = [
   {
     id: 'cat-001',
     parentId: null,
@@ -174,7 +181,139 @@ const memoryCategories: any[] = [
   }
 ];
 
+function loadCategoriesFromStorage(): any[] {
+  try {
+    if (fs.existsSync(CATEGORIES_FILE)) {
+      const raw = fs.readFileSync(CATEGORIES_FILE, 'utf-8');
+      const data = JSON.parse(raw);
+      if (Array.isArray(data) && data.length > 0) {
+        return data;
+      }
+    }
+  } catch (err) {
+    console.error('Error loading categories from categories.json:', err);
+  }
+  return [...initialCategories];
+}
+
+function saveCategoriesToStorage(categories: any[]) {
+  try {
+    const dir = path.dirname(CATEGORIES_FILE);
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
+    fs.writeFileSync(CATEGORIES_FILE, JSON.stringify(categories, null, 2), 'utf-8');
+  } catch (err) {
+    console.error('Error saving categories to categories.json:', err);
+  }
+}
+
+// Memory category store initialized from storage
+const memoryCategories: any[] = loadCategoriesFromStorage();
+
 export class CategoryRepository {
+  /**
+   * Enriches category objects with media asset objects and resolved URLs.
+   */
+  async enrichCategoriesWithMedia(categories: any[]) {
+    if (!categories || categories.length === 0) return [];
+
+    const fileAssetIds = new Set<string>();
+    categories.forEach((cat) => {
+      if (cat.imageFileId) fileAssetIds.add(cat.imageFileId);
+      if (cat.mobileImageFileId) fileAssetIds.add(cat.mobileImageFileId);
+      if (cat.iconFileId) fileAssetIds.add(cat.iconFileId);
+      if (cat.desktopBannerFileId) fileAssetIds.add(cat.desktopBannerFileId);
+      if (cat.mobileBannerFileId) fileAssetIds.add(cat.mobileBannerFileId);
+      if (cat.seoImageFileId) fileAssetIds.add(cat.seoImageFileId);
+    });
+
+    const fileAssetMap = new Map<string, any>();
+    if (fileAssetIds.size > 0) {
+      try {
+        const assets = await prisma.fileAsset.findMany({
+          where: { id: { in: Array.from(fileAssetIds) } },
+        });
+        assets.forEach((asset) => fileAssetMap.set(asset.id, asset));
+      } catch {
+        // Fallback: Read from fileAssets.json
+        try {
+          const fileAssetsFilePath = path.join(process.cwd(), 'server', 'src', 'modules', 'customerUploads', 'fileAssets.json');
+          if (fs.existsSync(fileAssetsFilePath)) {
+            const raw = fs.readFileSync(fileAssetsFilePath, 'utf-8');
+            const assets = JSON.parse(raw);
+            assets.forEach((a: any) => {
+              if (fileAssetIds.has(a.id)) {
+                fileAssetMap.set(a.id, a);
+              }
+            });
+          }
+        } catch (fErr) {
+          console.error('Failed to read fileAssets.json in CategoryRepository:', fErr);
+        }
+      }
+    }
+
+    return categories.map((cat) => {
+      const mainAsset = cat.imageFileId ? fileAssetMap.get(cat.imageFileId) : null;
+      const mobileAsset = cat.mobileImageFileId ? fileAssetMap.get(cat.mobileImageFileId) : null;
+      const iconAsset = cat.iconFileId ? fileAssetMap.get(cat.iconFileId) : null;
+      const desktopBannerAsset = cat.desktopBannerFileId ? fileAssetMap.get(cat.desktopBannerFileId) : null;
+      const mobileBannerAsset = cat.mobileBannerFileId ? fileAssetMap.get(cat.mobileBannerFileId) : null;
+
+      const mainImageUrl = resolveMediaUrl(mainAsset?.storagePath || cat.imageUrl);
+      const mobileImageUrl = resolveMediaUrl(mobileAsset?.storagePath || cat.mobileImageUrl);
+      const iconUrl = resolveMediaUrl(iconAsset?.storagePath || cat.iconUrl);
+      const desktopBannerUrl = resolveMediaUrl(desktopBannerAsset?.storagePath || cat.desktopBannerUrl);
+      const mobileBannerUrl = resolveMediaUrl(mobileBannerAsset?.storagePath || cat.mobileBannerUrl);
+
+      return {
+        ...cat,
+        imageUrl: mainImageUrl,
+        mobileImageUrl: mobileImageUrl,
+        iconUrl: iconUrl,
+        desktopBannerUrl: desktopBannerUrl,
+        mobileBannerUrl: mobileBannerUrl,
+
+        mainImage: mainImageUrl
+          ? {
+              id: cat.imageFileId || 'media-main',
+              url: mainImageUrl,
+              alt: cat.imageAltText || cat.name,
+            }
+          : null,
+        mobileImage: mobileImageUrl
+          ? {
+              id: cat.mobileImageFileId || 'media-mobile',
+              url: mobileImageUrl,
+              alt: cat.imageAltText || cat.name,
+            }
+          : null,
+        navigationIcon: iconUrl
+          ? {
+              id: cat.iconFileId || 'media-icon',
+              url: iconUrl,
+              alt: cat.name,
+            }
+          : null,
+        desktopBanner: desktopBannerUrl
+          ? {
+              id: cat.desktopBannerFileId || 'media-dt-banner',
+              url: desktopBannerUrl,
+              alt: cat.bannerAltText || cat.name,
+            }
+          : null,
+        mobileBanner: mobileBannerUrl
+          ? {
+              id: cat.mobileBannerFileId || 'media-mb-banner',
+              url: mobileBannerUrl,
+              alt: cat.bannerAltText || cat.name,
+            }
+          : null,
+      };
+    });
+  }
+
   /**
    * Helper to write audit logs safely
    */
@@ -269,7 +408,8 @@ export class CategoryRepository {
           ]
         });
 
-        const tree = buildCategoryTree(allCategories);
+        const enriched = await this.enrichCategoriesWithMedia(allCategories);
+        const tree = buildCategoryTree(enriched);
         return {
           categories: tree,
           total: allCategories.length,
@@ -305,11 +445,13 @@ export class CategoryRepository {
         prisma.category.count({ where })
       ]);
 
+      const enrichedItems = await this.enrichCategoriesWithMedia(items);
+
       return {
-        categories: items.map(cat => ({
+        categories: enrichedItems.map(cat => ({
           ...cat,
           productCount: 0,
-          activeChildCount: cat.children?.filter(c => c.status === 'ACTIVE').length || 0,
+          activeChildCount: cat.children?.filter((c: any) => c.status === 'ACTIVE').length || 0,
         })),
         total,
         page: pNum,
@@ -400,9 +542,12 @@ export class CategoryRepository {
         ]
       });
 
-      return buildCategoryTree(categories);
-    } catch {
-      return buildCategoryTree(memoryCategories.filter(c => !c.deletedAt));
+      const enriched = await this.enrichCategoriesWithMedia(categories);
+      return buildCategoryTree(enriched);
+    } catch (err) {
+      if (!shouldAllowFallback()) throw err;
+      const enrichedMemory = await this.enrichCategoriesWithMedia(memoryCategories.filter(c => !c.deletedAt));
+      return buildCategoryTree(enrichedMemory);
     }
   }
 
@@ -445,6 +590,9 @@ export class CategoryRepository {
 
       if (!category) return null;
 
+      const enrichedList = await this.enrichCategoriesWithMedia([category]);
+      const enrichedCat = enrichedList[0];
+
       // Construct breadcrumbs
       const breadcrumbs: Array<{ id: string; name: string; slug: string }> = [];
       if (category.path) {
@@ -458,7 +606,7 @@ export class CategoryRepository {
       }
 
       return {
-        ...category,
+        ...enrichedCat,
         breadcrumbs,
         analyticsPlaceholder: {
           totalProducts: 0,
@@ -469,7 +617,8 @@ export class CategoryRepository {
           avgOrderValue: 0
         }
       };
-    } catch {
+    } catch (err) {
+      if (!shouldAllowFallback()) throw err;
       const cat = memoryCategories.find(c => c.id === id);
       if (!cat) return null;
 
@@ -506,7 +655,8 @@ export class CategoryRepository {
         }
       });
       return category;
-    } catch {
+    } catch (err) {
+      if (!shouldAllowFallback()) throw err;
       return memoryCategories.find(c => c.slug === slug && (!excludeId || c.id !== excludeId) && !c.deletedAt) || null;
     }
   }
@@ -527,11 +677,13 @@ export class CategoryRepository {
       existing = await this.findCategoryBySlug(finalSlug);
     }
 
+    const normalizedParentId = (data.parentId && data.parentId !== 'null' && data.parentId !== 'undefined' && data.parentId.trim() !== '') ? data.parentId.trim() : null;
+
     let parentCategory: any = null;
-    if (data.parentId) {
-      parentCategory = await this.findCategoryById(data.parentId);
+    if (normalizedParentId) {
+      parentCategory = await this.findCategoryById(normalizedParentId);
       if (!parentCategory) {
-        throw new Error(`Parent category with ID ${data.parentId} not found.`);
+        throw new Error(`Parent category with ID ${normalizedParentId} not found.`);
       }
 
       if (!isDepthAllowed(parentCategory.level, 1)) {
@@ -540,7 +692,7 @@ export class CategoryRepository {
     }
 
     const tempId = `cat-${Date.now()}`;
-    const levelAndPath = calculateLevelAndPath(data.parentId || null, tempId, parentCategory);
+    const levelAndPath = calculateLevelAndPath(normalizedParentId, tempId, parentCategory);
 
     try {
       const created = await prisma.category.create({
@@ -548,7 +700,7 @@ export class CategoryRepository {
           name: data.name,
           slug: finalSlug,
           code: data.code || null,
-          parentId: data.parentId || null,
+          parentId: normalizedParentId,
           storeId: data.storeId || null,
           shortDescription: data.shortDescription || null,
           description: data.description || null,
@@ -556,6 +708,16 @@ export class CategoryRepository {
           iconFileId: data.iconFileId || null,
           desktopBannerFileId: data.desktopBannerFileId || null,
           mobileBannerFileId: data.mobileBannerFileId || null,
+          categoryType: data.categoryType || (normalizedParentId ? "CHILD" : "PARENT"),
+          mobileImageFileId: data.mobileImageFileId || null,
+          showInNavigation: data.showInNavigation !== undefined ? data.showInNavigation : true,
+          showInSearch: data.showInSearch !== undefined ? data.showInSearch : true,
+          showOnDesktop: data.showOnDesktop !== undefined ? data.showOnDesktop : true,
+          showOnMobile: data.showOnMobile !== undefined ? data.showOnMobile : true,
+          imageAltText: data.imageAltText || null,
+          bannerAltText: data.bannerAltText || null,
+          bgColour: data.bgColour || null,
+          textColour: data.textColour || null,
           status: data.status || 'ACTIVE',
           isFeatured: data.isFeatured ?? false,
           showOnHomepage: data.showOnHomepage ?? false,
@@ -571,28 +733,28 @@ export class CategoryRepository {
         }
       });
 
-      // Update path with actual DB ID if different from tempId
-      if (created.id !== tempId) {
-        const realLevelPath = calculateLevelAndPath(data.parentId || null, created.id, parentCategory);
-        const updated = await prisma.category.update({
-          where: { id: created.id },
-          data: { path: realLevelPath.path }
-        });
+      // Update path with actual DB ID
+      const realLevelPath = calculateLevelAndPath(normalizedParentId, created.id, parentCategory);
+      const updated = await prisma.category.update({
+        where: { id: created.id },
+        data: { path: realLevelPath.path }
+      });
 
-        await this.logAudit('CATEGORY_CREATED', updated.id, adminId, null, updated);
-        return updated;
-      }
-
-      await this.logAudit('CATEGORY_CREATED', created.id, adminId, null, created);
-      return created;
-    } catch {
-      // Memory fallback
+      await this.logAudit('CATEGORY_CREATED', updated.id, adminId, null, updated);
+      const memIdx = memoryCategories.findIndex(c => c.id === updated.id);
+      if (memIdx !== -1) memoryCategories[memIdx] = updated;
+      else memoryCategories.push(updated);
+      saveCategoriesToStorage(memoryCategories);
+      const enriched = await this.enrichCategoriesWithMedia([updated]);
+      return enriched[0];
+    } catch (err: any) {
+      if (!shouldAllowFallback()) throw err;
       const newCat = {
         id: tempId,
         name: data.name,
         slug: finalSlug,
         code: data.code || null,
-        parentId: data.parentId || null,
+        parentId: normalizedParentId,
         storeId: data.storeId || null,
         shortDescription: data.shortDescription || null,
         description: data.description || null,
@@ -600,6 +762,16 @@ export class CategoryRepository {
         iconFileId: data.iconFileId || null,
         desktopBannerFileId: data.desktopBannerFileId || null,
         mobileBannerFileId: data.mobileBannerFileId || null,
+        categoryType: data.categoryType || (normalizedParentId ? "CHILD" : "PARENT"),
+        mobileImageFileId: data.mobileImageFileId || null,
+        showInNavigation: data.showInNavigation !== undefined ? data.showInNavigation : true,
+        showInSearch: data.showInSearch !== undefined ? data.showInSearch : true,
+        showOnDesktop: data.showOnDesktop !== undefined ? data.showOnDesktop : true,
+        showOnMobile: data.showOnMobile !== undefined ? data.showOnMobile : true,
+        imageAltText: data.imageAltText || null,
+        bannerAltText: data.bannerAltText || null,
+        bgColour: data.bgColour || null,
+        textColour: data.textColour || null,
         status: data.status || 'ACTIVE',
         isFeatured: data.isFeatured ?? false,
         showOnHomepage: data.showOnHomepage ?? false,
@@ -618,7 +790,9 @@ export class CategoryRepository {
       };
 
       memoryCategories.push(newCat);
-      return newCat;
+      saveCategoriesToStorage(memoryCategories);
+      const enriched = await this.enrichCategoriesWithMedia([newCat]);
+      return enriched[0];
     }
   }
 
@@ -690,6 +864,17 @@ export class CategoryRepository {
           ...(data.iconFileId !== undefined ? { iconFileId: data.iconFileId } : {}),
           ...(data.desktopBannerFileId !== undefined ? { desktopBannerFileId: data.desktopBannerFileId } : {}),
           ...(data.mobileBannerFileId !== undefined ? { mobileBannerFileId: data.mobileBannerFileId } : {}),
+          ...(data.categoryType !== undefined ? { categoryType: data.categoryType } : {}),
+          ...(data.mobileImageFileId !== undefined ? { mobileImageFileId: data.mobileImageFileId } : {}),
+          ...(data.showInNavigation !== undefined ? { showInNavigation: data.showInNavigation } : {}),
+          ...(data.showInSearch !== undefined ? { showInSearch: data.showInSearch } : {}),
+          ...(data.showOnDesktop !== undefined ? { showOnDesktop: data.showOnDesktop } : {}),
+          ...(data.showOnMobile !== undefined ? { showOnMobile: data.showOnMobile } : {}),
+          ...(data.imageAltText !== undefined ? { imageAltText: data.imageAltText } : {}),
+          ...(data.bannerAltText !== undefined ? { bannerAltText: data.bannerAltText } : {}),
+          ...(data.bgColour !== undefined ? { bgColour: data.bgColour } : {}),
+          ...(data.textColour !== undefined ? { textColour: data.textColour } : {}),
+
           ...(data.status !== undefined ? { status: data.status } : {}),
           ...(data.isFeatured !== undefined ? { isFeatured: data.isFeatured } : {}),
           ...(data.showOnHomepage !== undefined ? { showOnHomepage: data.showOnHomepage } : {}),
@@ -710,8 +895,13 @@ export class CategoryRepository {
       }
 
       await this.logAudit('CATEGORY_UPDATED', id, adminId, existing, updated);
-      return updated;
-    } catch {
+      const memIdx = memoryCategories.findIndex(c => c.id === updated.id);
+      if (memIdx !== -1) memoryCategories[memIdx] = { ...memoryCategories[memIdx], ...updated };
+      saveCategoriesToStorage(memoryCategories);
+      const enriched = await this.enrichCategoriesWithMedia([updated]);
+      return enriched[0];
+    } catch (err) {
+      if (!shouldAllowFallback()) throw err;
       // Memory fallback
       const index = memoryCategories.findIndex(c => c.id === id);
       if (index !== -1) {
@@ -724,7 +914,9 @@ export class CategoryRepository {
           updatedByAdminId: adminId || null,
           updatedAt: new Date(),
         };
-        return memoryCategories[index];
+        saveCategoriesToStorage(memoryCategories);
+        const enriched = await this.enrichCategoriesWithMedia([memoryCategories[index]]);
+        return enriched[0];
       }
       throw new Error(`Category with ID ${id} not found.`);
     }
@@ -739,7 +931,8 @@ export class CategoryRepository {
         where: { deletedAt: null },
         select: { id: true, parentId: true, level: true, path: true }
       });
-    } catch {
+    } catch (err) {
+      if (!shouldAllowFallback()) throw err;
       return memoryCategories.filter(c => !c.deletedAt);
     }
   }
@@ -783,7 +976,8 @@ export class CategoryRepository {
 
         await this.updateSubtreePaths(child.id, childLevel, childPath);
       }
-    } catch {
+    } catch (err) {
+      if (!shouldAllowFallback()) throw err;
       // In-memory recursive update
       const children = memoryCategories.filter(c => c.parentId === parentId && !c.deletedAt);
       for (const child of children) {
@@ -814,11 +1008,13 @@ export class CategoryRepository {
 
       await this.logAudit('CATEGORY_STATUS_CHANGED', id, adminId, { status: existing.status }, { status });
       return updated;
-    } catch {
+    } catch (err) {
+      if (!shouldAllowFallback()) throw err;
       const cat = memoryCategories.find(c => c.id === id);
       if (cat) {
         cat.status = status;
         cat.updatedAt = new Date();
+        saveCategoriesToStorage(memoryCategories);
         return cat;
       }
       throw new Error(`Category with ID ${id} not found.`);
@@ -845,44 +1041,235 @@ export class CategoryRepository {
   }
 
   /**
-   * Soft delete category
-   * STRICT SAFETY CHECK: Block deletion if active/non-deleted subcategories exist!
+   * Helper to fetch all active descendant categories recursively
    */
-  async deleteCategory(id: string, adminId?: string) {
+  async getAllDescendantCategories(rootId: string): Promise<any[]> {
+    try {
+      const all = await prisma.category.findMany({
+        where: { deletedAt: null }
+      });
+      const descendants: any[] = [];
+      const collect = (parentId: string) => {
+        const children = all.filter(c => c.parentId === parentId);
+        children.forEach(ch => {
+          descendants.push(ch);
+          collect(ch.id);
+        });
+      };
+      collect(rootId);
+      return descendants;
+    } catch {
+      const descendants: any[] = [];
+      const collect = (parentId: string) => {
+        const children = memoryCategories.filter(c => c.parentId === parentId && !c.deletedAt);
+        children.forEach(ch => {
+          descendants.push(ch);
+          collect(ch.id);
+        });
+      };
+      collect(rootId);
+      return descendants;
+    }
+  }
+
+  /**
+   * Soft delete category with flexible strategies:
+   * SINGLE (default), CASCADE_DESCENDANTS, MOVE_DESCENDANTS, DEACTIVATE_BRANCH
+   */
+  async deleteCategory(id: string, options?: DeleteCategoryOptions, adminId?: string) {
     const existing = await this.findCategoryById(id);
     if (!existing) {
       throw new Error(`Category with ID ${id} not found.`);
     }
 
-    // Check children
-    const activeChildren = existing.children?.filter(c => !c.deletedAt) || [];
-    if (activeChildren.length > 0) {
-      throw new Error(
-        `Cannot delete category '${existing.name}' because it contains ${activeChildren.length} active subcategory/subcategories. Please move or delete the subcategories first.`
-      );
-    }
+    const mode = options?.mode || 'SINGLE';
+    const targetParentId = options?.targetParentId;
+    const descendants = await this.getAllDescendantCategories(id);
+    const activeChildren = existing.children?.filter((c: any) => !c.deletedAt) || [];
+    const directChildrenCount = activeChildren.length;
+    const totalDescendantsCount = descendants.length;
 
-    try {
-      const deleted = await prisma.category.update({
-        where: { id },
-        data: {
-          deletedAt: new Date(),
-          status: 'ARCHIVED',
-          updatedByAdminId: adminId || null,
+    // Helper to sync memory and json file
+    const syncMemoryAndStorageSoftDelete = (targetIds: string[]) => {
+      const now = new Date();
+      targetIds.forEach(tid => {
+        const cat = memoryCategories.find(c => c.id === tid);
+        if (cat) {
+          cat.deletedAt = now;
+          cat.status = 'ARCHIVED';
         }
       });
+      saveCategoriesToStorage(memoryCategories);
+    };
 
-      await this.logAudit('CATEGORY_DELETED', id, adminId, existing, deleted);
-      return { success: true, message: `Category '${existing.name}' deleted successfully.` };
-    } catch {
-      const cat = memoryCategories.find(c => c.id === id);
-      if (cat) {
-        cat.deletedAt = new Date();
-        cat.status = 'ARCHIVED';
-        return { success: true, message: `Category '${existing.name}' deleted successfully.` };
+    const syncMemoryAndStorageStatusChange = (targetIds: string[], newStatus: string) => {
+      targetIds.forEach(tid => {
+        const cat = memoryCategories.find(c => c.id === tid);
+        if (cat) {
+          cat.status = newStatus;
+          cat.updatedAt = new Date();
+        }
+      });
+      saveCategoriesToStorage(memoryCategories);
+    };
+
+    if (mode === 'SINGLE') {
+      if (directChildrenCount > 0) {
+        const err: any = new Error(
+          `Cannot delete category '${existing.name}' because it contains ${directChildrenCount} active subcategory/subcategories.`
+        );
+        err.code = 'CATEGORY_HAS_DESCENDANTS';
+        err.data = {
+          categoryId: id,
+          categoryName: existing.name,
+          directChildrenCount,
+          totalDescendantsCount,
+        };
+        throw err;
       }
-      throw new Error(`Failed to delete category.`);
+
+      // Perform soft delete on target category
+      try {
+        await prisma.category.update({
+          where: { id },
+          data: {
+            deletedAt: new Date(),
+            status: 'ARCHIVED',
+            updatedByAdminId: adminId || null,
+          }
+        });
+      } catch (err) {
+        if (!shouldAllowFallback()) throw err;
+      }
+
+      syncMemoryAndStorageSoftDelete([id]);
+      await this.logAudit('CATEGORY_DELETED', id, adminId, existing, { deletedAt: new Date(), status: 'ARCHIVED' });
+      return {
+        success: true,
+        message: `Category '${existing.name}' deleted successfully.`,
+        data: { id, mode: 'SINGLE' }
+      };
     }
+
+    if (mode === 'CASCADE_DESCENDANTS') {
+      const targetIds = [id, ...descendants.map(d => d.id)];
+      try {
+        await prisma.category.updateMany({
+          where: { id: { in: targetIds } },
+          data: {
+            deletedAt: new Date(),
+            status: 'ARCHIVED',
+            updatedByAdminId: adminId || null,
+          }
+        });
+      } catch (err) {
+        if (!shouldAllowFallback()) throw err;
+      }
+
+      syncMemoryAndStorageSoftDelete(targetIds);
+      await this.logAudit('CATEGORY_CASCADE_DELETED', id, adminId, existing, { deletedCount: targetIds.length });
+      return {
+        success: true,
+        message: `Category '${existing.name}' and ${descendants.length} descendant(s) deleted successfully.`,
+        data: { id, mode: 'CASCADE_DESCENDANTS', deletedCount: targetIds.length }
+      };
+    }
+
+    if (mode === 'MOVE_DESCENDANTS') {
+      const normTargetParentId = (targetParentId && targetParentId !== 'null' && targetParentId !== 'root') ? targetParentId.trim() : null;
+
+      if (normTargetParentId === id) {
+        throw new Error('Cannot move subcategories to the category being deleted.');
+      }
+
+      const descendantIds = descendants.map(d => d.id);
+      if (normTargetParentId && descendantIds.includes(normTargetParentId)) {
+        throw new Error('Cannot move subcategories under one of its own subcategories.');
+      }
+
+      let newParentCategory: any = null;
+      if (normTargetParentId) {
+        newParentCategory = await this.findCategoryById(normTargetParentId);
+        if (!newParentCategory) {
+          throw new Error(`Target parent category with ID ${normTargetParentId} not found.`);
+        }
+      }
+
+      // Re-assign direct children
+      for (const child of activeChildren) {
+        const levelAndPath = calculateLevelAndPath(normTargetParentId, child.id, newParentCategory);
+        try {
+          await prisma.category.update({
+            where: { id: child.id },
+            data: {
+              parentId: normTargetParentId,
+              level: levelAndPath.level,
+              path: levelAndPath.path,
+              updatedByAdminId: adminId || null,
+            }
+          });
+          await this.updateSubtreePaths(child.id, levelAndPath.level, levelAndPath.path);
+        } catch (err) {
+          if (!shouldAllowFallback()) throw err;
+        }
+
+        // Update memory categories
+        const memChild = memoryCategories.find(c => c.id === child.id);
+        if (memChild) {
+          memChild.parentId = normTargetParentId;
+          memChild.level = levelAndPath.level;
+          memChild.path = levelAndPath.path;
+          this.updateSubtreePaths(child.id, levelAndPath.level, levelAndPath.path);
+        }
+      }
+
+      // Now soft-delete target category
+      try {
+        await prisma.category.update({
+          where: { id },
+          data: {
+            deletedAt: new Date(),
+            status: 'ARCHIVED',
+            updatedByAdminId: adminId || null,
+          }
+        });
+      } catch (err) {
+        if (!shouldAllowFallback()) throw err;
+      }
+
+      syncMemoryAndStorageSoftDelete([id]);
+      await this.logAudit('CATEGORY_MOVED_AND_DELETED', id, adminId, existing, { movedCount: activeChildren.length });
+      return {
+        success: true,
+        message: `Subcategories moved and category '${existing.name}' deleted successfully.`,
+        data: { id, mode: 'MOVE_DESCENDANTS', movedCount: activeChildren.length }
+      };
+    }
+
+    if (mode === 'DEACTIVATE_BRANCH') {
+      const targetIds = [id, ...descendants.map(d => d.id)];
+      try {
+        await prisma.category.updateMany({
+          where: { id: { in: targetIds } },
+          data: {
+            status: 'INACTIVE',
+            updatedByAdminId: adminId || null,
+          }
+        });
+      } catch (err) {
+        if (!shouldAllowFallback()) throw err;
+      }
+
+      syncMemoryAndStorageStatusChange(targetIds, 'INACTIVE');
+      await this.logAudit('CATEGORY_BRANCH_DEACTIVATED', id, adminId, existing, { deactivatedCount: targetIds.length });
+      return {
+        success: true,
+        message: `Category '${existing.name}' and ${descendants.length} descendant(s) deactivated successfully.`,
+        data: { id, mode: 'DEACTIVATE_BRANCH', deactivatedCount: targetIds.length }
+      };
+    }
+
+    throw new Error(`Invalid deletion mode: ${mode}`);
   }
 
   /**
@@ -901,11 +1288,13 @@ export class CategoryRepository {
 
       await this.logAudit('CATEGORY_RESTORED', id, adminId, null, restored);
       return restored;
-    } catch {
+    } catch (err) {
+      if (!shouldAllowFallback()) throw err;
       const cat = memoryCategories.find(c => c.id === id);
       if (cat) {
         cat.deletedAt = null;
         cat.status = 'ACTIVE';
+        saveCategoriesToStorage(memoryCategories);
         return cat;
       }
       throw new Error(`Category with ID ${id} not found.`);

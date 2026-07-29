@@ -1,15 +1,15 @@
 [
   {
-    "id": "947c40bf-297d-43ae-84c5-55a6355433c7",
-    "startedAt": "2026-07-27T15:09:45.499Z",
-    "completedAt": "2026-07-27T15:09:45.499Z",
+    "id": "49467231-a48c-43f7-abcb-b5f9b2e9da21",
+    "startedAt": "2026-07-28T09:00:26.906Z",
+    "completedAt": "2026-07-28T09:00:26.907Z",
     "dryRun": false,
     "status": "SUCCESS",
     "scannedCount": 2,
     "expiredCount": 0,
     "skippedCount": 2,
     "failedCount": 0,
-    "createdAt": "2026-07-27T15:09:45.499Z",
-    "updatedAt": "2026-07-27T15:09:45.502Z"
+    "createdAt": "2026-07-28T09:00:26.906Z",
+    "updatedAt": "2026-07-28T09:00:26.911Z"
   }
 ]

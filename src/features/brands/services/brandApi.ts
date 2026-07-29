@@ -20,9 +20,7 @@ let mockBrands: Brand[] = [
     shortDescription: 'In-house studio crafting custom acrylic & wooden LED photo frames.',
     description: 'Premier Jaipur photo frame studio specializing in high-definition UV printed acrylic frames, customized LED wooden frames, and memory shadow boxes.',
     logoFileId: 'img-logo-001',
-    bannerFileId: 'img-banner-001',
     logoUrl: 'https://images.unsplash.com/photo-1513885535751-8b9238bd345a?auto=format&fit=crop&q=80&w=200',
-    bannerUrl: 'https://images.unsplash.com/photo-1513885535751-8b9238bd345a?auto=format&fit=crop&q=80&w=1200',
     seoImageFileId: null,
     websiteUrl: 'https://jaipurgifts.example.com/brands/photo-frame-studio',
     status: 'ACTIVE',
@@ -47,9 +45,7 @@ let mockBrands: Brand[] = [
     shortDescription: 'Handcrafted authentic Jaipuri keepsakes and personalised wooden crafts.',
     description: 'Traditional and contemporary gift collection showcasing handcrafted blue pottery motifs, brass engravings, and custom name plaques.',
     logoFileId: null,
-    bannerFileId: null,
     logoUrl: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901?auto=format&fit=crop&q=80&w=200',
-    bannerUrl: null,
     seoImageFileId: null,
     websiteUrl: 'https://jaipurgifts.example.com',
     status: 'ACTIVE',
@@ -74,9 +70,7 @@ let mockBrands: Brand[] = [
     shortDescription: 'Curated gift hampers for birthdays, anniversaries, and festive moments.',
     description: 'Exclusive celebration kits combining personalised memory items, premium chocolates, and greeting cards.',
     logoFileId: null,
-    bannerFileId: null,
     logoUrl: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=200',
-    bannerUrl: null,
     seoImageFileId: null,
     websiteUrl: null,
     status: 'ACTIVE',
@@ -160,11 +154,12 @@ export const brandApi = {
     if (filters.sortBy) queryParams.set('sortBy', filters.sortBy);
     if (filters.sortOrder) queryParams.set('sortOrder', filters.sortOrder);
 
-    const res = await fetch(`${API_BASE}/api/v1/admin/brands?${queryParams.toString()}`, {
+    const token = localStorage.getItem('admin_token');
+    const res = await fetch(`${API_BASE}/admin/brands?${queryParams.toString()}`, {
       headers: {
         'Content-Type': 'application/json',
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
       },
-      credentials: 'include',
     });
 
     if (!res.ok) {
@@ -192,8 +187,12 @@ export const brandApi = {
       return found;
     }
 
-    const res = await fetch(`${API_BASE}/api/v1/admin/brands/${id}`, {
-      credentials: 'include',
+    const token = localStorage.getItem('admin_token');
+    const res = await fetch(`${API_BASE}/admin/brands/${id}`, {
+      headers: {
+        'Content-Type': 'application/json',
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      },
     });
 
     if (!res.ok) {
@@ -224,7 +223,6 @@ export const brandApi = {
         description: data.description || null,
         shortDescription: data.shortDescription || null,
         logoFileId: data.logoFileId || null,
-        bannerFileId: data.bannerFileId || null,
         seoImageFileId: data.seoImageFileId || null,
         websiteUrl: data.websiteUrl || null,
         status: data.status || 'ACTIVE',
@@ -245,10 +243,13 @@ export const brandApi = {
       return newBrand;
     }
 
-    const res = await fetch(`${API_BASE}/api/v1/admin/brands`, {
+    const token = localStorage.getItem('admin_token');
+    const res = await fetch(`${API_BASE}/admin/brands`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      },
       body: JSON.stringify(data),
     });
 
@@ -283,10 +284,13 @@ export const brandApi = {
       return mockBrands[idx];
     }
 
-    const res = await fetch(`${API_BASE}/api/v1/admin/brands/${id}`, {
+    const token = localStorage.getItem('admin_token');
+    const res = await fetch(`${API_BASE}/admin/brands/${id}`, {
       method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      },
       body: JSON.stringify(data),
     });
 
@@ -320,9 +324,13 @@ export const brandApi = {
       return;
     }
 
-    const res = await fetch(`${API_BASE}/api/v1/admin/brands/${id}`, {
+    const token = localStorage.getItem('admin_token');
+    const res = await fetch(`${API_BASE}/admin/brands/${id}`, {
       method: 'DELETE',
-      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      },
     });
 
     if (!res.ok) {
@@ -344,9 +352,13 @@ export const brandApi = {
       return item;
     }
 
-    const res = await fetch(`${API_BASE}/api/v1/admin/brands/${id}/restore`, {
+    const token = localStorage.getItem('admin_token');
+    const res = await fetch(`${API_BASE}/admin/brands/${id}/restore`, {
       method: 'POST',
-      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      },
     });
 
     if (!res.ok) {
@@ -369,7 +381,6 @@ export const brandApi = {
         description: item.description,
         shortDescription: item.shortDescription,
         logoFileId: item.logoFileId,
-        bannerFileId: item.bannerFileId,
         seoImageFileId: item.seoImageFileId,
         websiteUrl: item.websiteUrl,
         status: 'INACTIVE',
@@ -381,14 +392,63 @@ export const brandApi = {
       });
     }
 
-    const res = await fetch(`${API_BASE}/api/v1/admin/brands/${id}/duplicate`, {
+    const token = localStorage.getItem('admin_token');
+    const res = await fetch(`${API_BASE}/admin/brands/${id}/duplicate`, {
       method: 'POST',
-      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      },
     });
 
     if (!res.ok) {
       const err = await res.json().catch(() => ({}));
       throw new Error(err.message || 'Failed to duplicate brand');
+    }
+
+    const json = await res.json();
+    return json.data;
+  },
+
+  async uploadMedia(file: File, role: string = 'BRAND_LOGO'): Promise<{
+    fileAssetId: string;
+    originalName: string;
+    url: string;
+    role: string;
+  }> {
+    const isMock = config.adminUseMockApi ?? config.useMockApi;
+
+    if (isMock) {
+      await new Promise((r) => setTimeout(r, 600)); // Simulate upload lag
+      const fakeId = `file-${Math.random().toString(36).substr(2, 9)}`;
+      let url = 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=400';
+      if (role === 'SEO_IMAGE') {
+        url = 'https://images.unsplash.com/photo-1432821596592-e2c18b78144f?auto=format&fit=crop&q=80&w=600';
+      }
+      return {
+        fileAssetId: fakeId,
+        originalName: file.name,
+        url,
+        role,
+      };
+    }
+
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('role', role);
+
+    const token = localStorage.getItem('admin_token');
+    const res = await fetch(`${API_BASE}/admin/brands/media`, {
+      method: 'POST',
+      headers: {
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      },
+      body: formData,
+    });
+
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.message || 'Failed to upload brand media');
     }
 
     const json = await res.json();
@@ -421,8 +481,12 @@ export const brandApi = {
     if (query.activeOnly !== undefined) queryParams.set('activeOnly', String(query.activeOnly));
     if (query.search) queryParams.set('search', query.search);
 
-    const res = await fetch(`${API_BASE}/api/v1/admin/brands/options?${queryParams.toString()}`, {
-      credentials: 'include',
+    const token = localStorage.getItem('admin_token');
+    const res = await fetch(`${API_BASE}/admin/brands/options?${queryParams.toString()}`, {
+      headers: {
+        'Content-Type': 'application/json',
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      },
     });
 
     if (!res.ok) {

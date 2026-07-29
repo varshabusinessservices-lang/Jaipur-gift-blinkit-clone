@@ -2,6 +2,7 @@ import React from 'react';
 import { clsx } from 'clsx';
 
 interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  className?: string;
   icon: React.ReactNode;
   label: string;
   variant?: 'primary' | 'outline' | 'ghost';

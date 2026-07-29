@@ -6,7 +6,8 @@ import {
   CategoryFormData, 
   CategoryFilterState, 
   CategoryStatus,
-  CategoryReorderPayload 
+  CategoryReorderPayload,
+  DeleteCategoryPayload
 } from '../types/category';
 
 export function useCategories() {
@@ -44,6 +45,7 @@ export function useCategories() {
   const [formModalOpen, setFormModalOpen] = useState<boolean>(false);
   const [editingCategory, setEditingCategory] = useState<Category | null>(null);
   const [defaultParentId, setDefaultParentId] = useState<string | null>(null);
+  const [categoryFormMode, setCategoryFormMode] = useState<'PARENT' | 'CHILD' | 'SUB_CHILD'>('PARENT');
 
   const [detailModalOpen, setDetailModalOpen] = useState<boolean>(false);
   const [reorderModalOpen, setReorderModalOpen] = useState<boolean>(false);
@@ -119,8 +121,46 @@ export function useCategories() {
   const handleCreateCategory = async (data: CategoryFormData) => {
     try {
       setError(null);
-      await categoryApi.createCategory(data);
-      setActionSuccess(`Category '${data.name}' created successfully.`);
+      let createdRes: Category;
+      if (categoryFormMode === 'PARENT') {
+        createdRes = await categoryApi.createParentCategory(data);
+      } else if (categoryFormMode === 'CHILD') {
+        createdRes = await categoryApi.createChildCategory(data);
+      } else if (categoryFormMode === 'SUB_CHILD') {
+        createdRes = await categoryApi.createSubChildCategory(data);
+      } else {
+        createdRes = await categoryApi.createCategory(data);
+      }
+
+      if (!createdRes || !createdRes.id) {
+        throw new Error('Category save failed: Backend returned invalid response or missing ID.');
+      }
+
+      // Re-fetch category tree to verify database persistence
+      const freshTree = await categoryApi.getCategoryTree();
+      
+      const findNodeInTree = (nodes: CategoryTreeNode[], targetId: string): boolean => {
+        for (const node of nodes) {
+          if (node.id === targetId) return true;
+          if (node.children && node.children.length > 0 && findNodeInTree(node.children, targetId)) {
+            return true;
+          }
+        }
+        return false;
+      };
+
+      const existsInFreshTree = findNodeInTree(freshTree, createdRes.id);
+      
+      if (!existsInFreshTree) {
+        const freshList = await categoryApi.getCategories({ limit: 100 });
+        const existsInList = freshList.data?.some(c => c.id === createdRes.id);
+        if (!existsInList) {
+          throw new Error('Category could not be verified after saving.');
+        }
+      }
+
+      setTreeData(freshTree);
+      setActionSuccess(`Category '${createdRes.name}' created successfully.`);
       setFormModalOpen(false);
       setEditingCategory(null);
       setDefaultParentId(null);
@@ -135,8 +175,16 @@ export function useCategories() {
   const handleUpdateCategory = async (id: string, data: Partial<CategoryFormData>) => {
     try {
       setError(null);
-      await categoryApi.updateCategory(id, data);
-      setActionSuccess(`Category updated successfully.`);
+      const updatedRes = await categoryApi.updateCategory(id, data);
+      if (!updatedRes || !updatedRes.id) {
+        throw new Error('Category update failed: Backend returned invalid response.');
+      }
+
+      // Verification: Refetch category tree from backend
+      const freshTree = await categoryApi.getCategoryTree();
+      setTreeData(freshTree);
+
+      setActionSuccess(`Category '${updatedRes.name || 'Category'}' updated successfully.`);
       setFormModalOpen(false);
       setEditingCategory(null);
       await refresh();
@@ -150,7 +198,15 @@ export function useCategories() {
   const handleStatusToggle = async (id: string, status: CategoryStatus) => {
     try {
       setError(null);
-      await categoryApi.updateStatus(id, status);
+      const updatedRes = await categoryApi.updateStatus(id, status);
+      if (!updatedRes || updatedRes.status !== status) {
+        throw new Error(`Status update verification failed: Expected '${status}' but received '${updatedRes?.status}'.`);
+      }
+
+      // Verification: Refetch category tree from backend
+      const freshTree = await categoryApi.getCategoryTree();
+      setTreeData(freshTree);
+
       setActionSuccess(`Category status updated to ${status}.`);
       await refresh();
       setTimeout(() => setActionSuccess(null), 3000);
@@ -163,6 +219,8 @@ export function useCategories() {
     try {
       setError(null);
       await categoryApi.reorderCategories(payload);
+      const freshTree = await categoryApi.getCategoryTree();
+      setTreeData(freshTree);
       setActionSuccess('Category sorting updated successfully.');
       setReorderModalOpen(false);
       await refresh();
@@ -172,17 +230,41 @@ export function useCategories() {
     }
   };
 
-  const handleDelete = async (id: string) => {
+  const handleDelete = async (id: string, payload?: DeleteCategoryPayload) => {
     try {
       setError(null);
-      await categoryApi.deleteCategory(id);
-      setActionSuccess('Category deleted successfully.');
+      const res = await categoryApi.deleteCategory(id, payload);
+
+      // Verification step: Refetch tree from backend to confirm deletion
+      const freshTree = await categoryApi.getCategoryTree();
+
+      const findNodeInTree = (nodes: CategoryTreeNode[], targetId: string): boolean => {
+        for (const node of nodes) {
+          if (node.id === targetId) return true;
+          if (node.children && node.children.length > 0 && findNodeInTree(node.children, targetId)) {
+            return true;
+          }
+        }
+        return false;
+      };
+
+      const mode = payload?.mode || 'SINGLE';
+      if (mode !== 'DEACTIVATE_BRANCH') {
+        const stillExistsInTree = findNodeInTree(freshTree, id);
+        if (stillExistsInTree) {
+          throw new Error(`Category deletion verification failed: Category '${id}' still present in backend tree.`);
+        }
+      }
+
+      setTreeData(freshTree);
+      setActionSuccess(res?.message || 'Category deleted successfully.');
       setDeleteModalOpen(false);
       setCategoryToDelete(null);
       await refresh();
-      setTimeout(() => setActionSuccess(null), 3000);
+      setTimeout(() => setActionSuccess(null), 3500);
     } catch (err: any) {
       setError(err.message || 'Failed to delete category');
+      throw err;
     }
   };
 
@@ -199,13 +281,22 @@ export function useCategories() {
   };
 
   // Helper trigger modals
-  const openCreateModal = (parentId: string | null = null) => {
+  const openCreateModal = (parentId: string | null = null, mode?: 'PARENT' | 'CHILD' | 'SUB_CHILD') => {
+    if (mode) setCategoryFormMode(mode);
+    else setCategoryFormMode(parentId ? 'CHILD' : 'PARENT');
     setEditingCategory(null);
     setDefaultParentId(parentId);
     setFormModalOpen(true);
   };
 
   const openEditModal = (category: Category) => {
+    if (category.level === 1) {
+      setCategoryFormMode('PARENT');
+    } else if (category.level === 2) {
+      setCategoryFormMode('CHILD');
+    } else if (category.level === 3) {
+      setCategoryFormMode('SUB_CHILD');
+    }
     setEditingCategory(category);
     setDefaultParentId(category.parentId);
     setFormModalOpen(true);
@@ -249,6 +340,8 @@ export function useCategories() {
     setFormModalOpen,
     editingCategory,
     defaultParentId,
+    categoryFormMode,
+    setCategoryFormMode,
     
     detailModalOpen,
     setDetailModalOpen,

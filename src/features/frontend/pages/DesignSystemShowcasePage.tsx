@@ -19,6 +19,7 @@ export function DesignSystemShowcasePage() {
 
   const sampleProduct = {
     id: 'sample-1',
+    slug: 'royal-truffle-celebration-hamper',
     name: 'Royal Truffle Celebration Hamper',
     subtitle: 'Handcrafted artisan chocolates & gourmet cookies',
     price: 1499,
@@ -46,7 +47,7 @@ export function DesignSystemShowcasePage() {
   };
 
   return (
-    <PublicLayout title="Design System Showcase | Jaipur Gifting">
+    <div className="min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
         
         {/* Hero Banner */}
@@ -158,6 +159,6 @@ export function DesignSystemShowcasePage() {
           </div>
         </div>
       </Drawer>
-    </PublicLayout>
+    </div>
   );
 }

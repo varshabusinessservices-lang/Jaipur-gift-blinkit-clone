@@ -33,7 +33,7 @@ export function ApiStatus() {
       case "mock":
         return { label: "Mock API", dotClass: "bg-amber-400" };
       case "connected":
-        return { label: "API Connected", dotClass: "bg-green-500" };
+        return { label: "REAL API", dotClass: "bg-green-500" };
       case "unavailable":
         return { label: "API Unavailable", dotClass: "bg-red-500" };
       default:

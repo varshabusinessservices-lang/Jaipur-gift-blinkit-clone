@@ -196,7 +196,7 @@ export class CheckoutRepository {
   async findWalletReservationsByCheckout(checkoutId: string): Promise<any[]> {
     try {
       if (!shouldAllowFallback()) {
-        return await prisma.walletReservation.findMany({ where: { checkoutId } });
+        return await prisma.walletReservation.findMany({ where: { checkoutSessionId: checkoutId } });
       }
     } catch (err) {}
 

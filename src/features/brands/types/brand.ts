@@ -9,10 +9,10 @@ export interface Brand {
   description?: string | null;
   shortDescription?: string | null;
   logoFileId?: string | null;
-  bannerFileId?: string | null;
+  logoAltText?: string | null;
   seoImageFileId?: string | null;
+  seoImageAltText?: string | null;
   logoUrl?: string | null;
-  bannerUrl?: string | null;
   seoImageUrl?: string | null;
   websiteUrl?: string | null;
   status: BrandStatus;
@@ -37,8 +37,11 @@ export interface BrandFormData {
   description?: string | null;
   shortDescription?: string | null;
   logoFileId?: string | null;
-  bannerFileId?: string | null;
+  logoAltText?: string | null;
   seoImageFileId?: string | null;
+  seoImageAltText?: string | null;
+  logoUrl?: string | null;
+  seoImageUrl?: string | null;
   websiteUrl?: string | null;
   status: BrandStatus;
   isFeatured: boolean;

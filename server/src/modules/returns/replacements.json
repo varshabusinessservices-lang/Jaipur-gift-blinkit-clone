@@ -88,5 +88,86 @@
     "status": "REPLACEMENT_INITIATED",
     "createdAt": "2026-07-27T15:09:47.334Z",
     "updatedAt": "2026-07-27T15:09:47.334Z"
+  },
+  {
+    "id": "rep-1785209570378",
+    "replacementNumber": "REP-2026-592046",
+    "returnId": "ret-1785209570375",
+    "originalOrderId": "6fefd6e8-cde7-4980-8e29-e048c4a20ade",
+    "status": "REPLACEMENT_INITIATED",
+    "createdAt": "2026-07-28T03:32:50.378Z",
+    "updatedAt": "2026-07-28T03:32:50.378Z"
+  },
+  {
+    "id": "rep-1785210240287",
+    "replacementNumber": "REP-2026-781731",
+    "returnId": "ret-1785210240283",
+    "originalOrderId": "05ad7c96-470e-4027-9613-16f6589f258d",
+    "status": "REPLACEMENT_INITIATED",
+    "createdAt": "2026-07-28T03:44:00.287Z",
+    "updatedAt": "2026-07-28T03:44:00.287Z"
+  },
+  {
+    "id": "rep-1785224207569",
+    "replacementNumber": "REP-2026-564154",
+    "returnId": "ret-1785224207564",
+    "originalOrderId": "e509d7a3-b7f0-4a07-9be4-af7efd4ce4f9",
+    "status": "REPLACEMENT_INITIATED",
+    "createdAt": "2026-07-28T07:36:47.569Z",
+    "updatedAt": "2026-07-28T07:36:47.569Z"
+  },
+  {
+    "id": "rep-1785224437972",
+    "replacementNumber": "REP-2026-488955",
+    "returnId": "ret-1785224437966",
+    "originalOrderId": "d5cee54f-babe-4cee-a369-35badd36d8be",
+    "status": "REPLACEMENT_INITIATED",
+    "createdAt": "2026-07-28T07:40:37.972Z",
+    "updatedAt": "2026-07-28T07:40:37.972Z"
+  },
+  {
+    "id": "rep-1785226754552",
+    "replacementNumber": "REP-2026-767947",
+    "returnId": "ret-1785226754547",
+    "originalOrderId": "029580c7-2a05-4a6d-a8ef-3104cd7ba439",
+    "status": "REPLACEMENT_INITIATED",
+    "createdAt": "2026-07-28T08:19:14.553Z",
+    "updatedAt": "2026-07-28T08:19:14.553Z"
+  },
+  {
+    "id": "rep-1785227043380",
+    "replacementNumber": "REP-2026-152018",
+    "returnId": "ret-1785227043376",
+    "originalOrderId": "109b32bb-83b3-4d64-92ec-3a29cc6494b6",
+    "status": "REPLACEMENT_INITIATED",
+    "createdAt": "2026-07-28T08:24:03.380Z",
+    "updatedAt": "2026-07-28T08:24:03.380Z"
+  },
+  {
+    "id": "rep-1785227192916",
+    "replacementNumber": "REP-2026-732866",
+    "returnId": "ret-1785227192911",
+    "originalOrderId": "dd9560e5-be17-4d5c-8795-81f26b900d4a",
+    "status": "REPLACEMENT_INITIATED",
+    "createdAt": "2026-07-28T08:26:32.917Z",
+    "updatedAt": "2026-07-28T08:26:32.917Z"
+  },
+  {
+    "id": "rep-1785227820300",
+    "replacementNumber": "REP-2026-948593",
+    "returnId": "ret-1785227820295",
+    "originalOrderId": "e9c46e11-2923-428a-a33f-9ce5f398ddad",
+    "status": "REPLACEMENT_INITIATED",
+    "createdAt": "2026-07-28T08:37:00.301Z",
+    "updatedAt": "2026-07-28T08:37:00.301Z"
+  },
+  {
+    "id": "rep-1785229219325",
+    "replacementNumber": "REP-2026-201735",
+    "returnId": "ret-1785229219319",
+    "originalOrderId": "68d52ab3-cecd-42f2-adce-8c8c9df2e821",
+    "status": "REPLACEMENT_INITIATED",
+    "createdAt": "2026-07-28T09:00:19.325Z",
+    "updatedAt": "2026-07-28T09:00:19.325Z"
   }
 ]

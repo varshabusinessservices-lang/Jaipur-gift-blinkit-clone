@@ -130,5 +130,113 @@
     "status": "PENDING",
     "createdAt": "2026-07-27T15:10:03.207Z",
     "updatedAt": "2026-07-27T15:10:03.207Z"
+  },
+  {
+    "id": "set-1785209578854",
+    "settlementNumber": "SET-2026-000012",
+    "entityType": "STORE",
+    "entityId": "store-jaipur-1",
+    "amount": 50000,
+    "commission": 2500,
+    "netAmount": 47500,
+    "status": "PENDING",
+    "createdAt": "2026-07-28T03:32:58.854Z",
+    "updatedAt": "2026-07-28T03:32:58.854Z"
+  },
+  {
+    "id": "set-1785210257796",
+    "settlementNumber": "SET-2026-000013",
+    "entityType": "STORE",
+    "entityId": "store-jaipur-1",
+    "amount": 50000,
+    "commission": 2500,
+    "netAmount": 47500,
+    "status": "PENDING",
+    "createdAt": "2026-07-28T03:44:17.796Z",
+    "updatedAt": "2026-07-28T03:44:17.796Z"
+  },
+  {
+    "id": "set-1785224216730",
+    "settlementNumber": "SET-2026-000014",
+    "entityType": "STORE",
+    "entityId": "store-jaipur-1",
+    "amount": 50000,
+    "commission": 2500,
+    "netAmount": 47500,
+    "status": "PENDING",
+    "createdAt": "2026-07-28T07:36:56.730Z",
+    "updatedAt": "2026-07-28T07:36:56.730Z"
+  },
+  {
+    "id": "set-1785224459669",
+    "settlementNumber": "SET-2026-000015",
+    "entityType": "STORE",
+    "entityId": "store-jaipur-1",
+    "amount": 50000,
+    "commission": 2500,
+    "netAmount": 47500,
+    "status": "PENDING",
+    "createdAt": "2026-07-28T07:40:59.669Z",
+    "updatedAt": "2026-07-28T07:40:59.669Z"
+  },
+  {
+    "id": "set-1785226785085",
+    "settlementNumber": "SET-2026-000016",
+    "entityType": "STORE",
+    "entityId": "store-jaipur-1",
+    "amount": 50000,
+    "commission": 2500,
+    "netAmount": 47500,
+    "status": "PENDING",
+    "createdAt": "2026-07-28T08:19:45.085Z",
+    "updatedAt": "2026-07-28T08:19:45.085Z"
+  },
+  {
+    "id": "set-1785227071212",
+    "settlementNumber": "SET-2026-000017",
+    "entityType": "STORE",
+    "entityId": "store-jaipur-1",
+    "amount": 50000,
+    "commission": 2500,
+    "netAmount": 47500,
+    "status": "PENDING",
+    "createdAt": "2026-07-28T08:24:31.212Z",
+    "updatedAt": "2026-07-28T08:24:31.212Z"
+  },
+  {
+    "id": "set-1785227211382",
+    "settlementNumber": "SET-2026-000018",
+    "entityType": "STORE",
+    "entityId": "store-jaipur-1",
+    "amount": 50000,
+    "commission": 2500,
+    "netAmount": 47500,
+    "status": "PENDING",
+    "createdAt": "2026-07-28T08:26:51.382Z",
+    "updatedAt": "2026-07-28T08:26:51.382Z"
+  },
+  {
+    "id": "set-1785227852973",
+    "settlementNumber": "SET-2026-000019",
+    "entityType": "STORE",
+    "entityId": "store-jaipur-1",
+    "amount": 50000,
+    "commission": 2500,
+    "netAmount": 47500,
+    "status": "PENDING",
+    "createdAt": "2026-07-28T08:37:32.973Z",
+    "updatedAt": "2026-07-28T08:37:32.973Z"
+  },
+  {
+    "id": "set-1785229257073",
+    "settlementNumber": "SET-2026-000020",
+    "entityType": "STORE",
+    "entityId": "store-jaipur-1",
+    "amount": 50000,
+    "commission": 2500,
+    "netAmount": 47500,
+    "status": "PENDING",
+    "createdAt": "2026-07-28T09:00:57.073Z",
+    "updatedAt": "2026-07-28T09:00:57.073Z"
   }
 ]

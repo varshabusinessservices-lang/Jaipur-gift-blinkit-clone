@@ -1,8 +1,8 @@
 [
   {
-    "id": "6a8d7490-6c7c-4382-95c0-1860a38d131b",
-    "uploadSessionId": "bf82d401-7f07-49d3-92a2-6e4e6e71622a",
-    "fileAssetId": "e8536437-6ac5-411e-ac38-fc4692b4a558",
+    "id": "ce6651e3-5657-4522-9baf-cae729407a59",
+    "uploadSessionId": "afbf6a0f-e9fd-43c4-93fe-23520db3d5f0",
+    "fileAssetId": "6e6ff282-632f-4575-bd0d-017856495901",
     "productId": "prod-001",
     "variationId": null,
     "personalisationFormId": "form-baby-frame",
@@ -25,12 +25,12 @@
     "isAdminProtected": false,
     "protectionReason": null,
     "retentionStartsAt": null,
-    "retentionExpiresAt": "2026-07-29T15:09:53.898Z",
+    "retentionExpiresAt": "2026-07-30T09:00:35.985Z",
     "purgedAt": null,
     "metadataJson": "{}",
     "validationResultJson": "{\"qualityResult\":\"WARNING\",\"flags\":[\"RESOLUTION_TOO_LOW\"],\"dimensions\":{\"width\":800,\"height\":800,\"aspect\":1}}",
-    "createdAt": "2026-07-27T15:09:53.902Z",
-    "updatedAt": "2026-07-27T15:09:53.902Z",
+    "createdAt": "2026-07-28T09:00:35.989Z",
+    "updatedAt": "2026-07-28T09:00:35.989Z",
     "deletedAt": null
   }
 ]

@@ -550,5 +550,509 @@
     "description": "Replacement REP-2026-149681 created and linked to original order",
     "returnId": "ret-1785164987330",
     "createdAt": "2026-07-27T15:09:47.334Z"
+  },
+  {
+    "id": "tl-1785209569818",
+    "status": "REJECTED",
+    "title": "Return Request Rejected",
+    "description": "Personalised items are non-returnable unless damaged, defective, wrong, or admin approved.",
+    "returnId": "ret-1785209569818",
+    "createdAt": "2026-07-28T03:32:49.819Z"
+  },
+  {
+    "id": "tl-1785209570015",
+    "status": "REQUESTED",
+    "title": "Return Request Created",
+    "description": "Meets return window and eligibility criteria",
+    "returnId": "ret-1785209570015",
+    "createdAt": "2026-07-28T03:32:50.016Z"
+  },
+  {
+    "id": "tl-1785209570199",
+    "status": "REQUESTED",
+    "title": "Return Request Created",
+    "description": "Meets return window and eligibility criteria",
+    "returnId": "ret-1785209570199",
+    "createdAt": "2026-07-28T03:32:50.200Z"
+  },
+  {
+    "id": "tl-1785209570203",
+    "status": "INSPECTION_PASSED",
+    "title": "Inspection PASS",
+    "description": "Confirmed wrong item shipped",
+    "returnId": "ret-1785209570199",
+    "createdAt": "2026-07-28T03:32:50.204Z"
+  },
+  {
+    "id": "tl-1785209570375",
+    "status": "REQUESTED",
+    "title": "Return Request Created",
+    "description": "Meets return window and eligibility criteria",
+    "returnId": "ret-1785209570375",
+    "createdAt": "2026-07-28T03:32:50.375Z"
+  },
+  {
+    "id": "tl-1785209570376",
+    "status": "INSPECTION_PASSED",
+    "title": "Inspection PASS",
+    "description": "Defect verified",
+    "returnId": "ret-1785209570375",
+    "createdAt": "2026-07-28T03:32:50.377Z"
+  },
+  {
+    "id": "tl-1785209570379",
+    "status": "REPLACEMENT_INITIATED",
+    "title": "Replacement Order Initiated",
+    "description": "Replacement REP-2026-592046 created and linked to original order",
+    "returnId": "ret-1785209570375",
+    "createdAt": "2026-07-28T03:32:50.379Z"
+  },
+  {
+    "id": "tl-1785210239741",
+    "status": "REJECTED",
+    "title": "Return Request Rejected",
+    "description": "Personalised items are non-returnable unless damaged, defective, wrong, or admin approved.",
+    "returnId": "ret-1785210239741",
+    "createdAt": "2026-07-28T03:43:59.741Z"
+  },
+  {
+    "id": "tl-1785210239933",
+    "status": "REQUESTED",
+    "title": "Return Request Created",
+    "description": "Meets return window and eligibility criteria",
+    "returnId": "ret-1785210239933",
+    "createdAt": "2026-07-28T03:43:59.933Z"
+  },
+  {
+    "id": "tl-1785210240109",
+    "status": "REQUESTED",
+    "title": "Return Request Created",
+    "description": "Meets return window and eligibility criteria",
+    "returnId": "ret-1785210240109",
+    "createdAt": "2026-07-28T03:44:00.109Z"
+  },
+  {
+    "id": "tl-1785210240111",
+    "status": "INSPECTION_PASSED",
+    "title": "Inspection PASS",
+    "description": "Confirmed wrong item shipped",
+    "returnId": "ret-1785210240109",
+    "createdAt": "2026-07-28T03:44:00.112Z"
+  },
+  {
+    "id": "tl-1785210240283",
+    "status": "REQUESTED",
+    "title": "Return Request Created",
+    "description": "Meets return window and eligibility criteria",
+    "returnId": "ret-1785210240283",
+    "createdAt": "2026-07-28T03:44:00.283Z"
+  },
+  {
+    "id": "tl-1785210240284",
+    "status": "INSPECTION_PASSED",
+    "title": "Inspection PASS",
+    "description": "Defect verified",
+    "returnId": "ret-1785210240283",
+    "createdAt": "2026-07-28T03:44:00.285Z"
+  },
+  {
+    "id": "tl-1785210240287",
+    "status": "REPLACEMENT_INITIATED",
+    "title": "Replacement Order Initiated",
+    "description": "Replacement REP-2026-781731 created and linked to original order",
+    "returnId": "ret-1785210240283",
+    "createdAt": "2026-07-28T03:44:00.288Z"
+  },
+  {
+    "id": "tl-1785224206923",
+    "status": "REJECTED",
+    "title": "Return Request Rejected",
+    "description": "Personalised items are non-returnable unless damaged, defective, wrong, or admin approved.",
+    "returnId": "ret-1785224206923",
+    "createdAt": "2026-07-28T07:36:46.923Z"
+  },
+  {
+    "id": "tl-1785224207137",
+    "status": "REQUESTED",
+    "title": "Return Request Created",
+    "description": "Meets return window and eligibility criteria",
+    "returnId": "ret-1785224207137",
+    "createdAt": "2026-07-28T07:36:47.138Z"
+  },
+  {
+    "id": "tl-1785224207356",
+    "status": "REQUESTED",
+    "title": "Return Request Created",
+    "description": "Meets return window and eligibility criteria",
+    "returnId": "ret-1785224207356",
+    "createdAt": "2026-07-28T07:36:47.357Z"
+  },
+  {
+    "id": "tl-1785224207359",
+    "status": "INSPECTION_PASSED",
+    "title": "Inspection PASS",
+    "description": "Confirmed wrong item shipped",
+    "returnId": "ret-1785224207356",
+    "createdAt": "2026-07-28T07:36:47.360Z"
+  },
+  {
+    "id": "tl-1785224207564",
+    "status": "REQUESTED",
+    "title": "Return Request Created",
+    "description": "Meets return window and eligibility criteria",
+    "returnId": "ret-1785224207564",
+    "createdAt": "2026-07-28T07:36:47.565Z"
+  },
+  {
+    "id": "tl-1785224207567",
+    "status": "INSPECTION_PASSED",
+    "title": "Inspection PASS",
+    "description": "Defect verified",
+    "returnId": "ret-1785224207564",
+    "createdAt": "2026-07-28T07:36:47.567Z"
+  },
+  {
+    "id": "tl-1785224207569",
+    "status": "REPLACEMENT_INITIATED",
+    "title": "Replacement Order Initiated",
+    "description": "Replacement REP-2026-564154 created and linked to original order",
+    "returnId": "ret-1785224207564",
+    "createdAt": "2026-07-28T07:36:47.569Z"
+  },
+  {
+    "id": "tl-1785224437317",
+    "status": "REJECTED",
+    "title": "Return Request Rejected",
+    "description": "Personalised items are non-returnable unless damaged, defective, wrong, or admin approved.",
+    "returnId": "ret-1785224437317",
+    "createdAt": "2026-07-28T07:40:37.318Z"
+  },
+  {
+    "id": "tl-1785224437535",
+    "status": "REQUESTED",
+    "title": "Return Request Created",
+    "description": "Meets return window and eligibility criteria",
+    "returnId": "ret-1785224437535",
+    "createdAt": "2026-07-28T07:40:37.535Z"
+  },
+  {
+    "id": "tl-1785224437752",
+    "status": "REQUESTED",
+    "title": "Return Request Created",
+    "description": "Meets return window and eligibility criteria",
+    "returnId": "ret-1785224437752",
+    "createdAt": "2026-07-28T07:40:37.752Z"
+  },
+  {
+    "id": "tl-1785224437755",
+    "status": "INSPECTION_PASSED",
+    "title": "Inspection PASS",
+    "description": "Confirmed wrong item shipped",
+    "returnId": "ret-1785224437752",
+    "createdAt": "2026-07-28T07:40:37.756Z"
+  },
+  {
+    "id": "tl-1785224437966",
+    "status": "REQUESTED",
+    "title": "Return Request Created",
+    "description": "Meets return window and eligibility criteria",
+    "returnId": "ret-1785224437966",
+    "createdAt": "2026-07-28T07:40:37.966Z"
+  },
+  {
+    "id": "tl-1785224437969",
+    "status": "INSPECTION_PASSED",
+    "title": "Inspection PASS",
+    "description": "Defect verified",
+    "returnId": "ret-1785224437966",
+    "createdAt": "2026-07-28T07:40:37.970Z"
+  },
+  {
+    "id": "tl-1785224437972",
+    "status": "REPLACEMENT_INITIATED",
+    "title": "Replacement Order Initiated",
+    "description": "Replacement REP-2026-488955 created and linked to original order",
+    "returnId": "ret-1785224437966",
+    "createdAt": "2026-07-28T07:40:37.976Z"
+  },
+  {
+    "id": "tl-1785226753806",
+    "status": "REJECTED",
+    "title": "Return Request Rejected",
+    "description": "Personalised items are non-returnable unless damaged, defective, wrong, or admin approved.",
+    "returnId": "ret-1785226753806",
+    "createdAt": "2026-07-28T08:19:13.807Z"
+  },
+  {
+    "id": "tl-1785226754043",
+    "status": "REQUESTED",
+    "title": "Return Request Created",
+    "description": "Meets return window and eligibility criteria",
+    "returnId": "ret-1785226754043",
+    "createdAt": "2026-07-28T08:19:14.043Z"
+  },
+  {
+    "id": "tl-1785226754283",
+    "status": "REQUESTED",
+    "title": "Return Request Created",
+    "description": "Meets return window and eligibility criteria",
+    "returnId": "ret-1785226754283",
+    "createdAt": "2026-07-28T08:19:14.284Z"
+  },
+  {
+    "id": "tl-1785226754293",
+    "status": "INSPECTION_PASSED",
+    "title": "Inspection PASS",
+    "description": "Confirmed wrong item shipped",
+    "returnId": "ret-1785226754283",
+    "createdAt": "2026-07-28T08:19:14.295Z"
+  },
+  {
+    "id": "tl-1785226754547",
+    "status": "REQUESTED",
+    "title": "Return Request Created",
+    "description": "Meets return window and eligibility criteria",
+    "returnId": "ret-1785226754547",
+    "createdAt": "2026-07-28T08:19:14.548Z"
+  },
+  {
+    "id": "tl-1785226754550",
+    "status": "INSPECTION_PASSED",
+    "title": "Inspection PASS",
+    "description": "Defect verified",
+    "returnId": "ret-1785226754547",
+    "createdAt": "2026-07-28T08:19:14.550Z"
+  },
+  {
+    "id": "tl-1785226754553",
+    "status": "REPLACEMENT_INITIATED",
+    "title": "Replacement Order Initiated",
+    "description": "Replacement REP-2026-767947 created and linked to original order",
+    "returnId": "ret-1785226754547",
+    "createdAt": "2026-07-28T08:19:14.554Z"
+  },
+  {
+    "id": "tl-1785227042206",
+    "status": "REJECTED",
+    "title": "Return Request Rejected",
+    "description": "Personalised items are non-returnable unless damaged, defective, wrong, or admin approved.",
+    "returnId": "ret-1785227042206",
+    "createdAt": "2026-07-28T08:24:02.207Z"
+  },
+  {
+    "id": "tl-1785227042591",
+    "status": "REQUESTED",
+    "title": "Return Request Created",
+    "description": "Meets return window and eligibility criteria",
+    "returnId": "ret-1785227042591",
+    "createdAt": "2026-07-28T08:24:02.591Z"
+  },
+  {
+    "id": "tl-1785227042992",
+    "status": "REQUESTED",
+    "title": "Return Request Created",
+    "description": "Meets return window and eligibility criteria",
+    "returnId": "ret-1785227042992",
+    "createdAt": "2026-07-28T08:24:02.993Z"
+  },
+  {
+    "id": "tl-1785227042995",
+    "status": "INSPECTION_PASSED",
+    "title": "Inspection PASS",
+    "description": "Confirmed wrong item shipped",
+    "returnId": "ret-1785227042992",
+    "createdAt": "2026-07-28T08:24:02.996Z"
+  },
+  {
+    "id": "tl-1785227043376",
+    "status": "REQUESTED",
+    "title": "Return Request Created",
+    "description": "Meets return window and eligibility criteria",
+    "returnId": "ret-1785227043376",
+    "createdAt": "2026-07-28T08:24:03.376Z"
+  },
+  {
+    "id": "tl-1785227043378",
+    "status": "INSPECTION_PASSED",
+    "title": "Inspection PASS",
+    "description": "Defect verified",
+    "returnId": "ret-1785227043376",
+    "createdAt": "2026-07-28T08:24:03.378Z"
+  },
+  {
+    "id": "tl-1785227043380",
+    "status": "REPLACEMENT_INITIATED",
+    "title": "Replacement Order Initiated",
+    "description": "Replacement REP-2026-152018 created and linked to original order",
+    "returnId": "ret-1785227043376",
+    "createdAt": "2026-07-28T08:24:03.381Z"
+  },
+  {
+    "id": "tl-1785227192085",
+    "status": "REJECTED",
+    "title": "Return Request Rejected",
+    "description": "Personalised items are non-returnable unless damaged, defective, wrong, or admin approved.",
+    "returnId": "ret-1785227192085",
+    "createdAt": "2026-07-28T08:26:32.085Z"
+  },
+  {
+    "id": "tl-1785227192340",
+    "status": "REQUESTED",
+    "title": "Return Request Created",
+    "description": "Meets return window and eligibility criteria",
+    "returnId": "ret-1785227192340",
+    "createdAt": "2026-07-28T08:26:32.340Z"
+  },
+  {
+    "id": "tl-1785227192627",
+    "status": "REQUESTED",
+    "title": "Return Request Created",
+    "description": "Meets return window and eligibility criteria",
+    "returnId": "ret-1785227192627",
+    "createdAt": "2026-07-28T08:26:32.628Z"
+  },
+  {
+    "id": "tl-1785227192630",
+    "status": "INSPECTION_PASSED",
+    "title": "Inspection PASS",
+    "description": "Confirmed wrong item shipped",
+    "returnId": "ret-1785227192627",
+    "createdAt": "2026-07-28T08:26:32.631Z"
+  },
+  {
+    "id": "tl-1785227192911",
+    "status": "REQUESTED",
+    "title": "Return Request Created",
+    "description": "Meets return window and eligibility criteria",
+    "returnId": "ret-1785227192911",
+    "createdAt": "2026-07-28T08:26:32.911Z"
+  },
+  {
+    "id": "tl-1785227192914",
+    "status": "INSPECTION_PASSED",
+    "title": "Inspection PASS",
+    "description": "Defect verified",
+    "returnId": "ret-1785227192911",
+    "createdAt": "2026-07-28T08:26:32.914Z"
+  },
+  {
+    "id": "tl-1785227192917",
+    "status": "REPLACEMENT_INITIATED",
+    "title": "Replacement Order Initiated",
+    "description": "Replacement REP-2026-732866 created and linked to original order",
+    "returnId": "ret-1785227192911",
+    "createdAt": "2026-07-28T08:26:32.918Z"
+  },
+  {
+    "id": "tl-1785227819439",
+    "status": "REJECTED",
+    "title": "Return Request Rejected",
+    "description": "Personalised items are non-returnable unless damaged, defective, wrong, or admin approved.",
+    "returnId": "ret-1785227819439",
+    "createdAt": "2026-07-28T08:36:59.439Z"
+  },
+  {
+    "id": "tl-1785227819723",
+    "status": "REQUESTED",
+    "title": "Return Request Created",
+    "description": "Meets return window and eligibility criteria",
+    "returnId": "ret-1785227819723",
+    "createdAt": "2026-07-28T08:36:59.724Z"
+  },
+  {
+    "id": "tl-1785227820026",
+    "status": "REQUESTED",
+    "title": "Return Request Created",
+    "description": "Meets return window and eligibility criteria",
+    "returnId": "ret-1785227820026",
+    "createdAt": "2026-07-28T08:37:00.026Z"
+  },
+  {
+    "id": "tl-1785227820029",
+    "status": "INSPECTION_PASSED",
+    "title": "Inspection PASS",
+    "description": "Confirmed wrong item shipped",
+    "returnId": "ret-1785227820026",
+    "createdAt": "2026-07-28T08:37:00.030Z"
+  },
+  {
+    "id": "tl-1785227820296",
+    "status": "REQUESTED",
+    "title": "Return Request Created",
+    "description": "Meets return window and eligibility criteria",
+    "returnId": "ret-1785227820295",
+    "createdAt": "2026-07-28T08:37:00.296Z"
+  },
+  {
+    "id": "tl-1785227820298",
+    "status": "INSPECTION_PASSED",
+    "title": "Inspection PASS",
+    "description": "Defect verified",
+    "returnId": "ret-1785227820295",
+    "createdAt": "2026-07-28T08:37:00.299Z"
+  },
+  {
+    "id": "tl-1785227820301",
+    "status": "REPLACEMENT_INITIATED",
+    "title": "Replacement Order Initiated",
+    "description": "Replacement REP-2026-948593 created and linked to original order",
+    "returnId": "ret-1785227820295",
+    "createdAt": "2026-07-28T08:37:00.301Z"
+  },
+  {
+    "id": "tl-1785229218476",
+    "status": "REJECTED",
+    "title": "Return Request Rejected",
+    "description": "Personalised items are non-returnable unless damaged, defective, wrong, or admin approved.",
+    "returnId": "ret-1785229218476",
+    "createdAt": "2026-07-28T09:00:18.477Z"
+  },
+  {
+    "id": "tl-1785229218752",
+    "status": "REQUESTED",
+    "title": "Return Request Created",
+    "description": "Meets return window and eligibility criteria",
+    "returnId": "ret-1785229218752",
+    "createdAt": "2026-07-28T09:00:18.753Z"
+  },
+  {
+    "id": "tl-1785229219027",
+    "status": "REQUESTED",
+    "title": "Return Request Created",
+    "description": "Meets return window and eligibility criteria",
+    "returnId": "ret-1785229219027",
+    "createdAt": "2026-07-28T09:00:19.028Z"
+  },
+  {
+    "id": "tl-1785229219031",
+    "status": "INSPECTION_PASSED",
+    "title": "Inspection PASS",
+    "description": "Confirmed wrong item shipped",
+    "returnId": "ret-1785229219027",
+    "createdAt": "2026-07-28T09:00:19.032Z"
+  },
+  {
+    "id": "tl-1785229219319",
+    "status": "REQUESTED",
+    "title": "Return Request Created",
+    "description": "Meets return window and eligibility criteria",
+    "returnId": "ret-1785229219319",
+    "createdAt": "2026-07-28T09:00:19.319Z"
+  },
+  {
+    "id": "tl-1785229219322",
+    "status": "INSPECTION_PASSED",
+    "title": "Inspection PASS",
+    "description": "Defect verified",
+    "returnId": "ret-1785229219319",
+    "createdAt": "2026-07-28T09:00:19.323Z"
+  },
+  {
+    "id": "tl-1785229219325",
+    "status": "REPLACEMENT_INITIATED",
+    "title": "Replacement Order Initiated",
+    "description": "Replacement REP-2026-201735 created and linked to original order",
+    "returnId": "ret-1785229219319",
+    "createdAt": "2026-07-28T09:00:19.326Z"
   }
 ]

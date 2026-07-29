@@ -80,6 +80,17 @@ export interface CategoryFormData {
   desktopBannerUrl: string | null;
   mobileBannerFileId: string | null;
   mobileBannerUrl: string | null;
+  categoryType?: 'PARENT' | 'CHILD' | 'SUB_CHILD';
+  mobileImageFileId?: string | null;
+  mobileImageUrl?: string | null;
+  showInNavigation?: boolean;
+  showInSearch?: boolean;
+  showOnDesktop?: boolean;
+  showOnMobile?: boolean;
+  imageAltText?: string | null;
+  bannerAltText?: string | null;
+  bgColour?: string | null;
+  textColour?: string | null;
   status: CategoryStatus;
   isFeatured: boolean;
   showOnHomepage: boolean;
@@ -112,4 +123,12 @@ export interface CategoryReorderPayload {
     parentId?: string | null;
     sortOrder: number;
   }>;
+}
+
+export type DeleteCategoryMode = 'SINGLE' | 'CASCADE_DESCENDANTS' | 'MOVE_DESCENDANTS' | 'DEACTIVATE_BRANCH';
+
+export interface DeleteCategoryPayload {
+  mode?: DeleteCategoryMode;
+  targetParentId?: string | null;
+  reason?: string;
 }

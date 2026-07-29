@@ -3,7 +3,8 @@ import {
   CategoryFilterQuery, 
   CreateCategoryDto, 
   UpdateCategoryDto, 
-  CategoryReorderItem 
+  CategoryReorderItem,
+  DeleteCategoryOptions
 } from './category.types';
 
 export class CategoryService {
@@ -52,8 +53,8 @@ export class CategoryService {
     return this.repository.reorderCategories(items, adminId);
   }
 
-  async deleteCategory(id: string, adminId?: string) {
-    return this.repository.deleteCategory(id, adminId);
+  async deleteCategory(id: string, options?: DeleteCategoryOptions, adminId?: string) {
+    return this.repository.deleteCategory(id, options, adminId);
   }
 
   async restoreCategory(id: string, adminId?: string) {

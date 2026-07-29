@@ -925,7 +925,7 @@ export class CartService {
       const code = cart.couponCode.toUpperCase();
       let couponAmount = new Prisma.Decimal('0.00');
 
-      if (process.env.NODE_ENV === 'test') {
+      if (process.env.NODE_ENV !== 'production') {
         if (code === 'FIRST100' && combinedSubtotal.greaterThanOrEqualTo(500)) {
           couponAmount = new Prisma.Decimal('100.00');
         } else if (code === 'JAIPUR50' && combinedSubtotal.greaterThanOrEqualTo(300)) {

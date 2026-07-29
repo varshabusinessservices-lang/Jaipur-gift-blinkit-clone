@@ -193,5 +193,1760 @@
     "metadataJson": "{\"reason\":\"Smudge defect\",\"staffName\":\"Vikram Supervisor\"}",
     "id": "c540719a-3071-4946-a20e-ac7d3f92bdbd",
     "createdAt": "2026-07-27T15:09:44.148Z"
+  },
+  {
+    "id": "e3caf4dd-824a-4ea1-9f12-6d368e881481",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-168024 created for order JG-2026-191023. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-168024\"}",
+    "jobId": "8c8397d6-fffd-4649-82e7-60739f02297e",
+    "createdAt": "2026-07-28T03:32:55.324Z"
+  },
+  {
+    "id": "6491ee79-3ad7-47a8-963a-db7f25b54c25",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-975591 created for order JG-2026-449699. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-975591\"}",
+    "jobId": "dd7d40ee-65cf-4950-8a15-18eccfa25c06",
+    "createdAt": "2026-07-28T03:32:55.525Z"
+  },
+  {
+    "jobId": "dd7d40ee-65cf-4950-8a15-18eccfa25c06",
+    "itemId": "d147fd87-f39c-40bc-a6b0-870162ee59cb",
+    "status": "PRINT_QUEUE",
+    "title": "Artwork APPROVE",
+    "description": "Artwork looks great",
+    "metadataJson": "{\"staffName\":\"Ramesh Designer\",\"action\":\"APPROVE\"}",
+    "id": "c068ba50-6109-4934-ab0e-1cbce7bbce4d",
+    "createdAt": "2026-07-28T03:32:55.527Z"
+  },
+  {
+    "id": "d99ad1b4-818c-45af-a40a-0b416eced809",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-557250 created for order JG-2026-619503. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-557250\"}",
+    "jobId": "b52859f7-71af-4320-a489-8b0ad85f2557",
+    "createdAt": "2026-07-28T03:32:55.718Z"
+  },
+  {
+    "jobId": "b52859f7-71af-4320-a489-8b0ad85f2557",
+    "itemId": "c8ede76d-752b-45ba-9f38-6dd7bd7fbc5a",
+    "status": "PRINT_QUEUE",
+    "title": "Artwork APPROVE",
+    "description": "Artwork review status: APPROVED by Ramesh Designer",
+    "metadataJson": "{\"staffName\":\"Ramesh Designer\",\"action\":\"APPROVE\"}",
+    "id": "5e528496-ab54-4a66-a03b-27e36977af8f",
+    "createdAt": "2026-07-28T03:32:55.719Z"
+  },
+  {
+    "jobId": "b52859f7-71af-4320-a489-8b0ad85f2557",
+    "itemId": "c8ede76d-752b-45ba-9f38-6dd7bd7fbc5a",
+    "status": "PRINTING",
+    "title": "Printing Started",
+    "description": "Printing started on machine mach-2 by Sunil Operator",
+    "metadataJson": "{\"machineId\":\"mach-2\",\"station\":\"Mug-Press-1\",\"staffName\":\"Sunil Operator\"}",
+    "id": "6e3e9fc5-1b1e-4752-a23f-7d0bb640280e",
+    "createdAt": "2026-07-28T03:32:55.720Z"
+  },
+  {
+    "jobId": "b52859f7-71af-4320-a489-8b0ad85f2557",
+    "itemId": "c8ede76d-752b-45ba-9f38-6dd7bd7fbc5a",
+    "status": "QC_PENDING",
+    "title": "Printing Completed & QC Pending",
+    "description": "Item printed successfully by Sunil Operator. Moved to Quality Check.",
+    "metadataJson": "{\"staffName\":\"Sunil Operator\"}",
+    "id": "2014c5f4-d5ed-4154-86d8-f3e4e67bff08",
+    "createdAt": "2026-07-28T03:32:55.721Z"
+  },
+  {
+    "id": "b2cb3439-9d91-4c03-af08-479908c2c523",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-317125 created for order JG-2026-632212. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-317125\"}",
+    "jobId": "193f3f64-98c2-48dd-9947-96f628e938f9",
+    "createdAt": "2026-07-28T03:32:55.914Z"
+  },
+  {
+    "jobId": "193f3f64-98c2-48dd-9947-96f628e938f9",
+    "itemId": "63673a90-83bb-40a3-8553-3d96da8a0ccb",
+    "status": "PRINT_QUEUE",
+    "title": "Artwork APPROVE",
+    "description": "Artwork review status: APPROVED by Ramesh Designer",
+    "metadataJson": "{\"staffName\":\"Ramesh Designer\",\"action\":\"APPROVE\"}",
+    "id": "074f7c1e-ef0b-4a9f-9e61-5a6a782e199b",
+    "createdAt": "2026-07-28T03:32:55.915Z"
+  },
+  {
+    "jobId": "193f3f64-98c2-48dd-9947-96f628e938f9",
+    "itemId": "63673a90-83bb-40a3-8553-3d96da8a0ccb",
+    "status": "PRINTING",
+    "title": "Printing Started",
+    "description": "Printing started on machine mach-2 by Sunil Operator",
+    "metadataJson": "{\"machineId\":\"mach-2\",\"station\":\"Station-1\",\"staffName\":\"Sunil Operator\"}",
+    "id": "faf3bcd7-ef83-456b-b4a8-542d9cbbb070",
+    "createdAt": "2026-07-28T03:32:55.916Z"
+  },
+  {
+    "jobId": "193f3f64-98c2-48dd-9947-96f628e938f9",
+    "itemId": "63673a90-83bb-40a3-8553-3d96da8a0ccb",
+    "status": "QC_PENDING",
+    "title": "Printing Completed & QC Pending",
+    "description": "Item printed successfully by Sunil Operator. Moved to Quality Check.",
+    "metadataJson": "{\"staffName\":\"Sunil Operator\"}",
+    "id": "b3d99cc8-eaab-416b-af84-4fb333e40da1",
+    "createdAt": "2026-07-28T03:32:55.917Z"
+  },
+  {
+    "jobId": "193f3f64-98c2-48dd-9947-96f628e938f9",
+    "itemId": "63673a90-83bb-40a3-8553-3d96da8a0ccb",
+    "status": "PACKING_QUEUE",
+    "title": "Quality Check PASS",
+    "description": "Colors vibrant, no defects",
+    "metadataJson": "{\"staffName\":\"Vikram Supervisor\",\"result\":\"PASS\"}",
+    "id": "5c5e18c0-e84a-412e-b4df-0d944380ebb9",
+    "createdAt": "2026-07-28T03:32:55.918Z"
+  },
+  {
+    "jobId": "193f3f64-98c2-48dd-9947-96f628e938f9",
+    "itemId": "63673a90-83bb-40a3-8553-3d96da8a0ccb",
+    "status": "PACKING",
+    "title": "Packing Started",
+    "description": "Packing started by Anita Packer",
+    "metadataJson": "{\"staffName\":\"Anita Packer\",\"action\":\"START\"}",
+    "id": "c0a46b78-bf91-4d9a-81d7-72301307609e",
+    "createdAt": "2026-07-28T03:32:55.919Z"
+  },
+  {
+    "jobId": "193f3f64-98c2-48dd-9947-96f628e938f9",
+    "itemId": "63673a90-83bb-40a3-8553-3d96da8a0ccb",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Packing Completed",
+    "description": "Gift boxed securely",
+    "metadataJson": "{\"staffName\":\"Anita Packer\",\"action\":\"COMPLETE\"}",
+    "id": "b86eb2e9-aaff-4f45-9299-13bc7d9fd8b1",
+    "createdAt": "2026-07-28T03:32:55.920Z"
+  },
+  {
+    "id": "aa965491-eff4-4792-a1b2-e45a656e6687",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-639487 created for order JG-2026-548577. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-639487\"}",
+    "jobId": "088ed9cc-180e-44aa-9cd5-3f823e6919fd",
+    "createdAt": "2026-07-28T03:32:56.120Z"
+  },
+  {
+    "jobId": "088ed9cc-180e-44aa-9cd5-3f823e6919fd",
+    "itemId": "a3727538-5b0d-40d9-a137-ee62756c5f80",
+    "status": "PRINT_QUEUE",
+    "title": "Artwork APPROVE",
+    "description": "Artwork review status: APPROVED by Ramesh Designer",
+    "metadataJson": "{\"staffName\":\"Ramesh Designer\",\"action\":\"APPROVE\"}",
+    "id": "77823d5d-fa5a-4c64-a4c6-f102dfe15d0a",
+    "createdAt": "2026-07-28T03:32:56.121Z"
+  },
+  {
+    "jobId": "088ed9cc-180e-44aa-9cd5-3f823e6919fd",
+    "itemId": "a3727538-5b0d-40d9-a137-ee62756c5f80",
+    "status": "PRINTING",
+    "title": "Printing Started",
+    "description": "Printing started on machine mach-2 by Sunil Operator",
+    "metadataJson": "{\"machineId\":\"mach-2\",\"station\":\"Station-1\",\"staffName\":\"Sunil Operator\"}",
+    "id": "7ba0e8b6-842a-4a7b-98ea-d44b0449869f",
+    "createdAt": "2026-07-28T03:32:56.122Z"
+  },
+  {
+    "jobId": "088ed9cc-180e-44aa-9cd5-3f823e6919fd",
+    "itemId": "a3727538-5b0d-40d9-a137-ee62756c5f80",
+    "status": "QC_PENDING",
+    "title": "Printing Completed & QC Pending",
+    "description": "Item printed successfully by Sunil Operator. Moved to Quality Check.",
+    "metadataJson": "{\"staffName\":\"Sunil Operator\"}",
+    "id": "7d5b140c-1cbc-48d7-8320-d482b566cc58",
+    "createdAt": "2026-07-28T03:32:56.123Z"
+  },
+  {
+    "jobId": "088ed9cc-180e-44aa-9cd5-3f823e6919fd",
+    "itemId": "a3727538-5b0d-40d9-a137-ee62756c5f80",
+    "status": "REPRINT_REQUIRED",
+    "title": "Quality Check FAIL",
+    "description": "Smudge on print",
+    "metadataJson": "{\"staffName\":\"Vikram Supervisor\",\"result\":\"FAIL\"}",
+    "id": "e7715d51-e3e6-4836-953c-af66f8ea8f61",
+    "createdAt": "2026-07-28T03:32:56.124Z"
+  },
+  {
+    "jobId": "088ed9cc-180e-44aa-9cd5-3f823e6919fd",
+    "itemId": "a3727538-5b0d-40d9-a137-ee62756c5f80",
+    "status": "PRINT_QUEUE",
+    "title": "Reprint Request Generated",
+    "description": "Reprint initiated due to: Smudge defect. Author: Vikram Supervisor",
+    "metadataJson": "{\"reason\":\"Smudge defect\",\"staffName\":\"Vikram Supervisor\"}",
+    "id": "d483a6b0-6c39-45a3-86ce-67f3aeb0b39b",
+    "createdAt": "2026-07-28T03:32:56.125Z"
+  },
+  {
+    "id": "fa3096ea-be46-43f0-9552-8ddcabb607e7",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-875328 created for order JG-2026-371565. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-875328\"}",
+    "jobId": "8e3a0e0c-4ca6-4558-9cbf-fa694a8c879d",
+    "createdAt": "2026-07-28T03:44:01.522Z"
+  },
+  {
+    "id": "c681c3e9-137d-489d-a4f9-6a556783ba95",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-122651 created for order JG-2026-545144. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-122651\"}",
+    "jobId": "0c4c8848-e008-4890-8d99-6ad86efc1e26",
+    "createdAt": "2026-07-28T03:44:01.724Z"
+  },
+  {
+    "jobId": "0c4c8848-e008-4890-8d99-6ad86efc1e26",
+    "itemId": "b0ef1b09-9cf7-4440-a2ff-239a41d9610b",
+    "status": "PRINT_QUEUE",
+    "title": "Artwork APPROVE",
+    "description": "Artwork looks great",
+    "metadataJson": "{\"staffName\":\"Ramesh Designer\",\"action\":\"APPROVE\"}",
+    "id": "536d2980-882f-493f-9c2b-b115d8ac57af",
+    "createdAt": "2026-07-28T03:44:01.725Z"
+  },
+  {
+    "id": "2cb7d565-7dae-463c-8359-bf74e0f87340",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-887498 created for order JG-2026-502818. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-887498\"}",
+    "jobId": "e418d309-9c10-485b-bcd0-5630c079109d",
+    "createdAt": "2026-07-28T03:44:01.924Z"
+  },
+  {
+    "jobId": "e418d309-9c10-485b-bcd0-5630c079109d",
+    "itemId": "a7de95d0-afc6-4d7e-be21-a7a8a2982a0c",
+    "status": "PRINT_QUEUE",
+    "title": "Artwork APPROVE",
+    "description": "Artwork review status: APPROVED by Ramesh Designer",
+    "metadataJson": "{\"staffName\":\"Ramesh Designer\",\"action\":\"APPROVE\"}",
+    "id": "47a04379-09d4-4eac-894d-7e7314eed6ab",
+    "createdAt": "2026-07-28T03:44:01.925Z"
+  },
+  {
+    "jobId": "e418d309-9c10-485b-bcd0-5630c079109d",
+    "itemId": "a7de95d0-afc6-4d7e-be21-a7a8a2982a0c",
+    "status": "PRINTING",
+    "title": "Printing Started",
+    "description": "Printing started on machine mach-2 by Sunil Operator",
+    "metadataJson": "{\"machineId\":\"mach-2\",\"station\":\"Mug-Press-1\",\"staffName\":\"Sunil Operator\"}",
+    "id": "77ed8b36-5e8a-4bad-a9eb-bc89ceae027c",
+    "createdAt": "2026-07-28T03:44:01.927Z"
+  },
+  {
+    "jobId": "e418d309-9c10-485b-bcd0-5630c079109d",
+    "itemId": "a7de95d0-afc6-4d7e-be21-a7a8a2982a0c",
+    "status": "QC_PENDING",
+    "title": "Printing Completed & QC Pending",
+    "description": "Item printed successfully by Sunil Operator. Moved to Quality Check.",
+    "metadataJson": "{\"staffName\":\"Sunil Operator\"}",
+    "id": "c8c085a7-2ec8-46cf-947c-0dc65d03b072",
+    "createdAt": "2026-07-28T03:44:01.928Z"
+  },
+  {
+    "id": "e6a7db00-3e0e-456f-a21e-40fca1afabb8",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-132297 created for order JG-2026-276572. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-132297\"}",
+    "jobId": "3dee2819-8249-46dd-ad2f-81df7b6bf46f",
+    "createdAt": "2026-07-28T03:44:02.113Z"
+  },
+  {
+    "jobId": "3dee2819-8249-46dd-ad2f-81df7b6bf46f",
+    "itemId": "ed360533-43ab-46d5-8b7c-c7e67cff51f6",
+    "status": "PRINT_QUEUE",
+    "title": "Artwork APPROVE",
+    "description": "Artwork review status: APPROVED by Ramesh Designer",
+    "metadataJson": "{\"staffName\":\"Ramesh Designer\",\"action\":\"APPROVE\"}",
+    "id": "2b53a687-e11d-4611-b6df-e15335bd2d37",
+    "createdAt": "2026-07-28T03:44:02.114Z"
+  },
+  {
+    "jobId": "3dee2819-8249-46dd-ad2f-81df7b6bf46f",
+    "itemId": "ed360533-43ab-46d5-8b7c-c7e67cff51f6",
+    "status": "PRINTING",
+    "title": "Printing Started",
+    "description": "Printing started on machine mach-2 by Sunil Operator",
+    "metadataJson": "{\"machineId\":\"mach-2\",\"station\":\"Station-1\",\"staffName\":\"Sunil Operator\"}",
+    "id": "06db4058-4b5c-441b-b951-350ce5f69abd",
+    "createdAt": "2026-07-28T03:44:02.116Z"
+  },
+  {
+    "jobId": "3dee2819-8249-46dd-ad2f-81df7b6bf46f",
+    "itemId": "ed360533-43ab-46d5-8b7c-c7e67cff51f6",
+    "status": "QC_PENDING",
+    "title": "Printing Completed & QC Pending",
+    "description": "Item printed successfully by Sunil Operator. Moved to Quality Check.",
+    "metadataJson": "{\"staffName\":\"Sunil Operator\"}",
+    "id": "db04d861-af88-48e9-8064-f6a6adf7a845",
+    "createdAt": "2026-07-28T03:44:02.117Z"
+  },
+  {
+    "jobId": "3dee2819-8249-46dd-ad2f-81df7b6bf46f",
+    "itemId": "ed360533-43ab-46d5-8b7c-c7e67cff51f6",
+    "status": "PACKING_QUEUE",
+    "title": "Quality Check PASS",
+    "description": "Colors vibrant, no defects",
+    "metadataJson": "{\"staffName\":\"Vikram Supervisor\",\"result\":\"PASS\"}",
+    "id": "6b6d5221-74f3-4fae-ad24-73c86d89e099",
+    "createdAt": "2026-07-28T03:44:02.119Z"
+  },
+  {
+    "jobId": "3dee2819-8249-46dd-ad2f-81df7b6bf46f",
+    "itemId": "ed360533-43ab-46d5-8b7c-c7e67cff51f6",
+    "status": "PACKING",
+    "title": "Packing Started",
+    "description": "Packing started by Anita Packer",
+    "metadataJson": "{\"staffName\":\"Anita Packer\",\"action\":\"START\"}",
+    "id": "7d433b4f-3272-47e9-b9b4-e98ef53b47ad",
+    "createdAt": "2026-07-28T03:44:02.120Z"
+  },
+  {
+    "jobId": "3dee2819-8249-46dd-ad2f-81df7b6bf46f",
+    "itemId": "ed360533-43ab-46d5-8b7c-c7e67cff51f6",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Packing Completed",
+    "description": "Gift boxed securely",
+    "metadataJson": "{\"staffName\":\"Anita Packer\",\"action\":\"COMPLETE\"}",
+    "id": "9676d1fd-ed31-4007-8ab5-bcc155d452b9",
+    "createdAt": "2026-07-28T03:44:02.122Z"
+  },
+  {
+    "id": "b38f9742-5364-453b-8612-fd746792f0fc",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-121625 created for order JG-2026-996698. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-121625\"}",
+    "jobId": "eba230eb-376d-4978-b790-af8b99e4c2b2",
+    "createdAt": "2026-07-28T03:44:02.337Z"
+  },
+  {
+    "jobId": "eba230eb-376d-4978-b790-af8b99e4c2b2",
+    "itemId": "ac274d93-c045-4dd5-85ca-2718f3101d84",
+    "status": "PRINT_QUEUE",
+    "title": "Artwork APPROVE",
+    "description": "Artwork review status: APPROVED by Ramesh Designer",
+    "metadataJson": "{\"staffName\":\"Ramesh Designer\",\"action\":\"APPROVE\"}",
+    "id": "b37d15e9-792d-4d86-8084-14fa33c7d910",
+    "createdAt": "2026-07-28T03:44:02.339Z"
+  },
+  {
+    "jobId": "eba230eb-376d-4978-b790-af8b99e4c2b2",
+    "itemId": "ac274d93-c045-4dd5-85ca-2718f3101d84",
+    "status": "PRINTING",
+    "title": "Printing Started",
+    "description": "Printing started on machine mach-2 by Sunil Operator",
+    "metadataJson": "{\"machineId\":\"mach-2\",\"station\":\"Station-1\",\"staffName\":\"Sunil Operator\"}",
+    "id": "c703ae9e-ddfd-4b81-89d4-64c363764182",
+    "createdAt": "2026-07-28T03:44:02.343Z"
+  },
+  {
+    "jobId": "eba230eb-376d-4978-b790-af8b99e4c2b2",
+    "itemId": "ac274d93-c045-4dd5-85ca-2718f3101d84",
+    "status": "QC_PENDING",
+    "title": "Printing Completed & QC Pending",
+    "description": "Item printed successfully by Sunil Operator. Moved to Quality Check.",
+    "metadataJson": "{\"staffName\":\"Sunil Operator\"}",
+    "id": "b983ead9-04c9-4c12-976f-f7fc549592ff",
+    "createdAt": "2026-07-28T03:44:02.344Z"
+  },
+  {
+    "jobId": "eba230eb-376d-4978-b790-af8b99e4c2b2",
+    "itemId": "ac274d93-c045-4dd5-85ca-2718f3101d84",
+    "status": "REPRINT_REQUIRED",
+    "title": "Quality Check FAIL",
+    "description": "Smudge on print",
+    "metadataJson": "{\"staffName\":\"Vikram Supervisor\",\"result\":\"FAIL\"}",
+    "id": "987afc03-470a-459e-af13-288d6aa03d5e",
+    "createdAt": "2026-07-28T03:44:02.345Z"
+  },
+  {
+    "jobId": "eba230eb-376d-4978-b790-af8b99e4c2b2",
+    "itemId": "ac274d93-c045-4dd5-85ca-2718f3101d84",
+    "status": "PRINT_QUEUE",
+    "title": "Reprint Request Generated",
+    "description": "Reprint initiated due to: Smudge defect. Author: Vikram Supervisor",
+    "metadataJson": "{\"reason\":\"Smudge defect\",\"staffName\":\"Vikram Supervisor\"}",
+    "id": "003ca587-cdaa-454c-9df1-625bddeff9e6",
+    "createdAt": "2026-07-28T03:44:02.346Z"
+  },
+  {
+    "id": "39a44d40-ebbf-452b-9a9f-fc6a6a4175b2",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-805717 created for order JG-2026-104465. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-805717\"}",
+    "jobId": "7cc8a5fd-29b7-43d6-8872-2c09a8c82467",
+    "createdAt": "2026-07-28T07:36:52.984Z"
+  },
+  {
+    "id": "2ed92d32-f5e4-4923-8a54-601417d4f207",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-489450 created for order JG-2026-812850. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-489450\"}",
+    "jobId": "5d2b789f-294a-42e3-a2d4-acf7d7387729",
+    "createdAt": "2026-07-28T07:36:53.233Z"
+  },
+  {
+    "jobId": "5d2b789f-294a-42e3-a2d4-acf7d7387729",
+    "itemId": "bb1eaa17-717a-47b8-98b5-b39f333553f2",
+    "status": "PRINT_QUEUE",
+    "title": "Artwork APPROVE",
+    "description": "Artwork looks great",
+    "metadataJson": "{\"staffName\":\"Ramesh Designer\",\"action\":\"APPROVE\"}",
+    "id": "264d1051-36a9-470d-be48-2ed680ea2809",
+    "createdAt": "2026-07-28T07:36:53.235Z"
+  },
+  {
+    "id": "e62c1ca0-52c1-4adb-b96e-12e7d50a3851",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-921073 created for order JG-2026-414859. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-921073\"}",
+    "jobId": "df7caa95-57e9-4fe0-a49e-cbd91b3933c7",
+    "createdAt": "2026-07-28T07:36:53.456Z"
+  },
+  {
+    "jobId": "df7caa95-57e9-4fe0-a49e-cbd91b3933c7",
+    "itemId": "7c0ab961-d704-4a92-9a33-b78fb71e7120",
+    "status": "PRINT_QUEUE",
+    "title": "Artwork APPROVE",
+    "description": "Artwork review status: APPROVED by Ramesh Designer",
+    "metadataJson": "{\"staffName\":\"Ramesh Designer\",\"action\":\"APPROVE\"}",
+    "id": "9ad86163-cdfa-47fc-90ff-01c9cd8aa87f",
+    "createdAt": "2026-07-28T07:36:53.457Z"
+  },
+  {
+    "jobId": "df7caa95-57e9-4fe0-a49e-cbd91b3933c7",
+    "itemId": "7c0ab961-d704-4a92-9a33-b78fb71e7120",
+    "status": "PRINTING",
+    "title": "Printing Started",
+    "description": "Printing started on machine mach-2 by Sunil Operator",
+    "metadataJson": "{\"machineId\":\"mach-2\",\"station\":\"Mug-Press-1\",\"staffName\":\"Sunil Operator\"}",
+    "id": "b808d66e-40ee-43de-9ee8-b23014c9e3c4",
+    "createdAt": "2026-07-28T07:36:53.459Z"
+  },
+  {
+    "jobId": "df7caa95-57e9-4fe0-a49e-cbd91b3933c7",
+    "itemId": "7c0ab961-d704-4a92-9a33-b78fb71e7120",
+    "status": "QC_PENDING",
+    "title": "Printing Completed & QC Pending",
+    "description": "Item printed successfully by Sunil Operator. Moved to Quality Check.",
+    "metadataJson": "{\"staffName\":\"Sunil Operator\"}",
+    "id": "59fc99a5-23d7-486f-811e-ec40ec166fd6",
+    "createdAt": "2026-07-28T07:36:53.461Z"
+  },
+  {
+    "id": "4f723237-6300-4238-aa5c-eb8a731aa36d",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-802342 created for order JG-2026-384296. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-802342\"}",
+    "jobId": "646fc135-e4a2-4aaf-9911-52cc97f8ce79",
+    "createdAt": "2026-07-28T07:36:53.674Z"
+  },
+  {
+    "jobId": "646fc135-e4a2-4aaf-9911-52cc97f8ce79",
+    "itemId": "8f3fabf6-0d24-4594-8bdb-cd33b85054ad",
+    "status": "PRINT_QUEUE",
+    "title": "Artwork APPROVE",
+    "description": "Artwork review status: APPROVED by Ramesh Designer",
+    "metadataJson": "{\"staffName\":\"Ramesh Designer\",\"action\":\"APPROVE\"}",
+    "id": "5f0a228a-cfbe-465d-8802-d9bf348e1a7e",
+    "createdAt": "2026-07-28T07:36:53.675Z"
+  },
+  {
+    "jobId": "646fc135-e4a2-4aaf-9911-52cc97f8ce79",
+    "itemId": "8f3fabf6-0d24-4594-8bdb-cd33b85054ad",
+    "status": "PRINTING",
+    "title": "Printing Started",
+    "description": "Printing started on machine mach-2 by Sunil Operator",
+    "metadataJson": "{\"machineId\":\"mach-2\",\"station\":\"Station-1\",\"staffName\":\"Sunil Operator\"}",
+    "id": "35ed7829-b8e4-4c53-950b-5777a8bac8ed",
+    "createdAt": "2026-07-28T07:36:53.678Z"
+  },
+  {
+    "jobId": "646fc135-e4a2-4aaf-9911-52cc97f8ce79",
+    "itemId": "8f3fabf6-0d24-4594-8bdb-cd33b85054ad",
+    "status": "QC_PENDING",
+    "title": "Printing Completed & QC Pending",
+    "description": "Item printed successfully by Sunil Operator. Moved to Quality Check.",
+    "metadataJson": "{\"staffName\":\"Sunil Operator\"}",
+    "id": "913498ab-6dcd-496f-8223-66e9ecfab36b",
+    "createdAt": "2026-07-28T07:36:53.679Z"
+  },
+  {
+    "jobId": "646fc135-e4a2-4aaf-9911-52cc97f8ce79",
+    "itemId": "8f3fabf6-0d24-4594-8bdb-cd33b85054ad",
+    "status": "PACKING_QUEUE",
+    "title": "Quality Check PASS",
+    "description": "Colors vibrant, no defects",
+    "metadataJson": "{\"staffName\":\"Vikram Supervisor\",\"result\":\"PASS\"}",
+    "id": "cf3a9048-b9d7-471f-8186-b115163686dd",
+    "createdAt": "2026-07-28T07:36:53.681Z"
+  },
+  {
+    "jobId": "646fc135-e4a2-4aaf-9911-52cc97f8ce79",
+    "itemId": "8f3fabf6-0d24-4594-8bdb-cd33b85054ad",
+    "status": "PACKING",
+    "title": "Packing Started",
+    "description": "Packing started by Anita Packer",
+    "metadataJson": "{\"staffName\":\"Anita Packer\",\"action\":\"START\"}",
+    "id": "7496f4f8-0f17-4e46-94ee-3821742d71d6",
+    "createdAt": "2026-07-28T07:36:53.682Z"
+  },
+  {
+    "jobId": "646fc135-e4a2-4aaf-9911-52cc97f8ce79",
+    "itemId": "8f3fabf6-0d24-4594-8bdb-cd33b85054ad",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Packing Completed",
+    "description": "Gift boxed securely",
+    "metadataJson": "{\"staffName\":\"Anita Packer\",\"action\":\"COMPLETE\"}",
+    "id": "82de8dd7-d36f-4f1c-850b-e15cfbca9c49",
+    "createdAt": "2026-07-28T07:36:53.684Z"
+  },
+  {
+    "id": "51cc8f76-9f11-4e70-bf2e-74b33ff4d777",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-262997 created for order JG-2026-567869. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-262997\"}",
+    "jobId": "2f3d98d7-b150-410f-bc63-641fcfe933bf",
+    "createdAt": "2026-07-28T07:36:53.910Z"
+  },
+  {
+    "jobId": "2f3d98d7-b150-410f-bc63-641fcfe933bf",
+    "itemId": "6d9bd8e0-8caf-4353-9ca2-cad99aa52a81",
+    "status": "PRINT_QUEUE",
+    "title": "Artwork APPROVE",
+    "description": "Artwork review status: APPROVED by Ramesh Designer",
+    "metadataJson": "{\"staffName\":\"Ramesh Designer\",\"action\":\"APPROVE\"}",
+    "id": "5c27bbb4-269f-48ca-a67d-719f46bbb0f7",
+    "createdAt": "2026-07-28T07:36:53.911Z"
+  },
+  {
+    "jobId": "2f3d98d7-b150-410f-bc63-641fcfe933bf",
+    "itemId": "6d9bd8e0-8caf-4353-9ca2-cad99aa52a81",
+    "status": "PRINTING",
+    "title": "Printing Started",
+    "description": "Printing started on machine mach-2 by Sunil Operator",
+    "metadataJson": "{\"machineId\":\"mach-2\",\"station\":\"Station-1\",\"staffName\":\"Sunil Operator\"}",
+    "id": "3a630459-0d74-495f-9018-d87d76adda04",
+    "createdAt": "2026-07-28T07:36:53.913Z"
+  },
+  {
+    "jobId": "2f3d98d7-b150-410f-bc63-641fcfe933bf",
+    "itemId": "6d9bd8e0-8caf-4353-9ca2-cad99aa52a81",
+    "status": "QC_PENDING",
+    "title": "Printing Completed & QC Pending",
+    "description": "Item printed successfully by Sunil Operator. Moved to Quality Check.",
+    "metadataJson": "{\"staffName\":\"Sunil Operator\"}",
+    "id": "97ff4705-4451-4af2-b887-1d08da9162c5",
+    "createdAt": "2026-07-28T07:36:53.915Z"
+  },
+  {
+    "jobId": "2f3d98d7-b150-410f-bc63-641fcfe933bf",
+    "itemId": "6d9bd8e0-8caf-4353-9ca2-cad99aa52a81",
+    "status": "REPRINT_REQUIRED",
+    "title": "Quality Check FAIL",
+    "description": "Smudge on print",
+    "metadataJson": "{\"staffName\":\"Vikram Supervisor\",\"result\":\"FAIL\"}",
+    "id": "8ac0c999-8cc3-4f8a-8196-6acbc77f1d57",
+    "createdAt": "2026-07-28T07:36:53.916Z"
+  },
+  {
+    "jobId": "2f3d98d7-b150-410f-bc63-641fcfe933bf",
+    "itemId": "6d9bd8e0-8caf-4353-9ca2-cad99aa52a81",
+    "status": "PRINT_QUEUE",
+    "title": "Reprint Request Generated",
+    "description": "Reprint initiated due to: Smudge defect. Author: Vikram Supervisor",
+    "metadataJson": "{\"reason\":\"Smudge defect\",\"staffName\":\"Vikram Supervisor\"}",
+    "id": "ab807c91-74ec-4cad-942c-a5d7a1b2fb25",
+    "createdAt": "2026-07-28T07:36:53.918Z"
+  },
+  {
+    "id": "5da48e9f-dd85-4a88-a344-d90655b0e33a",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-776896 created for order JG-2026-522525. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-776896\"}",
+    "jobId": "3c262ff6-b122-45b1-a85c-e9221602b7ea",
+    "createdAt": "2026-07-28T07:40:39.324Z"
+  },
+  {
+    "id": "c8f7af00-b58f-4238-9f9e-4306e3f0db4a",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-261162 created for order JG-2026-884333. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-261162\"}",
+    "jobId": "281b2de7-4f5b-425d-8823-479f8d5eae7e",
+    "createdAt": "2026-07-28T07:40:39.559Z"
+  },
+  {
+    "jobId": "281b2de7-4f5b-425d-8823-479f8d5eae7e",
+    "itemId": "6aabb88d-1c2c-49c4-8bef-44414f21f4b0",
+    "status": "PRINT_QUEUE",
+    "title": "Artwork APPROVE",
+    "description": "Artwork looks great",
+    "metadataJson": "{\"staffName\":\"Ramesh Designer\",\"action\":\"APPROVE\"}",
+    "id": "6317fb58-a8e7-42e5-a632-f149f1357111",
+    "createdAt": "2026-07-28T07:40:39.561Z"
+  },
+  {
+    "id": "5a3e74b9-0469-4e1d-90e0-99413a176ff8",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-378282 created for order JG-2026-883835. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-378282\"}",
+    "jobId": "11d13b96-027a-428c-ba09-b0356ac931da",
+    "createdAt": "2026-07-28T07:40:39.773Z"
+  },
+  {
+    "jobId": "11d13b96-027a-428c-ba09-b0356ac931da",
+    "itemId": "a632d86e-5d95-471a-af14-2936a042b5a9",
+    "status": "PRINT_QUEUE",
+    "title": "Artwork APPROVE",
+    "description": "Artwork review status: APPROVED by Ramesh Designer",
+    "metadataJson": "{\"staffName\":\"Ramesh Designer\",\"action\":\"APPROVE\"}",
+    "id": "4783e247-02d7-4818-bb08-c2a2c0ea4cf5",
+    "createdAt": "2026-07-28T07:40:39.774Z"
+  },
+  {
+    "jobId": "11d13b96-027a-428c-ba09-b0356ac931da",
+    "itemId": "a632d86e-5d95-471a-af14-2936a042b5a9",
+    "status": "PRINTING",
+    "title": "Printing Started",
+    "description": "Printing started on machine mach-2 by Sunil Operator",
+    "metadataJson": "{\"machineId\":\"mach-2\",\"station\":\"Mug-Press-1\",\"staffName\":\"Sunil Operator\"}",
+    "id": "86455f2d-8fc9-438f-92ff-6ecb43637cce",
+    "createdAt": "2026-07-28T07:40:39.777Z"
+  },
+  {
+    "jobId": "11d13b96-027a-428c-ba09-b0356ac931da",
+    "itemId": "a632d86e-5d95-471a-af14-2936a042b5a9",
+    "status": "QC_PENDING",
+    "title": "Printing Completed & QC Pending",
+    "description": "Item printed successfully by Sunil Operator. Moved to Quality Check.",
+    "metadataJson": "{\"staffName\":\"Sunil Operator\"}",
+    "id": "71a95c2e-d0f0-4ca1-969a-ee20a86513cb",
+    "createdAt": "2026-07-28T07:40:39.779Z"
+  },
+  {
+    "id": "2a2d7df6-e749-4c6e-b096-2fa4784a2cb3",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-607019 created for order JG-2026-235875. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-607019\"}",
+    "jobId": "340b12e6-cb3e-4e9a-9c2e-5504bdd6eac6",
+    "createdAt": "2026-07-28T07:40:40.028Z"
+  },
+  {
+    "jobId": "340b12e6-cb3e-4e9a-9c2e-5504bdd6eac6",
+    "itemId": "f8d8c557-61ac-4ecb-9b0f-2f78b9c5e9d5",
+    "status": "PRINT_QUEUE",
+    "title": "Artwork APPROVE",
+    "description": "Artwork review status: APPROVED by Ramesh Designer",
+    "metadataJson": "{\"staffName\":\"Ramesh Designer\",\"action\":\"APPROVE\"}",
+    "id": "0e08e6b7-37cf-4fcb-b9ed-277ae7c96570",
+    "createdAt": "2026-07-28T07:40:40.029Z"
+  },
+  {
+    "jobId": "340b12e6-cb3e-4e9a-9c2e-5504bdd6eac6",
+    "itemId": "f8d8c557-61ac-4ecb-9b0f-2f78b9c5e9d5",
+    "status": "PRINTING",
+    "title": "Printing Started",
+    "description": "Printing started on machine mach-2 by Sunil Operator",
+    "metadataJson": "{\"machineId\":\"mach-2\",\"station\":\"Station-1\",\"staffName\":\"Sunil Operator\"}",
+    "id": "5528e649-40d4-48e3-86fb-628e43090456",
+    "createdAt": "2026-07-28T07:40:40.031Z"
+  },
+  {
+    "jobId": "340b12e6-cb3e-4e9a-9c2e-5504bdd6eac6",
+    "itemId": "f8d8c557-61ac-4ecb-9b0f-2f78b9c5e9d5",
+    "status": "QC_PENDING",
+    "title": "Printing Completed & QC Pending",
+    "description": "Item printed successfully by Sunil Operator. Moved to Quality Check.",
+    "metadataJson": "{\"staffName\":\"Sunil Operator\"}",
+    "id": "0849fab2-37e9-4932-85df-0732fbfe1a48",
+    "createdAt": "2026-07-28T07:40:40.041Z"
+  },
+  {
+    "jobId": "340b12e6-cb3e-4e9a-9c2e-5504bdd6eac6",
+    "itemId": "f8d8c557-61ac-4ecb-9b0f-2f78b9c5e9d5",
+    "status": "PACKING_QUEUE",
+    "title": "Quality Check PASS",
+    "description": "Colors vibrant, no defects",
+    "metadataJson": "{\"staffName\":\"Vikram Supervisor\",\"result\":\"PASS\"}",
+    "id": "60b3c091-fe3d-4f64-bc65-e19e407cdbf2",
+    "createdAt": "2026-07-28T07:40:40.043Z"
+  },
+  {
+    "jobId": "340b12e6-cb3e-4e9a-9c2e-5504bdd6eac6",
+    "itemId": "f8d8c557-61ac-4ecb-9b0f-2f78b9c5e9d5",
+    "status": "PACKING",
+    "title": "Packing Started",
+    "description": "Packing started by Anita Packer",
+    "metadataJson": "{\"staffName\":\"Anita Packer\",\"action\":\"START\"}",
+    "id": "aeb9f0c0-2e88-41ef-bd94-be5fcb8b1bda",
+    "createdAt": "2026-07-28T07:40:40.044Z"
+  },
+  {
+    "jobId": "340b12e6-cb3e-4e9a-9c2e-5504bdd6eac6",
+    "itemId": "f8d8c557-61ac-4ecb-9b0f-2f78b9c5e9d5",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Packing Completed",
+    "description": "Gift boxed securely",
+    "metadataJson": "{\"staffName\":\"Anita Packer\",\"action\":\"COMPLETE\"}",
+    "id": "676799c9-0f9e-42fb-a549-7193ff007c51",
+    "createdAt": "2026-07-28T07:40:40.046Z"
+  },
+  {
+    "id": "e25e1dc3-e980-461c-90a2-48ab74352059",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-391790 created for order JG-2026-140946. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-391790\"}",
+    "jobId": "490237ec-0bf7-4ec5-bafc-28e855eb4863",
+    "createdAt": "2026-07-28T07:40:40.284Z"
+  },
+  {
+    "jobId": "490237ec-0bf7-4ec5-bafc-28e855eb4863",
+    "itemId": "f8de0495-49d6-4704-97ba-ba5b5e8e928e",
+    "status": "PRINT_QUEUE",
+    "title": "Artwork APPROVE",
+    "description": "Artwork review status: APPROVED by Ramesh Designer",
+    "metadataJson": "{\"staffName\":\"Ramesh Designer\",\"action\":\"APPROVE\"}",
+    "id": "8d595da1-e1cc-4903-812d-5140ad0d0540",
+    "createdAt": "2026-07-28T07:40:40.285Z"
+  },
+  {
+    "jobId": "490237ec-0bf7-4ec5-bafc-28e855eb4863",
+    "itemId": "f8de0495-49d6-4704-97ba-ba5b5e8e928e",
+    "status": "PRINTING",
+    "title": "Printing Started",
+    "description": "Printing started on machine mach-2 by Sunil Operator",
+    "metadataJson": "{\"machineId\":\"mach-2\",\"station\":\"Station-1\",\"staffName\":\"Sunil Operator\"}",
+    "id": "757e3f5b-8b36-4b28-83a0-d356a193cb1e",
+    "createdAt": "2026-07-28T07:40:40.287Z"
+  },
+  {
+    "jobId": "490237ec-0bf7-4ec5-bafc-28e855eb4863",
+    "itemId": "f8de0495-49d6-4704-97ba-ba5b5e8e928e",
+    "status": "QC_PENDING",
+    "title": "Printing Completed & QC Pending",
+    "description": "Item printed successfully by Sunil Operator. Moved to Quality Check.",
+    "metadataJson": "{\"staffName\":\"Sunil Operator\"}",
+    "id": "c86e1937-768e-4065-9d92-f19a1a4d364d",
+    "createdAt": "2026-07-28T07:40:40.289Z"
+  },
+  {
+    "jobId": "490237ec-0bf7-4ec5-bafc-28e855eb4863",
+    "itemId": "f8de0495-49d6-4704-97ba-ba5b5e8e928e",
+    "status": "REPRINT_REQUIRED",
+    "title": "Quality Check FAIL",
+    "description": "Smudge on print",
+    "metadataJson": "{\"staffName\":\"Vikram Supervisor\",\"result\":\"FAIL\"}",
+    "id": "642e9e11-386f-4dbd-a602-9f961c00f18b",
+    "createdAt": "2026-07-28T07:40:40.291Z"
+  },
+  {
+    "jobId": "490237ec-0bf7-4ec5-bafc-28e855eb4863",
+    "itemId": "f8de0495-49d6-4704-97ba-ba5b5e8e928e",
+    "status": "PRINT_QUEUE",
+    "title": "Reprint Request Generated",
+    "description": "Reprint initiated due to: Smudge defect. Author: Vikram Supervisor",
+    "metadataJson": "{\"reason\":\"Smudge defect\",\"staffName\":\"Vikram Supervisor\"}",
+    "id": "f6dfdfd4-f933-4f73-b222-2bce772639ed",
+    "createdAt": "2026-07-28T07:40:40.292Z"
+  },
+  {
+    "id": "5d508ab0-b79f-41a4-8e01-e4222124560f",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-714704 created for order JG-2026-146023. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-714704\"}",
+    "jobId": "c762ecfc-fd20-43b5-add7-941e8b860d18",
+    "createdAt": "2026-07-28T08:19:16.016Z"
+  },
+  {
+    "id": "66c587cf-5282-4b14-9fdb-608ff04a8fa6",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-253076 created for order JG-2026-959908. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-253076\"}",
+    "jobId": "69acc727-3b3e-4af6-a60d-0744052bb750",
+    "createdAt": "2026-07-28T08:19:16.282Z"
+  },
+  {
+    "jobId": "69acc727-3b3e-4af6-a60d-0744052bb750",
+    "itemId": "aa1f8348-4414-4075-8519-0fef8ac00a20",
+    "status": "PRINT_QUEUE",
+    "title": "Artwork APPROVE",
+    "description": "Artwork looks great",
+    "metadataJson": "{\"staffName\":\"Ramesh Designer\",\"action\":\"APPROVE\"}",
+    "id": "074d5290-6d4f-46fd-920a-ba80f18ebd0f",
+    "createdAt": "2026-07-28T08:19:16.284Z"
+  },
+  {
+    "id": "9614bde1-d6cd-4278-835b-97055a878aa9",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-829842 created for order JG-2026-740642. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-829842\"}",
+    "jobId": "4abe5b14-37b4-46df-b76d-74f42db793c6",
+    "createdAt": "2026-07-28T08:19:16.532Z"
+  },
+  {
+    "jobId": "4abe5b14-37b4-46df-b76d-74f42db793c6",
+    "itemId": "b2de76b6-cbe0-4e7c-8ace-af34219dd62b",
+    "status": "PRINT_QUEUE",
+    "title": "Artwork APPROVE",
+    "description": "Artwork review status: APPROVED by Ramesh Designer",
+    "metadataJson": "{\"staffName\":\"Ramesh Designer\",\"action\":\"APPROVE\"}",
+    "id": "c85fe36d-3d65-4b60-8a3c-4f4fab746789",
+    "createdAt": "2026-07-28T08:19:16.534Z"
+  },
+  {
+    "jobId": "4abe5b14-37b4-46df-b76d-74f42db793c6",
+    "itemId": "b2de76b6-cbe0-4e7c-8ace-af34219dd62b",
+    "status": "PRINTING",
+    "title": "Printing Started",
+    "description": "Printing started on machine mach-2 by Sunil Operator",
+    "metadataJson": "{\"machineId\":\"mach-2\",\"station\":\"Mug-Press-1\",\"staffName\":\"Sunil Operator\"}",
+    "id": "73d67491-f65a-4ad1-81ee-dfe973361124",
+    "createdAt": "2026-07-28T08:19:16.536Z"
+  },
+  {
+    "jobId": "4abe5b14-37b4-46df-b76d-74f42db793c6",
+    "itemId": "b2de76b6-cbe0-4e7c-8ace-af34219dd62b",
+    "status": "QC_PENDING",
+    "title": "Printing Completed & QC Pending",
+    "description": "Item printed successfully by Sunil Operator. Moved to Quality Check.",
+    "metadataJson": "{\"staffName\":\"Sunil Operator\"}",
+    "id": "a40c2a2a-d919-4674-8e9c-a8867a9c4182",
+    "createdAt": "2026-07-28T08:19:16.538Z"
+  },
+  {
+    "id": "d7865728-7e8c-4918-acd1-4d50cd793acb",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-524324 created for order JG-2026-338816. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-524324\"}",
+    "jobId": "1f7824a9-852c-4101-a054-53cd9a35181b",
+    "createdAt": "2026-07-28T08:19:16.769Z"
+  },
+  {
+    "jobId": "1f7824a9-852c-4101-a054-53cd9a35181b",
+    "itemId": "02c6eb93-510b-4d58-aae1-6c8b82d24f11",
+    "status": "PRINT_QUEUE",
+    "title": "Artwork APPROVE",
+    "description": "Artwork review status: APPROVED by Ramesh Designer",
+    "metadataJson": "{\"staffName\":\"Ramesh Designer\",\"action\":\"APPROVE\"}",
+    "id": "7f0eb328-c9f0-40bd-a728-fbff2b0d1aaf",
+    "createdAt": "2026-07-28T08:19:16.771Z"
+  },
+  {
+    "jobId": "1f7824a9-852c-4101-a054-53cd9a35181b",
+    "itemId": "02c6eb93-510b-4d58-aae1-6c8b82d24f11",
+    "status": "PRINTING",
+    "title": "Printing Started",
+    "description": "Printing started on machine mach-2 by Sunil Operator",
+    "metadataJson": "{\"machineId\":\"mach-2\",\"station\":\"Station-1\",\"staffName\":\"Sunil Operator\"}",
+    "id": "43e28040-4982-406a-a799-f31848782c5b",
+    "createdAt": "2026-07-28T08:19:16.773Z"
+  },
+  {
+    "jobId": "1f7824a9-852c-4101-a054-53cd9a35181b",
+    "itemId": "02c6eb93-510b-4d58-aae1-6c8b82d24f11",
+    "status": "QC_PENDING",
+    "title": "Printing Completed & QC Pending",
+    "description": "Item printed successfully by Sunil Operator. Moved to Quality Check.",
+    "metadataJson": "{\"staffName\":\"Sunil Operator\"}",
+    "id": "54073b07-f9a8-40d0-8798-f63532c743b1",
+    "createdAt": "2026-07-28T08:19:16.776Z"
+  },
+  {
+    "jobId": "1f7824a9-852c-4101-a054-53cd9a35181b",
+    "itemId": "02c6eb93-510b-4d58-aae1-6c8b82d24f11",
+    "status": "PACKING_QUEUE",
+    "title": "Quality Check PASS",
+    "description": "Colors vibrant, no defects",
+    "metadataJson": "{\"staffName\":\"Vikram Supervisor\",\"result\":\"PASS\"}",
+    "id": "edcd7a2c-2060-406c-9df5-d2d3c7eeb456",
+    "createdAt": "2026-07-28T08:19:16.778Z"
+  },
+  {
+    "jobId": "1f7824a9-852c-4101-a054-53cd9a35181b",
+    "itemId": "02c6eb93-510b-4d58-aae1-6c8b82d24f11",
+    "status": "PACKING",
+    "title": "Packing Started",
+    "description": "Packing started by Anita Packer",
+    "metadataJson": "{\"staffName\":\"Anita Packer\",\"action\":\"START\"}",
+    "id": "f8b542a1-5f47-4c86-8d15-a7cf5e449598",
+    "createdAt": "2026-07-28T08:19:16.779Z"
+  },
+  {
+    "jobId": "1f7824a9-852c-4101-a054-53cd9a35181b",
+    "itemId": "02c6eb93-510b-4d58-aae1-6c8b82d24f11",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Packing Completed",
+    "description": "Gift boxed securely",
+    "metadataJson": "{\"staffName\":\"Anita Packer\",\"action\":\"COMPLETE\"}",
+    "id": "69e89895-9446-4fdf-ba4a-67d9397692ef",
+    "createdAt": "2026-07-28T08:19:16.781Z"
+  },
+  {
+    "id": "d1910b4d-6686-4955-a0c0-371d52550630",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-645397 created for order JG-2026-675796. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-645397\"}",
+    "jobId": "912999f5-bfc8-469f-af08-e42d4f787ce8",
+    "createdAt": "2026-07-28T08:19:17.036Z"
+  },
+  {
+    "jobId": "912999f5-bfc8-469f-af08-e42d4f787ce8",
+    "itemId": "38c16149-a2a3-4f2c-9707-fc5844a59e46",
+    "status": "PRINT_QUEUE",
+    "title": "Artwork APPROVE",
+    "description": "Artwork review status: APPROVED by Ramesh Designer",
+    "metadataJson": "{\"staffName\":\"Ramesh Designer\",\"action\":\"APPROVE\"}",
+    "id": "87f0a6f7-f761-4a9a-8085-68d5b3399301",
+    "createdAt": "2026-07-28T08:19:17.038Z"
+  },
+  {
+    "jobId": "912999f5-bfc8-469f-af08-e42d4f787ce8",
+    "itemId": "38c16149-a2a3-4f2c-9707-fc5844a59e46",
+    "status": "PRINTING",
+    "title": "Printing Started",
+    "description": "Printing started on machine mach-2 by Sunil Operator",
+    "metadataJson": "{\"machineId\":\"mach-2\",\"station\":\"Station-1\",\"staffName\":\"Sunil Operator\"}",
+    "id": "d649f292-0b20-4b47-a0c3-0a14837e4e5c",
+    "createdAt": "2026-07-28T08:19:17.040Z"
+  },
+  {
+    "jobId": "912999f5-bfc8-469f-af08-e42d4f787ce8",
+    "itemId": "38c16149-a2a3-4f2c-9707-fc5844a59e46",
+    "status": "QC_PENDING",
+    "title": "Printing Completed & QC Pending",
+    "description": "Item printed successfully by Sunil Operator. Moved to Quality Check.",
+    "metadataJson": "{\"staffName\":\"Sunil Operator\"}",
+    "id": "4d7a3d80-4756-4685-9e65-fb588cbaabc5",
+    "createdAt": "2026-07-28T08:19:17.042Z"
+  },
+  {
+    "jobId": "912999f5-bfc8-469f-af08-e42d4f787ce8",
+    "itemId": "38c16149-a2a3-4f2c-9707-fc5844a59e46",
+    "status": "REPRINT_REQUIRED",
+    "title": "Quality Check FAIL",
+    "description": "Smudge on print",
+    "metadataJson": "{\"staffName\":\"Vikram Supervisor\",\"result\":\"FAIL\"}",
+    "id": "9f6772c1-d08a-40e8-a468-12144a69b76d",
+    "createdAt": "2026-07-28T08:19:17.043Z"
+  },
+  {
+    "jobId": "912999f5-bfc8-469f-af08-e42d4f787ce8",
+    "itemId": "38c16149-a2a3-4f2c-9707-fc5844a59e46",
+    "status": "PRINT_QUEUE",
+    "title": "Reprint Request Generated",
+    "description": "Reprint initiated due to: Smudge defect. Author: Vikram Supervisor",
+    "metadataJson": "{\"reason\":\"Smudge defect\",\"staffName\":\"Vikram Supervisor\"}",
+    "id": "b76c6c86-c73b-4434-b4e3-357650670d47",
+    "createdAt": "2026-07-28T08:19:17.044Z"
+  },
+  {
+    "id": "f5ffc7a8-5960-4824-bd65-b1cc28d119d4",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-484706 created for order JG-2026-506417. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-484706\"}",
+    "jobId": "6f982055-4be5-4806-974d-c21e8f3d70e4",
+    "createdAt": "2026-07-28T08:24:05.444Z"
+  },
+  {
+    "id": "008e6f4d-fed6-4d5c-a958-1150df8f30f4",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-117590 created for order JG-2026-883703. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-117590\"}",
+    "jobId": "81c10c43-b7a0-4b0c-ad3c-e4cf83186b94",
+    "createdAt": "2026-07-28T08:24:05.805Z"
+  },
+  {
+    "jobId": "81c10c43-b7a0-4b0c-ad3c-e4cf83186b94",
+    "itemId": "b8ca0cc1-15d3-4ad4-8064-862e86b51e5a",
+    "status": "PRINT_QUEUE",
+    "title": "Artwork APPROVE",
+    "description": "Artwork looks great",
+    "metadataJson": "{\"staffName\":\"Ramesh Designer\",\"action\":\"APPROVE\"}",
+    "id": "8d2adb8e-489d-4d51-983c-1983aceddcad",
+    "createdAt": "2026-07-28T08:24:05.807Z"
+  },
+  {
+    "id": "b7b2126d-6dab-4582-b462-59796c1add10",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-821433 created for order JG-2026-884198. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-821433\"}",
+    "jobId": "7e5bb235-ef44-4f76-a410-1c0d03175974",
+    "createdAt": "2026-07-28T08:24:06.250Z"
+  },
+  {
+    "jobId": "7e5bb235-ef44-4f76-a410-1c0d03175974",
+    "itemId": "1b9b9165-49d2-4766-a60c-843731986a35",
+    "status": "PRINT_QUEUE",
+    "title": "Artwork APPROVE",
+    "description": "Artwork review status: APPROVED by Ramesh Designer",
+    "metadataJson": "{\"staffName\":\"Ramesh Designer\",\"action\":\"APPROVE\"}",
+    "id": "1a63c839-b685-4ba8-aef0-d597fc2b4fe4",
+    "createdAt": "2026-07-28T08:24:06.253Z"
+  },
+  {
+    "jobId": "7e5bb235-ef44-4f76-a410-1c0d03175974",
+    "itemId": "1b9b9165-49d2-4766-a60c-843731986a35",
+    "status": "PRINTING",
+    "title": "Printing Started",
+    "description": "Printing started on machine mach-2 by Sunil Operator",
+    "metadataJson": "{\"machineId\":\"mach-2\",\"station\":\"Mug-Press-1\",\"staffName\":\"Sunil Operator\"}",
+    "id": "284ab283-c82e-4ec0-8c5b-005212b084d7",
+    "createdAt": "2026-07-28T08:24:06.263Z"
+  },
+  {
+    "jobId": "7e5bb235-ef44-4f76-a410-1c0d03175974",
+    "itemId": "1b9b9165-49d2-4766-a60c-843731986a35",
+    "status": "QC_PENDING",
+    "title": "Printing Completed & QC Pending",
+    "description": "Item printed successfully by Sunil Operator. Moved to Quality Check.",
+    "metadataJson": "{\"staffName\":\"Sunil Operator\"}",
+    "id": "c5f215d4-8b34-4792-8592-e3f46ead32bd",
+    "createdAt": "2026-07-28T08:24:06.265Z"
+  },
+  {
+    "id": "f1505bbe-04e0-47c3-a814-14cbc20c6f0a",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-737698 created for order JG-2026-883370. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-737698\"}",
+    "jobId": "676c0298-0fdc-4ec4-b913-fc04d96876e4",
+    "createdAt": "2026-07-28T08:24:06.781Z"
+  },
+  {
+    "jobId": "676c0298-0fdc-4ec4-b913-fc04d96876e4",
+    "itemId": "a61bf30d-6a88-4642-900a-6639b9c33ecd",
+    "status": "PRINT_QUEUE",
+    "title": "Artwork APPROVE",
+    "description": "Artwork review status: APPROVED by Ramesh Designer",
+    "metadataJson": "{\"staffName\":\"Ramesh Designer\",\"action\":\"APPROVE\"}",
+    "id": "655e102b-9bfd-4135-beb2-fab02d6b6d0d",
+    "createdAt": "2026-07-28T08:24:06.782Z"
+  },
+  {
+    "jobId": "676c0298-0fdc-4ec4-b913-fc04d96876e4",
+    "itemId": "a61bf30d-6a88-4642-900a-6639b9c33ecd",
+    "status": "PRINTING",
+    "title": "Printing Started",
+    "description": "Printing started on machine mach-2 by Sunil Operator",
+    "metadataJson": "{\"machineId\":\"mach-2\",\"station\":\"Station-1\",\"staffName\":\"Sunil Operator\"}",
+    "id": "979648ed-54bd-4d68-b708-e4fcf759ba72",
+    "createdAt": "2026-07-28T08:24:06.785Z"
+  },
+  {
+    "jobId": "676c0298-0fdc-4ec4-b913-fc04d96876e4",
+    "itemId": "a61bf30d-6a88-4642-900a-6639b9c33ecd",
+    "status": "QC_PENDING",
+    "title": "Printing Completed & QC Pending",
+    "description": "Item printed successfully by Sunil Operator. Moved to Quality Check.",
+    "metadataJson": "{\"staffName\":\"Sunil Operator\"}",
+    "id": "9495cece-c63d-448d-b0a4-3c5d7fd5fe80",
+    "createdAt": "2026-07-28T08:24:06.787Z"
+  },
+  {
+    "jobId": "676c0298-0fdc-4ec4-b913-fc04d96876e4",
+    "itemId": "a61bf30d-6a88-4642-900a-6639b9c33ecd",
+    "status": "PACKING_QUEUE",
+    "title": "Quality Check PASS",
+    "description": "Colors vibrant, no defects",
+    "metadataJson": "{\"staffName\":\"Vikram Supervisor\",\"result\":\"PASS\"}",
+    "id": "f4c09506-fa15-4b69-b36c-613cf70f4ece",
+    "createdAt": "2026-07-28T08:24:06.789Z"
+  },
+  {
+    "jobId": "676c0298-0fdc-4ec4-b913-fc04d96876e4",
+    "itemId": "a61bf30d-6a88-4642-900a-6639b9c33ecd",
+    "status": "PACKING",
+    "title": "Packing Started",
+    "description": "Packing started by Anita Packer",
+    "metadataJson": "{\"staffName\":\"Anita Packer\",\"action\":\"START\"}",
+    "id": "628476f4-1312-4f5a-a71a-593f6a525876",
+    "createdAt": "2026-07-28T08:24:06.791Z"
+  },
+  {
+    "jobId": "676c0298-0fdc-4ec4-b913-fc04d96876e4",
+    "itemId": "a61bf30d-6a88-4642-900a-6639b9c33ecd",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Packing Completed",
+    "description": "Gift boxed securely",
+    "metadataJson": "{\"staffName\":\"Anita Packer\",\"action\":\"COMPLETE\"}",
+    "id": "68385c3b-3fb6-40e6-afd0-113f3c68ed35",
+    "createdAt": "2026-07-28T08:24:06.793Z"
+  },
+  {
+    "id": "b7b5963e-a306-424a-afb4-57f078c4c77b",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-224185 created for order JG-2026-329977. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-224185\"}",
+    "jobId": "1fed5445-228f-4aa8-9e66-35d0a04f20b1",
+    "createdAt": "2026-07-28T08:24:07.274Z"
+  },
+  {
+    "jobId": "1fed5445-228f-4aa8-9e66-35d0a04f20b1",
+    "itemId": "7eb59b0d-7f9e-4cef-9d58-3b4a7cbe7e8a",
+    "status": "PRINT_QUEUE",
+    "title": "Artwork APPROVE",
+    "description": "Artwork review status: APPROVED by Ramesh Designer",
+    "metadataJson": "{\"staffName\":\"Ramesh Designer\",\"action\":\"APPROVE\"}",
+    "id": "4c5d0201-8591-4a4c-95c2-764f5ce5471d",
+    "createdAt": "2026-07-28T08:24:07.277Z"
+  },
+  {
+    "jobId": "1fed5445-228f-4aa8-9e66-35d0a04f20b1",
+    "itemId": "7eb59b0d-7f9e-4cef-9d58-3b4a7cbe7e8a",
+    "status": "PRINTING",
+    "title": "Printing Started",
+    "description": "Printing started on machine mach-2 by Sunil Operator",
+    "metadataJson": "{\"machineId\":\"mach-2\",\"station\":\"Station-1\",\"staffName\":\"Sunil Operator\"}",
+    "id": "0b969063-41bf-4cac-b62f-b4711225774e",
+    "createdAt": "2026-07-28T08:24:07.281Z"
+  },
+  {
+    "jobId": "1fed5445-228f-4aa8-9e66-35d0a04f20b1",
+    "itemId": "7eb59b0d-7f9e-4cef-9d58-3b4a7cbe7e8a",
+    "status": "QC_PENDING",
+    "title": "Printing Completed & QC Pending",
+    "description": "Item printed successfully by Sunil Operator. Moved to Quality Check.",
+    "metadataJson": "{\"staffName\":\"Sunil Operator\"}",
+    "id": "e061a100-2744-4323-8458-6ac7ce3b0d7e",
+    "createdAt": "2026-07-28T08:24:07.285Z"
+  },
+  {
+    "jobId": "1fed5445-228f-4aa8-9e66-35d0a04f20b1",
+    "itemId": "7eb59b0d-7f9e-4cef-9d58-3b4a7cbe7e8a",
+    "status": "REPRINT_REQUIRED",
+    "title": "Quality Check FAIL",
+    "description": "Smudge on print",
+    "metadataJson": "{\"staffName\":\"Vikram Supervisor\",\"result\":\"FAIL\"}",
+    "id": "6fcf888b-f84f-44d9-a869-26e98e05a11b",
+    "createdAt": "2026-07-28T08:24:07.288Z"
+  },
+  {
+    "jobId": "1fed5445-228f-4aa8-9e66-35d0a04f20b1",
+    "itemId": "7eb59b0d-7f9e-4cef-9d58-3b4a7cbe7e8a",
+    "status": "PRINT_QUEUE",
+    "title": "Reprint Request Generated",
+    "description": "Reprint initiated due to: Smudge defect. Author: Vikram Supervisor",
+    "metadataJson": "{\"reason\":\"Smudge defect\",\"staffName\":\"Vikram Supervisor\"}",
+    "id": "467d01b7-0f2c-49df-b0bb-6abd9e452d96",
+    "createdAt": "2026-07-28T08:24:07.290Z"
+  },
+  {
+    "id": "70f6fbd4-c674-4e6a-80d5-547fa57c9f72",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-507518 created for order JG-2026-947956. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-507518\"}",
+    "jobId": "edaa491f-2957-46f9-8a92-e0ed0a95a41e",
+    "createdAt": "2026-07-28T08:26:34.390Z"
+  },
+  {
+    "id": "d090a7a1-ec8d-49ba-b525-b38f50fbf31d",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-892197 created for order JG-2026-764408. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-892197\"}",
+    "jobId": "8b987a54-6156-4573-a670-fff33eac998f",
+    "createdAt": "2026-07-28T08:26:34.659Z"
+  },
+  {
+    "jobId": "8b987a54-6156-4573-a670-fff33eac998f",
+    "itemId": "910412f5-08d7-452e-9481-c435ece84308",
+    "status": "PRINT_QUEUE",
+    "title": "Artwork APPROVE",
+    "description": "Artwork looks great",
+    "metadataJson": "{\"staffName\":\"Ramesh Designer\",\"action\":\"APPROVE\"}",
+    "id": "bcdce74c-279e-475b-a85c-a8871562a2b4",
+    "createdAt": "2026-07-28T08:26:34.661Z"
+  },
+  {
+    "id": "e57d6556-e49c-4136-b424-0d25ce44ffc7",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-273290 created for order JG-2026-232344. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-273290\"}",
+    "jobId": "b91b903f-9fa0-4060-86c4-0e625032952d",
+    "createdAt": "2026-07-28T08:26:34.918Z"
+  },
+  {
+    "jobId": "b91b903f-9fa0-4060-86c4-0e625032952d",
+    "itemId": "5387b4a1-0a1c-47b3-8edf-fb49684e899e",
+    "status": "PRINT_QUEUE",
+    "title": "Artwork APPROVE",
+    "description": "Artwork review status: APPROVED by Ramesh Designer",
+    "metadataJson": "{\"staffName\":\"Ramesh Designer\",\"action\":\"APPROVE\"}",
+    "id": "874af150-0eec-402b-9516-eaa2c9a5e131",
+    "createdAt": "2026-07-28T08:26:34.920Z"
+  },
+  {
+    "jobId": "b91b903f-9fa0-4060-86c4-0e625032952d",
+    "itemId": "5387b4a1-0a1c-47b3-8edf-fb49684e899e",
+    "status": "PRINTING",
+    "title": "Printing Started",
+    "description": "Printing started on machine mach-2 by Sunil Operator",
+    "metadataJson": "{\"machineId\":\"mach-2\",\"station\":\"Mug-Press-1\",\"staffName\":\"Sunil Operator\"}",
+    "id": "4c924337-7d70-4870-b5ba-b3c868016f00",
+    "createdAt": "2026-07-28T08:26:34.923Z"
+  },
+  {
+    "jobId": "b91b903f-9fa0-4060-86c4-0e625032952d",
+    "itemId": "5387b4a1-0a1c-47b3-8edf-fb49684e899e",
+    "status": "QC_PENDING",
+    "title": "Printing Completed & QC Pending",
+    "description": "Item printed successfully by Sunil Operator. Moved to Quality Check.",
+    "metadataJson": "{\"staffName\":\"Sunil Operator\"}",
+    "id": "b6a794c2-51f2-4245-9608-87f1d86e4d2d",
+    "createdAt": "2026-07-28T08:26:34.925Z"
+  },
+  {
+    "id": "aa000da6-d130-4ca4-86ef-96f9fcf11ee0",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-645251 created for order JG-2026-711124. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-645251\"}",
+    "jobId": "5c77b0a6-9a65-4f7e-afec-a27a837f2fdf",
+    "createdAt": "2026-07-28T08:26:35.187Z"
+  },
+  {
+    "jobId": "5c77b0a6-9a65-4f7e-afec-a27a837f2fdf",
+    "itemId": "e1eb9f34-a542-4095-84d7-3e1057a27dc2",
+    "status": "PRINT_QUEUE",
+    "title": "Artwork APPROVE",
+    "description": "Artwork review status: APPROVED by Ramesh Designer",
+    "metadataJson": "{\"staffName\":\"Ramesh Designer\",\"action\":\"APPROVE\"}",
+    "id": "f9ddad52-2dda-473a-a102-62059aea49d2",
+    "createdAt": "2026-07-28T08:26:35.189Z"
+  },
+  {
+    "jobId": "5c77b0a6-9a65-4f7e-afec-a27a837f2fdf",
+    "itemId": "e1eb9f34-a542-4095-84d7-3e1057a27dc2",
+    "status": "PRINTING",
+    "title": "Printing Started",
+    "description": "Printing started on machine mach-2 by Sunil Operator",
+    "metadataJson": "{\"machineId\":\"mach-2\",\"station\":\"Station-1\",\"staffName\":\"Sunil Operator\"}",
+    "id": "e32e28f9-dba1-44e9-957c-0e5ee9fde66a",
+    "createdAt": "2026-07-28T08:26:35.193Z"
+  },
+  {
+    "jobId": "5c77b0a6-9a65-4f7e-afec-a27a837f2fdf",
+    "itemId": "e1eb9f34-a542-4095-84d7-3e1057a27dc2",
+    "status": "QC_PENDING",
+    "title": "Printing Completed & QC Pending",
+    "description": "Item printed successfully by Sunil Operator. Moved to Quality Check.",
+    "metadataJson": "{\"staffName\":\"Sunil Operator\"}",
+    "id": "54d99484-6a77-488b-a4da-db34ad9276a4",
+    "createdAt": "2026-07-28T08:26:35.196Z"
+  },
+  {
+    "jobId": "5c77b0a6-9a65-4f7e-afec-a27a837f2fdf",
+    "itemId": "e1eb9f34-a542-4095-84d7-3e1057a27dc2",
+    "status": "PACKING_QUEUE",
+    "title": "Quality Check PASS",
+    "description": "Colors vibrant, no defects",
+    "metadataJson": "{\"staffName\":\"Vikram Supervisor\",\"result\":\"PASS\"}",
+    "id": "f0aa990e-2081-4d2c-baaa-d348b9ec7cb0",
+    "createdAt": "2026-07-28T08:26:35.200Z"
+  },
+  {
+    "jobId": "5c77b0a6-9a65-4f7e-afec-a27a837f2fdf",
+    "itemId": "e1eb9f34-a542-4095-84d7-3e1057a27dc2",
+    "status": "PACKING",
+    "title": "Packing Started",
+    "description": "Packing started by Anita Packer",
+    "metadataJson": "{\"staffName\":\"Anita Packer\",\"action\":\"START\"}",
+    "id": "8db49945-7477-4a8f-9373-7fb8957329d5",
+    "createdAt": "2026-07-28T08:26:35.202Z"
+  },
+  {
+    "jobId": "5c77b0a6-9a65-4f7e-afec-a27a837f2fdf",
+    "itemId": "e1eb9f34-a542-4095-84d7-3e1057a27dc2",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Packing Completed",
+    "description": "Gift boxed securely",
+    "metadataJson": "{\"staffName\":\"Anita Packer\",\"action\":\"COMPLETE\"}",
+    "id": "c47bb81d-def3-4701-a7db-4ffc02391bd1",
+    "createdAt": "2026-07-28T08:26:35.207Z"
+  },
+  {
+    "id": "2b415aa4-395e-46fd-8012-1f5c45c8724a",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-916223 created for order JG-2026-261435. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-916223\"}",
+    "jobId": "899f8f79-2751-4219-9e35-c63d2219610c",
+    "createdAt": "2026-07-28T08:26:35.471Z"
+  },
+  {
+    "jobId": "899f8f79-2751-4219-9e35-c63d2219610c",
+    "itemId": "17c984ba-65dc-4a31-940a-1273941d4e62",
+    "status": "PRINT_QUEUE",
+    "title": "Artwork APPROVE",
+    "description": "Artwork review status: APPROVED by Ramesh Designer",
+    "metadataJson": "{\"staffName\":\"Ramesh Designer\",\"action\":\"APPROVE\"}",
+    "id": "c30ce428-48da-41e6-94d0-f049d0b3694c",
+    "createdAt": "2026-07-28T08:26:35.473Z"
+  },
+  {
+    "jobId": "899f8f79-2751-4219-9e35-c63d2219610c",
+    "itemId": "17c984ba-65dc-4a31-940a-1273941d4e62",
+    "status": "PRINTING",
+    "title": "Printing Started",
+    "description": "Printing started on machine mach-2 by Sunil Operator",
+    "metadataJson": "{\"machineId\":\"mach-2\",\"station\":\"Station-1\",\"staffName\":\"Sunil Operator\"}",
+    "id": "d76034a2-3165-4acd-8213-fa699933b5d6",
+    "createdAt": "2026-07-28T08:26:35.475Z"
+  },
+  {
+    "jobId": "899f8f79-2751-4219-9e35-c63d2219610c",
+    "itemId": "17c984ba-65dc-4a31-940a-1273941d4e62",
+    "status": "QC_PENDING",
+    "title": "Printing Completed & QC Pending",
+    "description": "Item printed successfully by Sunil Operator. Moved to Quality Check.",
+    "metadataJson": "{\"staffName\":\"Sunil Operator\"}",
+    "id": "aa57b37c-a994-4c7c-b85f-421e9c52e365",
+    "createdAt": "2026-07-28T08:26:35.478Z"
+  },
+  {
+    "jobId": "899f8f79-2751-4219-9e35-c63d2219610c",
+    "itemId": "17c984ba-65dc-4a31-940a-1273941d4e62",
+    "status": "REPRINT_REQUIRED",
+    "title": "Quality Check FAIL",
+    "description": "Smudge on print",
+    "metadataJson": "{\"staffName\":\"Vikram Supervisor\",\"result\":\"FAIL\"}",
+    "id": "f08e6429-50f0-4ae4-9517-06a04182d5a7",
+    "createdAt": "2026-07-28T08:26:35.481Z"
+  },
+  {
+    "jobId": "899f8f79-2751-4219-9e35-c63d2219610c",
+    "itemId": "17c984ba-65dc-4a31-940a-1273941d4e62",
+    "status": "PRINT_QUEUE",
+    "title": "Reprint Request Generated",
+    "description": "Reprint initiated due to: Smudge defect. Author: Vikram Supervisor",
+    "metadataJson": "{\"reason\":\"Smudge defect\",\"staffName\":\"Vikram Supervisor\"}",
+    "id": "5d8e67cd-cde4-48ef-a914-bc23b4d85672",
+    "createdAt": "2026-07-28T08:26:35.482Z"
+  },
+  {
+    "id": "8135c2b4-234f-4a2c-bdda-52bcab2c1a0e",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-946335 created for order JG-2026-137833. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-946335\"}",
+    "jobId": "fe5298b7-3ac7-46aa-a72e-a9b91af83da3",
+    "createdAt": "2026-07-28T08:37:04.856Z"
+  },
+  {
+    "id": "a3ef896c-b69e-4343-9765-a53f0b67461a",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-963821 created for order JG-2026-379207. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-963821\"}",
+    "jobId": "917c1408-8349-4f7c-886d-6e1a131947be",
+    "createdAt": "2026-07-28T08:37:05.176Z"
+  },
+  {
+    "jobId": "917c1408-8349-4f7c-886d-6e1a131947be",
+    "itemId": "0ad7d3cd-096b-4997-aee0-6351712a4122",
+    "status": "PRINT_QUEUE",
+    "title": "Artwork APPROVE",
+    "description": "Artwork looks great",
+    "metadataJson": "{\"staffName\":\"Ramesh Designer\",\"action\":\"APPROVE\"}",
+    "id": "b31cf555-7d0a-4fef-88ae-a05d9f3d9f58",
+    "createdAt": "2026-07-28T08:37:05.179Z"
+  },
+  {
+    "id": "15dbb1bf-1943-4f0c-a3a3-96c87a980eb4",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-661638 created for order JG-2026-186934. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-661638\"}",
+    "jobId": "cb6a19fc-910b-4769-b2b0-af2295a08ab4",
+    "createdAt": "2026-07-28T08:37:05.486Z"
+  },
+  {
+    "jobId": "cb6a19fc-910b-4769-b2b0-af2295a08ab4",
+    "itemId": "fd828bd4-2da5-4058-8587-7abfd50575da",
+    "status": "PRINT_QUEUE",
+    "title": "Artwork APPROVE",
+    "description": "Artwork review status: APPROVED by Ramesh Designer",
+    "metadataJson": "{\"staffName\":\"Ramesh Designer\",\"action\":\"APPROVE\"}",
+    "id": "838abf1c-05e4-48e3-9ffa-9562feff7f14",
+    "createdAt": "2026-07-28T08:37:05.489Z"
+  },
+  {
+    "jobId": "cb6a19fc-910b-4769-b2b0-af2295a08ab4",
+    "itemId": "fd828bd4-2da5-4058-8587-7abfd50575da",
+    "status": "PRINTING",
+    "title": "Printing Started",
+    "description": "Printing started on machine mach-2 by Sunil Operator",
+    "metadataJson": "{\"machineId\":\"mach-2\",\"station\":\"Mug-Press-1\",\"staffName\":\"Sunil Operator\"}",
+    "id": "cb9dfde3-86ca-44f8-b8e9-63957b6ad444",
+    "createdAt": "2026-07-28T08:37:05.492Z"
+  },
+  {
+    "jobId": "cb6a19fc-910b-4769-b2b0-af2295a08ab4",
+    "itemId": "fd828bd4-2da5-4058-8587-7abfd50575da",
+    "status": "QC_PENDING",
+    "title": "Printing Completed & QC Pending",
+    "description": "Item printed successfully by Sunil Operator. Moved to Quality Check.",
+    "metadataJson": "{\"staffName\":\"Sunil Operator\"}",
+    "id": "a0408514-30a2-4b40-8c40-4981102d6f4f",
+    "createdAt": "2026-07-28T08:37:05.495Z"
+  },
+  {
+    "id": "a220f7ec-ac58-424b-a518-68f2e26c61b8",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-975984 created for order JG-2026-495544. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-975984\"}",
+    "jobId": "3aa754c4-aa43-449d-93ff-66ba604d227f",
+    "createdAt": "2026-07-28T08:37:05.797Z"
+  },
+  {
+    "jobId": "3aa754c4-aa43-449d-93ff-66ba604d227f",
+    "itemId": "abba113e-45d3-4c53-9aeb-c848995efc7c",
+    "status": "PRINT_QUEUE",
+    "title": "Artwork APPROVE",
+    "description": "Artwork review status: APPROVED by Ramesh Designer",
+    "metadataJson": "{\"staffName\":\"Ramesh Designer\",\"action\":\"APPROVE\"}",
+    "id": "ea7b0251-751b-477c-8163-b969f000e982",
+    "createdAt": "2026-07-28T08:37:05.799Z"
+  },
+  {
+    "jobId": "3aa754c4-aa43-449d-93ff-66ba604d227f",
+    "itemId": "abba113e-45d3-4c53-9aeb-c848995efc7c",
+    "status": "PRINTING",
+    "title": "Printing Started",
+    "description": "Printing started on machine mach-2 by Sunil Operator",
+    "metadataJson": "{\"machineId\":\"mach-2\",\"station\":\"Station-1\",\"staffName\":\"Sunil Operator\"}",
+    "id": "951e5f55-a1ae-49c6-9e00-8e53514814ff",
+    "createdAt": "2026-07-28T08:37:05.802Z"
+  },
+  {
+    "jobId": "3aa754c4-aa43-449d-93ff-66ba604d227f",
+    "itemId": "abba113e-45d3-4c53-9aeb-c848995efc7c",
+    "status": "QC_PENDING",
+    "title": "Printing Completed & QC Pending",
+    "description": "Item printed successfully by Sunil Operator. Moved to Quality Check.",
+    "metadataJson": "{\"staffName\":\"Sunil Operator\"}",
+    "id": "baa3cc23-8d31-4eb0-8064-f4fb5e39c66e",
+    "createdAt": "2026-07-28T08:37:05.805Z"
+  },
+  {
+    "jobId": "3aa754c4-aa43-449d-93ff-66ba604d227f",
+    "itemId": "abba113e-45d3-4c53-9aeb-c848995efc7c",
+    "status": "PACKING_QUEUE",
+    "title": "Quality Check PASS",
+    "description": "Colors vibrant, no defects",
+    "metadataJson": "{\"staffName\":\"Vikram Supervisor\",\"result\":\"PASS\"}",
+    "id": "8ec7704e-e549-434e-acc8-bc198f96c2dc",
+    "createdAt": "2026-07-28T08:37:05.808Z"
+  },
+  {
+    "jobId": "3aa754c4-aa43-449d-93ff-66ba604d227f",
+    "itemId": "abba113e-45d3-4c53-9aeb-c848995efc7c",
+    "status": "PACKING",
+    "title": "Packing Started",
+    "description": "Packing started by Anita Packer",
+    "metadataJson": "{\"staffName\":\"Anita Packer\",\"action\":\"START\"}",
+    "id": "ad5cd9a9-873a-433a-8154-480ac98e9489",
+    "createdAt": "2026-07-28T08:37:05.810Z"
+  },
+  {
+    "jobId": "3aa754c4-aa43-449d-93ff-66ba604d227f",
+    "itemId": "abba113e-45d3-4c53-9aeb-c848995efc7c",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Packing Completed",
+    "description": "Gift boxed securely",
+    "metadataJson": "{\"staffName\":\"Anita Packer\",\"action\":\"COMPLETE\"}",
+    "id": "7f7ec274-554d-45bc-9ecc-69ca00ebc024",
+    "createdAt": "2026-07-28T08:37:05.812Z"
+  },
+  {
+    "id": "024784b5-132e-412b-a7e6-0f0676833d15",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-561622 created for order JG-2026-338399. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-561622\"}",
+    "jobId": "1fbfce89-1023-418b-947e-ef01bad55ba7",
+    "createdAt": "2026-07-28T08:37:06.134Z"
+  },
+  {
+    "jobId": "1fbfce89-1023-418b-947e-ef01bad55ba7",
+    "itemId": "5c621995-2f46-45ea-b324-7224707bccb5",
+    "status": "PRINT_QUEUE",
+    "title": "Artwork APPROVE",
+    "description": "Artwork review status: APPROVED by Ramesh Designer",
+    "metadataJson": "{\"staffName\":\"Ramesh Designer\",\"action\":\"APPROVE\"}",
+    "id": "626318b7-1569-4859-89e9-bd5f9540426f",
+    "createdAt": "2026-07-28T08:37:06.136Z"
+  },
+  {
+    "jobId": "1fbfce89-1023-418b-947e-ef01bad55ba7",
+    "itemId": "5c621995-2f46-45ea-b324-7224707bccb5",
+    "status": "PRINTING",
+    "title": "Printing Started",
+    "description": "Printing started on machine mach-2 by Sunil Operator",
+    "metadataJson": "{\"machineId\":\"mach-2\",\"station\":\"Station-1\",\"staffName\":\"Sunil Operator\"}",
+    "id": "abbcc1c2-8284-4272-b46c-d26a6515aa34",
+    "createdAt": "2026-07-28T08:37:06.139Z"
+  },
+  {
+    "jobId": "1fbfce89-1023-418b-947e-ef01bad55ba7",
+    "itemId": "5c621995-2f46-45ea-b324-7224707bccb5",
+    "status": "QC_PENDING",
+    "title": "Printing Completed & QC Pending",
+    "description": "Item printed successfully by Sunil Operator. Moved to Quality Check.",
+    "metadataJson": "{\"staffName\":\"Sunil Operator\"}",
+    "id": "439b90aa-5533-4751-98be-27f610334028",
+    "createdAt": "2026-07-28T08:37:06.141Z"
+  },
+  {
+    "jobId": "1fbfce89-1023-418b-947e-ef01bad55ba7",
+    "itemId": "5c621995-2f46-45ea-b324-7224707bccb5",
+    "status": "REPRINT_REQUIRED",
+    "title": "Quality Check FAIL",
+    "description": "Smudge on print",
+    "metadataJson": "{\"staffName\":\"Vikram Supervisor\",\"result\":\"FAIL\"}",
+    "id": "80900585-b9ef-4046-89b1-8a072a56acc4",
+    "createdAt": "2026-07-28T08:37:06.144Z"
+  },
+  {
+    "jobId": "1fbfce89-1023-418b-947e-ef01bad55ba7",
+    "itemId": "5c621995-2f46-45ea-b324-7224707bccb5",
+    "status": "PRINT_QUEUE",
+    "title": "Reprint Request Generated",
+    "description": "Reprint initiated due to: Smudge defect. Author: Vikram Supervisor",
+    "metadataJson": "{\"reason\":\"Smudge defect\",\"staffName\":\"Vikram Supervisor\"}",
+    "id": "8d9f8f64-0845-4de7-b668-375d81b37c5a",
+    "createdAt": "2026-07-28T08:37:06.146Z"
+  },
+  {
+    "id": "24a8f7b2-c3be-4259-8f06-2f3fff9aa726",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-322440 created for order JG-2026-585627. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-322440\"}",
+    "jobId": "1c02506f-22d6-4111-9367-62bdd8786baf",
+    "createdAt": "2026-07-28T09:00:21.566Z"
+  },
+  {
+    "id": "6e8d9bdd-be47-499f-991f-0556bef77afc",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-854774 created for order JG-2026-395692. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-854774\"}",
+    "jobId": "5bc3ba13-65b4-4406-b501-65b37eb36c79",
+    "createdAt": "2026-07-28T09:00:22.148Z"
+  },
+  {
+    "jobId": "5bc3ba13-65b4-4406-b501-65b37eb36c79",
+    "itemId": "9446a68c-13db-4102-a062-9508ddb39486",
+    "status": "PRINT_QUEUE",
+    "title": "Artwork APPROVE",
+    "description": "Artwork looks great",
+    "metadataJson": "{\"staffName\":\"Ramesh Designer\",\"action\":\"APPROVE\"}",
+    "id": "7008ed96-f67a-4449-94c1-d7bef2a009e9",
+    "createdAt": "2026-07-28T09:00:22.151Z"
+  },
+  {
+    "id": "e14e4d2f-734f-4f4a-8032-64556bef0f03",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-424236 created for order JG-2026-963658. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-424236\"}",
+    "jobId": "97a62e26-d111-4d40-89cf-7a5e741b4d10",
+    "createdAt": "2026-07-28T09:00:22.667Z"
+  },
+  {
+    "jobId": "97a62e26-d111-4d40-89cf-7a5e741b4d10",
+    "itemId": "4f9defc5-a063-4e06-9897-349b0e7ef228",
+    "status": "PRINT_QUEUE",
+    "title": "Artwork APPROVE",
+    "description": "Artwork review status: APPROVED by Ramesh Designer",
+    "metadataJson": "{\"staffName\":\"Ramesh Designer\",\"action\":\"APPROVE\"}",
+    "id": "9cc3e096-d520-4db2-9403-316effc7b889",
+    "createdAt": "2026-07-28T09:00:22.669Z"
+  },
+  {
+    "jobId": "97a62e26-d111-4d40-89cf-7a5e741b4d10",
+    "itemId": "4f9defc5-a063-4e06-9897-349b0e7ef228",
+    "status": "PRINTING",
+    "title": "Printing Started",
+    "description": "Printing started on machine mach-2 by Sunil Operator",
+    "metadataJson": "{\"machineId\":\"mach-2\",\"station\":\"Mug-Press-1\",\"staffName\":\"Sunil Operator\"}",
+    "id": "38ccd793-a354-4d03-8a22-7e231bbd3baa",
+    "createdAt": "2026-07-28T09:00:22.673Z"
+  },
+  {
+    "jobId": "97a62e26-d111-4d40-89cf-7a5e741b4d10",
+    "itemId": "4f9defc5-a063-4e06-9897-349b0e7ef228",
+    "status": "QC_PENDING",
+    "title": "Printing Completed & QC Pending",
+    "description": "Item printed successfully by Sunil Operator. Moved to Quality Check.",
+    "metadataJson": "{\"staffName\":\"Sunil Operator\"}",
+    "id": "cedc0fa9-b781-4927-8919-d93dd9602325",
+    "createdAt": "2026-07-28T09:00:22.677Z"
+  },
+  {
+    "id": "87297e7f-9757-4f89-83fc-669e0891b35f",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-398615 created for order JG-2026-762838. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-398615\"}",
+    "jobId": "708b05a1-64c5-43bf-aa4f-413b42445757",
+    "createdAt": "2026-07-28T09:00:23.287Z"
+  },
+  {
+    "jobId": "708b05a1-64c5-43bf-aa4f-413b42445757",
+    "itemId": "a0d34674-1147-4b0f-9e4e-0a0b7c7e048d",
+    "status": "PRINT_QUEUE",
+    "title": "Artwork APPROVE",
+    "description": "Artwork review status: APPROVED by Ramesh Designer",
+    "metadataJson": "{\"staffName\":\"Ramesh Designer\",\"action\":\"APPROVE\"}",
+    "id": "6152a894-8dc1-4629-aa2c-38214d85d05a",
+    "createdAt": "2026-07-28T09:00:23.289Z"
+  },
+  {
+    "jobId": "708b05a1-64c5-43bf-aa4f-413b42445757",
+    "itemId": "a0d34674-1147-4b0f-9e4e-0a0b7c7e048d",
+    "status": "PRINTING",
+    "title": "Printing Started",
+    "description": "Printing started on machine mach-2 by Sunil Operator",
+    "metadataJson": "{\"machineId\":\"mach-2\",\"station\":\"Station-1\",\"staffName\":\"Sunil Operator\"}",
+    "id": "3e60793d-8412-4cee-ae5e-b9a70f153acc",
+    "createdAt": "2026-07-28T09:00:23.291Z"
+  },
+  {
+    "jobId": "708b05a1-64c5-43bf-aa4f-413b42445757",
+    "itemId": "a0d34674-1147-4b0f-9e4e-0a0b7c7e048d",
+    "status": "QC_PENDING",
+    "title": "Printing Completed & QC Pending",
+    "description": "Item printed successfully by Sunil Operator. Moved to Quality Check.",
+    "metadataJson": "{\"staffName\":\"Sunil Operator\"}",
+    "id": "38f123a8-077f-4103-bc11-da6958f29383",
+    "createdAt": "2026-07-28T09:00:23.294Z"
+  },
+  {
+    "jobId": "708b05a1-64c5-43bf-aa4f-413b42445757",
+    "itemId": "a0d34674-1147-4b0f-9e4e-0a0b7c7e048d",
+    "status": "PACKING_QUEUE",
+    "title": "Quality Check PASS",
+    "description": "Colors vibrant, no defects",
+    "metadataJson": "{\"staffName\":\"Vikram Supervisor\",\"result\":\"PASS\"}",
+    "id": "e756eb61-36d8-450f-833f-bb5bc4039f4c",
+    "createdAt": "2026-07-28T09:00:23.296Z"
+  },
+  {
+    "jobId": "708b05a1-64c5-43bf-aa4f-413b42445757",
+    "itemId": "a0d34674-1147-4b0f-9e4e-0a0b7c7e048d",
+    "status": "PACKING",
+    "title": "Packing Started",
+    "description": "Packing started by Anita Packer",
+    "metadataJson": "{\"staffName\":\"Anita Packer\",\"action\":\"START\"}",
+    "id": "59093f73-0654-4c2b-8eb0-36acd719046b",
+    "createdAt": "2026-07-28T09:00:23.298Z"
+  },
+  {
+    "jobId": "708b05a1-64c5-43bf-aa4f-413b42445757",
+    "itemId": "a0d34674-1147-4b0f-9e4e-0a0b7c7e048d",
+    "status": "READY_FOR_DISPATCH",
+    "title": "Packing Completed",
+    "description": "Gift boxed securely",
+    "metadataJson": "{\"staffName\":\"Anita Packer\",\"action\":\"COMPLETE\"}",
+    "id": "50ac67ab-d35f-4da9-89b4-91292c55dc9e",
+    "createdAt": "2026-07-28T09:00:23.300Z"
+  },
+  {
+    "id": "81918989-2ddf-456f-b81f-f065a66b735f",
+    "status": "ARTWORK_PENDING",
+    "title": "Production Job Created",
+    "description": "Job PJ-2026-368355 created for order JG-2026-384763. Awaiting artwork review.",
+    "metadataJson": "{\"jobNumber\":\"PJ-2026-368355\"}",
+    "jobId": "83851d2c-99d6-4214-adbe-5a9776a225ae",
+    "createdAt": "2026-07-28T09:00:23.794Z"
+  },
+  {
+    "jobId": "83851d2c-99d6-4214-adbe-5a9776a225ae",
+    "itemId": "ab85ec14-3e5b-4c66-8d4a-971da62d47e9",
+    "status": "PRINT_QUEUE",
+    "title": "Artwork APPROVE",
+    "description": "Artwork review status: APPROVED by Ramesh Designer",
+    "metadataJson": "{\"staffName\":\"Ramesh Designer\",\"action\":\"APPROVE\"}",
+    "id": "44d00e2d-58a3-42ef-867f-6037cbce3d1a",
+    "createdAt": "2026-07-28T09:00:23.796Z"
+  },
+  {
+    "jobId": "83851d2c-99d6-4214-adbe-5a9776a225ae",
+    "itemId": "ab85ec14-3e5b-4c66-8d4a-971da62d47e9",
+    "status": "PRINTING",
+    "title": "Printing Started",
+    "description": "Printing started on machine mach-2 by Sunil Operator",
+    "metadataJson": "{\"machineId\":\"mach-2\",\"station\":\"Station-1\",\"staffName\":\"Sunil Operator\"}",
+    "id": "c6c6342b-b906-4c0b-9c39-2949f8eebf2b",
+    "createdAt": "2026-07-28T09:00:23.846Z"
+  },
+  {
+    "jobId": "83851d2c-99d6-4214-adbe-5a9776a225ae",
+    "itemId": "ab85ec14-3e5b-4c66-8d4a-971da62d47e9",
+    "status": "QC_PENDING",
+    "title": "Printing Completed & QC Pending",
+    "description": "Item printed successfully by Sunil Operator. Moved to Quality Check.",
+    "metadataJson": "{\"staffName\":\"Sunil Operator\"}",
+    "id": "bff58f49-cb7f-4b5e-96da-e07a29c05839",
+    "createdAt": "2026-07-28T09:00:23.849Z"
+  },
+  {
+    "jobId": "83851d2c-99d6-4214-adbe-5a9776a225ae",
+    "itemId": "ab85ec14-3e5b-4c66-8d4a-971da62d47e9",
+    "status": "REPRINT_REQUIRED",
+    "title": "Quality Check FAIL",
+    "description": "Smudge on print",
+    "metadataJson": "{\"staffName\":\"Vikram Supervisor\",\"result\":\"FAIL\"}",
+    "id": "506fd806-6280-4b40-a1b8-b816e8d6cd40",
+    "createdAt": "2026-07-28T09:00:23.851Z"
+  },
+  {
+    "jobId": "83851d2c-99d6-4214-adbe-5a9776a225ae",
+    "itemId": "ab85ec14-3e5b-4c66-8d4a-971da62d47e9",
+    "status": "PRINT_QUEUE",
+    "title": "Reprint Request Generated",
+    "description": "Reprint initiated due to: Smudge defect. Author: Vikram Supervisor",
+    "metadataJson": "{\"reason\":\"Smudge defect\",\"staffName\":\"Vikram Supervisor\"}",
+    "id": "d21dd66b-fbc5-4c1f-a6a2-c357c68ff77e",
+    "createdAt": "2026-07-28T09:00:23.853Z"
   }
 ]

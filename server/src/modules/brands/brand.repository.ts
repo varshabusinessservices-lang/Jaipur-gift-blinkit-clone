@@ -1,4 +1,4 @@
-import { prisma } from '../../database/prisma';
+import { prisma, shouldAllowFallback } from '../../database/prisma';
 import { 
   BrandFilterQuery, 
   CreateBrandDto, 
@@ -20,7 +20,6 @@ const memoryBrands: any[] = [
     shortDescription: 'In-house studio crafting custom acrylic & wooden LED photo frames.',
     description: 'Premier Jaipur photo frame studio specializing in high-definition UV printed acrylic frames, customized LED wooden frames, and memory shadow boxes.',
     logoFileId: 'img-logo-001',
-    bannerFileId: 'img-banner-001',
     seoImageFileId: null,
     websiteUrl: 'https://jaipurgifts.example.com/brands/photo-frame-studio',
     status: 'ACTIVE',
@@ -44,7 +43,6 @@ const memoryBrands: any[] = [
     shortDescription: 'Handcrafted authentic Jaipuri keepsakes and personalised wooden crafts.',
     description: 'Traditional and contemporary gift collection showcasing handcrafted blue pottery motifs, brass engravings, and custom name plaques.',
     logoFileId: null,
-    bannerFileId: null,
     seoImageFileId: null,
     websiteUrl: 'https://jaipurgifts.example.com',
     status: 'ACTIVE',
@@ -68,7 +66,6 @@ const memoryBrands: any[] = [
     shortDescription: 'Curated gift hampers for birthdays, anniversaries, and festive moments.',
     description: 'Exclusive celebration kits combining personalised memory items, premium chocolates, and greeting cards.',
     logoFileId: null,
-    bannerFileId: null,
     seoImageFileId: null,
     websiteUrl: null,
     status: 'ACTIVE',
@@ -146,6 +143,7 @@ export class BrandRepository {
         totalPages: Math.ceil(total / limit) || 1,
       };
     } catch (dbError) {
+      if (!shouldAllowFallback()) throw dbError;
       // Memory fallback
       let filtered = memoryBrands.filter((b) => {
         if (filters.includeDeleted !== 'true' && filters.includeDeleted !== true && b.deletedAt !== null) {
@@ -196,6 +194,7 @@ export class BrandRepository {
         productCount: null,
       };
     } catch (err) {
+      if (!shouldAllowFallback()) throw err;
       const item = memoryBrands.find((b) => b.id === id);
       if (!item) return null;
       return { ...item, productCount: null };
@@ -248,8 +247,9 @@ export class BrandRepository {
           description: dto.description || null,
           shortDescription: dto.shortDescription || null,
           logoFileId: dto.logoFileId || null,
-          bannerFileId: dto.bannerFileId || null,
+          logoAltText: dto.logoAltText || null,
           seoImageFileId: dto.seoImageFileId || null,
+          seoImageAltText: dto.seoImageAltText || null,
           websiteUrl: dto.websiteUrl || null,
           status: dto.status || 'ACTIVE',
           isFeatured: dto.isFeatured ?? false,
@@ -276,6 +276,7 @@ export class BrandRepository {
 
       return { ...created, productCount: null };
     } catch (dbError) {
+      if (!shouldAllowFallback()) throw dbError;
       const newBrand = {
         id: `brand-${Date.now()}`,
         storeId: dto.storeId || null,
@@ -285,8 +286,9 @@ export class BrandRepository {
         description: dto.description || null,
         shortDescription: dto.shortDescription || null,
         logoFileId: dto.logoFileId || null,
-        bannerFileId: dto.bannerFileId || null,
+        logoAltText: dto.logoAltText || null,
         seoImageFileId: dto.seoImageFileId || null,
+        seoImageAltText: dto.seoImageAltText || null,
         websiteUrl: dto.websiteUrl || null,
         status: dto.status || 'ACTIVE',
         isFeatured: dto.isFeatured ?? false,
@@ -321,8 +323,9 @@ export class BrandRepository {
           ...(dto.description !== undefined && { description: dto.description }),
           ...(dto.shortDescription !== undefined && { shortDescription: dto.shortDescription }),
           ...(dto.logoFileId !== undefined && { logoFileId: dto.logoFileId }),
-          ...(dto.bannerFileId !== undefined && { bannerFileId: dto.bannerFileId }),
+          ...(dto.logoAltText !== undefined && { logoAltText: dto.logoAltText }),
           ...(dto.seoImageFileId !== undefined && { seoImageFileId: dto.seoImageFileId }),
+          ...(dto.seoImageAltText !== undefined && { seoImageAltText: dto.seoImageAltText }),
           ...(dto.websiteUrl !== undefined && { websiteUrl: dto.websiteUrl }),
           ...(dto.status !== undefined && { status: dto.status }),
           ...(dto.isFeatured !== undefined && { isFeatured: dto.isFeatured }),
@@ -349,6 +352,7 @@ export class BrandRepository {
 
       return { ...updated, productCount: null };
     } catch (dbError) {
+      if (!shouldAllowFallback()) throw dbError;
       const idx = memoryBrands.findIndex((b) => b.id === id);
       if (idx !== -1) {
         memoryBrands[idx] = {

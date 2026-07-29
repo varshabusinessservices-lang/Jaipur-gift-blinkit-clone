@@ -225,13 +225,15 @@ export const CategoryTableView: React.FC<CategoryTableViewProps> = ({
                             <Eye className="w-4 h-4" />
                           </button>
 
+                          {cat.level < 3 && (
                           <button
                             onClick={() => onAddSubcategory(cat.id)}
                             className="p-1.5 text-slate-500 hover:text-emerald-600 hover:bg-slate-100 rounded-lg transition-colors cursor-pointer"
-                            title="Add Subcategory"
+                            title={cat.level === 1 ? 'Add Child Category' : 'Add Sub-Child Category'}
                           >
                             <Plus className="w-4 h-4" />
                           </button>
+                          )}
 
                           <button
                             onClick={() => onEdit(cat)}

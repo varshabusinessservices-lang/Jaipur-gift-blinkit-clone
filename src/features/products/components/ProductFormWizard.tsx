@@ -16,6 +16,8 @@ import { taxRateApi } from '../../taxRates/services/taxRateApi';
 import { TaxRate } from '../../taxRates/types/taxRate';
 import { productAttributeApi } from '../../productAttributes/services/productAttributeApi';
 import { ProductAttributeDetail } from '../../productAttributes/types/productAttribute';
+import { productApi } from '../services/productApi';
+import { config } from '../../../config/env';
 import { calculateTax } from '../../../utils/taxCalculator';
 import { generateVariationCombinations, AttributeSelectionInput } from '../../../utils/variationCombinator';
 import {
@@ -34,6 +36,8 @@ import {
   AlertCircle,
   HelpCircle,
   Sparkles,
+  X,
+  Settings,
 } from 'lucide-react';
 
 interface ProductFormWizardProps {
@@ -167,6 +171,409 @@ export function ProductFormWizard({ initialData, onSubmit, loading, mode }: Prod
   // Selected Attribute & Variation combinations generator preview
   const [variationSelections, setVariationSelections] = useState<AttributeSelectionInput[]>([]);
   const [variationPreview, setVariationPreview] = useState<any>(null);
+
+  // Real variations state
+  const [productVariations, setProductVariations] = useState<any[]>([]);
+  const [loadingVariations, setLoadingVariations] = useState(false);
+  const [savingVariations, setSavingVariations] = useState(false);
+
+  // Custom Attribute Form State
+  const [showCustomAttrForm, setShowCustomAttrForm] = useState(false);
+  const [customAttrName, setCustomAttrName] = useState('');
+  const [customAttrType, setCustomAttrType] = useState('BUTTON');
+  const [customAttrValuesStr, setCustomAttrValuesStr] = useState('');
+  const [creatingCustomAttr, setCreatingCustomAttr] = useState(false);
+
+  // Manual single variation addition form state
+  const [manualVariationSelections, setManualVariationSelections] = useState<Record<string, string>>({});
+  const [manualSku, setManualSku] = useState('');
+  const [manualMrp, setManualMrp] = useState<number | undefined>(undefined);
+  const [manualSellingPrice, setManualSellingPrice] = useState<number | undefined>(undefined);
+  const [manualStock, setManualStock] = useState<number>(10);
+  const [addingManualVariation, setAddingManualVariation] = useState(false);
+
+  // Image upload states
+  const fileInputRef = React.useRef<HTMLInputElement>(null);
+  const [uploadingImage, setUploadingImage] = useState(false);
+
+  // Load product variations in Edit Mode
+  useEffect(() => {
+    if (mode === 'edit' && initialData?.id) {
+      setLoadingVariations(true);
+      productApi.listVariations(initialData.id)
+        .then(res => {
+          if (res.success) {
+            setProductVariations(res.data || []);
+          }
+        })
+        .catch(console.error)
+        .finally(() => setLoadingVariations(false));
+    }
+  }, [mode, initialData?.id]);
+
+  // Attribute Handlers
+  const toggleAttributeAssignment = (attributeId: string) => {
+    const isAssigned = formData.attributeAssignments?.some(a => a.attributeId === attributeId);
+    if (isAssigned) {
+      setFormData(prev => ({
+        ...prev,
+        attributeAssignments: (prev.attributeAssignments || []).filter(a => a.attributeId !== attributeId)
+      }));
+    } else {
+      setFormData(prev => ({
+        ...prev,
+        attributeAssignments: [
+          ...(prev.attributeAssignments || []),
+          {
+            attributeId,
+            isRequired: false,
+            isVariationAttribute: false,
+            isFilterable: true,
+            sortOrder: (prev.attributeAssignments?.length || 0) + 1,
+            valueIds: [],
+          }
+        ]
+      }));
+    }
+  };
+
+  const toggleAttributeValue = (attributeId: string, valueId: string) => {
+    setFormData(prev => {
+      const assignments = [...(prev.attributeAssignments || [])];
+      const idx = assignments.findIndex(a => a.attributeId === attributeId);
+      if (idx === -1) return prev;
+
+      const assignment = { ...assignments[idx] };
+      const valueIds = [...assignment.valueIds];
+      const valIdx = valueIds.indexOf(valueId);
+      if (valIdx > -1) {
+        valueIds.splice(valIdx, 1);
+      } else {
+        valueIds.push(valueId);
+      }
+      assignment.valueIds = valueIds;
+      assignments[idx] = assignment;
+      return { ...prev, attributeAssignments: assignments };
+    });
+  };
+
+  const updateAssignmentSetting = (attributeId: string, key: 'isRequired' | 'isVariationAttribute' | 'isFilterable', value: boolean) => {
+    setFormData(prev => {
+      const assignments = (prev.attributeAssignments || []).map(a => {
+        if (a.attributeId === attributeId) {
+          return { ...a, [key]: value };
+        }
+        return a;
+      });
+      return { ...prev, attributeAssignments: assignments };
+    });
+  };
+
+  const handleCreateCustomAttribute = async () => {
+    if (!customAttrName.trim()) {
+      alert('Please enter an attribute name');
+      return;
+    }
+    const values = customAttrValuesStr.split(',')
+      .map(v => v.trim())
+      .filter(Boolean)
+      .map((v, i) => ({
+        name: v,
+        slug: v.toLowerCase().replace(/\s+/g, '-'),
+        displayValue: v,
+        sortOrder: i + 1,
+        status: 'ACTIVE' as const,
+      }));
+
+    if (values.length === 0) {
+      alert('Please enter at least one attribute value');
+      return;
+    }
+
+    setCreatingCustomAttr(true);
+    try {
+      const newAttr = await productAttributeApi.createAttribute({
+        name: customAttrName,
+        type: customAttrType as any,
+        values,
+        status: 'ACTIVE',
+        sortOrder: attributes.length + 1,
+        allowMultipleValues: true,
+      });
+
+      setAttributes(prev => [...prev, newAttr]);
+      
+      setFormData(prev => ({
+        ...prev,
+        attributeAssignments: [
+          ...(prev.attributeAssignments || []),
+          {
+            attributeId: newAttr.id,
+            isRequired: false,
+            isVariationAttribute: false,
+            isFilterable: true,
+            sortOrder: (prev.attributeAssignments?.length || 0) + 1,
+            valueIds: newAttr.values.map(v => v.id),
+          }
+        ]
+      }));
+
+      setShowCustomAttrForm(false);
+      setCustomAttrName('');
+      setCustomAttrType('BUTTON');
+      setCustomAttrValuesStr('');
+    } catch (error: any) {
+      console.error('Error creating attribute:', error);
+      alert('Failed to create custom attribute: ' + (error.message || 'Unknown error'));
+    } finally {
+      setCreatingCustomAttr(false);
+    }
+  };
+
+  const buildSelectionsFromFormData = (): AttributeSelectionInput[] => {
+    const selections: AttributeSelectionInput[] = [];
+    const assignments = formData.attributeAssignments || [];
+
+    for (const assign of assignments) {
+      if (!assign.isVariationAttribute) continue;
+
+      const attr = attributes.find(a => a.id === assign.attributeId);
+      if (!attr) continue;
+
+      const selectedVals = attr.values
+        .filter(v => assign.valueIds.includes(v.id))
+        .map(v => ({
+          id: v.id,
+          name: v.displayValue || v.name,
+          status: v.status || 'ACTIVE'
+        }));
+
+      if (selectedVals.length > 0) {
+        selections.push({
+          attributeId: attr.id,
+          attributeName: attr.name,
+          values: selectedVals
+        });
+      }
+    }
+
+    return selections;
+  };
+
+  // Real Combination Generator via API
+  const handleGenerateVariationsReal = async () => {
+    if (!initialData?.id) {
+      alert('Product ID not found. Please save the basic product first.');
+      return;
+    }
+    const selections = buildSelectionsFromFormData();
+    if (selections.length === 0) {
+      alert('Please select at least one variation attribute and value first.');
+      return;
+    }
+
+    const previewRes = generateVariationCombinations(selections, 100);
+    if (!previewRes.success || previewRes.combinations.length === 0) {
+      alert(previewRes.warningMessage || 'No combinations could be generated.');
+      return;
+    }
+
+    setSavingVariations(true);
+    try {
+      const combinationsPayload = previewRes.combinations.map((c: any) => ({
+        combinationKey: c.combinationKey,
+        title: `${formData.title} - ${c.label}`,
+        attributeValues: c.attributeValues.map((av: any) => ({
+          attributeId: av.attributeId,
+          attributeValueId: av.valueId,
+        })),
+        mrp: formData.mrp || 0,
+        sellingPrice: formData.sellingPrice || 0,
+        costPrice: formData.costPrice || 0,
+        stockQuantity: formData.stockQuantity || 0,
+        status: 'ACTIVE' as const,
+      }));
+
+      await productApi.generateVariations(initialData.id, {
+        combinations: combinationsPayload,
+        skipExisting: true,
+        activateNew: true,
+      });
+
+      // Reload variations
+      const updated = await productApi.listVariations(initialData.id);
+      if (updated.success) {
+        setProductVariations(updated.data || []);
+      }
+      alert('Variations generated and saved successfully!');
+    } catch (error: any) {
+      console.error('Error generating variations:', error);
+      alert(error.message || 'Failed to generate variations.');
+    } finally {
+      setSavingVariations(false);
+    }
+  };
+
+  const handleBulkSaveVariations = async () => {
+    if (!initialData?.id) return;
+    setSavingVariations(true);
+    try {
+      const payload = productVariations.map(v => ({
+        id: v.id,
+        sku: v.sku,
+        mrp: parseFloat(v.mrp) || 0,
+        sellingPrice: parseFloat(v.sellingPrice) || 0,
+        costPrice: parseFloat(v.costPrice) || 0,
+        stockQuantity: parseInt(v.stockQuantity) || 0,
+        status: v.status,
+        isDefault: v.isDefault || false,
+      }));
+
+      await productApi.bulkUpdateVariations(initialData.id, { variations: payload });
+      alert('All variations updated successfully!');
+    } catch (error: any) {
+      console.error('Error bulk updating variations:', error);
+      alert(error.message || 'Failed to bulk update variations.');
+    } finally {
+      setSavingVariations(false);
+    }
+  };
+
+  const handleCreateManualVariation = async () => {
+    if (!initialData?.id) return;
+    const variationAttrs = (formData.attributeAssignments || []).filter(a => a.isVariationAttribute);
+    
+    // Check if a value is selected for each variation attribute
+    const attributeValues: any[] = [];
+    for (const assign of variationAttrs) {
+      const selectedValueId = manualVariationSelections[assign.attributeId];
+      if (!selectedValueId) {
+        const attr = attributes.find(a => a.id === assign.attributeId);
+        alert(`Please select a value for attribute: ${attr?.name || 'Unknown'}`);
+        return;
+      }
+      attributeValues.push({
+        attributeId: assign.attributeId,
+        attributeValueId: selectedValueId,
+      });
+    }
+
+    if (attributeValues.length === 0) {
+      alert('No variation attributes configured. Set at least one attribute to "Use for Variations" first.');
+      return;
+    }
+
+    // Sort to build unique key for duplicate check
+    const sortedPairs = [...attributeValues].sort((a, b) => a.attributeId.localeCompare(b.attributeId));
+    const combinationKey = sortedPairs.map(p => `${p.attributeId}:${p.attributeValueId}`).join('|');
+
+    // Duplicate Check
+    const exists = productVariations.some(v => {
+      return v.combinationKey === combinationKey;
+    });
+
+    if (exists) {
+      alert('Duplicate Variation: A variation with this exact combination already exists.');
+      return;
+    }
+
+    setAddingManualVariation(true);
+    try {
+      const labelParts: string[] = [];
+      for (const pair of sortedPairs) {
+        const attr = attributes.find(a => a.id === pair.attributeId);
+        const valObj = attr?.values.find(v => v.id === pair.attributeValueId);
+        labelParts.push(valObj?.displayValue || valObj?.name || '');
+      }
+      const label = labelParts.join(' / ');
+
+      await productApi.createVariation(initialData.id, {
+        combinationKey,
+        title: `${formData.title} - ${label}`,
+        sku: manualSku || null,
+        mrp: manualMrp || formData.mrp || 0,
+        sellingPrice: manualSellingPrice || formData.sellingPrice || 0,
+        costPrice: formData.costPrice || 0,
+        stockQuantity: manualStock,
+        status: 'ACTIVE',
+        isDefault: productVariations.length === 0,
+        attributeValues,
+      });
+
+      // Reload variations
+      const updated = await productApi.listVariations(initialData.id);
+      if (updated.success) {
+        setProductVariations(updated.data || []);
+      }
+      
+      // Reset manual fields
+      setManualSku('');
+      setManualMrp(undefined);
+      setManualSellingPrice(undefined);
+      setManualStock(10);
+      alert('Manual variation created successfully!');
+    } catch (error: any) {
+      console.error('Error creating manual variation:', error);
+      alert(error.message || 'Failed to create manual variation.');
+    } finally {
+      setAddingManualVariation(false);
+    }
+  };
+
+  const handleDeleteVariation = async (variationId: string) => {
+    if (!initialData?.id) return;
+    if (!confirm('Are you sure you want to delete this variation?')) return;
+
+    try {
+      await productApi.deleteVariation(initialData.id, variationId);
+      setProductVariations(prev => prev.filter(v => v.id !== variationId));
+    } catch (error: any) {
+      console.error('Error deleting variation:', error);
+      alert(error.message || 'Failed to delete variation');
+    }
+  };
+
+  const handleProductImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    if (!files || files.length === 0) return;
+
+    setUploadingImage(true);
+    try {
+      const file = files[0];
+      const formDataUpload = new FormData();
+      formDataUpload.append('file', file);
+      formDataUpload.append('role', 'PRODUCT_IMAGE');
+
+      const res = await fetch(`${config.apiBaseUrl}/admin/products/media`, {
+        method: 'POST',
+        body: formDataUpload,
+      });
+
+      if (!res.ok) {
+        throw new Error('Failed to upload image');
+      }
+
+      const responseJson = await res.json();
+      const uploadedAsset = responseJson.data;
+
+      const newMedia = [
+        ...(formData.media || []),
+        {
+          fileAssetId: uploadedAsset.fileAssetId,
+          url: uploadedAsset.url,
+          isPrimary: (formData.media?.length || 0) === 0,
+          sortOrder: (formData.media?.length || 0) + 1,
+        },
+      ];
+      setFormData((prev) => ({ ...prev, media: newMedia }));
+    } catch (err) {
+      console.error('Error uploading product media:', err);
+      alert('Failed to upload image. Please try again.');
+    } finally {
+      setUploadingImage(false);
+      if (fileInputRef.current) fileInputRef.current.value = '';
+    }
+  };
 
   // Fetch Category, Brand, Tax Rate options
   useEffect(() => {
@@ -839,83 +1246,537 @@ export function ProductFormWizard({ initialData, onSubmit, loading, mode }: Prod
         {/* STEP 4: Attributes & Variations */}
         {currentStep === 4 && (
           <div className="space-y-6">
-            <h2 className="text-base font-bold text-slate-900 border-b border-slate-100 pb-3">
-              Step 4: Product Attributes & Variations Foundation
-            </h2>
+            <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+              <h2 className="text-base font-bold text-slate-900">
+                Step 4: Product Attributes & Variations Foundation
+              </h2>
+              <button
+                type="button"
+                onClick={() => setShowCustomAttrForm(true)}
+                className="px-3 py-1.5 text-xs font-bold text-indigo-600 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 rounded-lg transition-colors flex items-center gap-1"
+              >
+                <Plus className="w-3.5 h-3.5" />
+                Create Custom Attribute
+              </button>
+            </div>
 
             <div className="p-4 bg-indigo-50/70 border border-indigo-100 rounded-xl text-xs text-indigo-900 space-y-1">
               <p className="font-semibold flex items-center gap-1.5">
                 <Sparkles className="w-4 h-4 text-indigo-600" /> Attribute Assignment & Variation Combinations
               </p>
               <p className="text-indigo-800">
-                Select attribute dimensions (e.g. Colour, Size, Material) to configure variations for this product.
+                Select attribute dimensions (e.g. Colour, Size, Material) to configure variations for this product. You can toggle attribute settings, select values, and create custom values.
               </p>
             </div>
 
+            {/* Custom Attribute Creation Modal / Form */}
+            {showCustomAttrForm && (
+              <div className="p-4 border border-indigo-200 rounded-xl bg-indigo-50/30 space-y-4">
+                <div className="flex items-center justify-between">
+                  <h4 className="text-xs font-bold text-indigo-900 uppercase tracking-wider">
+                    New Custom Attribute
+                  </h4>
+                  <button
+                    type="button"
+                    onClick={() => setShowCustomAttrForm(false)}
+                    className="p-1 hover:bg-indigo-100 rounded text-indigo-700"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  <div>
+                    <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1">
+                      Attribute Name
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="e.g. Sleeve Type"
+                      value={customAttrName}
+                      onChange={(e) => setCustomAttrName(e.target.value)}
+                      className="w-full px-3 py-2 border border-slate-200 rounded-lg text-xs"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1">
+                      Display Type
+                    </label>
+                    <select
+                      value={customAttrType}
+                      onChange={(e) => setCustomAttrType(e.target.value)}
+                      className="w-full px-3 py-2 border border-slate-200 rounded-lg text-xs"
+                    >
+                      <option value="BUTTON">Chips / Buttons</option>
+                      <option value="COLOUR">Color Circles</option>
+                      <option value="SELECT">Dropdown Menu</option>
+                      <option value="TEXT">Text Field</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1">
+                    Attribute Values (Comma-separated)
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="e.g. Short Sleeve, Full Sleeve, Sleeveless"
+                    value={customAttrValuesStr}
+                    onChange={(e) => setCustomAttrValuesStr(e.target.value)}
+                    className="w-full px-3 py-2 border border-slate-200 rounded-lg text-xs"
+                  />
+                  <p className="text-[10px] text-slate-500 mt-1">
+                    Enter values separated by commas. Each value will be added automatically.
+                  </p>
+                </div>
+
+                <div className="flex justify-end gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setShowCustomAttrForm(false)}
+                    className="px-3 py-1.5 text-xs font-semibold text-slate-600 bg-white border border-slate-200 hover:bg-slate-50 rounded-lg"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="button"
+                    disabled={creatingCustomAttr}
+                    onClick={handleCreateCustomAttribute}
+                    className="px-3 py-1.5 text-xs font-semibold text-white bg-indigo-600 hover:bg-indigo-700 rounded-lg"
+                  >
+                    {creatingCustomAttr ? 'Creating...' : 'Save & Assign'}
+                  </button>
+                </div>
+              </div>
+            )}
+
             {/* List Attributes */}
             <div className="space-y-4">
-              <h3 className="text-sm font-bold text-slate-900">Global Product Attributes</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {attributes.map((attr) => (
-                  <div key={attr.id} className="p-3 border border-slate-200 rounded-xl bg-slate-50/50">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-xs font-bold text-slate-900">{attr.name}</span>
-                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-slate-200 text-slate-700">
-                        {attr.type}
-                      </span>
-                    </div>
+              <h3 className="text-sm font-bold text-slate-900">Manage Product Attributes</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {attributes.map((attr) => {
+                  const assignment = (formData.attributeAssignments || []).find(
+                    (a) => a.attributeId === attr.id
+                  );
+                  const isAssigned = !!assignment;
 
-                    <div className="flex flex-wrap gap-1.5 mt-2">
-                      {attr.values.map((v) => (
-                        <span
-                          key={v.id}
-                          className="text-[11px] px-2 py-1 rounded-md bg-white border border-slate-200 text-slate-700"
-                        >
-                          {v.displayValue || v.name}
-                        </span>
-                      ))}
+                  return (
+                    <div
+                      key={attr.id}
+                      className={`p-4 border rounded-xl transition-all ${
+                        isAssigned
+                          ? 'border-indigo-200 bg-white shadow-xs'
+                          : 'border-slate-200 bg-slate-50/50 opacity-80'
+                      }`}
+                    >
+                      <div className="flex items-center justify-between mb-2 pb-2 border-b border-slate-100">
+                        <div className="flex items-center gap-2">
+                          {isAssigned ? (
+                            <div className="w-4 h-4 rounded-full bg-indigo-600 flex items-center justify-center text-white">
+                              <Check className="w-2.5 h-2.5 stroke-[3]" />
+                            </div>
+                          ) : (
+                            <div className="w-4 h-4 rounded-full border border-slate-300" />
+                          )}
+                          <span className="text-xs font-bold text-slate-900">{attr.name}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <span className="text-[10px] px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 border border-slate-200">
+                            {attr.type}
+                          </span>
+                          <button
+                            type="button"
+                            onClick={() => toggleAttributeAssignment(attr.id)}
+                            className={`text-[11px] font-semibold px-2.5 py-1 rounded-lg transition-colors border ${
+                              isAssigned
+                                ? 'bg-red-50 hover:bg-red-100 text-red-600 border-red-200'
+                                : 'bg-indigo-600 hover:bg-indigo-700 text-white border-transparent'
+                            }`}
+                          >
+                            {isAssigned ? 'Deactivate' : 'Activate'}
+                          </button>
+                        </div>
+                      </div>
+
+                      {isAssigned && (
+                        <div className="space-y-3 mt-3">
+                          {/* Attribute Settings checkboxes */}
+                          <div className="flex flex-wrap items-center gap-4 py-1.5 border-b border-slate-50 text-[11px] text-slate-600">
+                            <label className="flex items-center gap-1.5 cursor-pointer">
+                              <input
+                                type="checkbox"
+                                checked={assignment.isRequired || false}
+                                onChange={(e) =>
+                                  updateAssignmentSetting(attr.id, 'isRequired', e.target.checked)
+                                }
+                                className="rounded text-indigo-600 border-slate-300 w-3.5 h-3.5"
+                              />
+                              Required
+                            </label>
+                            <label className="flex items-center gap-1.5 cursor-pointer">
+                              <input
+                                type="checkbox"
+                                checked={assignment.isVariationAttribute || false}
+                                onChange={(e) =>
+                                  updateAssignmentSetting(attr.id, 'isVariationAttribute', e.target.checked)
+                                }
+                                className="rounded text-indigo-600 border-slate-300 w-3.5 h-3.5"
+                              />
+                              <span className="font-semibold text-indigo-600">Use for Variations</span>
+                            </label>
+                            <label className="flex items-center gap-1.5 cursor-pointer">
+                              <input
+                                type="checkbox"
+                                checked={assignment.isFilterable ?? true}
+                                onChange={(e) =>
+                                  updateAssignmentSetting(attr.id, 'isFilterable', e.target.checked)
+                                }
+                                className="rounded text-indigo-600 border-slate-300 w-3.5 h-3.5"
+                              />
+                              Filterable
+                            </label>
+                          </div>
+
+                          {/* Attribute Value Selection badges */}
+                          <div>
+                            <span className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1.5">
+                              Select Active Values for this Product:
+                            </span>
+                            <div className="flex flex-wrap gap-1.5">
+                              {attr.values.map((v) => {
+                                const selected = assignment.valueIds.includes(v.id);
+                                return (
+                                  <button
+                                    key={v.id}
+                                    type="button"
+                                    onClick={() => toggleAttributeValue(attr.id, v.id)}
+                                    className={`text-[11px] px-2.5 py-1.5 rounded-lg border font-medium transition-all ${
+                                      selected
+                                        ? 'bg-indigo-600 text-white border-transparent shadow-xs'
+                                        : 'bg-white text-slate-700 border-slate-200 hover:border-slate-300 hover:bg-slate-50'
+                                    }`}
+                                  >
+                                    {v.displayValue || v.name}
+                                  </button>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        </div>
+                      )}
+
+                      {!isAssigned && (
+                        <div className="text-center py-4 text-xs text-slate-400">
+                          Activate to assign this attribute dimension.
+                        </div>
+                      )}
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
 
             {/* Variation Combination Builder Preview */}
             {formData.productType === 'VARIABLE' && (
-              <div className="p-4 border border-slate-200 rounded-xl bg-slate-50 space-y-3">
-                <div className="flex items-center justify-between">
-                  <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider">
-                    Variation Combination Generator Preview
-                  </h4>
-                  <button
-                    type="button"
-                    onClick={handleGenerateVariationsPreview}
-                    className="px-3 py-1.5 text-xs font-semibold text-white bg-indigo-600 hover:bg-indigo-700 rounded-lg shadow-xs"
-                  >
-                    Generate Combinations
-                  </button>
-                </div>
+              <div className="mt-8 space-y-6">
+                <h3 className="text-sm font-bold text-slate-900 border-t border-slate-100 pt-6">
+                  Manage Product Variations
+                </h3>
 
-                {variationPreview && (
-                  <div className="mt-3 p-3 bg-white rounded-lg border border-slate-200 space-y-2">
-                    <div className="flex items-center justify-between text-xs">
-                      <span className="font-semibold text-slate-700">
-                        Total Generated: {variationPreview.totalCombinations}
-                      </span>
-                      {variationPreview.exceededLimit && (
-                        <span className="text-amber-600 font-bold">Limit Exceeded (&gt;100)</span>
+                {mode === 'edit' ? (
+                  <div className="space-y-6">
+                    {/* Generators Panel */}
+                    <div className="p-4 border border-slate-200 rounded-xl bg-slate-50 space-y-3">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider">
+                            Cartesian Combination Generator
+                          </h4>
+                          <p className="text-[11px] text-slate-500 mt-0.5">
+                            Automatically create all possible unique variation permutations based on active variation attribute selections above.
+                          </p>
+                        </div>
+                        <button
+                          type="button"
+                          disabled={savingVariations}
+                          onClick={handleGenerateVariationsReal}
+                          className="px-4 py-2 text-xs font-semibold text-white bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 rounded-lg shadow-xs transition-colors"
+                        >
+                          {savingVariations ? 'Generating...' : 'Generate Combinations'}
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Manual Variation Section */}
+                    <div className="p-4 border border-slate-200 rounded-xl bg-white space-y-4">
+                      <div>
+                        <h4 className="text-xs font-bold text-slate-950 uppercase tracking-wider">
+                          Create Custom Single Variation Manually
+                        </h4>
+                        <p className="text-[11px] text-slate-500">
+                          Manually define a custom combination variation. Duplicate combinations are automatically blocked.
+                        </p>
+                      </div>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
+                        {/* Select value for each active variation attribute */}
+                        {(formData.attributeAssignments || [])
+                          .filter((a) => a.isVariationAttribute)
+                          .map((assign) => {
+                            const attr = attributes.find((at) => at.id === assign.attributeId);
+                            if (!attr) return null;
+                            return (
+                              <div key={assign.attributeId}>
+                                <label className="block text-[10px] font-bold text-slate-600 mb-1">
+                                  {attr.name}
+                                </label>
+                                <select
+                                  value={manualVariationSelections[assign.attributeId] || ''}
+                                  onChange={(e) =>
+                                    setManualVariationSelections((prev) => ({
+                                      ...prev,
+                                      [assign.attributeId]: e.target.value,
+                                    }))
+                                  }
+                                  className="w-full px-2 py-1.5 border border-slate-200 rounded-lg text-xs"
+                                >
+                                  <option value="">Select...</option>
+                                  {attr.values
+                                    .filter((val) => assign.valueIds.includes(val.id))
+                                    .map((val) => (
+                                      <option key={val.id} value={val.id}>
+                                        {val.displayValue || val.name}
+                                      </option>
+                                    ))}
+                                </select>
+                              </div>
+                            );
+                          })}
+                      </div>
+
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 pt-2">
+                        <div>
+                          <label className="block text-[10px] font-bold text-slate-600 mb-1">
+                            SKU (Optional)
+                          </label>
+                          <input
+                            type="text"
+                            placeholder="SKU Code"
+                            value={manualSku}
+                            onChange={(e) => setManualSku(e.target.value)}
+                            className="w-full px-2 py-1.5 border border-slate-200 rounded-lg text-xs"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-[10px] font-bold text-slate-600 mb-1">
+                            MRP (INR)
+                          </label>
+                          <input
+                            type="number"
+                            placeholder={String(formData.mrp || '')}
+                            value={manualMrp === undefined ? '' : manualMrp}
+                            onChange={(e) =>
+                              setManualMrp(e.target.value === '' ? undefined : Number(e.target.value))
+                            }
+                            className="w-full px-2 py-1.5 border border-slate-200 rounded-lg text-xs"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-[10px] font-bold text-slate-600 mb-1">
+                            Selling Price (INR)
+                          </label>
+                          <input
+                            type="number"
+                            placeholder={String(formData.sellingPrice || '')}
+                            value={manualSellingPrice === undefined ? '' : manualSellingPrice}
+                            onChange={(e) =>
+                              setManualSellingPrice(
+                                e.target.value === '' ? undefined : Number(e.target.value)
+                              )
+                            }
+                            className="w-full px-2 py-1.5 border border-slate-200 rounded-lg text-xs"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-[10px] font-bold text-slate-600 mb-1">
+                            Stock Quantity
+                          </label>
+                          <input
+                            type="number"
+                            value={manualStock}
+                            onChange={(e) => setManualStock(Number(e.target.value))}
+                            className="w-full px-2 py-1.5 border border-slate-200 rounded-lg text-xs"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="flex justify-end pt-2">
+                        <button
+                          type="button"
+                          disabled={addingManualVariation}
+                          onClick={handleCreateManualVariation}
+                          className="px-3.5 py-2 text-xs font-bold text-white bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 rounded-lg shadow-xs flex items-center gap-1 transition-colors"
+                        >
+                          {addingManualVariation ? 'Adding...' : 'Add Variation'}
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Existing Variations Table */}
+                    <div className="border border-slate-200 rounded-xl bg-white overflow-hidden shadow-xs">
+                      <div className="flex items-center justify-between p-4 bg-slate-50 border-b border-slate-200">
+                        <div>
+                          <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider">
+                            Active Variations List ({productVariations.length})
+                          </h4>
+                          <p className="text-[11px] text-slate-500">
+                            Edit details inline, select default product variation, or delete obsolete ones.
+                          </p>
+                        </div>
+                        <button
+                          type="button"
+                          disabled={savingVariations}
+                          onClick={handleBulkSaveVariations}
+                          className="px-3.5 py-2 text-xs font-bold text-white bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 rounded-lg shadow-xs flex items-center gap-1.5 transition-colors"
+                        >
+                          <Save className="w-4 h-4" />
+                          {savingVariations ? 'Saving...' : 'Bulk Save Variations'}
+                        </button>
+                      </div>
+
+                      {loadingVariations ? (
+                        <div className="p-8 text-center text-xs text-slate-400">
+                          Loading active variations...
+                        </div>
+                      ) : productVariations.length === 0 ? (
+                        <div className="p-8 text-center text-xs text-slate-400">
+                          No active variations created yet.
+                        </div>
+                      ) : (
+                        <div className="overflow-x-auto">
+                          <table className="w-full text-left text-xs text-slate-600">
+                            <thead className="bg-slate-50/50 border-b border-slate-100 text-[10px] text-slate-500 uppercase font-bold tracking-wider">
+                              <tr>
+                                <th className="p-3">Variation</th>
+                                <th className="p-3 w-40">SKU</th>
+                                <th className="p-3 w-28">MRP (₹)</th>
+                                <th className="p-3 w-28">Selling (₹)</th>
+                                <th className="p-3 w-24">Stock</th>
+                                <th className="p-3 w-32">Status</th>
+                                <th className="p-3 text-center w-20">Default</th>
+                                <th className="p-3 text-center w-12">Action</th>
+                              </tr>
+                            </thead>
+                            <tbody className="divide-y divide-slate-100">
+                              {productVariations.map((v, idx) => (
+                                <tr key={v.id} className="hover:bg-slate-50/30">
+                                  <td className="p-3 font-semibold text-slate-900">
+                                    {v.title.replace(`${formData.title} - `, '')}
+                                  </td>
+                                  <td className="p-3">
+                                    <input
+                                      type="text"
+                                      value={v.sku || ''}
+                                      onChange={(e) => {
+                                        const next = [...productVariations];
+                                        next[idx].sku = e.target.value;
+                                        setProductVariations(next);
+                                      }}
+                                      className="w-full px-2 py-1 border border-slate-200 rounded text-xs"
+                                    />
+                                  </td>
+                                  <td className="p-3">
+                                    <input
+                                      type="number"
+                                      value={v.mrp || ''}
+                                      onChange={(e) => {
+                                        const next = [...productVariations];
+                                        next[idx].mrp = e.target.value;
+                                        setProductVariations(next);
+                                      }}
+                                      className="w-full px-2 py-1 border border-slate-200 rounded text-xs font-medium"
+                                    />
+                                  </td>
+                                  <td className="p-3">
+                                    <input
+                                      type="number"
+                                      value={v.sellingPrice || ''}
+                                      onChange={(e) => {
+                                        const next = [...productVariations];
+                                        next[idx].sellingPrice = e.target.value;
+                                        setProductVariations(next);
+                                      }}
+                                      className="w-full px-2 py-1 border border-slate-200 rounded text-xs font-semibold text-slate-900"
+                                    />
+                                  </td>
+                                  <td className="p-3">
+                                    <input
+                                      type="number"
+                                      value={v.stockQuantity ?? ''}
+                                      onChange={(e) => {
+                                        const next = [...productVariations];
+                                        next[idx].stockQuantity = e.target.value;
+                                        setProductVariations(next);
+                                      }}
+                                      className="w-full px-2 py-1 border border-slate-200 rounded text-xs"
+                                    />
+                                  </td>
+                                  <td className="p-3">
+                                    <select
+                                      value={v.status || 'ACTIVE'}
+                                      onChange={(e) => {
+                                        const next = [...productVariations];
+                                        next[idx].status = e.target.value;
+                                        setProductVariations(next);
+                                      }}
+                                      className="w-full px-1.5 py-1 border border-slate-200 rounded text-xs"
+                                    >
+                                      <option value="ACTIVE">Active</option>
+                                      <option value="INACTIVE">Inactive</option>
+                                      <option value="OUT_OF_STOCK">Out Of Stock</option>
+                                    </select>
+                                  </td>
+                                  <td className="p-3 text-center">
+                                    <input
+                                      type="radio"
+                                      name="defaultVariation"
+                                      checked={v.isDefault || false}
+                                      onChange={() => {
+                                        const next = productVariations.map((vItem, i) => ({
+                                          ...vItem,
+                                          isDefault: i === idx,
+                                        }));
+                                        setProductVariations(next);
+                                      }}
+                                      className="rounded-full text-indigo-600 border-slate-300 focus:ring-indigo-500 w-4 h-4 cursor-pointer"
+                                    />
+                                  </td>
+                                  <td className="p-3 text-center">
+                                    <button
+                                      type="button"
+                                      onClick={() => handleDeleteVariation(v.id)}
+                                      className="text-red-500 hover:text-red-700 p-1 rounded hover:bg-red-50"
+                                    >
+                                      <Trash2 className="w-4 h-4" />
+                                    </button>
+                                  </td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
                       )}
                     </div>
-                    <div className="max-h-40 overflow-y-auto space-y-1">
-                      {variationPreview.combinations.map((c: any, i: number) => (
-                        <div
-                          key={i}
-                          className="flex items-center justify-between text-[11px] p-1.5 bg-slate-50 rounded-md border border-slate-100"
-                        >
-                          <span className="font-semibold text-slate-800">{c.label}</span>
-                          <span className="font-mono text-slate-400 text-[10px]">{c.combinationKey}</span>
-                        </div>
-                      ))}
+                  </div>
+                ) : (
+                  <div className="p-5 border border-amber-100 rounded-xl bg-amber-50/50 text-xs text-amber-900 flex gap-3">
+                    <AlertCircle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-bold">Save Product to Generate Variations</p>
+                      <p className="text-amber-800 mt-1 leading-relaxed">
+                        To guarantee structural data safety, you can generate, bulk edit, and manually add custom variations as soon as you save this new product. After creation, you will be automatically redirected back here to manage your variations database in real-time.
+                      </p>
                     </div>
                   </div>
                 )}
@@ -968,25 +1829,30 @@ export function ProductFormWizard({ initialData, onSubmit, loading, mode }: Prod
                 ))}
 
                 {(formData.media?.length || 0) < 6 && (
-                  <button
-                    type="button"
-                    onClick={() => {
-                      const newMedia = [
-                        ...(formData.media || []),
-                        {
-                          fileAssetId: `img-file-${Date.now()}`,
-                          url: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=800&q=80',
-                          isPrimary: (formData.media?.length || 0) === 0,
-                          sortOrder: (formData.media?.length || 0) + 1,
-                        },
-                      ];
-                      setFormData((prev) => ({ ...prev, media: newMedia }));
-                    }}
-                    className="flex flex-col items-center justify-center rounded-xl border-2 border-dashed border-slate-300 hover:border-indigo-500 hover:bg-indigo-50/50 aspect-square text-slate-400 hover:text-indigo-600 transition-all cursor-pointer"
-                  >
-                    <Plus className="w-5 h-5 mb-1" />
-                    <span className="text-[10px] font-semibold">Add Image</span>
-                  </button>
+                  <div className="aspect-square">
+                    <input
+                      type="file"
+                      ref={fileInputRef}
+                      className="hidden"
+                      onChange={handleProductImageUpload}
+                      accept="image/*"
+                    />
+                    <button
+                      type="button"
+                      disabled={uploadingImage}
+                      onClick={() => fileInputRef.current?.click()}
+                      className="w-full h-full flex flex-col items-center justify-center rounded-xl border-2 border-dashed border-slate-300 hover:border-indigo-500 hover:bg-indigo-50/50 aspect-square text-slate-400 hover:text-indigo-600 transition-all cursor-pointer disabled:opacity-50"
+                    >
+                      {uploadingImage ? (
+                        <div className="w-5 h-5 border-2 border-indigo-600 border-t-transparent rounded-full animate-spin mb-1" />
+                      ) : (
+                        <Plus className="w-5 h-5 mb-1" />
+                      )}
+                      <span className="text-[10px] font-semibold">
+                        {uploadingImage ? 'Uploading...' : 'Add Image'}
+                      </span>
+                    </button>
+                  </div>
                 )}
               </div>
             </div>

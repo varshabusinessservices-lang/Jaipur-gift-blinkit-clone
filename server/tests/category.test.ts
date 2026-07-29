@@ -101,12 +101,12 @@ describe('CategoryService CRUD Operations', () => {
 
   it('should block deletion if subcategories exist', async () => {
     // Attempting to delete 'cat-001' which has child 'cat-002'
-    await expect(service.deleteCategory('cat-001', 'admin-id')).rejects.toThrow(/subcategories/i);
+    await expect(service.deleteCategory('cat-001', { mode: 'SINGLE' }, 'admin-id')).rejects.toThrow(/subcategories/i);
   });
 
   it('should allow deletion when category has no subcategories', async () => {
     // Delete leaf category 'cat-003'
-    const result = await service.deleteCategory('cat-003', 'admin-id');
+    const result = await service.deleteCategory('cat-003', undefined, 'admin-id');
     expect(result.success).toBe(true);
   });
 });

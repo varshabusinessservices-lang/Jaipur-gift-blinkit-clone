@@ -5,30 +5,41 @@ import { prisma } from '../database/prisma';
 export const requireAuth = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const authHeader = req.headers.authorization;
-    if (!authHeader?.startsWith('Bearer ')) {
-      (req as any).user = { id: 'dev-admin', role: 'SUPER_ADMIN', status: 'ACTIVE', email: 'admin@example.com', name: 'Super Admin' };
-      return next();
-    }
-    const token = authHeader.split(' ')[1];
-    try {
-      const decoded = verifyAccessToken(token);
-      const user = await prisma.adminUser.findUnique({
-        where: { id: decoded.userId },
-        select: { id: true, role: true, status: true, email: true, name: true, deletedAt: true }
-      });
-      if (user && user.status === 'ACTIVE' && user.deletedAt === null) {
-        (req as any).user = user;
-        return next();
+    if (authHeader?.startsWith('Bearer ')) {
+      const token = authHeader.split(' ')[1];
+      try {
+        const decoded = verifyAccessToken(token);
+        try {
+          const user = await prisma.adminUser.findUnique({
+            where: { id: decoded.userId },
+            select: { id: true, role: true, status: true, email: true, name: true, deletedAt: true }
+          });
+          if (user && user.status === 'ACTIVE' && user.deletedAt === null) {
+            (req as any).user = user;
+            return next();
+          }
+        } catch (dbErr) {
+          // Fall back to decoded JWT payload if DB is in fallback mode
+        }
+
+        if (decoded && decoded.userId) {
+          (req as any).user = {
+            id: decoded.userId,
+            role: decoded.role || 'SUPER_ADMIN',
+            status: 'ACTIVE',
+            email: 'admin@jaipurgifting.com',
+            name: 'Super Admin'
+          };
+          return next();
+        }
+      } catch (e) {
+        return res.status(401).json({ success: false, message: 'Invalid or expired token', code: 'UNAUTHORIZED' });
       }
-    } catch (e) {
-      // Token verification failed, fallback to dev admin
     }
 
-    (req as any).user = { id: 'dev-admin', role: 'SUPER_ADMIN', status: 'ACTIVE', email: 'admin@example.com', name: 'Super Admin' };
-    next();
+    return res.status(401).json({ success: false, message: 'Authentication token required', code: 'UNAUTHORIZED' });
   } catch (error) {
-    (req as any).user = { id: 'dev-admin', role: 'SUPER_ADMIN', status: 'ACTIVE', email: 'admin@example.com', name: 'Super Admin' };
-    next();
+    return res.status(401).json({ success: false, message: 'Authentication failed', code: 'UNAUTHORIZED' });
   }
 };
 
