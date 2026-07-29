@@ -1,89 +1,199 @@
+import express from 'express';
+import path from 'path';
+
 import { app } from './app';
 import { env } from './config/env';
 import { prisma } from './database/prisma';
 import { notFoundHandler } from './middlewares/not-found';
 import { errorHandler } from './middlewares/error-handler';
-import path from 'path';
-import express from 'express';
 
-async function startServer() {
+function validateProductionEnvironment(): void {
+  if (env.NODE_ENV !== 'production') {
+    return;
+  }
+
+  const requiredVariables = [
+    'DATABASE_URL',
+    'CUSTOMER_UPLOAD_SECRET',
+  ];
+
+  const missingVariables = requiredVariables.filter((variableName) => {
+    const value = process.env[variableName];
+    return !value || value.trim() === '' || value === 'CHANGE_ME';
+  });
+
+  if (missingVariables.length > 0) {
+    throw new Error(
+      `Missing required production environment variables: ${missingVariables.join(', ')}`
+    );
+  }
+
+  const uploadSecret = process.env.CUSTOMER_UPLOAD_SECRET as string;
+
+  if (uploadSecret.length < 32) {
+    throw new Error(
+      'CUSTOMER_UPLOAD_SECRET must be at least 32 characters in production.'
+    );
+  }
+
+  if (process.env.ALLOW_JSON_STORAGE_FALLBACK === 'true') {
+    throw new Error(
+      'ALLOW_JSON_STORAGE_FALLBACK must be false in production.'
+    );
+  }
+
+  if (process.env.CATEGORY_FILE_FALLBACK_ENABLED === 'true') {
+    throw new Error(
+      'CATEGORY_FILE_FALLBACK_ENABLED must be false in production.'
+    );
+  }
+}
+
+async function verifyDatabaseConnection(): Promise<void> {
+  console.log('[server]: Verifying MySQL database connection...');
+
+  const timeoutPromise = new Promise<never>((_, reject) => {
+    setTimeout(() => {
+      reject(new Error('Database connection timed out after 10 seconds.'));
+    }, 10_000);
+  });
+
+  await Promise.race([
+    prisma.$connect().then(async () => {
+      await prisma.$queryRaw`SELECT 1`;
+    }),
+    timeoutPromise,
+  ]);
+
+  console.log('[server]: MySQL database connected successfully.');
+}
+
+function configureFrontend(): void {
+  if (env.NODE_ENV !== 'production' && process.env.VITE_DEV_SERVER !== 'false') {
+    return;
+  }
+
+  if (env.NODE_ENV === 'production') {
+    const distPath = path.resolve(process.cwd(), 'dist');
+    const indexPath = path.join(distPath, 'index.html');
+
+    app.use(express.static(distPath));
+
+    app.get('*', (req, res, next) => {
+      /*
+       * API requests must never receive React index.html.
+       * They should continue to the API 404/error handlers.
+       */
+      if (req.path.startsWith('/api')) {
+        return next();
+      }
+
+      return res.sendFile(indexPath);
+    });
+  }
+}
+
+async function startServer(): Promise<void> {
   try {
-    // Verifying database connection (graceful fallback in Cloud Run/AI Studio unless FAIL_FAST=true is set)
-    const failFast = process.env.FAIL_FAST === 'true';
-    console.log('[server]: Verifying database connection...');
-    try {
-      const connectPromise = Promise.race([
-        prisma.$connect().then(() => prisma.$executeRawUnsafe('SELECT 1')),
-        new Promise((_, reject) => setTimeout(() => reject(new Error('Database connection timeout (3s)')), 3000))
-      ]);
-      await connectPromise;
-      console.log('[server]: Database connected successfully');
-    } catch (dbErr) {
-      if (failFast) {
-        console.error('[server]: DB connect issue. Fail-fast active.');
-        throw dbErr;
-      } else {
-        console.log('[server]: Gracefully falling back to mock/JSON storage mode for preview/publish.');
-        process.env.ALLOW_JSON_STORAGE_FALLBACK = 'true';
+    validateProductionEnvironment();
+
+    /*
+     * Production must use the real MySQL database.
+     * Do not silently enable JSON/mock fallback.
+     */
+    await verifyDatabaseConnection();
+
+    /*
+     * Public endpoint to verify that Express is actually running.
+     * Place this before the SPA fallback and global 404 handler.
+     */
+    app.get('/api/health', async (_req, res) => {
+      try {
+        await prisma.$queryRaw`SELECT 1`;
+
+        return res.status(200).json({
+          success: true,
+          status: 'ok',
+          database: 'connected',
+          environment: env.NODE_ENV,
+        });
+      } catch {
+        return res.status(503).json({
+          success: false,
+          status: 'error',
+          database: 'disconnected',
+        });
       }
-    }
-
-    // Verify or safely default CUSTOMER_UPLOAD_SECRET in production
-    if (env.NODE_ENV === 'production') {
-      const uploadSecret = process.env.CUSTOMER_UPLOAD_SECRET;
-      if (!uploadSecret || uploadSecret === 'CHANGE_ME' || uploadSecret === 'super-secret-customer-uploads-key-1234' || uploadSecret.length < 16) {
-        console.log('[server]: CUSTOMER_UPLOAD_SECRET is not configured or weak. Using secure auto-generated fallback secret for preview/publish.');
-        process.env.CUSTOMER_UPLOAD_SECRET = process.env.CUSTOMER_UPLOAD_SECRET || 'secure-fallback-upload-secret-key-9999';
-      }
-    }
-
-    // 5. Frontend catch-all where applicable
-    if (env.NODE_ENV !== 'production' && process.env.VITE_DEV_SERVER !== 'false') {
-      const { createServer: createViteServer } = await import('vite');
-      const vite = await createViteServer({
-        server: { middlewareMode: true },
-        appType: 'spa',
-      });
-      app.use(vite.middlewares);
-    } else if (env.NODE_ENV === 'production') {
-      const distPath = path.join(process.cwd(), 'dist');
-      app.use(express.static(distPath));
-      app.get('*', (req, res, next) => {
-        if (req.path.startsWith('/api')) {
-          return next();
-        }
-        res.sendFile(path.join(distPath, 'index.html'));
-      });
-    }
-
-    // 6. Global 404 handler (must come after API and static routes)
-    app.use(notFoundHandler);
-
-    // 7. Global Error handler
-    app.use(errorHandler);
-
-    const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
-    const server = app.listen(port, '0.0.0.0', () => {
-      console.log(`[server]: Server is running at http://localhost:${port}`);
     });
 
-    // Graceful shutdown
-    const shutdown = async () => {
-      console.log('Shutting down gracefully...');
+    if (
+      env.NODE_ENV !== 'production' &&
+      process.env.VITE_DEV_SERVER !== 'false'
+    ) {
+      const { createServer: createViteServer } = await import('vite');
+
+      const vite = await createViteServer({
+        server: {
+          middlewareMode: true,
+        },
+        appType: 'spa',
+      });
+
+      app.use(vite.middlewares);
+    } else {
+      configureFrontend();
+    }
+
+    /*
+     * These must remain after API routes, static files and SPA fallback.
+     */
+    app.use(notFoundHandler);
+    app.use(errorHandler);
+
+    const port = Number(process.env.PORT) || 3000;
+
+    const server = app.listen(port, '0.0.0.0', () => {
+      console.log(`[server]: Express server listening on port ${port}`);
+      console.log(`[server]: Environment: ${env.NODE_ENV}`);
+      console.log(`[server]: Health endpoint: /api/health`);
+      console.log(`[server]: API base path: /api/v1`);
+    });
+
+    const shutdown = async (signal: string): Promise<void> => {
+      console.log(`[server]: Received ${signal}. Shutting down...`);
+
       server.close(async () => {
-        console.log('HTTP server closed');
-        await prisma.$disconnect();
-        process.exit(0);
+        try {
+          await prisma.$disconnect();
+          console.log('[server]: Database connection closed.');
+          process.exit(0);
+        } catch (error) {
+          console.error('[server]: Shutdown error:', error);
+          process.exit(1);
+        }
       });
     };
 
-    process.on('SIGINT', shutdown);
-    process.on('SIGTERM', shutdown);
+    process.on('SIGINT', () => {
+      void shutdown('SIGINT');
+    });
 
+    process.on('SIGTERM', () => {
+      void shutdown('SIGTERM');
+    });
   } catch (error) {
-    console.error('Failed to start server:', error);
+    console.error('[server]: Failed to start application.');
+
+    if (error instanceof Error) {
+      console.error('[server]: Error message:', error.message);
+      console.error('[server]: Error stack:', error.stack);
+    } else {
+      console.error(error);
+    }
+
+    await prisma.$disconnect().catch(() => undefined);
     process.exit(1);
   }
 }
 
-startServer();
+void startServer();
